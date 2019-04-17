@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homepage</title>
+	    <link href="Homepage CSS 2.css" rel="stylesheet">
+		    <link href="Homepage JS.js" rel="animation">
+
+</head>
+	
+<body> 
+
+<!--- Top navigation bar --->	
+	
+<div class="content-wrapper">
+  	
+	<div class="navmenu">
+	  
+    <span id="menu"><img src="img/hamburger menu.png" alt="hamburger_menu" width="40px" height="30px"></span>
+    <nav id="navbar" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		
+    <ul class="navbar" id="myNavbar">
+		
+		<li><a href="/" itemprop="url" title="logo"><span itemprop="name">Home</span></a></li>
+		
+		<li id="sub-menu-categories">
+		<span itemprop="name" class="dropdown_title">Types</span>
+        <ul class="sub-menu">
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Family</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Friendship</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Horror</span></a></li>				
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Justice</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Love</span></a></li>				
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Philisophical</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">War</span></a></li>	
+		</ul>
+		</li>
+        
+		<li id="sub-menu-genres">
+		<span itemprop="name" class="dropdown_title">Genres</span>
+        <ul class="sub-menu">
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Art &amp; design</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Fiction</span></a></li>		   
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Mystery</span></a></li>	
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Non fiction</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Science fiction</span></a></li>	
+		</ul>
+		</li>
+		<li><a href="/" itemprop="url" title="Events"><span itemprop="name">Events</span></a></li>
+		<li><a href="/" itemprop="url" title="Contact us"><span itemprop="name">Contact us</span></a></li>
+
+
+<li>
+
+		<form action="/search" autocomplete="on" id="search-form" method="get">
+		<input type="text" placeholder="Search here" size="15"/>
+		<div id="search_button"><img src="img/search icon.png" id="search_icon" alt="search icon" width="25px" height="25px"></div>
+    	</form>   	
+
+		</li>			
+				
+        </ul>
+
+</nav>
+	
+	
+		<div class="menu_icons_container">
+		<span class="menu_icons"><img src="img/logo profile.png" alt="logo_profile" width="35px" height="35px" /></span>
+		<span class="menu_icons"><img src="img/logo cart.png" alt="logo_cart" width="35px" height="35px"/></span>	
+		</div>	
+
+</div>
+</div>
+	
+<div style="clear: both;"/>
+	
+<!--- End of Top navigation bar --->	
+	
+	
+	
+	
+	
+<!--- Landing page with title --->		
+	
+<section id="landing_page">
+	<span id="landing_page_bg">
+	</span>
+	<div id="landing_title_container">
+	<h3 id="landing_title_small">Welcome to</h3>
+	<h1 id="landing_title_big">Bookaholic</h1>
+	<span id="landing_title_box"></span>
+	</div>
+	<h4 id="landing_subtitle">All the books you want <br> are just one click away! </h4>
+	
+	</section>	
+
+<!--- End of Landing page with title --->	
+	
+	
+	
+	
+<!--- Latest products section --->	
+	
+<!--- First slide --->	
+	
+	
+<section id="latest_products">
+	<h3 class="section_title">
+	Latest products
+		</h3>
+
+    <div class="carousel">
+        <ul class="slides">
+            <input type="radio" name="radio-buttons" id="img-1" checked />
+    <li class="slide-container">
+        <div class="slide-image">
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img1">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img2">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img3">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img4">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img5">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img6">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+</div>
+
+
+<!--- Second slide --->	
+
+	
+                <div class="carousel-controls">
+                    <label for="img-3" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-2" class="next-slide">
+                      <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+			
+<input type="radio" name="radio-buttons" id="img-2" />
+            <li class="slide-container">
+                <div class="slide-image">
+		<div class="image_and_caption">	
+ 	       <img src="img/kobane.jpg" id="slide2_img1">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/kobane.jpg" id="slide2_img2">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/kobane.jpg" id="slide2_img3">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/kobane.jpg" id="slide2_img4">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="img/kobane.jpg" id="slide2_img5">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+
+		<div class="image_and_caption">	
+ 	       <img src="img/kobane.jpg" id="slide2_img6">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>					
+			
+                </div>
+				
+				
+<!--- Third slide --->		
+	
+                <div class="carousel-controls">
+                    <label for="img-1" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-3" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+            <input type="radio" name="radio-buttons" id="img-3" />
+	
+            <li class="slide-container">
+                <div class="slide-image">
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img1">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img2">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img3">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img4">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img5">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img6">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>					
+                </div>
+                <div class="carousel-controls">
+                    <label for="img-2" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-1" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+ 
+        </ul>
+    </div>
+
+
+</section>	
+	
+<!--- End of latest products section --->	
+	
+	
+	
+	
+<!--- Our suggestions section --->			
+	
+<div id="our_suggestions">
+	<h3 class="section_title">
+Our suggestions
+	</h3>
+	</div>
+	
+<!--- End of Our suggestions section --->			
+
+	
+	
+	
+<!--- Gift cards section --->				
+	
+<div id="gift_cards">
+	<h3 class="section_title">
+Gift cards and vouchers	</h3>
+</div>
+	
+<!--- End of Gift cards section --->				
+	
+	
+	
+
+<!--- Footer --->	
+	
+<footer>
+	<h6>Bookaholic<br>
+	info@bookaholic.co.uk<br>
+	+44 20 7269 9030
+	</h6>
+	
+	</footer>
+	
+<!--- End of Footer --->	
+	
+	
+	
+	
+</body>
+</html>
