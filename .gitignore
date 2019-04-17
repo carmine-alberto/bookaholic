@@ -63,3 +63,6 @@ typings/
 #temp files
 *.tmp
 *~$*
+
+#csv 
+*.csv

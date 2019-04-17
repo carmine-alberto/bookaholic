@@ -1,0 +1,1342 @@
+openapi: 3.0.2
+info:
+  title: Bookaholic API
+  description: Bookaholic server offering access to books, reviews, users and related
+    data
+  termsOfService: http://addToShere
+  contact:
+    name: Carmine Alberto
+    email: carmine.alberto@mail.polimi.it
+  license:
+    name: Apache-2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: localhost:8080
+  description: API run offline - for testing purposes
+- url: herokuURL
+  description: Official API server where the application resides - for clients' consumption
+tags:
+- name: Book
+  description: Operations performed on books
+- name: Cart
+  description: Operations available for a user's cart
+- name: User
+  description: Operations about user
+- name: Author
+  description: Retrieval operations for authors
+- name: Event
+  description: Operations about events
+- name: Review
+  description: Operations for reviews editing and retrieval
+paths:
+  /books:
+    get:
+      tags:
+      - Book
+      summary: Get a set of books
+      operationId: getBooks
+      parameters:
+      - name: published_after
+        in: query
+        description: 'Return a subset of books: published after the given date'
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: date
+      - name: suggested
+        in: query
+        description: 'Return a subset of books: suggested by us'
+        required: false
+        allowEmptyValue: true
+        style: form
+        explode: true
+        schema:
+          type: boolean
+          default: false
+      - name: starts_with
+        in: query
+        description: 'Return a subset of books: title starts with the provided string'
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: '*'
+      - name: genre
+        in: query
+        description: 'Return a subset of books: having provided genre'
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: '*'
+      - name: type
+        in: query
+        description: 'Return a subset of books: having provided type'
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: '*'
+      - name: similar_to
+        in: query
+        description: 'Return a subset of books: having the same property specified
+          in criterion as the book provided'
+        required: false
+        style: form
+        explode: true
+        schema:
+          $ref: '#/components/schemas/similar_to'
+      - name: limit
+        in: query
+        description: The number of items to return.
+        required: false
+        style: form
+        explode: true
+        schema:
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        description: Items to skip before starting to collect the response set.
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          example: 5
+          default: 0
+      responses:
+        200:
+          description: Books retrieval successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+                x-content-type: application/json
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        404:
+          description: The requested resource does not exist in the server
+        default:
+          description: The server cannot handle the received request
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+      x-swagger-router-controller: Book
+    x-swagger-router-controller: Book
+  /books/types:
+    get:
+      tags:
+      - Book
+      summary: get available types
+      description: Return all the distinct available book types in the database
+      operationId: getTypes
+      responses:
+        200:
+          description: Types retrieval successful
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                example:
+                - war
+                - love
+                items:
+                  type: string
+                x-content-type: application/json
+      x-swagger-router-controller: Book
+    x-swagger-router-controller: Book
+  /books/genres:
+    get:
+      tags:
+      - Book
+      summary: get available genres
+      description: Return all the distinct available book genres in the database
+      operationId: getGenres
+      responses:
+        200:
+          description: Genres retrieval successful
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                example:
+                - fiction
+                - science-fiction
+                items:
+                  type: string
+                x-content-type: application/json
+      x-swagger-router-controller: Book
+    x-swagger-router-controller: Book
+  /books/{book_id}:
+    get:
+      tags:
+      - Book
+      summary: get information on a single book
+      description: Returns all the information pertaining to a single book
+      operationId: getBookById
+      parameters:
+      - name: book_id
+        in: path
+        description: The ID of the book whose information have to be returned
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+      responses:
+        200:
+          description: Book retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetailedBook'
+        404:
+          description: The requested resource does not exist in the server
+      x-swagger-router-controller: Book
+    x-swagger-router-controller: Book
+  /authors:
+    get:
+      tags:
+      - Author
+      summary: get all authors
+      operationId: getAuthors
+      parameters:
+      - name: limit
+        in: query
+        description: The number of items to return.
+        required: false
+        style: form
+        explode: true
+        schema:
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        description: Items to skip before starting to collect the response set.
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          example: 5
+          default: 0
+      - name: of
+        in: query
+        description: Specify the book whose authors have to be retrieved
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+      responses:
+        200:
+          description: Authors retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        404:
+          description: The requested resource does not exist in the server
+      x-swagger-router-controller: Author
+    x-swagger-router-controller: Author
+  /authors/{author_id}:
+    get:
+      tags:
+      - Author
+      summary: get a single author
+      operationId: getAuthorById
+      parameters:
+      - name: author_id
+        in: path
+        description: The ID of the author whose information has to be returned
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: ^\d{8}$
+          type: string
+          format: author_id
+      responses:
+        200:
+          description: Author retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        404:
+          description: The requested resource does not exist in the server
+      x-swagger-router-controller: Author
+    x-swagger-router-controller: Author
+  /events:
+    get:
+      tags:
+      - Event
+      summary: Get events details
+      operationId: getEvents
+      parameters:
+      - name: offset
+        in: query
+        description: Items to skip before starting to collect the response set.
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          example: 5
+          default: 0
+      - name: limit
+        in: query
+        description: The number of items to return.
+        required: false
+        style: form
+        explode: true
+        schema:
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 20
+      - name: about
+        in: query
+        description: Specify what book requested resources are related to
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+      - name: where
+        in: query
+        description: Specify the place where the events shown will be held
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: Specify the minimum starting date for events shown; can be coupled
+          with <<to>> parameter
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: date
+      - name: to
+        in: query
+        description: Specify the maximum date for events shown; can be coupled with
+          <<from>> parameter
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: date
+      responses:
+        200:
+          description: Events retrieved successfully
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+                x-content-type: application/json
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        404:
+          description: The requested resource does not exist in the server
+      x-swagger-router-controller: Event
+    x-swagger-router-controller: Author
+  /events/places:
+    get:
+      tags:
+      - Event
+      summary: Get places where events will be held
+      operationId: getEventPlaces
+      responses:
+        200:
+          description: Places retrieved successfully
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  type: string
+                x-content-type: application/json
+      x-swagger-router-controller: Event
+    x-swagger-router-controller: Author
+  /events/{event_id}:
+    get:
+      tags:
+      - Event
+      summary: Get a single event's details
+      operationId: getEventById
+      parameters:
+      - name: event_id
+        in: path
+        description: Specify the ID of the event you want to know more about
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: ^\d{9}$
+          type: string
+          format: event_id
+      responses:
+        200:
+          description: Event details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        404:
+          description: The requested resource does not exist in the server
+      x-swagger-router-controller: Event
+    x-swagger-router-controller: Author
+  /reviews:
+    get:
+      tags:
+      - Review
+      summary: Get a set of reviews
+      operationId: getReviews
+      parameters:
+      - name: limit
+        in: query
+        description: The number of items to return.
+        required: false
+        style: form
+        explode: true
+        schema:
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        description: Items to skip before starting to collect the response set.
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          example: 5
+          default: 0
+      - name: about
+        in: query
+        description: Specify what book requested resources are related to
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+      - name: by_rating
+        in: query
+        description: Specify rating by which reviews have to be filtered
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+          format: int32
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+      - name: by_user
+        in: query
+        description: Specify the received reviews' author. If this query parameter
+          is used, book_title and book_cover will be added to the response object.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Reviews retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        404:
+          description: The requested resource does not exist in the server
+      x-swagger-router-controller: Review
+    post:
+      tags:
+      - Review
+      summary: Add a review
+      operationId: postReview
+      requestBody:
+        description: Review to add
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Review'
+            encoding:
+              gist:
+                style: form
+                allowReserved: true
+              content:
+                style: form
+                allowReserved: true
+        required: true
+      responses:
+        201:
+          description: Review added
+        401:
+          description: Missing JWT
+        403:
+          description: A review of this book written by the user sending the request
+            already exists
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: Review
+    delete:
+      tags:
+      - Review
+      summary: Delete a review
+      operationId: deleteReview
+      parameters:
+      - name: about
+        in: query
+        description: Specify what book requested resources are related to
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+      responses:
+        204:
+          description: The request was carried out, no more information will be supplied
+        401:
+          description: Missing JWT
+        404:
+          description: The requested resource does not exist in the server
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: Review
+    x-swagger-router-controller: Author
+  /cart:
+    get:
+      tags:
+      - Cart
+      summary: Get the items put in the cart by the user
+      operationId: getCart
+      responses:
+        200:
+          description: Cart's item retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CartBook'
+                x-content-type: application/json
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: Cart
+    post:
+      tags:
+      - Cart
+      summary: Add a new book to the cart
+      operationId: postToCart
+      requestBody:
+        description: Used to specify the book to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartBook'
+        required: true
+      responses:
+        204:
+          description: The request was carried out, no further information will be
+            supplied
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        401:
+          description: Missing JWT
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: Cart
+    delete:
+      tags:
+      - Cart
+      summary: Delete every item in the cart
+      operationId: emptyCart
+      responses:
+        204:
+          description: The request was carried out, no further information will be
+            supplied
+        401:
+          description: Missing JWT
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: Cart
+    x-swagger-router-controller: Cart
+  /cart/{itemId}:
+    patch:
+      tags:
+      - Cart
+      summary: Edit the amount of the specified book
+      operationId: editAmount
+      parameters:
+      - name: itemId
+        in: path
+        description: |
+          Parameters used to identify the resource whose amount has to be modified
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/itemId'
+      - name: amount
+        in: query
+        description: |
+          New amount of the specified resource. A value of 0 is tantamount to removing the resource from the cart
+        required: true
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: number
+          format: int32
+      responses:
+        204:
+          description: The request was carried out, no further information will be
+            supplied
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        401:
+          description: Missing JWT
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: Cart
+    x-swagger-router-controller: Cart
+  /orders:
+    get:
+      tags:
+      - User
+      summary: Get the user's orders
+      operationId: getOrders
+      parameters:
+      - name: limit
+        in: query
+        description: The number of items to return.
+        required: false
+        style: form
+        explode: true
+        schema:
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        description: Items to skip before starting to collect the response set.
+        required: false
+        style: form
+        explode: true
+        schema:
+          minimum: 0
+          type: integer
+          example: 5
+          default: 0
+      responses:
+        200:
+          description: Orders retrieved successfully
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+                x-content-type: application/json
+        401:
+          description: Missing JWT
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: User
+    post:
+      tags:
+      - User
+      summary: Add a new order
+      operationId: postToOrders
+      responses:
+        204:
+          description: The request was carried out, no further information will be
+            supplied
+        401:
+          description: Missing JWT
+        403:
+          description: 'Forbidden operation: no items in the cart'
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: User
+    x-swagger-router-controller: Order
+  /profile:
+    get:
+      tags:
+      - User
+      summary: Get the user profile
+      operationId: getProfile
+      responses:
+        200:
+          description: Returns the authenticated user's data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          description: Missing JWT
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: User
+    post:
+      tags:
+      - User
+      summary: Create a new profile
+      operationId: register
+      requestBody:
+        description: Data retrieved via a form to create a new user
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/body'
+        required: true
+      responses:
+        201:
+          description: Profile created successfully. User's data returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        403:
+          description: 'Forbidden action: the user already exists'
+      x-swagger-router-controller: User
+    x-swagger-router-controller: Profile
+  /profile/{field}:
+    put:
+      tags:
+      - User
+      summary: Overwrite the specified resource
+      operationId: updateField
+      parameters:
+      - name: field
+        in: path
+        description: Specify the field to be updated
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          enum:
+          - username
+          - email
+          - password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        required: true
+      responses:
+        204:
+          description: The request was carried out, no further information will be
+            supplied
+        400:
+          description: Provided parameters do not match the requested format
+          content:
+            text/plain:
+              schema:
+                type: string
+                x-content-type: text/plain
+        401:
+          description: Missing JWT
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: User
+    x-swagger-router-controller: Profile
+  /login:
+    post:
+      tags:
+      - User
+      summary: Login facility
+      operationId: login
+      requestBody:
+        description: User's data provided
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/body_1'
+        required: true
+      responses:
+        200:
+          description: User authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        400:
+          description: Authentication failed! Username or password wrong
+      x-swagger-router-controller: User
+    x-swagger-router-controller: Login
+  /logout:
+    get:
+      tags:
+      - User
+      summary: Log out the user
+      operationId: logout
+      responses:
+        200:
+          description: User logged out successfully
+        401:
+          description: No user to log out
+      security:
+      - jwtAuth: []
+      x-swagger-router-controller: User
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        book_id:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+        title:
+          type: string
+          readOnly: true
+        cover:
+          pattern: ^[\w]+\.jpg$
+          type: string
+          readOnly: true
+    DetailedBook:
+      description: A book for sale in the store
+      example:
+        book_id: 8012039031
+        title: The Power
+        cover: the_power.jpg
+        authors:
+        - Naomi Alderman
+        abstract: All over the world women and girls are discovering they have the
+          power. With a flick of the fingers they can inflict terrible pain, and even
+          death.
+        interview: none
+        publication_date: {}
+        genre: Science-fiction
+        type: Horror
+        language: English
+        details:
+        - ISBN: 1234567890123
+          cover_type: hardcover
+          in_storage: 15
+          price: 8.99
+        - ISBN: 1234567890124
+          cover_type: digital
+          in_storage: 2147483647
+          price: 6.99
+      allOf:
+      - $ref: '#/components/schemas/Book'
+      - type: object
+        properties:
+          authors:
+            minItems: 1
+            uniqueItems: true
+            type: array
+            items:
+              $ref: '#/components/schemas/Author'
+          abstract:
+            type: string
+          interview:
+            type: string
+          publication_date:
+            type: string
+            format: date
+          genre:
+            type: string
+          type:
+            type: string
+          language:
+            type: string
+          details:
+            minItems: 1
+            uniqueItems: true
+            type: array
+            items:
+              $ref: '#/components/schemas/DetailedBook_details'
+    CartBook:
+      allOf:
+      - $ref: '#/components/schemas/Book'
+      - required:
+        - amount
+        - cover_type
+        - price
+        type: object
+        properties:
+          cover_type:
+            type: string
+          price:
+            minimum: 0.01
+            type: number
+            format: float
+            readOnly: true
+          amount:
+            minimum: 1
+            type: number
+            format: integer
+          toBeReserved:
+            type: boolean
+            readOnly: true
+        description: |
+          The "toBeReserved" property is set by the server upon adding a book to the cart false when amount <= in_storage, true otherwise. It's a client's duty to warn the user about this behaviour, using the quantity property provided by the getBookById operation.
+        example:
+          book_id: 1243765890
+          book_title: Mortal Instruments - City of Bones
+          cover: city_of_bones.jpg
+          cover_type: paperback
+          price: 8.99
+          amount: 2
+          toBeReserved: false
+    Author:
+      required:
+      - name
+      - picture
+      - short_bio
+      type: object
+      properties:
+        name:
+          type: string
+        picture:
+          pattern: ^[\w]+\.jpg
+          type: string
+        short_bio:
+          type: string
+      example:
+        name: Friedrich Nietzsche
+        picture: friedrich_nietzsche.jpg
+        short_bio: "Born in Rocken in 1844, Nietzsche is a philosopher best known\
+          \ for his controversial theories on human nature. \n"
+    Event:
+      required:
+      - book_id
+      - date
+      - event_id
+      - image
+      - info
+      - place
+      type: object
+      properties:
+        event_id:
+          pattern: ^\d{9}$
+          type: string
+          format: event_id
+        info:
+          type: string
+        place:
+          type: string
+        date:
+          type: string
+          format: date
+        image:
+          pattern: ^[\w]+\.jpg$
+          type: string
+        book_id:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+      example:
+        event_id: 102034659
+        info: |
+          Don't miss the opportunity to know one of most promising authors of this year at the presentation of his first book, {{random title here}}.
+        place: Milan
+        date: {}
+        image: even01.jpg
+        book_id: "0239277421"
+    Review:
+      required:
+      - book_id
+      - content
+      - gist
+      - rating
+      type: object
+      properties:
+        username:
+          type: string
+        gist:
+          type: string
+        content:
+          type: string
+        rating:
+          type: number
+          format: int32
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+        book_id:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+        book_title:
+          type: string
+        book_cover:
+          pattern: ^[\w]+\.jpg$
+          type: string
+      description: book_title and book_cover are optional and provided only if the
+        resource is requested with the <<by_user>> parameter
+      example:
+        username: mike20
+        gist: This book is amazing
+        content: "I've never read such a finely-written book. The author goes to lenghts\
+          \ to ensure the reader has the best experience possible while unveiling\
+          \ the misteries enshrouding the main character's past. I suggest you buy\
+          \ it if you haven't yet. \n"
+        rating: 5
+        book_title: Chronicles of the Emerged World - Nihal from the Land of the Wind
+    Order:
+      required:
+      - emission_time
+      - order_id
+      - status
+      - total
+      type: object
+      properties:
+        order_id:
+          pattern: ^\d{10}$
+          type: string
+        emission_time:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum:
+          - pending
+          - dispatched
+          - reservation
+        total:
+          minimum: 0.01
+          type: number
+          format: float
+        details:
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/Order_details'
+      description: Object representing the an emitted order. We had thought about
+        adding an additional attribute, address, and may do so in the future
+      example:
+        order_id: 1231314421
+        emission_time: 2019-06-02T21:45Z
+        status: reservation
+        total: 47.9
+        details:
+        - {}
+    User:
+      required:
+      - email
+      - password
+      - username
+      type: object
+      properties:
+        username:
+          maxLength: 20
+          minLength: 3
+          type: string
+        password:
+          type: string
+          format: password
+          writeOnly: true
+        email:
+          type: string
+          format: email
+      description: Object representing a user. username is the identifier
+      example:
+        username: jace
+        password: abcd
+        email: jace.wayland@domain.com
+    similar_to:
+      required:
+      - criteria
+      - id
+      type: object
+      properties:
+        id:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+        criterion:
+          type: string
+          enum:
+          - genre
+          - type
+          - author
+    itemId:
+      type: object
+      properties:
+        book_id:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+        cover_type:
+          type: string
+          enum:
+          - hardcover
+          - paperback
+          - digital
+    body:
+      required:
+      - password
+      - username
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+          format: password
+        e-mail:
+          type: string
+          format: email
+    body_1:
+      type: object
+      properties:
+        username:
+          maxLength: 20
+          minLength: 3
+          type: string
+        password:
+          type: string
+          format: password
+    DetailedBook_details:
+      type: object
+      properties:
+        ISBN:
+          pattern: ^d{13}$
+          type: string
+        cover_type:
+          type: string
+          enum:
+          - hardcover
+          - paperback
+          - digital
+        in_storage:
+          minimum: 0
+          type: number
+          format: int
+        price:
+          minimum: 0.01
+          type: number
+          format: float
+    Order_details:
+      required:
+      - amount
+      - book_id
+      - book_title
+      - cover_type
+      - price
+      type: object
+      properties:
+        book_id:
+          pattern: ^\d{10}$
+          type: string
+          format: book_id
+        book_title:
+          type: string
+        cover_type:
+          type: string
+          enum:
+          - hardcover
+          - paperback
+          - digital
+        price:
+          minimum: 0.01
+          type: number
+          format: float
+        amount:
+          minimum: 1
+          type: number
+          format: int32
+  responses:
+    204NoContent:
+      description: The request was carried out, no further information will be supplied
+    404NotFound:
+      description: The requested resource does not exist in the server
+    400BadRequest:
+      description: Provided parameters do not match the requested format
+      content:
+        text/plain:
+          schema:
+            type: string
+            x-content-type: text/plain
+    401Unauthorized:
+      description: Missing JWT
+    Default:
+      description: The server cannot handle the received request
+      content:
+        text/plain:
+          schema:
+            type: string
+            x-content-type: text/plain
+  parameters:
+    offsetParam:
+      name: offset
+      in: query
+      description: Items to skip before starting to collect the response set.
+      required: false
+      style: form
+      explode: true
+      schema:
+        minimum: 0
+        type: integer
+        example: 5
+        default: 0
+    limitParam:
+      name: limit
+      in: query
+      description: The number of items to return.
+      required: false
+      style: form
+      explode: true
+      schema:
+        maximum: 100
+        minimum: 1
+        type: integer
+        default: 20
+    aboutBook:
+      name: about
+      in: query
+      description: Specify what book requested resources are related to
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: ^\d{10}$
+        type: string
+        format: book_id
+    itemInCart:
+      name: item
+      in: query
+      description: Select the item in the cart to manage. Amount is the number of
+        items of a kind the user wants to have in the cart. An amount of 0 will make
+        the item disappear from the cart.
+      required: true
+      style: form
+      explode: true
+      schema:
+        required:
+        - amount
+        - cover_type
+        - id
+        type: object
+        properties:
+          id:
+            pattern: ^\d{10}$
+            type: string
+            format: book_id
+          cover_type:
+            type: string
+            enum:
+            - hardcover
+            - paperback
+            - digital
+          amount:
+            minimum: 0
+            type: number
+        example:
+          id: "8022143769"
+          cover_type: hardcover
+  securitySchemes:
+    jwtAuth:
+      type: apiKey
+      name: JWT
+      in: cookie
