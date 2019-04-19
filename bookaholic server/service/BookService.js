@@ -46,7 +46,6 @@ exports.getBookById = function(book_id) {
 exports.getBooks = function(published_after,suggested,starts_with,genre,type,similar_to,limit,offset) {
   console.log("Inside getBooks");
   return new Promise(function(resolve, reject) {
-
     if (published_after)
       database.select("book_id","title", "cover")
       .from("book")

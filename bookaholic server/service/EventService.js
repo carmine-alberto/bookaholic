@@ -9,12 +9,11 @@ const database = require("./DataLayer.js");
  **/
 exports.getEventById = function(event_id) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    database.select("event_id", "info", "place", "occurring as date", "image", "book_id")
+    .from("event")
+    .where({event_id: event_id})
+    .then(data => resolve(data[0]))
+    .catch(err => reject(err));
   });
 }
 
@@ -26,12 +25,10 @@ exports.getEventById = function(event_id) {
  **/
 exports.getEventPlaces = function() {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    database.distinct("place")
+    .from("event")
+    .then(data => resolve(data.map(obj => obj["place"])))
+    .catch(err => reject(err));
   });
 }
 
@@ -49,11 +46,22 @@ exports.getEventPlaces = function() {
  **/
 exports.getEvents = function(offset,limit,about,where,from,to) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    if (about)
+      database.select("event_id", "info", "place", "occurring as date", "image", "book_id")
+      .from("event")
+      .where({book_id: book_id})
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data))
+      .catch(err => reject(err));
+    else if (where)
+      database.select("event_id", "info", "place", "occurring as date", "image", "book_id")
+      .from("event")
+      .where({place: where})
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data))
+      .catch(err => reject(err));
+    else if (from)
   });
 }

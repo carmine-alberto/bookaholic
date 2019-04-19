@@ -9,13 +9,12 @@ const database = require("./DataLayer.js");
  **/
 exports.getAuthorById = function(author_id) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+    database.select("name", "picture", "short_bio")
+    .from("author")
+    .where({author_id: author_id})
+    .then(data => resolve(data[0]))
+    .catch(err => reject(err));
+  })
 }
 
 
@@ -27,13 +26,23 @@ exports.getAuthorById = function(author_id) {
  * of String Specify the book whose authors have to be retrieved (optional)
  * returns Author
  **/
-exports.getAuthors = function(limit,offset,of) {
+exports.getAuthors = function(limit, offset, of) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    if (of)
+      database.select("author_id", "name", "picture", "short_bio")
+      .from("author")
+      .whereIn("author_id",
+        database.select("author_id")
+        .from("written_by")
+        .where({book_id: of})
+      ).then(data => resolve(data))
+      .catch(err => reject(err));
+    else
+      database.select("name", "picture", "short_bio")
+      .from("author")
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data))
+      .catch(err => reject(err));
   });
 }

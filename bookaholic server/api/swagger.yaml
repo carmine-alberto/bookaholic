@@ -263,7 +263,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Author'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Author'
+                uniqueItems: true
+                minItems: 1
+
         400:
           description: Provided parameters do not match the requested format
           content:
@@ -979,8 +984,12 @@ components:
       - name
       - picture
       - short_bio
+      description: author_id provided only when a set is requested
       type: object
       properties:
+        author_id:
+          type: string
+          pattern: ^\d{8}$
         name:
           type: string
         picture:
@@ -989,6 +998,7 @@ components:
         short_bio:
           type: string
       example:
+        author_id: 10293894
         name: Friedrich Nietzsche
         picture: friedrich_nietzsche.jpg
         short_bio: "Born in Rocken in 1844, Nietzsche is a philosopher best known\
