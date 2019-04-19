@@ -1,6 +1,6 @@
 'use strict';
 
-
+const database = require("./DataLayer.js");
 /**
  * Delete a review
  *
@@ -39,13 +39,13 @@ exports.getReviews = function(limit,offset,about,by_rating,by_user) {
 /**
  * Add a review
  *
- * username String 
- * gist String 
- * content String 
- * rating BigDecimal 
- * book_id String 
- * book_title String 
- * book_cover String 
+ * username String
+ * gist String
+ * content String
+ * rating BigDecimal
+ * book_id String
+ * book_title String
+ * book_cover String
  * no response value expected for this operation
  **/
 exports.postReview = function(username,gist,content,rating,book_id,book_title,book_cover) {
@@ -53,4 +53,3 @@ exports.postReview = function(username,gist,content,rating,book_id,book_title,bo
     resolve();
   });
 }
-

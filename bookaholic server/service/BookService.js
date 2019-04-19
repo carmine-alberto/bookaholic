@@ -1,6 +1,6 @@
 'use strict';
 
-
+const database = require("./DataLayer.js");
 /**
  * get information on a single book
  * Returns all the information pertaining to a single book
@@ -8,16 +8,26 @@
  * book_id String The ID of the book whose information have to be returned
  * returns DetailedBook
  **/
+
+
 exports.getBookById = function(book_id) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+    database.select("isbn", "cover_type", "price", "in_storage")
+    .from("book_details")
+    .where({book_id: book_id})
+    .then(details => {
+      database.select("*")
+      .from("book")
+      .where({book_id: book_id})
+      .then(data => {
+          data[0].details = details;
+          resolve(data[0]);
+      })
+    })
+    .catch(err => reject(err))
+  })
 }
+
 
 
 /**
@@ -34,16 +44,69 @@ exports.getBookById = function(book_id) {
  * returns List
  **/
 exports.getBooks = function(published_after,suggested,starts_with,genre,type,similar_to,limit,offset) {
+  console.log("Inside getBooks");
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
 
+    if (published_after)
+      database.select("book_id","title", "cover")
+      .from("book")
+      .where("publication_date", ">", published_after)
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+
+    else if (suggested)
+      database.select("book_id","title", "cover")
+      .from("book")
+      .where("is_suggested", true)
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+
+    else if (starts_with)
+      database.select("book_id","title", "cover")
+      .from("book")
+      .where("title", "like", starts_with+"%")
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+
+    else if (similar_to)
+      database({ a: 'book', b: 'book' })
+      .whereRaw('"a".?? = "b".??', [similar_to.criterion, similar_to.criterion])
+      .andWhere("a.book_id", similar_to.id)
+      .andWhereNot("b.book_id", similar_to.id)
+      .select( "b.book_id", "b.title", "b.cover")
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+
+    else if (genre)
+      database.select("book_id","title", "cover")
+      .from("book")
+      .where("genre", genre)
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+
+    else if (type)
+      database.select("book_id","title", "cover")
+      .from("book")
+      .where("type", type)
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+
+    else
+      database.select("book_id","title", "cover")
+      .from("book")
+      .limit(limit)
+      .offset(offset)
+      .then(data => resolve(data));
+  })
+}
+/*
+*/
 
 /**
  * get available genres
@@ -53,13 +116,10 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
  **/
 exports.getGenres = function() {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+    database.distinct("genre")
+    .from("book")
+    .then(data => resolve(data.map( el => el["genre"] )));
+  })
 }
 
 
@@ -71,12 +131,8 @@ exports.getGenres = function() {
  **/
 exports.getTypes = function() {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    database.distinct("type")
+    .from("book")
+    .then(data => resolve(data.map( el => el["type"] )));
   });
 }
-

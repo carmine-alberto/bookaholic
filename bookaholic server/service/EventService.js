@@ -1,6 +1,6 @@
 'use strict';
 
-
+const database = require("./DataLayer.js");
 /**
  * Get a single event's details
  *
@@ -57,4 +57,3 @@ exports.getEvents = function(offset,limit,about,where,from,to) {
     }
   });
 }
-

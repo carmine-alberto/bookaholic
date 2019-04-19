@@ -7,6 +7,8 @@ var fs = require('fs'),
 var app = require('connect')();
 var oas3Tools = require('oas3-tools');
 var jsyaml = require('js-yaml');
+var serve = require('serve-static');
+var morgan = require("morgan");
 var serverPort = 8080;
 
 // swaggerRouter configuration
@@ -34,6 +36,12 @@ oas3Tools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
+
+  //Serve static pages
+  app.use(serve(__dirname + "/views"));
+
+  //Log requests
+  app.use(morgan("dev"));
 
   // Start the server
   http.createServer(app).listen(serverPort, function () {

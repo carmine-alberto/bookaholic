@@ -1,12 +1,13 @@
 'use strict';
 
 var utils = require('../utils/writer.js');
-var Book = require('../service/BookService');
+var Book = require('../service/BookService.js');
 
 module.exports.getBookById = function getBookById (req, res, next) {
   var book_id = req.swagger.params['book_id'].value;
   Book.getBookById(book_id)
     .then(function (response) {
+      console.log(response);
       utils.writeJson(res, response);
     })
     .catch(function (response) {
@@ -23,6 +24,7 @@ module.exports.getBooks = function getBooks (req, res, next) {
   var similar_to = req.swagger.params['similar_to'].value;
   var limit = req.swagger.params['limit'].value;
   var offset = req.swagger.params['offset'].value;
+  console.log("Inside getBooks");
   Book.getBooks(published_after,suggested,starts_with,genre,type,similar_to,limit,offset)
     .then(function (response) {
       utils.writeJson(res, response);

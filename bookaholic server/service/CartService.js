@@ -1,11 +1,11 @@
 'use strict';
 
-
+const database = require("./DataLayer.js");
 /**
  * Edit the amount of the specified book
  *
- * itemId itemId Parameters used to identify the resource whose amount has to be modified 
- * amount BigDecimal New amount of the specified resource. A value of 0 is tantamount to removing the resource from the cart 
+ * itemId itemId Parameters used to identify the resource whose amount has to be modified
+ * amount BigDecimal New amount of the specified resource. A value of 0 is tantamount to removing the resource from the cart
  * no response value expected for this operation
  **/
 exports.editAmount = function(itemId,amount) {
@@ -55,4 +55,3 @@ exports.postToCart = function(body) {
     resolve();
   });
 }
-

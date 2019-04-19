@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.0.1
 info:
   title: Bookaholic API
   description: Bookaholic server offering access to books, reviews, users and related
@@ -53,12 +53,10 @@ paths:
         in: query
         description: 'Return a subset of books: suggested by us'
         required: false
-        allowEmptyValue: true
         style: form
         explode: true
         schema:
           type: boolean
-          default: false
       - name: starts_with
         in: query
         description: 'Return a subset of books: title starts with the provided string'
@@ -903,8 +901,6 @@ components:
         book_id: 8012039031
         title: The Power
         cover: the_power.jpg
-        authors:
-        - Naomi Alderman
         abstract: All over the world women and girls are discovering they have the
           power. With a flick of the fingers they can inflict terrible pain, and even
           death.
@@ -926,12 +922,6 @@ components:
       - $ref: '#/components/schemas/Book'
       - type: object
         properties:
-          authors:
-            minItems: 1
-            uniqueItems: true
-            type: array
-            items:
-              $ref: '#/components/schemas/Author'
           abstract:
             type: string
           interview:
@@ -1146,7 +1136,7 @@ components:
         email: jace.wayland@domain.com
     similar_to:
       required:
-      - criteria
+      - criterion
       - id
       type: object
       properties:

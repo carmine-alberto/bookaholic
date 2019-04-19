@@ -1,6 +1,6 @@
 'use strict';
 
-
+const database = require("./DataLayer.js");
 /**
  * Get the user's orders
  *
@@ -40,8 +40,8 @@ exports.getProfile = function() {
 /**
  * Login facility
  *
- * username String 
- * password String 
+ * username String
+ * password String
  * returns User
  **/
 exports.login = function(username,password) {
@@ -83,9 +83,9 @@ exports.postToOrders = function() {
 /**
  * Create a new profile
  *
- * username String 
- * password String 
- * eMail String 
+ * username String
+ * password String
+ * eMail String
  * returns User
  **/
 exports.register = function(username,password,eMail) {
@@ -103,7 +103,7 @@ exports.register = function(username,password,eMail) {
 /**
  * Overwrite the specified resource
  *
- * body String 
+ * body String
  * field String Specify the field to be updated
  * no response value expected for this operation
  **/
@@ -112,4 +112,3 @@ exports.updateField = function(body,field) {
     resolve();
   });
 }
-

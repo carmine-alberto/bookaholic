@@ -1,6 +1,6 @@
 'use strict';
 
-
+const database = require("./DataLayer.js");
 /**
  * get a single author
  *
@@ -37,4 +37,3 @@ exports.getAuthors = function(limit,offset,of) {
     }
   });
 }
-
