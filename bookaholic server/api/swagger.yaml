@@ -15,10 +15,11 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-- url: localhost:8080
+- url: http://localhost:8080
   description: API run offline - for testing purposes
 - url: herokuURL
   description: Official API server where the application resides - for clients' consumption
+
 tags:
 - name: Book
   description: Operations performed on books
@@ -65,7 +66,7 @@ paths:
         explode: true
         schema:
           type: string
-          default: '*'
+
       - name: genre
         in: query
         description: 'Return a subset of books: having provided genre'
@@ -74,7 +75,7 @@ paths:
         explode: true
         schema:
           type: string
-          default: '*'
+
       - name: type
         in: query
         description: 'Return a subset of books: having provided type'
@@ -83,7 +84,7 @@ paths:
         explode: true
         schema:
           type: string
-          default: '*'
+
       - name: similar_to
         in: query
         description: 'Return a subset of books: having the same property specified
@@ -113,7 +114,6 @@ paths:
         schema:
           minimum: 0
           type: integer
-          example: 5
           default: 0
       responses:
         200:
@@ -1068,9 +1068,11 @@ components:
           format: book_id
         book_title:
           type: string
+          readOnly: true
         book_cover:
           pattern: ^[\w]+\.jpg$
           type: string
+          readOnly: true
       description: book_title and book_cover are optional and provided only if the
         resource is requested with the <<by_user>> parameter
       example:

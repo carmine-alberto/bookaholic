@@ -28,21 +28,28 @@ exports.getAuthorById = function(author_id) {
  **/
 exports.getAuthors = function(limit, offset, of) {
   return new Promise(function(resolve, reject) {
+    var query = database
+      .select("author_id", "name", "picture", "short_bio")
+      .from("author");
+
     if (of)
-      database.select("author_id", "name", "picture", "short_bio")
-      .from("author")
+      query = query
       .whereIn("author_id",
         database.select("author_id")
         .from("written_by")
         .where({book_id: of})
-      ).then(data => resolve(data))
-      .catch(err => reject(err));
-    else
-      database.select("name", "picture", "short_bio")
-      .from("author")
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data))
-      .catch(err => reject(err));
+      );
+
+    if (limit)
+      query = query
+      .limit(limit);
+
+    if (offset)
+      query = query
+      .offset(offset);
+
+    query
+    .then(data => resolve(data))
+    .catch(err => reject(err));
   });
 }

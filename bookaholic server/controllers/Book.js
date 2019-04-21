@@ -16,6 +16,7 @@ module.exports.getBookById = function getBookById (req, res, next) {
 };
 
 module.exports.getBooks = function getBooks (req, res, next) {
+  console.log(req.swagger);
   var published_after = req.swagger.params['published_after'].value;
   var suggested = req.swagger.params['suggested'].value;
   var starts_with = req.swagger.params['starts_with'].value;

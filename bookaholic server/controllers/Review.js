@@ -5,9 +5,10 @@ var Review = require('../service/ReviewService');
 
 module.exports.deleteReview = function deleteReview (req, res, next) {
   var about = req.swagger.params['about'].value;
-  Review.deleteReview(about)
+  var username = "carmine"; //req.user returned from authentication module to be added here
+  Review.deleteReview(username, about)
     .then(function (response) {
-      utils.writeJson(res, response);
+      utils.writeJson(res, utils.respondWithCode(204));
     })
     .catch(function (response) {
       utils.writeJson(res, response);
@@ -30,14 +31,13 @@ module.exports.getReviews = function getReviews (req, res, next) {
 };
 
 module.exports.postReview = function postReview (req, res, next) {
-  var username = req.swagger.params['username'].value;
-  var gist = req.swagger.params['gist'].value;
-  var content = req.swagger.params['content'].value;
-  var rating = req.swagger.params['rating'].value;
-  var book_id = req.swagger.params['book_id'].value;
-  var book_title = req.swagger.params['book_title'].value;
-  var book_cover = req.swagger.params['book_cover'].value;
-  Review.postReview(username,gist,content,rating,book_id,book_title,book_cover)
+  console.log(req.body);
+  var username = "carmine"; //to be fetched from authentication module
+  var gist = req.body.gist;
+  var content = req.body.content;
+  var rating = req.body.rating;
+  var book_id = req.body.book_id;  //<input type="text" name="book_id" value="window.params.book_id" hidden />
+  Review.postReview(username,gist,content,rating,book_id)
     .then(function (response) {
       utils.writeJson(res, response);
     })

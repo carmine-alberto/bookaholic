@@ -4,12 +4,14 @@ var fs = require('fs'),
     path = require('path'),
     http = require('http');
 
-var app = require('connect')();
+var app = require('express')();
 var oas3Tools = require('oas3-tools');
 var jsyaml = require('js-yaml');
 var serve = require('serve-static');
 var morgan = require("morgan");
+var bodyParser = require("body-parser");
 var serverPort = 8080;
+const swaggerUi = require('swagger-ui-express');
 
 // swaggerRouter configuration
 var options = {
@@ -21,6 +23,8 @@ var options = {
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
 var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Initialize the Swagger middleware
 oas3Tools.initializeMiddleware(swaggerDoc, function (middleware) {
@@ -35,7 +39,7 @@ oas3Tools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerRouter(options));
 
   // Serve the Swagger documents and Swagger UI
-  app.use(middleware.swaggerUi());
+  app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
   //Serve static pages
   app.use(serve(__dirname + "/views"));

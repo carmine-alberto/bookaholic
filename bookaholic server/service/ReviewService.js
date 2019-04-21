@@ -7,9 +7,14 @@ const database = require("./DataLayer.js");
  * about String Specify what book requested resources are related to (optional)
  * no response value expected for this operation
  **/
-exports.deleteReview = function(about) {
+exports.deleteReview = function(username, about) { //Controller must provide username
   return new Promise(function(resolve, reject) {
-    resolve();
+    database
+    .del()
+    .from("review")
+    .where({username: username, book_id: about})
+    .then(rows_deleted => resolve(JSON.stringify(rows_deleted)))
+    .catch(err => reject(err));
   });
 }
 
@@ -26,12 +31,37 @@ exports.deleteReview = function(about) {
  **/
 exports.getReviews = function(limit,offset,about,by_rating,by_user) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    var query = database
+    .select("username", "gist", "content", "rating")
+    .from("review")
+
+    if (about)
+      query = query
+      .where({book_id: about});
+
+    if (by_rating)
+      query = query
+      .where({rating: by_rating});
+
+    if (by_user)
+      query = query
+      .clearSelect()
+      .select("username", "gist", "content", "rating", "book_id", "book_title", "book_cover")
+      .join("book", "review.book_id", "book.book_id")
+      .where({username: by_user});
+
+    if (limit)
+      query = query
+      .limit(limit);
+
+    if (offset)
+      query = query
+      .offset(offset);
+
+    query
+    .then(data => resolve(data))
+    .catch(err => reject(err));
+
   });
 }
 
@@ -48,8 +78,23 @@ exports.getReviews = function(limit,offset,about,by_rating,by_user) {
  * book_cover String
  * no response value expected for this operation
  **/
-exports.postReview = function(username,gist,content,rating,book_id,book_title,book_cover) {
+exports.postReview = function(username,gist,content,rating,book_id) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    database
+    .select("*")
+    .from("review")
+    .where({username: username, book_id: book_id})
+    .then(data => {
+      if (data[0])
+        reject({status: 403,
+                details: "Unauthorized. A review for this book written by "+username+" already exists"
+              });
+      else
+        database.
+        insert({username: username, gist: gist, content: content, rating: rating, book_id: book_id})
+        .into("review")
+        .then(dbresponse => resolve("Review added correctly"))
+        .catch(dberr => reject(dberr));
+    })
   });
 }

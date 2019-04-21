@@ -46,22 +46,36 @@ exports.getEventPlaces = function() {
  **/
 exports.getEvents = function(offset,limit,about,where,from,to) {
   return new Promise(function(resolve, reject) {
+    var query = database
+    .select("event_id", "info", "place", "occurring as date", "image", "book_id")
+    .from("event");
+
     if (about)
-      database.select("event_id", "info", "place", "occurring as date", "image", "book_id")
-      .from("event")
-      .where({book_id: book_id})
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data))
-      .catch(err => reject(err));
-    else if (where)
-      database.select("event_id", "info", "place", "occurring as date", "image", "book_id")
-      .from("event")
+      query = query
+      .where({book_id: about})
+
+    if (where)
+      query = query
       .where({place: where})
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data))
-      .catch(err => reject(err));
-    else if (from)
+
+    if (from)
+      query = query
+      .where("occurring", ">", from);
+
+    if (to)
+      query = query
+      .where("occurring", "<", to);
+
+    if (limit)
+      query = query
+      .limit(limit);
+
+    if (offset)
+      query = query
+      .offset(offset);
+
+    query
+    .then(data => resolve(data))
+    .catch(err => reject(err));
   });
 }

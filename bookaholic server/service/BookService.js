@@ -44,64 +44,51 @@ exports.getBookById = function(book_id) {
  * returns List
  **/
 exports.getBooks = function(published_after,suggested,starts_with,genre,type,similar_to,limit,offset) {
-  console.log("Inside getBooks");
   return new Promise(function(resolve, reject) {
+    var query = database.select("book_id","title", "cover")
+    .from("book");
+
     if (published_after)
-      database.select("book_id","title", "cover")
-      .from("book")
-      .where("publication_date", ">", published_after)
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
+      query = query
+      .where("publication_date", ">", published_after);
 
-    else if (suggested)
-      database.select("book_id","title", "cover")
-      .from("book")
-      .where("is_suggested", true)
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
+    if (suggested)
+      query = query
+      .where("is_suggested", true);
 
-    else if (starts_with)
-      database.select("book_id","title", "cover")
-      .from("book")
-      .where("title", "like", starts_with+"%")
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
+    if (starts_with)
+      query = query
+      .where("title", "like", starts_with+"%");
 
-    else if (similar_to)
-      database({ a: 'book', b: 'book' })
-      .whereRaw('"a".?? = "b".??', [similar_to.criterion, similar_to.criterion])
-      .andWhere("a.book_id", similar_to.id)
-      .andWhereNot("b.book_id", similar_to.id)
-      .select( "b.book_id", "b.title", "b.cover")
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
-
-    else if (genre)
-      database.select("book_id","title", "cover")
-      .from("book")
+    if (genre)
+      query = query
       .where("genre", genre)
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
 
-    else if (type)
-      database.select("book_id","title", "cover")
-      .from("book")
+    if (type)
+      query = query
       .where("type", type)
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
 
-    else
-      database.select("book_id","title", "cover")
-      .from("book")
-      .limit(limit)
-      .offset(offset)
-      .then(data => resolve(data));
+    if (similar_to)
+      query = query
+      .whereIn("book_id",
+        database({ a: 'book', b: 'book' })
+        .whereRaw('"a".?? = "b".??', [similar_to.criterion, similar_to.criterion])
+        .andWhere("a.book_id", similar_to.id)
+        .andWhereNot("b.book_id", similar_to.id) //b: column for similar books
+        .select("b.book_id")
+      );
+
+    if (limit)
+      query = query
+      .limit(limit);
+
+    if (offset)
+      query = query
+      .offset(offset);
+
+    query
+    .then(data => resolve(data))
+    .catch(err => reject(err));
   })
 }
 /*
