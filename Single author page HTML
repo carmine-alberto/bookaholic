@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento senza titolo</title>
+<link href="Author page CSS.css" rel="stylesheet">
+</head>
+
+<body>
+	
+<!--- Top navigation bar --->	
+	
+<div class="content-wrapper">
+  	
+	<div class="navmenu">
+	  
+    <span id="menu"><img src="img/hamburger menu.png" alt="hamburger_menu" width="40px" height="30px"></span>
+    <nav id="navbar" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		
+    <ul class="navbar" id="myNavbar">
+		
+		<li><a href="/" itemprop="url" title="logo"><span itemprop="name">Home</span></a></li>
+		
+		<li id="sub-menu-categories">
+		<span itemprop="name" class="dropdown_title">Types</span>
+        <ul class="sub-menu">
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Family</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Friendship</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Horror</span></a></li>				
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Justice</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Love</span></a></li>				
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Philisophical</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">War</span></a></li>	
+		</ul>
+		</li>
+        
+		<li id="sub-menu-genres">
+		<span itemprop="name" class="dropdown_title">Genres</span>
+        <ul class="sub-menu">
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Art &amp; design</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Fiction</span></a></li>		   
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Mystery</span></a></li>	
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Non fiction</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Science fiction</span></a></li>	
+		</ul>
+		</li>
+		<li><a href="/" itemprop="url" title="Events"><span itemprop="name">Events</span></a></li>
+		<li><a href="/" itemprop="url" title="Contact us"><span itemprop="name">Who we are</span></a></li>
+
+
+<li>
+
+		<form action="/search" autocomplete="on" id="search-form" method="get">
+		<input type="text" placeholder="Search here" size="15"/>
+		<div id="search_button"><img src="img/search icon.png" id="search_icon" alt="search icon" width="25px" height="25px"></div>
+    	</form>   	
+
+		</li>			
+				
+        </ul>
+
+</nav>
+	
+	
+		<div class="menu_icons_container">
+		<span class="menu_icons"><img src="img/logo profile.png" alt="logo_profile" width="35px" height="35px" /></span>
+		<span class="menu_icons"><img src="img/logo cart.png" alt="logo_cart" width="35px" height="35px"/></span>	
+		</div>	
+
+</div>
+</div>
+	
+<div style="clear: both;"/>
+	
+<!--- End of Top navigation bar --->	
+	
+	
+<!--- Author section --->	
+	
+<section id="author_intro">
+<h3 id="author_name">Author_name</h3>
+<img id="author_photo" src="img/giorgia lupi.jpg">
+<h5 id="author_bio_title">Biography</h5>
+<h6 id="author_bio">Giorgia Lupi is an information designer, artist and entrepreneur.<br>
+She co-founded Accurat, a data-driven design firm with offices in Milan and New York where she is the Creative Director.<br>
+After receiving her Masters in Architecture, she earned a PhD in Design at Politecnico di Milano.<br>
+Her work is part of the permanent collection of the Museum of Modern Art, where in 2017 she also was commissioned to create an original site-specific piece.<br>
+Her TED TALK on her Humanistic approach to Data has over one million views.<br>
+She is co-author of Dear Data. Her new interactive book Observe, Collect, Draw - A Visual Journal, is now available for preorders.<br>
+She recently joined MIT Media Lab as a Director's Fellow.<br>
+She lives in New York.
+</h6>
+	</section>
+	
+<!--- END Author section --->		
+	
+	
+<!--- Related books section --->	
+	
+<section id="related_books">
+<h3 class="section_title">Books</h3>
+    <div class="carousel">
+        <ul class="slides">
+            <input type="radio" name="radio-buttons" id="img-1" checked />
+    <li class="slide-container">
+        <div class="slide-image">
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img1">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img2">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img3">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>
+			
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img4">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img5">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>			
+
+		<div class="image_and_caption">	
+ 	       <img src="img/DearData_US_jacket.jpeg" id="slide1_img6">
+		   <div class="caption_container">
+		   <h6 class="book_author">Book_author</h6>
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_price">Book_price</h6>
+			</div>
+			</div>	
+			</div>
+			</li>
+			</ul>
+		</div>			
+</section>
+	
+<!--- END Related books section --->
+	
+
+<!--- Related events section --->
+	
+<section id="related_events">
+<h3 class="section_title">Events</h3>	
+<img src="img/giorgia lupi.jpg" id="event_photo">	
+<h4 id="event_date">15th May 2019, 5 pm</h4>
+<h2 id="event_title">Giorgia Lupi introduces "Dear Data"</h2>
+<h6 id="event_description">Giorgia Lupi is an information designer, artist and entrepreneur. She co-founded Accurat, a data-driven design firm with offices in Milan and New York where she is the Creative Director. The question she wants to ask you is: does data looks like something cold to you? Yes, but is it truly cold? Come and meet her in our bookstore, as she will better explain the whole experience behind Dear Data and the concept of data humanism.</h6>
+</section>
+	
+<!--- END Related events section --->	
+	
+</body>
+</html>
