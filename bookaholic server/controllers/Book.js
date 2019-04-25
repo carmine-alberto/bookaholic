@@ -1,56 +1,48 @@
 'use strict';
 
-var utils = require('../utils/writer.js');
-var Book = require('../service/BookService.js');
+const respondWithCode = require('../utils/writer.js');
+const Book = require('../service/BookService.js');
 
-module.exports.getBookById = function getBookById (req, res, next) {
-  var book_id = req.swagger.params['book_id'].value;
-  Book.getBookById(book_id)
-    .then(function (response) {
-      console.log(response);
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.getBookById = function getBookById (context) {
+  const book_id = context.params.path.book_id;
+
+  return Promise.resolve(
+    Book.getBookById(book_id)
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, 404, err))
+  )
 };
 
-module.exports.getBooks = function getBooks (req, res, next) {
-  console.log(req.swagger);
-  var published_after = req.swagger.params['published_after'].value;
-  var suggested = req.swagger.params['suggested'].value;
-  var starts_with = req.swagger.params['starts_with'].value;
-  var genre = req.swagger.params['genre'].value;
-  var type = req.swagger.params['type'].value;
-  var similar_to = req.swagger.params['similar_to'].value;
-  var limit = req.swagger.params['limit'].value;
-  var offset = req.swagger.params['offset'].value;
-  console.log("Inside getBooks");
-  Book.getBooks(published_after,suggested,starts_with,genre,type,similar_to,limit,offset)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.getBooks = function getBooks (context) {
+
+  const published_after = context.params.query.published_after;
+  const suggested = context.params.query.suggested;
+  const starts_with = context.params.query.starts_with;
+  const genre = context.params.query.genre;
+  const type = context.params.query.type;
+  const similar_to = context.params.query.similar_to;
+  const limit = context.params.query.limit;
+  const offset = context.params.query.offset;
+
+  return Promise.resolve (
+    Book.getBooks(published_after,suggested,starts_with,genre,type,similar_to,limit,offset)
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, err))
+  );
 };
 
-module.exports.getGenres = function getGenres (req, res, next) {
-  Book.getGenres()
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.getGenres = function getGenres (context) {
+  return Promise.resolve(
+    Book.getGenres()
+      .then(response => respondWithCode(context, 200, err))
+      .catch(err => respondWithCode(context, err))
+    )
 };
 
-module.exports.getTypes = function getTypes (req, res, next) {
-  Book.getTypes()
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.getTypes = function getTypes (context) {
+  return Promise.resolve(
+    Book.getTypes()
+      .then(response => respondWithCode(context, 200, err))
+      .catch(err => respondWithCode(context, err))
+    )
 };

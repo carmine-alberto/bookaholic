@@ -13,7 +13,7 @@ exports.deleteReview = function(username, about) { //Controller must provide use
     .del()
     .from("review")
     .where({username: username, book_id: about})
-    .then(rows_deleted => resolve(JSON.stringify(rows_deleted)))
+    .then(rows_deleted => resolve(rows_deleted))
     .catch(err => reject(err));
   });
 }
@@ -32,7 +32,7 @@ exports.deleteReview = function(username, about) { //Controller must provide use
 exports.getReviews = function(limit,offset,about,by_rating,by_user) {
   return new Promise(function(resolve, reject) {
     var query = database
-    .select("username", "gist", "content", "rating")
+    .select("username", "gist", "content", "rating", "book_id")
     .from("review")
 
     if (about)
@@ -61,7 +61,6 @@ exports.getReviews = function(limit,offset,about,by_rating,by_user) {
     query
     .then(data => resolve(data))
     .catch(err => reject(err));
-
   });
 }
 
@@ -81,20 +80,9 @@ exports.getReviews = function(limit,offset,about,by_rating,by_user) {
 exports.postReview = function(username,gist,content,rating,book_id) {
   return new Promise(function(resolve, reject) {
     database
-    .select("*")
-    .from("review")
-    .where({username: username, book_id: book_id})
-    .then(data => {
-      if (data[0])
-        reject({status: 403,
-                details: "Unauthorized. A review for this book written by "+username+" already exists"
-              });
-      else
-        database.
-        insert({username: username, gist: gist, content: content, rating: rating, book_id: book_id})
-        .into("review")
-        .then(dbresponse => resolve("Review added correctly"))
-        .catch(dberr => reject(dberr));
-    })
-  });
+    .insert({username: username, gist: gist, content: content, rating: rating, book_id: book_id})
+    .into("review")
+    .then(response => resolve(response))
+    .catch(error => reject(error));
+  })
 }

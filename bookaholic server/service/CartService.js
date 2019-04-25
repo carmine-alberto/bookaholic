@@ -8,10 +8,20 @@ const database = require("./DataLayer.js");
  * amount BigDecimal New amount of the specified resource. A value of 0 is tantamount to removing the resource from the cart
  * no response value expected for this operation
  **/
-exports.editAmount = function(itemId,amount) {
+exports.editAmount = function(username,itemId,amount) {  //NB: itemId is an object containing book_id and cover_type
   return new Promise(function(resolve, reject) {
-    resolve();
-  });
+    database("cart")
+    .update("quantity", amount, ["book_id", "cover_type", "quantity as newAmount"])
+    .where("username", username)
+    .andWhere({book_id: itemId.book_id, cover_type: itemId.cover_type})
+    .then(result => {
+      if (result[0])
+        resolve(result[0]);
+      else
+        reject("Resource to edit not found");
+    })
+    .catch(error => reject(error));
+  })
 }
 
 
@@ -20,9 +30,14 @@ exports.editAmount = function(itemId,amount) {
  *
  * no response value expected for this operation
  **/
-exports.emptyCart = function() {
+exports.emptyCart = function(username) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    database
+    .del()
+    .from("cart")
+    .where("username", username)
+    .then(response => resolve(response))
+    .catch(error => reject(error));
   });
 }
 
@@ -32,14 +47,16 @@ exports.emptyCart = function() {
  *
  * returns List
  **/
-exports.getCart = function() {
+exports.getCart = function(username) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+      database
+      .select("cart.book_id", "title as book_title", "cover", "cart.cover_type", "price", "quantity as amount", "in_storage")
+      .from("cart")
+      .join("book_details as bd", {"cart.book_id": "bd.book_id", "cart.cover_type": "bd.cover_type"})
+      .join("book", "bd.book_id", "book.book_id")
+      .where("username", username)
+      .then(response => resolve(response))
+      .catch(error => reject(error));
   });
 }
 
@@ -50,8 +67,12 @@ exports.getCart = function() {
  * body CartBook Used to specify the book to be added
  * no response value expected for this operation
  **/
-exports.postToCart = function(body) {
+exports.postToCart = function(username, book_id, cover_type, amount) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    database
+    .insert({username: username, book_id: book_id, cover_type: cover_type, quantity: amount})
+    .into("cart")
+    .then(response => resolve(response))
+    .catch(error => reject(error));
   });
 }

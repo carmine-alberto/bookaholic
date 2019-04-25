@@ -1,47 +1,43 @@
 'use strict';
 
-var utils = require('../utils/writer.js');
-var Review = require('../service/ReviewService');
+const respondWithCode = require('../utils/writer.js');
+const Review = require('../service/ReviewService');
 
-module.exports.deleteReview = function deleteReview (req, res, next) {
-  var about = req.swagger.params['about'].value;
-  var username = "carmine"; //req.user returned from authentication module to be added here
-  Review.deleteReview(username, about)
-    .then(function (response) {
-      utils.writeJson(res, utils.respondWithCode(204));
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.deleteReview = function deleteReview (context) {
+  const about = context.params.query.about;
+  const username = context.user;
+
+  return Promise.resolve(
+    Review.deleteReview(username, about)
+    .then(response => respondWithCode(context, 204, response))
+    .catch(err => respondWithCode(context, 404, err))
+  )
 };
 
-module.exports.getReviews = function getReviews (req, res, next) {
-  var limit = req.swagger.params['limit'].value;
-  var offset = req.swagger.params['offset'].value;
-  var about = req.swagger.params['about'].value;
-  var by_rating = req.swagger.params['by_rating'].value;
-  var by_user = req.swagger.params['by_user'].value;
-  Review.getReviews(limit,offset,about,by_rating,by_user)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.getReviews = function getReviews (context) {
+  const limit = context.params.query.limit;
+  const offset = context.params.query.offset;
+  const about = context.params.query.about;
+  const by_rating = context.params.query.by_rating;
+  const by_user = context.params.query.by_user;
+
+  return Promise.resolve(
+    Review.getReviews(limit,offset,about,by_rating,by_user)
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, err))
+  )
 };
 
-module.exports.postReview = function postReview (req, res, next) {
-  console.log(req.body);
-  var username = "carmine"; //to be fetched from authentication module
-  var gist = req.body.gist;
-  var content = req.body.content;
-  var rating = req.body.rating;
-  var book_id = req.body.book_id;  //<input type="text" name="book_id" value="window.params.book_id" hidden />
-  Review.postReview(username,gist,content,rating,book_id)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.postReview = function postReview (context) {
+  const username = context.user; //to be fetched from authentication module
+  const gist = context.requestBody.gist;
+  const content = context.requestBody.content;
+  const rating = context.requestBody.rating;
+  const book_id = context.requestBody.book_id;  //<input type="text" name="book_id" value="window.params.book_id" hidden />
+
+  return Promise.resolve(
+    Review.postReview(username,gist,content,rating,book_id)
+    .then(response => respondWithCode(context, 201, response))
+    .catch(err => respondWithCode(context, 403, err))
+  )
 };

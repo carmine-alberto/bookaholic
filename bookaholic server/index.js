@@ -1,56 +1,57 @@
-'use strict';
+const express = require('express');
+const exegesisExpress = require('exegesis-express');
+const http = require('http');
+const path = require('path');
+const jwtAuthenticator = require("./authenticators/JWTAuth.js");
+const exegesisSwaggerUIPlugin = require("exegesis-plugin-swagger-ui-express");
 
-var fs = require('fs'),
-    path = require('path'),
-    http = require('http');
+async function createServer() {
 
-var app = require('express')();
-var oas3Tools = require('oas3-tools');
-var jsyaml = require('js-yaml');
-var serve = require('serve-static');
-var morgan = require("morgan");
-var bodyParser = require("body-parser");
-var serverPort = 8080;
-const swaggerUi = require('swagger-ui-express');
+    const app = express();
 
-// swaggerRouter configuration
-var options = {
-  swaggerUi: path.join(__dirname, '/swagger.json'),
-  controllers: path.join(__dirname, './controllers'),
-  useStubs: process.env.NODE_ENV === 'development' // Conditionally turn on stubs (mock mode)
-};
+    const options = {
+        controllers: path.resolve(__dirname, './controllers'),
+        allowMissingControllers: false,
+        customFormats: {
+                        book_id: /^\d{10}$/,
+                        author_id: /^\d{8}$/,
+                        event_id: /^\d{9}$/
+                      },
+        authenticators: { jwtAuth: jwtAuthenticator },
+        plugins: [
+        exegesisSwaggerUIPlugin({
+            app: app,
+            path: "/docs"
+        })
+      ]
+    };
 
-// The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
-var swaggerDoc = jsyaml.safeLoad(spec);
+    const exegesisMiddleware = await exegesisExpress.middleware(
+        path.resolve(__dirname, './api/bookaholic_api_spec.yaml'),
+        options
+    );
 
-app.use(bodyParser.urlencoded({extended: false}));
+    app.use(exegesisMiddleware);
 
-// Initialize the Swagger middleware
-oas3Tools.initializeMiddleware(swaggerDoc, function (middleware) {
+    app.use((req, res) => {
+        res.status(404).json({message: `Not found`});
+    });
 
-  // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
-  app.use(middleware.swaggerMetadata());
+    app.use((err, req, res, next) => {
+        res.status(500).json({message: `Internal error: ${err.message}`});
+    });
 
-  // Validate Swagger requests
-  app.use(middleware.swaggerValidator());
+    const server = http.createServer(app);
 
-  // Route validated requests to appropriate controller
-  app.use(middleware.swaggerRouter(options));
+    return server;
+}
 
-  // Serve the Swagger documents and Swagger UI
-  app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
-
-  //Serve static pages
-  app.use(serve(__dirname + "/views"));
-
-  //Log requests
-  app.use(morgan("dev"));
-
-  // Start the server
-  http.createServer(app).listen(serverPort, function () {
-    console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-    console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
-  });
-
+createServer()
+.then(server => {
+    server.listen(8080);
+    console.log("Listening on port 8080");
+})
+.catch(err => {
+    console.error(err.stack);
+    process.exit(1);
 });

@@ -17,14 +17,14 @@ CREATE TABLE "book_details" (
     ON DELETE CASCADE,
   "cover_type" varchar,
   "price" float NOT NULL,
-  "in_storage" int DEFAULT 2147483647, 
+  "in_storage" int DEFAULT 2147483647,
   "isbn" char(13) UNIQUE NOT NULL,
   PRIMARY KEY("book_id", "cover_type")
 );
 
 CREATE TABLE "user" (
   "username" varchar(20) PRIMARY KEY,
-  "password_hash" char(32) NOT NULL,
+  "password_hash" char(60) NOT NULL,
   "email" text UNIQUE
 );
 
@@ -36,7 +36,7 @@ CREATE TABLE "order" (
   "address" text NOT NULL,
   "username" varchar(20) REFERENCES "user"("username")
     ON UPDATE CASCADE
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
 );
 
 CREATE TABLE "author" (
@@ -71,14 +71,14 @@ CREATE TABLE "cart" (
 CREATE TABLE "review" (
   "username" varchar(20) REFERENCES "user"("username")
     ON UPDATE CASCADE
-    ON DELETE NO ACTION,
+    ON DELETE CASCADE,
   "book_id" char(10) REFERENCES "book"("book_id")
     ON UPDATE CASCADE
     ON DELETE CASCADE,
   "gist" text DEFAULT 'Read below',
   "content" text NOT NULL,
   "rating" int NOT NULL,
-  PRIMARY KEY("username", "book_id")       
+  PRIMARY KEY("username", "book_id")
 );
 
 CREATE TABLE "details" (
@@ -92,7 +92,7 @@ CREATE TABLE "details" (
   PRIMARY KEY ("order_id", "book_id", "cover_type"),
   FOREIGN KEY ("book_id", "cover_type") REFERENCES "book_details"("book_id", "cover_type")
     ON UPDATE CASCADE
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
 );
 
 CREATE TABLE "written_by" (

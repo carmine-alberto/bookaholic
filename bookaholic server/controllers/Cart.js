@@ -1,47 +1,49 @@
 'use strict';
 
-var utils = require('../utils/writer.js');
-var Cart = require('../service/CartService');
+const Cart = require('../service/CartService');
+const respondWithCode = require('../utils/writer.js');
 
-module.exports.editAmount = function editAmount (req, res, next) {
-  var itemId = req.swagger.params['itemId'].value;
-  var amount = req.swagger.params['amount'].value;
-  Cart.editAmount(itemId,amount)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.editAmount = function editAmount (context) {
+  const username = context.user;
+  const itemId = context.params.path.itemId  //NB: this one is an object containing book_id and cover_type
+  const amount = context.params.query.amount;
+
+  return Promise.resolve(
+    Cart.editAmount(username,itemId,amount)
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, 404, err))
+  )
 };
 
-module.exports.emptyCart = function emptyCart (req, res, next) {
-  Cart.emptyCart()
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.emptyCart = function emptyCart (context) {
+  const username = context.user;
+
+  return Promise.resolve(
+    Cart.emptyCart(username)
+    .then(response => respondWithCode(context, 204, response))
+    .catch(err => respondWithCode(context, err))
+  )
 };
 
-module.exports.getCart = function getCart (req, res, next) {
-  Cart.getCart()
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.getCart = function getCart (context) {
+  const username = context.user;
+
+  return Promise.resolve(
+    Cart.getCart(username)
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, err))
+  )
 };
 
-module.exports.postToCart = function postToCart (req, res, next) {
-  var body = req.swagger.params['body'].value;
-  Cart.postToCart(body)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
+module.exports.postToCart = function postToCart (context) {
+  const username = context.user;
+  const book_id = context.requestBody.book_id;
+  const cover_type = context.requestBody.cover_type;
+  const amount = context.requestBody.amount;
+
+  return Promise.resolve(
+    Cart.postToCart(username, book_id, cover_type, amount)
+    .then(response => respondWithCode(context, 204, response))
+    .catch(err => respondWithCode(context, 403, err))
+  )
 };

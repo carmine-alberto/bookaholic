@@ -1,4 +1,4 @@
-openapi: "3.0.1"
+openapi: "3.0.2"
 info:
     version: "1.0.0"
     title: "Bookaholic API"
@@ -12,9 +12,9 @@ info:
         url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 
 servers:
-    - url: "localhost:8080/api"
+    - url: "http://localhost:8080/api"
       description: "API run offline - for testing purposes"
-    - url: "herokuURL"
+    - url: "http://herokuURL:8081/api"
       description: "Official API server where the application resides - for clients' consumption"
 
 tags:
@@ -83,6 +83,8 @@ paths:
             required:
               - id
               - criterion
+          style: deepObject
+          explode: true
           description: "Return a subset of books: having the same property specified in criterion as the book provided"
         - $ref: "#/components/parameters/limitParam"
         - $ref: "#/components/parameters/offsetParam"
@@ -106,7 +108,7 @@ paths:
         default:
           $ref: "#/components/responses/Default"
 
-    x-swagger-router-controller: "Book"
+      x-exegesis-controller: "Book"
 
   /books/types:
     get:
@@ -131,7 +133,7 @@ paths:
                 uniqueItems: true
                 example: ["war", "love"]
 
-    x-swagger-router-controller: "Book"
+      x-exegesis-controller: "Book"
 
   /books/genres:
     get:
@@ -156,7 +158,7 @@ paths:
                 uniqueItems: true
                 example: ["fiction", "science-fiction"]
 
-    x-swagger-router-controller: "Book"
+      x-exegesis-controller: "Book"
 
   /books/{book_id}:
     get:
@@ -190,7 +192,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
-    x-swagger-router-controller: "Book"
+      x-exegesis-controller: "Book"
 
   /authors:
     get:
@@ -230,7 +232,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
-    x-swagger-router-controller: "Author"
+      x-exegesis-controller: "Author"
 
 
   /authors/{author_id}:
@@ -266,7 +268,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
-    x-swagger-router-controller: "Author"
+      x-exegesis-controller: "Author"
 
   /events:
     get:
@@ -316,7 +318,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
-    x-swagger-router-controller: "Author"
+      x-exegesis-controller: "Event"
 
 
   /events/places:
@@ -339,7 +341,7 @@ paths:
                   type: string
                 uniqueItems: true
 
-    x-swagger-router-controller: "Author"
+      x-exegesis-controller: "Event"
 
   /events/{event_id}:
     get:
@@ -373,7 +375,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
-    x-swagger-router-controller: "Author"
+      x-exegesis-controller: "Event"
 
   /reviews:
     get:
@@ -393,7 +395,8 @@ paths:
           schema:
             type: number
             format: int32
-            enum: [1, 2, 3, 4, 5]
+            minimum: 1
+            maximum: 5
           description: Specify rating by which reviews have to be filtered
         - name: by_user
           in: query
@@ -418,6 +421,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
+      x-exegesis-controller: "Review"
     post:
       summary: Add a review
 
@@ -430,7 +434,7 @@ paths:
         - jwtAuth: []
 
       requestBody:
-        description: Review to add
+        x-name: Review
         required: true
         content:
           application/x-www-form-urlencoded:
@@ -449,11 +453,7 @@ paths:
                   type: string
                   format: book_id
                   pattern: '^\d{10}$'
-            encoding:
-              gist:
-                allowReserved: true
-              content:
-                allowReserved: true
+        description: Review to add
 
       responses:
         '201':
@@ -464,6 +464,8 @@ paths:
 
         '403':
           description: A review of this book written by the user sending the request already exists
+
+      x-exegesis-controller: "Review"
 
     delete:
       summary: Delete a review
@@ -489,7 +491,7 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
-    x-swagger-router-controller: "Author"
+      x-exegesis-controller: "Review"
 
   /cart:
     get:
@@ -513,6 +515,8 @@ paths:
                 items:
                   $ref: "#/components/schemas/CartBook"
 
+      x-exegesis-controller: "Cart"
+
     post:
       summary: Add a new book to the cart
 
@@ -526,6 +530,7 @@ paths:
 
       requestBody:
         required: true
+        x-name: Cart
         content:
           application/json:
             schema:
@@ -542,26 +547,27 @@ paths:
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
+      x-exegesis-controller: "Cart"
 
     delete:
-        summary: Delete every item in the cart
+      summary: Delete every item in the cart
 
-        tags:
-          - Cart
+      tags:
+        - Cart
 
-        operationId: emptyCart
+      operationId: emptyCart
 
-        security:
-          - jwtAuth: []
+      security:
+        - jwtAuth: []
 
-        responses:
-          '204':
-            $ref: "#/components/responses/204NoContent"
+      responses:
+        '204':
+          $ref: "#/components/responses/204NoContent"
 
-          '401':
-            $ref: "#/components/responses/401Unauthorized"
+        '401':
+          $ref: "#/components/responses/401Unauthorized"
 
-    x-swagger-router-controller: "Cart"
+      x-exegesis-controller: "Cart"
 
   /cart/{itemId}:
     patch:
@@ -611,7 +617,7 @@ paths:
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
-    x-swagger-router-controller: "Cart"
+      x-exegesis-controller: "Cart"
 
   /orders:
     get:
@@ -642,6 +648,7 @@ paths:
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
+      x-exegesis-controller: "User"
 
     post:
       summary: Add a new order
@@ -664,7 +671,7 @@ paths:
         '403':
           description: "Forbidden operation: no items in the cart"
 
-    x-swagger-router-controller: "Order"
+      x-exegesis-controller: "User"
 
   /profile:
     get:
@@ -688,7 +695,7 @@ paths:
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
-
+      x-exegesis-controller: "User"
     post:
       summary: Create a new profile
 
@@ -699,6 +706,7 @@ paths:
 
       requestBody:
         required: true
+        x-name: User
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -709,10 +717,10 @@ paths:
                 password:
                   type: string
                   format: password
-                e-mail:
+                email:
                   type: string
                   format: email
-              required: [username, password]
+              required: [username, password, email]
         description: Data retrieved via a form to create a new user
 
       responses:
@@ -726,7 +734,7 @@ paths:
         '403':
           description: "Forbidden action: the user already exists"
 
-    x-swagger-router-controller: "Profile"
+      x-exegesis-controller: "User"
 
 
   /profile/{field}:
@@ -752,6 +760,7 @@ paths:
 
       requestBody:
         required: true
+        x-name: User
         content:
           application/json:
             schema:
@@ -767,7 +776,7 @@ paths:
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
-    x-swagger-router-controller: "Profile"
+      x-exegesis-controller: "User"
 
   /login:
     post:
@@ -780,6 +789,7 @@ paths:
 
       requestBody:
         required: true
+        x-name: User
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -796,16 +806,23 @@ paths:
 
       responses:
         '200':
-          description: User authenticated
+          description: |
+            The user provided the correct credentials. The client should save the access-token in the local storage and append it to next requests headers as follows: Authentication: Bearer $(access-token)
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                type: object
+                properties:
+                  username:
+                    type: string
+                  access-token:
+                    type: string
+
 
         '400':
           description: "Authentication failed! Username or password wrong"
 
-    x-swagger-router-controller: "Login"
+      x-exegesis-controller: "User"
 
   /logout:
     get:
@@ -821,10 +838,11 @@ paths:
 
       responses:
         '200':
-          description: User logged out successfully
+          description: User logged out successfully. Nothing happens server-side, it's the client's duty to delete the JWT stored in the local storage. JWTs expire after 1 hour
 
         '401':
           description: No user to log out
+      x-exegesis-controller: "User"
 
 components:
   parameters:
@@ -833,10 +851,10 @@ components:
       in: "query"
       required: false
       schema:
-        type: "integer"
+        type: number
+        format: int32
         minimum: 0
         default: 0
-        example: 5
       description: "Items to skip before starting to collect the response set."
 
     limitParam:
@@ -844,7 +862,8 @@ components:
       in: query
       required: false
       schema:
-        type: integer
+        type: number
+        format: int32
         minimum: 1
         maximum: 100
         default: 20
@@ -876,6 +895,7 @@ components:
             enum: [hardcover, paperback, digital]
           amount:
             type: number
+            format: int32
             minimum: 0
         required:
           - id
@@ -957,7 +977,7 @@ components:
                     enum: [hardcover, paperback, digital]
                   in_storage:
                     type: number
-                    format: int
+                    format: int32
                     minimum: 0
                   price:
                     type: number
@@ -1000,7 +1020,7 @@ components:
               readOnly: true
             amount:
               type: number
-              format: integer
+              format: int32
               minimum: 1
             toBeReserved:
               type: boolean
@@ -1142,11 +1162,11 @@ components:
                 type: number
                 format: float
                 minimum: 0.01
-              amount:
+              quantity:
                 type: number
                 format: int32
                 minimum: 1
-            required: [book_id, book_title, cover_type, price, amount]
+            required: [book_id, book_title, cover_type, price, quantity]
           minItems: 1
           uniqueItems: true
       required: [order_id, emission_time, status, total]
@@ -1181,9 +1201,9 @@ components:
 
   securitySchemes:
     jwtAuth:
-      type: apiKey
-      in: cookie
-      name: JWT
+      type: http
+      scheme: Bearer
+      bearerFormat: JWT
 
 externalDocs:
   description: Find out more about Swagger
