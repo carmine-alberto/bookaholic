@@ -3,7 +3,9 @@ const exegesisExpress = require('exegesis-express');
 const http = require('http');
 const path = require('path');
 const jwtAuthenticator = require("./authenticators/JWTAuth.js");
+const serveStatic = require("serve-static");
 const exegesisSwaggerUIPlugin = require("exegesis-plugin-swagger-ui-express");
+
 
 async function createServer() {
 
@@ -19,11 +21,10 @@ async function createServer() {
                       },
         authenticators: { jwtAuth: jwtAuthenticator },
         plugins: [
-        exegesisSwaggerUIPlugin({
-            app: app,
-            path: "/docs"
-        })
-      ]
+                  exegesisSwaggerUIPlugin({
+                    app: app,
+                    path: "/docs"
+                  })]
     };
 
     const exegesisMiddleware = await exegesisExpress.middleware(
@@ -32,6 +33,8 @@ async function createServer() {
     );
 
     app.use(exegesisMiddleware);
+
+    app.use(serveStatic(path.join(__dirname, "views")));
 
     app.use((req, res) => {
         res.status(404).json({message: `Not found`});

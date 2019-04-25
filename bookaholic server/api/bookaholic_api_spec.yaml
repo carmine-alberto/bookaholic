@@ -1202,7 +1202,7 @@ components:
   securitySchemes:
     jwtAuth:
       type: http
-      scheme: Bearer
+      scheme: bearer
       bearerFormat: JWT
 
 externalDocs:

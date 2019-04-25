@@ -5,7 +5,7 @@ const secretKey = require("../secretKey.js");
 
 module.exports = function(pluginContext, info) {
   return new Promise((resolve, reject) => {
-    const authorizationHeader = /^Bearer ((?:\w|\.)+)$/.exec(pluginContext.req.headers.authorization);
+    const authorizationHeader = /^Bearer (.+)$/.exec(pluginContext.req.headers.authorization);
 
     if (authorizationHeader && authorizationHeader[1]) //the second parameter represents the remembered string, i.e. the token
       jwtParser.verify(authorizationHeader[1], secretKey, (err, accessToken) => {
