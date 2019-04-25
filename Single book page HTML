@@ -82,7 +82,7 @@
 <img id="book_image" alt="book_cover" src="img/DearData_US_jacket.jpeg">
 <h1 id="book_name">Book_name</h1>
 <h2 id="book_author">Book_author</h2>
-<h4 id="book_price">00.00 eur</h4>
+<h2 id="book_price">00.00 eur</h2>
 <h5 id="book_resume">For one year, Giorgia Lupi, an Italian living in New York, and Stefanie Posavec, an American in London, mapped the particulars of their daily lives as a series of hand-drawn postcards they exchanged via mail weekly—small portraits as full of emotion as they are data, both mundane and magical. Dear Data reproduces in pinpoint detail the full year's set of cards, front and back, providing a remarkable portrait of two artists connected by their attention to the details of their lives—including complaints, distractions, phone addictions, physical contact, and desires.</h5>
 <div id="add_to_cart_button">add to cart</div>
 </div>	
@@ -98,12 +98,22 @@
 <div id="fact_sheet">
 <h4 class="section_title" id="fact_sheet_title">Fact sheet</h4>	
 <div id="fact_sheet_content">
-<h5>Released:</h5>
-<h5 class="release_date">Release_date</h5>
-<h5>Language</h5>
-<h5 class="book_language">Book_language</h5>
-<h5>Type of cover</h5>
-	<h5 class="type_of_cover">hardcover</h5>
+<div class="column">	
+<h4 class="fact_title">Released:</h4>
+<h5 id="release_date">Release_date</h5>
+<h4 class="fact_title">Language</h4>
+<h5 id="book_language">Book_language</h5>
+<h4 class="fact_title">Genre</h4>
+<h5 id="book_genre">Book_genre</h5>
+</div>
+<div class="column">	
+<h4 class="fact_title">Publisher:</h4>
+<h5 id="book_publisher">Book_publisher</h5>
+<h4 class="fact_title">ISBN</h4>
+<h5 id="isbn">Book_ISBN</h5>
+<h4 class="fact_title">Type of cover</h4>
+<h5 id="type_of_cover_">hardcover</h5>
+</div>
 </div>
 </div>	
 	
