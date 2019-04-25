@@ -14,11 +14,10 @@ h2 {
 	font-size: 36px;
 }
 
-
-
 h5 {
 	font-size: 14px;
 	color: #555555;
+	font-weight: lighter;
 }
 
 .section_title {
@@ -226,6 +225,20 @@ background-color: rgba(225,225,225,1.00);
 	padding-top: 80px;
 }
 
+#book_name {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+#book_author {
+	font-style: italic;
+	font-weight: 500;
+}
+
+#book_price {
+	font-weight: 500;
+}
+
 #book_image {
   width: 432px; 
   height: 588px; 
@@ -254,6 +267,10 @@ background-color: rgba(225,225,225,1.00);
 height: 350px
 }
 
+.fact_title {
+	color: #555555;
+}
+
 #fact_sheet {
 	position: absolute;
 	left:5%;
@@ -262,6 +279,17 @@ height: 350px
 
 #fact_sheet_content {
 	margin-left: 30px;
+}
+
+#fact_sheet_content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+	  float: left;
+  width: 50%;
 }
 
 #fact_sheet_title {
