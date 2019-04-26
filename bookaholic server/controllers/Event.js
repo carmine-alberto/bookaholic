@@ -17,7 +17,7 @@ module.exports.getEventPlaces = function getEventPlaces (context) {
   return Promise.resolve(
     Event.getEventPlaces()
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };
 
@@ -32,6 +32,6 @@ module.exports.getEvents = function getEvents (context) {
   return Promise.resolve(
     Event.getEvents(offset,limit,about,where,from,to)
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };

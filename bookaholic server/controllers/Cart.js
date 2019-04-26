@@ -21,7 +21,7 @@ module.exports.emptyCart = function emptyCart (context) {
   return Promise.resolve(
     Cart.emptyCart(username)
     .then(response => respondWithCode(context, 204, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };
 
@@ -31,7 +31,7 @@ module.exports.getCart = function getCart (context) {
   return Promise.resolve(
     Cart.getCart(username)
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };
 
@@ -44,6 +44,6 @@ module.exports.postToCart = function postToCart (context) {
   return Promise.resolve(
     Cart.postToCart(username, book_id, cover_type, amount)
     .then(response => respondWithCode(context, 204, response))
-    .catch(err => respondWithCode(context, 403, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };

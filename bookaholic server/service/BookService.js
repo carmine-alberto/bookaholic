@@ -12,19 +12,20 @@ const database = require("./DataLayer.js");
 
 exports.getBookById = function(book_id) {
   return new Promise(function(resolve, reject) {
-    database.select("isbn", "cover_type", "price", "in_storage")
+    database
+    .select("isbn", "cover_type", "price", "in_storage")
     .from("book_details")
-    .where({book_id: book_id})
-    .then(details => {
-      database.select("*")
+    .where("book_id", book_id)
+    .then(details => database
+      .select("*")
       .from("book")
-      .where({book_id: book_id})
+      .where("book_id", book_id)
       .then(data => {
           data[0].details = details;
           resolve(data[0]);
-      })
-    })
-    .catch(err => reject(err))
+        })
+      .catch(bookError => reject(bookError)))
+    .catch(bdError => reject(bdError))
   })
 }
 
@@ -45,7 +46,8 @@ exports.getBookById = function(book_id) {
  **/
 exports.getBooks = function(published_after,suggested,starts_with,genre,type,similar_to,limit,offset) {
   return new Promise(function(resolve, reject) {
-    var query = database.select("book_id","title", "cover")
+    var query = database
+    .select("book_id","title", "cover")
     .from("book");
 
     if (published_after)
@@ -102,9 +104,11 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
  **/
 exports.getGenres = function() {
   return new Promise(function(resolve, reject) {
-    database.distinct("genre")
+    database
+    .distinct("genre")
     .from("book")
-    .then(data => resolve(data.map( el => el["genre"] )));
+    .then(data => resolve(data.map( el => el["genre"] )))
+    .catch(error => reject(error));
   })
 }
 
@@ -117,8 +121,10 @@ exports.getGenres = function() {
  **/
 exports.getTypes = function() {
   return new Promise(function(resolve, reject) {
-    database.distinct("type")
+    database
+    .distinct("type")
     .from("book")
-    .then(data => resolve(data.map( el => el["type"] )));
+    .then(data => resolve(data.map( el => el["type"] )))
+    .catch(error => reject(error));
   });
 }

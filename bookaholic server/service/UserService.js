@@ -29,7 +29,10 @@ exports.getOrders = function(username,limit,offset) {
       .from("details")
       .join("book", "details.book_id", "book.book_id")
       .where("order_id", order.order_id)
-      .then(order_details => order.details = order_details))
+      .then(order_details => {
+        order.details = order_details;
+        return order;
+      }))
     .then(detailedOrders => resolve(detailedOrders))
     .catch(error => reject(error))
   });
@@ -97,12 +100,60 @@ exports.logout = function(username) {
  *
  * no response value expected for this operation
  **/
-exports.postToOrders = function() {
+exports.postToOrders = function(username, address) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    console.log("entering post");
+    const booksInCart = database
+    .select("cart.book_id", "cart.cover_type", "quantity", "in_storage", "price")
+    .from("cart")
+    .join("book_details as bd", {"cart.book_id":"bd.book_id", "cart.cover_type": "bd.cover_type"})
+    .where("username", username)
+    .then(booksRetrieved => {
+      console.log(booksRetrieved)
+      if (booksRetrieved[0]) {
+        console.log(booksRetrieved[0]);
+        return booksRetrieved;
+      }
+      console.log("ready to reject");  //This is printed - what's going on below?
+      reject({error: "There are no books in your cart!"})})
+    .catch(error => reject(error));
+
+    console.log(booksInCart);
+
+    const {total, status} = booksInCart
+      .reduce((acc, book) => {
+        acc.total += book.price;
+        acc.status = (acc.status == "pending" && book.quantity > book.in_storage)
+                     ? "reservation"
+                     : "pending";
+        return acc;
+      }, {total: 0, status: "pending"});
+
+    const [orderId] = database
+      .insert({"status": status, "total": total, "address": address, "username": username})
+      .into("order")
+      .returning("order_id")
+      .catch(orderInsertionError => reject(orderInsertionError));
+
+    booksInCart
+    .filter(book => book.quantity <= book.in_storage)
+    .forEach(bookInStorage => database
+      .insert({"order_id": orderId, "book_id": bookInStorage.book_id, "cover_type": bookInStorage.cover_type, "item_price": bookInStorage.price, "quantity": bookInStorage.quantity})
+      .into("order_details")
+      .returning(["book_id", "cover_type", "quantity"])
+      .map(returnedInfoAsArray => returnedInfoAsArray[0])
+      .then(returnedInfo => database("book_details")
+        .decrement("in_storage", returnedInfo.quantity)
+        .where({"book_id": returnedInfo.book_id, "cover_type": returnedInfo.cover_type})
+        .catch(decrementError => reject(decrementError)))
+      .catch(insertionError => reject(insertionError)))
+
   });
 }
-
+// Issue: if a concurrent order resolves after order insertion, but before order_details insertion, and brings quantity below the threshold,
+// an error is thrown by the database during second orders' details insertion, leaving the database in an inconsistent state.
+// How do we encapsulate the atomic operations in a transaction?
+//How it works: fetch all items in the cart and, for each, check availability in the book_details table. If quantity > in_storage,
 
 /**
  * Create a new profile
@@ -132,8 +183,15 @@ exports.register = function(username,password,email) {
  * field String Specify the field to be updated
  * no response value expected for this operation
  **/
-exports.updateField = function(body,field) {
+exports.updateField = function(username,field,body) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    database("user")
+    .update(field, body)
+    .where("username", username)
+    .then(response => resolve(field == "username"
+                                ? "Operation successful. Delete your JWT and repeat the login procedure"
+                                : "Operation successful"
+                              ))
+    .catch(error => reject(field+" already exists!"))
   });
 }

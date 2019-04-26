@@ -37,18 +37,18 @@ exports.getReviews = function(limit,offset,about,by_rating,by_user) {
 
     if (about)
       query = query
-      .where({book_id: about});
+      .where("book_id", about);
 
     if (by_rating)
       query = query
-      .where({rating: by_rating});
+      .where("rating", by_rating);
 
     if (by_user)
       query = query
       .clearSelect()
       .select("username", "gist", "content", "rating", "book_id", "book_title", "book_cover")
       .join("book", "review.book_id", "book.book_id")
-      .where({username: by_user});
+      .where("username", by_user);
 
     if (limit)
       query = query
@@ -82,7 +82,8 @@ exports.postReview = function(username,gist,content,rating,book_id) {
     database
     .insert({username: username, gist: gist, content: content, rating: rating, book_id: book_id})
     .into("review")
+    .returning("")
     .then(response => resolve(response))
     .catch(error => reject(error));
-  })
+  });
 }

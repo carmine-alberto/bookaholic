@@ -17,7 +17,8 @@ CREATE TABLE "book_details" (
     ON DELETE CASCADE,
   "cover_type" varchar,
   "price" float NOT NULL,
-  "in_storage" int DEFAULT 2147483647,
+  "in_storage" int DEFAULT 2147483647
+    CHECK ("in_storage" >= 0),
   "isbn" char(13) UNIQUE NOT NULL,
   PRIMARY KEY("book_id", "cover_type")
 );
@@ -29,8 +30,8 @@ CREATE TABLE "user" (
 );
 
 CREATE TABLE "order" (
-  "order_id" char(10) PRIMARY KEY,
-  "emission_time" timestamp(0) NOT NULL,
+  "order_id" SERIAL PRIMARY KEY,
+  "emission_time" timestamp(0) NOT NULL DEFAULT LOCALTIMESTAMP(0),
   "status" varchar(11) NOT NULL,
   "total" float NOT NULL,
   "address" text NOT NULL,
@@ -81,8 +82,8 @@ CREATE TABLE "review" (
   PRIMARY KEY("username", "book_id")
 );
 
-CREATE TABLE "details" (
-  "order_id" char(10) REFERENCES "order"("order_id")
+CREATE TABLE "order_details" (
+  "order_id" int REFERENCES "order"("order_id")
     ON UPDATE CASCADE
     ON DELETE CASCADE,
   "book_id" char(10),

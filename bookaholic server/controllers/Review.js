@@ -24,7 +24,7 @@ module.exports.getReviews = function getReviews (context) {
   return Promise.resolve(
     Review.getReviews(limit,offset,about,by_rating,by_user)
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };
 
@@ -37,7 +37,7 @@ module.exports.postReview = function postReview (context) {
 
   return Promise.resolve(
     Review.postReview(username,gist,content,rating,book_id)
-    .then(response => respondWithCode(context, 201, response))
+    .then(response => respondWithCode(context, 204, response))
     .catch(err => respondWithCode(context, 403, err))
   )
 };

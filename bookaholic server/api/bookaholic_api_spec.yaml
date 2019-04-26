@@ -47,27 +47,27 @@ paths:
           schema:
             type: string
             format: date
-          description: "Return a subset of books: published after the given date"
+          description: "Return a subset of books: published after the given date."
         - name: suggested
           in: query
           schema:
             type: boolean
-          description: "Return a subset of books: suggested by us"
+          description: "Return a subset of books: suggested by us."
         - name: starts_with
           in: query
           schema:
             type: string
-          description: "Return a subset of books: title starts with the provided string"
+          description: "Return a subset of books: title starts with the provided string."
         - name: genre
           in: query
           schema:
             type: string
-          description: "Return a subset of books: having provided genre"
+          description: "Return a subset of books: having provided genre."
         - name: type
           in: query
           schema:
             type: string
-          description: "Return a subset of books: having provided type"
+          description: "Return a subset of books: having provided type."
         - name: similar_to
           in: query
           schema:
@@ -76,7 +76,7 @@ paths:
               id:
                 type: string
                 format: book_id
-                pattern: '^\d{10}$'
+                pattern: ^\d{10}$
               criterion:
                 type: string
                 enum: [genre, type, author]
@@ -85,13 +85,16 @@ paths:
               - criterion
           style: deepObject
           explode: true
-          description: "Return a subset of books: having the same property specified in criterion as the book provided"
+          description: "Return a subset of books: having the same property specified in criterion as the book provided."
+          example:
+            id: 8743289412
+            criterion: genre
         - $ref: "#/components/parameters/limitParam"
         - $ref: "#/components/parameters/offsetParam"
 
       responses:
         '200':
-          description: "Books retrieval successful"
+          description: "Returned when the operation is carried out successfully, along with a set of books as requested through query parameters."
           content:
             application/json:
               schema:
@@ -102,28 +105,25 @@ paths:
         '400':
           $ref: "#/components/responses/400BadRequest"
 
-        '404':
-          $ref: "#/components/responses/404NotFound"
-
-        default:
-          $ref: "#/components/responses/Default"
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Book"
 
   /books/types:
     get:
-      summary: get available types
+      summary: Get available types
 
       tags:
         - Book
 
-      description: "Return all the distinct available book types in the database"
+      description: "Return all the distinct available book types in the database."
 
       operationId: getTypes
 
       responses:
         '200':
-          description: "Types retrieval successful"
+          description: "Return all the distinct available book genres in the database."
           content:
             application/json:
               schema:
@@ -133,22 +133,25 @@ paths:
                 uniqueItems: true
                 example: ["war", "love"]
 
+        '500':
+          $ref: "#/components/responses/500ServerError"
+
       x-exegesis-controller: "Book"
 
   /books/genres:
     get:
-      summary: get available genres
+      summary: Get available genres
 
       tags:
         - Book
 
-      description: "Return all the distinct available book genres in the database"
+      description: "Return all the distinct available book genres in the database."
 
       operationId: getGenres
 
       responses:
-        "200":
-          description: "Genres retrieval successful"
+        '200':
+          description: "Returned when the genres are retrieved successfully, along with the available distinct genres."
           content:
             application/json:
               schema:
@@ -157,6 +160,9 @@ paths:
                   type: string
                 uniqueItems: true
                 example: ["fiction", "science-fiction"]
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Book"
 
@@ -167,7 +173,7 @@ paths:
       tags:
         - Book
 
-      description: "Returns all the information pertaining to a single book"
+      description: "Returns all the information pertaining to a single book."
 
       operationId: getBookById
 
@@ -178,12 +184,12 @@ paths:
           schema:
             type: string
             format: book_id
-            pattern: '^\d{10}$'
-          description: "The ID of the book whose information have to be returned"
+            pattern: ^\d{10}$
+          description: "The ID of the book whose information have to be returned."
 
       responses:
         '200':
-          description: Book retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with the requested book's details."
           content:
             application/json:
               schema:
@@ -192,17 +198,19 @@ paths:
         '404':
           $ref: "#/components/responses/404NotFound"
 
+        '500':
+          $ref: "#/components/responses/500ServerError"
+
       x-exegesis-controller: "Book"
 
   /authors:
     get:
-      summary: get all authors
+      summary: Get all authors
 
       tags:
         - Author
 
       operationId: getAuthors
-
 
       parameters:
         - $ref: "#/components/parameters/limitParam"
@@ -212,12 +220,12 @@ paths:
           schema:
             type: string
             format: book_id
-            pattern: '^\d{10}$'
-          description: Specify the book whose authors have to be retrieved
+            pattern: ^\d{10}$
+          description: "Specify the book whose authors have to be retrieved."
 
       responses:
         '200':
-          description: "Authors retrieved successfully"
+          description: "Returned when authors are retrieved successfully, along with a set of them as specified through parameters."
           content:
             application/json:
               schema:
@@ -229,15 +237,15 @@ paths:
         '400':
           $ref: "#/components/responses/400BadRequest"
 
-        '404':
-          $ref: "#/components/responses/404NotFound"
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Author"
 
 
   /authors/{author_id}:
     get:
-      summary: get a single author
+      summary: Get a single author
 
       tags:
         - Author
@@ -251,12 +259,12 @@ paths:
           schema:
             type: string
             format: author_id
-            pattern: '^\d{8}$'
-          description: "The ID of the author whose information has to be returned"
+            pattern: ^\d{8}$
+          description: "The ID of the author whose information has to be returned."
 
       responses:
         '200':
-          description: Author retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with the requested author's details."
           content:
             application/json:
               schema:
@@ -267,6 +275,9 @@ paths:
 
         '404':
           $ref: "#/components/responses/404NotFound"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Author"
 
@@ -287,23 +298,23 @@ paths:
           in: query
           schema:
             type: string
-          description: Specify the place where the events shown will be held
+          description: "Specify the place where the events shown will be held."
         - name: from
           in: query
           schema:
             type: string
             format: date
-          description: Specify the minimum starting date for events shown; can be coupled with <<to>> parameter
+          description: "Specify the minimum starting date for events shown; can be coupled with <<to>> parameter."
         - name: to
           in: query
           schema:
             type: string
             format: date
-          description: Specify the maximum date for events shown; can be coupled with <<from>> parameter
+          description: "Specify the maximum date for events shown; can be coupled with <<from>> parameter."
 
       responses:
         '200':
-          description: Events retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with a set of events as specified through parameters."
           content:
             application/json:
               schema:
@@ -315,11 +326,10 @@ paths:
         '400':
           $ref: "#/components/responses/400BadRequest"
 
-        '404':
-          $ref: "#/components/responses/404NotFound"
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Event"
-
 
   /events/places:
     get:
@@ -332,7 +342,7 @@ paths:
 
       responses:
         '200':
-          description: Places retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with all the distinct places where events will be held."
           content:
             application/json:
               schema:
@@ -340,6 +350,9 @@ paths:
                 items:
                   type: string
                 uniqueItems: true
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Event"
 
@@ -359,21 +372,22 @@ paths:
           schema:
             type: string
             format: event_id
-            pattern: '^\d{9}$'
-          description: Specify the ID of the event you want to know more about
+            pattern: ^\d{9}$
+          description: "Specify the ID of the event you want to know more about."
 
       responses:
         '200':
-          description: Event details retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with the specified event's details."
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Event"
-        '400':
-          $ref: "#/components/responses/400BadRequest"
 
         '404':
           $ref: "#/components/responses/404NotFound"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Event"
 
@@ -397,16 +411,16 @@ paths:
             format: int32
             minimum: 1
             maximum: 5
-          description: Specify rating by which reviews have to be filtered
+          description: "Specify rating by which reviews have to be filtered."
         - name: by_user
           in: query
           schema:
             type: string
-          description: Specify the received reviews' author. If this query parameter is used, book_title and book_cover will be added to the response object.
+          description: "Specify the received reviews' author. If this query parameter is used, book_title and book_cover will be added to the response object."
 
       responses:
         '200':
-          description: Reviews retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with a set of reviews as specified through parameters."
           content:
             application/json:
               schema:
@@ -418,10 +432,11 @@ paths:
         '400':
           $ref: "#/components/responses/400BadRequest"
 
-        '404':
-          $ref: "#/components/responses/404NotFound"
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Review"
+
     post:
       summary: Add a review
 
@@ -434,7 +449,6 @@ paths:
         - jwtAuth: []
 
       requestBody:
-        x-name: Review
         required: true
         content:
           application/x-www-form-urlencoded:
@@ -448,22 +462,30 @@ paths:
                 rating:
                   type: number
                   format: int32
-                  enum: [1, 2, 3, 4, 5]
+                  minimum: 1
+                  maximum: 5
                 book_id:
                   type: string
                   format: book_id
-                  pattern: '^\d{10}$'
-        description: Review to add
+                  pattern: ^\d{10}$
+        description: "Contains the body of the review submitted."
 
       responses:
-        '201':
-          description: Review added
+        '204':
+          $ref: "#/components/responses/204NoContent"
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
         '403':
-          description: A review of this book written by the user sending the request already exists
+          description: "Returned when a review of this book written by the user sending the request already exists."
+          content:
+            text/plain:
+              schema:
+                type: string
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Review"
 
@@ -483,13 +505,16 @@ paths:
 
       responses:
         '204':
-          description: The request was carried out, no more information will be supplied
+          $ref: "#/components/responses/204NoContent"
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
         '404':
           $ref: "#/components/responses/404NotFound"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Review"
 
@@ -507,13 +532,18 @@ paths:
 
       responses:
         '200':
-          description: Cart's item retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with the set of books inside the cart."
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: "#/components/schemas/CartBook"
+        '401':
+          $ref: "#/components/responses/401Unauthorized"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Cart"
 
@@ -530,22 +560,27 @@ paths:
 
       requestBody:
         required: true
-        x-name: Cart
         content:
           application/json:
             schema:
               $ref: "#/components/schemas/CartBook"
-        description: Used to specify the book to be added
+        description: "Contains the details of the book to be added to the cart."
 
       responses:
         '204':
           $ref: "#/components/responses/204NoContent"
+          description: |
+            Returned when the operation is carried out successfully.
+            Upon receiving this response, the client should update the cart content.
 
         '400':
           $ref: "#/components/responses/400BadRequest"
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Cart"
 
@@ -566,6 +601,9 @@ paths:
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "Cart"
 
@@ -617,11 +655,17 @@ paths:
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
+        '404':
+          $ref: "#/components/responses/404NotFound"
+          
+        '500':
+          $ref: "#/components/responses/500ServerError"
+
       x-exegesis-controller: "Cart"
 
   /orders:
     get:
-      summary: "Get the user's orders"
+      summary: Get the user's orders
 
       tags:
         - User
@@ -637,7 +681,7 @@ paths:
 
       responses:
         '200':
-          description: Orders retrieved successfully
+          description: "Returned when the operation is carried out successfully, along with a set of orders as specified through parameters."
           content:
             application/json:
               schema:
@@ -648,10 +692,19 @@ paths:
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
+
       x-exegesis-controller: "User"
 
     post:
       summary: Add a new order
+
+      description: |
+        Amount provided by the user is checked against quantity in storage before registering the order.
+        The user ought to be made aware of the fact that the availability of books in his cart may change throughout the procedure,
+        and the current order may be registered as reservation.
 
       tags:
         - User
@@ -661,15 +714,47 @@ paths:
       security:
         - jwtAuth: []
 
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              pattern: ^Via|Strada|Piazza|Corso .+\, \d+(?:\/[A-Z])*\, \d{5}, .+ \([A-Z]{2}\)$
+              example: Via del Carroccio, 33/F, 20032, Milano (MI)
+
       responses:
-        '204':
-          $ref: "#/components/responses/204NoContent"
+        '201':
+          description: |
+            Returned when the order is registered correctly. The response contains its status: pending or reservation;
+            the client ought to use it to inform the user and may want to call "emptyCart".
+          content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    status:
+                      type: string
+                      enum: [pending, reservation]
+                    message:
+                      type: string
+                  required: [status, message]
+
+        '400':
+          $ref: "#/components/responses/400BadRequest"
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
         '403':
-          description: "Forbidden operation: no items in the cart"
+          description: "Returned when there are no items in the cart."
+          content:
+            text/plain:
+              schema:
+                type: string
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "User"
 
@@ -687,7 +772,7 @@ paths:
 
       responses:
         '200':
-          description: Returns the authenticated user's data
+          description: "Returned along with the authenticated user's data."
           content:
             application/json:
               schema:
@@ -695,7 +780,12 @@ paths:
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
+
       x-exegesis-controller: "User"
+
     post:
       summary: Create a new profile
 
@@ -706,7 +796,6 @@ paths:
 
       requestBody:
         required: true
-        x-name: User
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -714,6 +803,8 @@ paths:
               properties:
                 username:
                   type: string
+                  minLength: 3
+                  maxLength: 20
                 password:
                   type: string
                   format: password
@@ -721,24 +812,31 @@ paths:
                   type: string
                   format: email
               required: [username, password, email]
-        description: Data retrieved via a form to create a new user
+        description: "Data retrieved via a form to create a new user. User should be informed about required fields."
 
       responses:
         '201':
-          description: Profile created successfully. User's data returned
+          description: "Returned when the profile is created successfully. User should be prompted to login."
           content:
-            application/json:
+            text/plain:
               schema:
-                $ref: "#/components/schemas/User"
+                type: string
 
         '403':
-          description: "Forbidden action: the user already exists"
+          description: "Returned when a user with the same username/email already exists."
+          content:
+            text/plain:
+              schema:
+                type: string
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "User"
 
 
   /profile/{field}:
-    put:
+    patch:
       summary: Overwrite the specified resource
 
       tags:
@@ -756,25 +854,38 @@ paths:
           schema:
             type: string
             enum: [username, email, password]
-          description: Specify the field to be updated
+          description: "Specify the field to be updated."
 
       requestBody:
         required: true
-        x-name: User
         content:
-          application/json:
+          text/plain:
             schema:
               type: string
+              example: "my_new_email (field: email)"
 
       responses:
         '204':
-          $ref: "#/components/responses/204NoContent"
+          description: |
+            Returned when the operation is carried out successfully.
+            If field is username, prompt the user to login again, in order to get a working JWT.
+            The client ought to delete the JWT from the local storage.
+          content:
+            text/plain:
+              schema:
+                  type: string
 
         '400':
           $ref: "#/components/responses/400BadRequest"
 
         '401':
           $ref: "#/components/responses/401Unauthorized"
+
+        '403':
+          description: "Returned when the provided username/email already exists."
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
 
       x-exegesis-controller: "User"
 
@@ -789,7 +900,6 @@ paths:
 
       requestBody:
         required: true
-        x-name: User
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -802,12 +912,13 @@ paths:
                 password:
                   type: string
                   format: password
-        description: User's data required to login
+        description: "User's data required to login."
 
       responses:
         '200':
           description: |
-            The user provided the correct credentials. The client should save the access-token in the local storage and append it to next requests headers as follows: Authentication: Bearer $(access-token)
+            Returned when the provided credentials match a user in the database, along with a JWT.
+            The client should save the access-token in the local storage and append it to following requests' header as follows: Authentication: Bearer $(access-token)
           content:
             application/json:
               schema:
@@ -817,10 +928,13 @@ paths:
                     type: string
                   access-token:
                     type: string
-
+                    pattern: ^.{60}$
+                example:
+                  username: carmine
+                  access-token: abcdefghilabcdefghilabcdefghilabcdefghilabcdefghilabcdefghil
 
         '400':
-          description: "Authentication failed! Username or password wrong"
+          $ref: "#/components/responses/400BadRequest"
 
       x-exegesis-controller: "User"
 
@@ -837,11 +951,18 @@ paths:
         - jwtAuth: []
 
       responses:
-        '200':
-          description: User logged out successfully. Nothing happens server-side, it's the client's duty to delete the JWT stored in the local storage. JWTs expire after 1 hour
+        '204':
+          description: |
+            Returned when an authenticated user makes the request.
+            Nothing happens server-side, it's the client's duty to delete the JWT stored in the local storage.
+            If not deleted, JWTs expire after 1 hour.
 
         '401':
-          description: No user to log out
+          $ref: "#/components/responses/401Unauthorized"
+
+        '500':
+          $ref: "#/components/responses/500ServerError"
+
       x-exegesis-controller: "User"
 
 components:
@@ -908,23 +1029,31 @@ components:
 
   responses:
     204NoContent:
-      description: The request was carried out, no further information will be supplied
-
-    404NotFound:
-      description: The requested resource does not exist in the server
+      description: "Returned when the request is carried out successfully and no further information is to be supplied."
 
     400BadRequest:
-      description: Provided parameters do not match the requested format
+      description: "Returned when provided parameters do not match the requested format."
       content:
         text/plain:
           schema:
             type: string
 
     401Unauthorized:
-      description: Missing JWT
+      description: "Returned when the authentication token is missing."
+      content:
+        text/plain:
+          schema:
+            type: string
 
-    Default:
-      description: The server cannot handle the received request
+    404NotFound:
+      description: "Returned when the requested resource does not exist in the server."
+      content:
+        text/plain:
+          schema:
+            type: string
+
+    500ServerError:
+      description: "Returned as default error when something unexpected happens server-side."
       content:
         text/plain:
           schema:
@@ -1004,7 +1133,7 @@ components:
             cover_type: digital
             in_storage: 2147483647
             price: 6.99
-      description: A book for sale in the store
+      description: "A book for sale in the store."
 
     CartBook:
       allOf:
@@ -1022,10 +1151,11 @@ components:
               type: number
               format: int32
               minimum: 1
-            toBeReserved:
-              type: boolean
-              readOnly: true
-          required: [cover_type, price, amount]
+            in_storage:
+              type: number
+              format: int32
+              minimum: 0
+          required: [cover_type, price, amount, in_storage]
           example:
             book_id: 1243765890
             book_title: Mortal Instruments - City of Bones
@@ -1033,9 +1163,11 @@ components:
             cover_type: paperback
             price: 8.99
             amount: 2
-            toBeReserved: false
+            in_storage: 5
           description: |
-            The "toBeReserved" property is set by the server upon adding a book to the cart false when amount <= in_storage, true otherwise. It's a client's duty to warn the user about this behaviour, using the quantity property provided by the getBookById operation.
+            Property "in_storage" provided in order for the client to be able to tell the user whether the book will be added as reservation.
+            It's a client's duty to warn the user and provide required facilities to manage reservations using this information.
+            If used in the cart page, the user should also be informed that an order may be added as reservation if quantity in storage drops below the amount requested.
 
 
     Author:
@@ -1055,7 +1187,7 @@ components:
         - name
         - picture
         - short_bio
-      description: author_id provided with sets requests only
+      description: "author_id provided with sets requests only."
       example:
         name: Friedrich Nietzsche
         picture: friedrich_nietzsche.jpg
@@ -1106,7 +1238,8 @@ components:
         rating:
           type: number
           format: int32
-          enum: [1, 2, 3, 4, 5]
+          minimum: 1
+          maximum: 5
         book_id:
           type: string
           format: book_id
@@ -1119,7 +1252,7 @@ components:
             pattern: '^[\w]+\.jpg$'
             readOnly: true
       required: [gist, content, rating, book_id]
-      description: book_title and book_cover are optional and provided only if the resource is requested with the <<by_user>> parameter
+      description: "book_title and book_cover are optional and provided only if the resource is requested with the <<by_user>> parameter."
       example:
         username: mike20
         gist: This book is amazing
@@ -1133,7 +1266,7 @@ components:
       properties:
         order_id:
           type: string
-          pattern: '^\d{10}$'
+          pattern: '^\d{1,10}$'
         emission_time:
           type: string
           format: date-time
@@ -1167,16 +1300,20 @@ components:
                 format: int32
                 minimum: 1
             required: [book_id, book_title, cover_type, price, quantity]
+          address:
+            type: string
+            pattern: ^(?:Via|Strada|Piazza|Corso) .+\, \d+(?:\/[A-Z])*\, \d{5}, .+ \([A-Z]{2}\)$
           minItems: 1
           uniqueItems: true
-      required: [order_id, emission_time, status, total]
-      description: Object representing the an emitted order. We had thought about adding an additional attribute, address, and may do so in the future
+      required: [order_id, emission_time, status, total, details, address]
+      description: "Object representing an emitted order. Check the example for a visualization of the regexp above."
       example:
         order_id: 1231314421
         emission_time: 2019-06-02T21:45Z
         status: reservation
         total: 47.90
         details: [{1929484718, Dear Data, digital, 18.70, 2 }]
+        address: Via del Carroccio, 33/F, 20032, Milano (MI)
 
     User:
       type: object
@@ -1193,7 +1330,7 @@ components:
           type: string
           format: email
       required: [username, password, email]
-      description: Object representing a user. username is the identifier
+      description: "Object representing a user. username is the identifier."
       example:
         username: jace
         password: abcd

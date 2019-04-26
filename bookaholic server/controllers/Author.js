@@ -21,6 +21,6 @@ module.exports.getAuthors = function getAuthors (context) {
   return Promise.resolve(
     Author.getAuthors(limit,offset,of)
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };

@@ -9,7 +9,8 @@ const database = require("./DataLayer.js");
  **/
 exports.getEventById = function(event_id) {
   return new Promise(function(resolve, reject) {
-    database.select("event_id", "info", "place", "occurring as date", "image", "book_id")
+    database
+    .select("event_id", "info", "place", "occurring as date", "image", "book_id")
     .from("event")
     .where({event_id: event_id})
     .then(data => resolve(data[0]))
@@ -25,7 +26,8 @@ exports.getEventById = function(event_id) {
  **/
 exports.getEventPlaces = function() {
   return new Promise(function(resolve, reject) {
-    database.distinct("place")
+    database
+    .distinct("place")
     .from("event")
     .then(data => resolve(data.map(obj => obj["place"])))
     .catch(err => reject(err));

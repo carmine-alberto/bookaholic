@@ -11,10 +11,10 @@ exports.getAuthorById = function(author_id) {
   return new Promise(function(resolve, reject) {
     database.select("name", "picture", "short_bio")
     .from("author")
-    .where({author_id: author_id})
+    .where("author_id", author_id)
     .then(data => resolve(data[0]))
     .catch(err => reject(err));
-  })
+  });
 }
 
 
@@ -35,10 +35,10 @@ exports.getAuthors = function(limit, offset, of) {
     if (of)
       query = query
       .whereIn("author_id",
-        database.select("author_id")
+        database
+        .select("author_id")
         .from("written_by")
-        .where({book_id: of})
-      );
+        .where("book_id", of));
 
     if (limit)
       query = query

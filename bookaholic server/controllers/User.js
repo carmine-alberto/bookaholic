@@ -21,7 +21,7 @@ module.exports.getProfile = function getProfile (context) {
   return Promise.resolve(
     User.getProfile(username)
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, err))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };
 
@@ -41,23 +41,23 @@ module.exports.logout = function logout (context) {
 
   return Promise.resolve(
     User.logout(username)
-    .then(response => respondWithCode(context, 204, response))
-    .catch(err => respondWithCode(context, 403, err))
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, 500, err))
   )
 };
 
 module.exports.postToOrders = function postToOrders (context) {
   const username = context.user;
+  const address = context.requestBody;
 
   return Promise.resolve(
-    User.postToOrders(username)
+    User.postToOrders(username, address)
     .then(response => respondWithCode(context, 201, response))
     .catch(err => respondWithCode(context, 403, err))
   )
 };
 
 module.exports.register = function register (context) {
-  console.log(context.requestBody);
   const username = context.requestBody.username;
   const password = context.requestBody.password;
   const email = context.requestBody.email;
@@ -71,12 +71,12 @@ module.exports.register = function register (context) {
 
 module.exports.updateField = function updateField (context) {
   const username = context.user;
-  const field = context.params.query.field;
-  const body = context.requestBody.body;
+  const field = context.params.path.field;
+  const body = context.requestBody;
 
   return Promise.resolve(
     User.updateField(username,field,body)
-    .then(response => respondWithCode(context, 204, response))
-    .catch(err => respondWithCode(context, err))
+    .then(response => respondWithCode(context, 200, response))
+    .catch(err => respondWithCode(context, 403, err))
   )
 };
