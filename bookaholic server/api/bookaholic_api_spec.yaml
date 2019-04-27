@@ -1300,11 +1300,11 @@ components:
                 format: int32
                 minimum: 1
             required: [book_id, book_title, cover_type, price, quantity]
-          address:
-            type: string
-            pattern: ^(?:Via|Strada|Piazza|Corso) .+\, \d+(?:\/[A-Z])*\, \d{5}, .+ \([A-Z]{2}\)$
           minItems: 1
           uniqueItems: true
+        address:
+          type: string
+          pattern: ^(?:Via|Strada|Piazza|Corso) .+\, \d+(?:\/[A-Z])*\, \d{5}, .+ \([A-Z]{2}\)$
       required: [order_id, emission_time, status, total, details, address]
       description: "Object representing an emitted order. Check the example for a visualization of the regexp above."
       example:
