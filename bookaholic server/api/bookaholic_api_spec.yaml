@@ -87,7 +87,7 @@ paths:
           explode: true
           description: "Return a subset of books: having the same property specified in criterion as the book provided."
           example:
-            id: 8743289412
+            id: 8935171483
             criterion: genre
         - $ref: "#/components/parameters/limitParam"
         - $ref: "#/components/parameters/offsetParam"
@@ -237,8 +237,8 @@ paths:
         '400':
           $ref: "#/components/responses/400BadRequest"
 
-        '500':
-          $ref: "#/components/responses/500ServerError"
+        '404':
+          $ref: "#/components/responses/404NotFound"
 
       x-exegesis-controller: "Author"
 
@@ -629,7 +629,7 @@ paths:
               book_id:
                 type: string
                 format: book_id
-                pattern: '^\d{10}$'
+                pattern: ^\d{10}$
               cover_type:
                 type: string
                 enum: [hardcover, paperback, digital]
@@ -657,7 +657,7 @@ paths:
 
         '404':
           $ref: "#/components/responses/404NotFound"
-          
+
         '500':
           $ref: "#/components/responses/500ServerError"
 
@@ -997,7 +997,7 @@ components:
       schema:
         type: string
         format: book_id
-        pattern: '^\d{10}$'
+        pattern: ^\d{10}$
       description: "Specify what book requested resources are related to"
 
     itemInCart:
@@ -1010,7 +1010,7 @@ components:
           id:
             type: string
             format: book_id
-            pattern: '^\d{10}$'
+            pattern: ^\d{10}$
           cover_type:
             type: string
             enum: [hardcover, paperback, digital]
@@ -1066,13 +1066,13 @@ components:
         book_id:
           type: string
           format: book_id
-          pattern: '^\d{10}$'
+          pattern: ^\d{10}$
         title:
           type: string
           readOnly: true
         cover:
           type: string
-          pattern: '^[\w]+\.jpg$'
+          pattern: ^[\w]+\.jpg$
           readOnly: true
 
     DetailedBook:
@@ -1100,7 +1100,7 @@ components:
                 properties:
                   ISBN:
                     type: string
-                    pattern: '^d{13}$'
+                    pattern: ^d{13}$
                   cover_type:
                     type: string
                     enum: [hardcover, paperback, digital]
@@ -1175,12 +1175,12 @@ components:
       properties:
         author_id:
           type: string
-          pattern: '^\d{8}$'
+          pattern: ^\d{8}$
         name:
           type: string
         picture:
           type: string
-          pattern: '^[\w]+\.jpg'
+          pattern: ^[\w]+\.jpg
         short_bio:
           type: string
       required:
@@ -1200,7 +1200,7 @@ components:
         event_id:
           type: string
           format: event_id
-          pattern: '^\d{9}$'
+          pattern: ^\d{9}$
         info:
           type: string
         place:
@@ -1210,11 +1210,11 @@ components:
           format: date
         image:
           type: string
-          pattern: '^[\w]+\.jpg$'
+          pattern: ^[\w]+\.jpg$
         book_id:
           type: string
           format: book_id
-          pattern: '^\d{10}$'
+          pattern: ^\d{10}$
       required: [event_id, info, place, date, image, book_id]
       example:
         event_id: 102034659
@@ -1243,13 +1243,13 @@ components:
         book_id:
           type: string
           format: book_id
-          pattern: '^\d{10}$'
+          pattern: ^\d{10}$
         book_title:
             type: string
             readOnly: true
         book_cover:
             type: string
-            pattern: '^[\w]+\.jpg$'
+            pattern: ^[\w]+\.jpg$
             readOnly: true
       required: [gist, content, rating, book_id]
       description: "book_title and book_cover are optional and provided only if the resource is requested with the <<by_user>> parameter."
@@ -1266,7 +1266,7 @@ components:
       properties:
         order_id:
           type: string
-          pattern: '^\d{1,10}$'
+          pattern: ^\d{1,10}$
         emission_time:
           type: string
           format: date-time
@@ -1285,7 +1285,7 @@ components:
               book_id:
                 type: string
                 format: book_id
-                pattern: '^\d{10}$'
+                pattern: ^\d{10}$
               book_title:
                 type: string
               cover_type:

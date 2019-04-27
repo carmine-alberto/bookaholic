@@ -103,38 +103,41 @@ exports.logout = function(username) {
 exports.postToOrders = function(username, address) {
   return new Promise(function(resolve, reject) {
     console.log("entering post");
-    const booksInCart = database
+    database
     .select("cart.book_id", "cart.cover_type", "quantity", "in_storage", "price")
     .from("cart")
     .join("book_details as bd", {"cart.book_id":"bd.book_id", "cart.cover_type": "bd.cover_type"})
     .where("username", username)
-    .then(booksRetrieved => {
-      console.log(booksRetrieved)
-      if (booksRetrieved[0]) {
-        console.log(booksRetrieved[0]);
-        return booksRetrieved;
-      }
-      console.log("ready to reject");  //This is printed - what's going on below?
-      reject({error: "There are no books in your cart!"})})
+    .then(booksInCart => addOrder(database, booksInCart))
+    .then((orderId, booksInCart) => addOrderDetails(database, booksInCart, orderId))
+    .then(success => resolve(success))
     .catch(error => reject(error));
+  });
+};
 
-    console.log(booksInCart);
-
-    const {total, status} = booksInCart
+const addOrder = function(database,booksInCart) {
+  return new Promise(function(resolve, reject) {
+    booksInCart[0]
+    ? booksInCart
       .reduce((acc, book) => {
-        acc.total += book.price;
-        acc.status = (acc.status == "pending" && book.quantity > book.in_storage)
-                     ? "reservation"
-                     : "pending";
-        return acc;
-      }, {total: 0, status: "pending"});
+         acc.total += book.price;
+         acc.status = (acc.status == "pending" && book.quantity > book.in_storage)
+                      ? "reservation"
+                      : "pending";
+         return acc;
+      }, {total: 0, status: "pending"})
+      .then(order => database
+         .insert({"status": order.status, "total": order.total, "address": address, "username": username})
+         .into("order")
+         .returning("order_id")
+         .then(order_id => resolve(order_id, booksInCart))
+         .catch(orderInsertionError => reject(orderInsertionError)))
+    : reject("There are no books in your cart!");
+  })
+}
 
-    const [orderId] = database
-      .insert({"status": status, "total": total, "address": address, "username": username})
-      .into("order")
-      .returning("order_id")
-      .catch(orderInsertionError => reject(orderInsertionError));
-
+const addOrderDetails = function(database, booksInCart, orderId) {
+  return new Promise(function(resolve, reject) {
     booksInCart
     .filter(book => book.quantity <= book.in_storage)
     .forEach(bookInStorage => database
@@ -145,10 +148,16 @@ exports.postToOrders = function(username, address) {
       .then(returnedInfo => database("book_details")
         .decrement("in_storage", returnedInfo.quantity)
         .where({"book_id": returnedInfo.book_id, "cover_type": returnedInfo.cover_type})
+        .then( () => booksInCart
+          .filter(book => book.quantity > book.in_storage)
+          .forEach(bookInStorage => database
+            .insert({"order_id": orderId, "book_id": bookInStorage.book_id, "cover_type": bookInStorage.cover_type, "item_price": bookInStorage.price, "quantity": bookInStorage.quantity})
+            .into("order_details")
+            .catch(insertionError => reject(insertionError)))
+          .then( () => resolve("Order registered successfully!")))
         .catch(decrementError => reject(decrementError)))
-      .catch(insertionError => reject(insertionError)))
-
-  });
+      .catch(prevInsertionError => reject(prevInsertionError)));
+  })
 }
 // Issue: if a concurrent order resolves after order insertion, but before order_details insertion, and brings quantity below the threshold,
 // an error is thrown by the database during second orders' details insertion, leaving the database in an inconsistent state.

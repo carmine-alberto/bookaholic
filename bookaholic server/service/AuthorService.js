@@ -49,7 +49,12 @@ exports.getAuthors = function(limit, offset, of) {
       .offset(offset);
 
     query
-    .then(data => resolve(data))
-    .catch(err => reject(err));
+    .then(data =>
+      data
+      ? resolve(data)
+      : Promise
+        .reject("The specified book does not exist in the database")
+        .catch(err => reject(err)))
+    .catch(serverError => reject(serverError));
   });
 }
