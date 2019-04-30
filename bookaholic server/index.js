@@ -9,6 +9,8 @@ const exegesisSwaggerUIPlugin = require("exegesis-plugin-swagger-ui-express");
 
 async function createServer() {
 
+    const port = process.env.PORT || 8080;
+
     const app = express();
 
     const options = {
@@ -51,7 +53,7 @@ async function createServer() {
 
 createServer()
 .then(server => {
-    server.listen(8080);
+    server.listen(port);
     console.log("Listening on port 8080");
 })
 .catch(err => {
