@@ -12,10 +12,10 @@ info:
         url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 
 servers:
-    - url: "https://testing-server-123.herokuapp.com/api"
-      description: "Official API server where the application resides - for clients' consumption"
     - url: "http://localhost:8080/api"
       description: "API run offline - for testing purposes"    
+    - url: "https://testing-server-123.herokuapp.com/api"
+      description: "Official API server where the application resides - for clients' consumption"
 
 tags:
     - name: "Book"
