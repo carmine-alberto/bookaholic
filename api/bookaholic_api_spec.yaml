@@ -15,7 +15,7 @@ servers:
     - url: "https://testing-server-123.herokuapp.com/api"
       description: "Official API server where the application resides - for clients' consumption"
     - url: "http://localhost:8080/api"
-      description: "API run offline - for testing purposes"    
+      description: "API run offline - for testing purposes"
 
 tags:
     - name: "Book"
@@ -1155,6 +1155,7 @@ components:
               type: number
               format: int32
               minimum: 0
+              readOnly: true
           required: [cover_type, price, amount, in_storage]
           example:
             book_id: 1243765890
