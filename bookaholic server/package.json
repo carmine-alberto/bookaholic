@@ -1,0 +1,29 @@
+{
+  "name": "bookaholic-server",
+  "version": "1.0.0",
+  "description": "Server for our HYP project",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "exegesis-plugin-swagger-ui-express": "^1.0.5",
+    "express": "^4.16.4",
+    "exegesis-express": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.16.5",
+    "pg": "^7.10.0",
+    "serve-static": "^1.13.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm install . ; node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carmine-alberto/hyp-project/tree/master/bookaholic%20server"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Carmine Alberto",
+  "license": "ISC"
+}
