@@ -33,7 +33,7 @@ module.exports.getBooks = function getBooks (context) {
 module.exports.getGenres = function getGenres (context) {
   return Promise.resolve(
     Book.getGenres()
-      .then(response => respondWithCode(context, 200, err))
+      .then(response => respondWithCode(context, 200, response))
       .catch(err => respondWithCode(context, 500, err))
     )
 };
@@ -41,7 +41,7 @@ module.exports.getGenres = function getGenres (context) {
 module.exports.getTypes = function getTypes (context) {
   return Promise.resolve(
     Book.getTypes()
-      .then(response => respondWithCode(context, 200, err))
+      .then(response => respondWithCode(context, 200, response))
       .catch(err => respondWithCode(context, 500, err))
     )
 };
