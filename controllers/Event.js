@@ -4,7 +4,7 @@ const Event = require('../service/EventService');
 const respondWithCode = require('../utils/writer.js');
 
 module.exports.getEventById = function getEventById (context) {
-  const event_id = context.params.query.event_id;
+  const event_id = context.params.path.event_id;
 
   return Promise.resolve(
     Event.getEventById(event_id)
