@@ -15,7 +15,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "npm install . ; node index.js"
+    "prestart": "npm install",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

@@ -1,1 +1,1 @@
-web: cd bookaholic\ server && npm start
+web: npm start

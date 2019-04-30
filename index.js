@@ -5,11 +5,11 @@ const path = require('path');
 const jwtAuthenticator = require("./authenticators/JWTAuth.js");
 const serveStatic = require("serve-static");
 const exegesisSwaggerUIPlugin = require("exegesis-plugin-swagger-ui-express");
-
+const serverPort = process.env.PORT || 8080;
 
 async function createServer() {
 
-    const port = process.env.PORT || 8080;
+
 
     const app = express();
 
@@ -53,8 +53,8 @@ async function createServer() {
 
 createServer()
 .then(server => {
-    server.listen(port);
-    console.log("Listening on port 8080");
+    server.listen(serverPort);
+    console.log("Listening on port " + serverPort);
 })
 .catch(err => {
     console.error(err.stack);
