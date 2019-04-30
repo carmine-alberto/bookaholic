@@ -4,8 +4,8 @@ const respondWithCode = require('../utils/writer.js');
 const Author = require('../service/AuthorService');
 
 module.exports.getAuthorById = function getAuthorById (context) {
-  const author_id = context.params.query.author_id;
-
+  const author_id = context.params.path.author_id;
+  
   return Promise.resolve(
     Author.getAuthorById(author_id)
     .then(response => respondWithCode(context, 200, response))
