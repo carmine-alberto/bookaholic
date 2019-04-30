@@ -14,7 +14,7 @@ info:
 servers:
     - url: "http://localhost:8080/api"
       description: "API run offline - for testing purposes"
-    - url: "http://herokuURL:8081/api"
+    - url: "https://testing-server-123.herokuapp.com/api"
       description: "Official API server where the application resides - for clients' consumption"
 
 tags:
