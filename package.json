@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Server for our HYP project",
   "main": "index.js",
+  "private": true,
   "dependencies": {
     "bcrypt": "^3.0.6",
     "exegesis-plugin-swagger-ui-express": "^1.0.5",

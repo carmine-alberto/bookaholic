@@ -563,7 +563,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CartBook"
+              type: object
+              properties:
+                book_id:
+                  type: string
+                  format: book_id
+                cover_type:
+                  type: string
+                  enum: [paperback, hardcover, digital]
+                amount:
+                  type: number
+                  format: int32
+                  minimum: 1
+              required: [book_id, cover_type, amount]
         description: "Contains the details of the book to be added to the cart."
 
       responses:

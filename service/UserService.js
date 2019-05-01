@@ -108,14 +108,14 @@ exports.postToOrders = function(username, address) {
     .from("cart")
     .join("book_details as bd", {"cart.book_id":"bd.book_id", "cart.cover_type": "bd.cover_type"})
     .where("username", username)
-    .then(booksInCart => addOrder(database, booksInCart))
+    .then(booksInCart => addOrder(database, booksInCart, address, username))
     .then((orderId, booksInCart) => addOrderDetails(database, booksInCart, orderId))
     .then(success => resolve(success))
     .catch(error => reject(error));
   });
 };
 
-const addOrder = function(database,booksInCart) {
+const addOrder = function(database,booksInCart, address, username) {
   return new Promise(function(resolve, reject) {
     booksInCart[0]
     ? booksInCart
