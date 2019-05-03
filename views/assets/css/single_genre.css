@@ -342,6 +342,17 @@ input:checked + .slide-container .carousel-controls label {
      display: block; 
 }
 
-input:checked + .slide-container .nav label { display: block; }@charset "utf-8";
-/* CSS Document */
+input:checked + .slide-container .nav label { display: block; }
+
+.book_title {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.book_author {
+	font-weight: lighter;
+	font-size: 12px;
+}
+
+
 
