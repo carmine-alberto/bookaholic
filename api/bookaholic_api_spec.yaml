@@ -94,13 +94,28 @@ paths:
 
       responses:
         '200':
-          description: "Returned when the operation is carried out successfully, along with a set of books as requested through query parameters."
+          description: "Returned when the operation is carried out successfully, along with a set of books as requested through query parameters and, for each, all its authors."
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Book"
+                  allOf:
+                  - $ref: "#/components/schemas/Book"
+                  - type: object
+                    properties:
+                      authors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            author_id:
+                              type: string
+                            author_name:
+                              type: string
+                        minItems: 1
+                        maxItems: 4
+                    required: [authors]
 
         '400':
           $ref: "#/components/responses/400BadRequest"

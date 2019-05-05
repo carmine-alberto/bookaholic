@@ -48,7 +48,7 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
   return new Promise(function(resolve, reject) {
     var query = database
     .select("book_id","title", "cover")
-    .from("book");
+    .from("book")
 
     if (published_after)
       query = query
@@ -89,8 +89,18 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
       .offset(offset);
 
     query
-    .then(data => resolve(data))
-    .catch(err => reject(err));
+    .then(data => {
+      Promise.all(
+        data.map(book => database
+          .select("author.author_id", "author.name as author_name")
+          .from("written_by")
+          .join("author", "written_by.author_id", "author.author_id")
+          .where("written_by.book_id", book.book_id)
+          .then(authors => {book.authors = authors; return book;})
+        ))
+      .then(data => resolve(data))
+      .catch(err => reject(err));
+    })
   })
 }
 /*

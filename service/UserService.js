@@ -117,6 +117,7 @@ exports.postToOrders = function(username, address) {
 
 const addOrder = function(database,booksInCart, address, username) {
   return new Promise(function(resolve, reject) {
+    console.log("inside addOrder"+booksInCart[0]);
     booksInCart[0]
     ? booksInCart
       .reduce((acc, book) => {
@@ -124,20 +125,24 @@ const addOrder = function(database,booksInCart, address, username) {
          acc.status = (acc.status == "pending" && book.quantity > book.in_storage)
                       ? "reservation"
                       : "pending";
+        console.log(address, username);
+
          return acc;
-      }, {total: 0, status: "pending"})
-      .then(order => database
+      }, {total: 0, status: "pending"}) //Il problema sta qui
+      .then(order => {console.log(order);
+         database
          .insert({"status": order.status, "total": order.total, "address": address, "username": username})
          .into("order")
          .returning("order_id")
-         .then(order_id => resolve(order_id, booksInCart))
-         .catch(orderInsertionError => reject(orderInsertionError)))
+         .then(order_id => {console.log(order_id, booksInCart); resolve(order_id, booksInCart)})
+         .catch(orderInsertionError => {console.log("rejected"); reject(orderInsertionError)})})
     : reject("There are no books in your cart!");
   })
 }
 
 const addOrderDetails = function(database, booksInCart, orderId) {
   return new Promise(function(resolve, reject) {
+    console.log("Inside addOrderDetails");
     booksInCart
     .filter(book => book.quantity <= book.in_storage)
     .forEach(bookInStorage => database
