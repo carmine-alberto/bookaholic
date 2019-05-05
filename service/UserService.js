@@ -128,7 +128,7 @@ const addOrder = function(database,booksInCart, address, username) {
         console.log(address, username);
 
          return acc;
-      }, {total: 0, status: "pending"}) //Il problema sta qui
+      }, {total: 0, status: "pending"}) //Il problema sta qui - potrebbe essere dovuto al fatto che l'oggetto non è iterabile, reduce va chiamata su un array.
       .then(order => {console.log(order);
          database
          .insert({"status": order.status, "total": order.total, "address": address, "username": username})
