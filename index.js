@@ -38,6 +38,8 @@ async function createServer() {
 
     app.use(serveStatic(path.join(__dirname, "views")));
 
+    app.use(serveStatic(path.join(__dirname, "views/assets")));
+
     app.use((req, res) => {
         res.status(404).json({message: `Not found`});
     });
