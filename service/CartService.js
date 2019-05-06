@@ -10,16 +10,20 @@ const database = require("./DataLayer.js");
  **/
 exports.editAmount = function(username,itemId,amount) {  //NB: itemId is an object containing book_id and cover_type
   return new Promise(function(resolve, reject) {
-    database("cart")
-    .update("quantity", amount, ["book_id", "cover_type", "quantity as newAmount"])
-    .where("username", username)
-    .andWhere({book_id: itemId.book_id, cover_type: itemId.cover_type})
-    .then(result => {
-      if (result[0])
-        resolve(result[0]);
-      else
-        reject("Resource to edit not found");
-    })
+    var query = amount > 0
+      ? database("cart")
+        .update("quantity", amount, ["book_id", "cover_type", "quantity as new_amount"])
+        .where("username", username)
+        .andWhere({book_id: itemId.book_id, cover_type: itemId.cover_type})
+      : database
+        .del(["book_id", "cover_type", "quantity as old_amount"])
+        .from("cart")
+        .where({"username": username, book_id: itemId.book_id, cover_type: itemId.cover_type})
+
+    query
+    .then(result => result[0]
+        ? resolve(result[0])
+        : reject("Resource to edit not found"))
     .catch(error => reject(error));
   })
 }

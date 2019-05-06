@@ -24,17 +24,16 @@ exports.getOrders = function(username,limit,offset) {
       query = query.offset(offset);
 
     query
-    .map(order => database
-      .select("details.book_id", "title as book_title", "cover_type", "item_price as price", "quantity")
-      .from("details")
-      .join("book", "details.book_id", "book.book_id")
-      .where("order_id", order.order_id)
-      .then(order_details => {
-        order.details = order_details;
-        return order;
-      }))
-    .then(detailedOrders => resolve(detailedOrders))
-    .catch(error => reject(error))
+    .then(data =>
+      Promise.all(
+        data.map(order => database
+          .select("order_details.book_id", "title as book_title", "cover_type", "item_price as price", "quantity")
+          .from("order_details")
+          .join("book", "order_details.book_id", "book.book_id")
+          .where("order_id", order.order_id)
+          .then(order_details => { order.details = order_details; return order; })))
+      .then(detailedOrders => resolve(detailedOrders))
+      .catch(error => reject(error)))
   });
 
   /*to group them all:
@@ -109,9 +108,9 @@ exports.postToOrders = function(username, address) {
     .join("book_details as bd", {"cart.book_id":"bd.book_id", "cart.cover_type": "bd.cover_type"})
     .where("username", username)
     .then(booksInCart => addOrder(database, booksInCart, address, username))
-    .then((orderId, booksInCart) => addOrderDetails(database, booksInCart, orderId))
+    .then(orderDetails => {console.log(orderDetails); return addOrderDetails(database, orderDetails.booksInCart, orderDetails.orderId);})
     .then(success => resolve(success))
-    .catch(error => reject(error));
+    .catch(error => {console.log(error); reject(error)});
   });
 };
 
@@ -120,21 +119,21 @@ const addOrder = function(database,booksInCart, address, username) {
     console.log("inside addOrder"+booksInCart[0]);
     booksInCart[0]
     ? booksInCart
-      .reduce((acc, book) => {
+      .reduce((promise, book) => promise.then(acc => {
          acc.total += book.price;
          acc.status = (acc.status == "pending" && book.quantity > book.in_storage)
                       ? "reservation"
-                      : "pending";
-        console.log(address, username);
+                      : acc.status;
+         console.log(acc);
 
-         return acc;
-      }, {total: 0, status: "pending"}) //Il problema sta qui - potrebbe essere dovuto al fatto che l'oggetto non è iterabile, reduce va chiamata su un array.
+         return Promise.resolve(acc);
+      }), Promise.resolve({total: 0, status: "pending"})) //Il problema sta qui - potrebbe essere dovuto al fatto che l'oggetto non è iterabile, reduce va chiamata su un array.
       .then(order => {console.log(order);
          database
          .insert({"status": order.status, "total": order.total, "address": address, "username": username})
          .into("order")
          .returning("order_id")
-         .then(order_id => {console.log(order_id, booksInCart); resolve(order_id, booksInCart)})
+         .then(order_id => {console.log(order_id, booksInCart); resolve({orderId: order_id[0], booksInCart: booksInCart}); })
          .catch(orderInsertionError => {console.log("rejected"); reject(orderInsertionError)})})
     : reject("There are no books in your cart!");
   })
@@ -142,26 +141,26 @@ const addOrder = function(database,booksInCart, address, username) {
 
 const addOrderDetails = function(database, booksInCart, orderId) {
   return new Promise(function(resolve, reject) {
-    console.log("Inside addOrderDetails");
+    console.log("Inside addOrderDetails "+ orderId);
     booksInCart
     .filter(book => book.quantity <= book.in_storage)
     .forEach(bookInStorage => database
       .insert({"order_id": orderId, "book_id": bookInStorage.book_id, "cover_type": bookInStorage.cover_type, "item_price": bookInStorage.price, "quantity": bookInStorage.quantity})
       .into("order_details")
       .returning(["book_id", "cover_type", "quantity"])
-      .map(returnedInfoAsArray => returnedInfoAsArray[0])
+      .then(returnedInfoAsArray => returnedInfoAsArray[0])
       .then(returnedInfo => database("book_details")
         .decrement("in_storage", returnedInfo.quantity)
         .where({"book_id": returnedInfo.book_id, "cover_type": returnedInfo.cover_type})
-        .then( () => booksInCart
+        .then( () => booksInCart                                                            //TO BE FIXED: i due filter avvengono in parallelo
           .filter(book => book.quantity > book.in_storage)
           .forEach(bookInStorage => database
             .insert({"order_id": orderId, "book_id": bookInStorage.book_id, "cover_type": bookInStorage.cover_type, "item_price": bookInStorage.price, "quantity": bookInStorage.quantity})
             .into("order_details")
-            .catch(insertionError => reject(insertionError)))
-          .then( () => resolve("Order registered successfully!")))
+            .catch(insertionError => reject(insertionError))))
         .catch(decrementError => reject(decrementError)))
       .catch(prevInsertionError => reject(prevInsertionError)));
+      resolve("Order registered successfully!");
   })
 }
 // Issue: if a concurrent order resolves after order insertion, but before order_details insertion, and brings quantity below the threshold,

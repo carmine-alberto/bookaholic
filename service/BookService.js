@@ -89,7 +89,7 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
       .offset(offset);
 
     query
-    .then(data => {
+    .then(data =>
       Promise.all(
         data.map(book => database
           .select("author.author_id", "author.name as author_name")
@@ -99,8 +99,7 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
           .then(authors => {book.authors = authors; return book;})
         ))
       .then(data => resolve(data))
-      .catch(err => reject(err));
-    })
+      .catch(err => reject(err)))
   })
 }
 /*
