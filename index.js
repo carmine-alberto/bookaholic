@@ -36,6 +36,13 @@ async function createServer() {
 
     app.use(exegesisMiddleware);
 
+    /*This endpoint is necessary if we want to make the clicked resource's id available to the page in the URL,
+    * for an easy retrieval of the requested resource from the server through URL parsing.
+    */
+    app.get(/\/(?:books|authors|events)\/\d{8,10}$/, function(req, res) {
+      res.sendFile(path.join(__dirname, "views", req.url.match(/(?:book|author|event)/)[0] + ".html"));
+    })
+
     app.use(serveStatic(path.join(__dirname, "views"), {extensions: ["html"]}));
 
     app.use(serveStatic(path.join(__dirname, "views/assets")));
