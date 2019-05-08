@@ -36,7 +36,7 @@ async function createServer() {
 
     app.use(exegesisMiddleware);
 
-    app.use(serveStatic(path.join(__dirname, "views")));
+    app.use(serveStatic(path.join(__dirname, "views"), {extensions: ["html"]}));
 
     app.use(serveStatic(path.join(__dirname, "views/assets")));
 
