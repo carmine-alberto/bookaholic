@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento senza titolo</title>
+<link rel="stylesheet" href="Events page CSS.css" />
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="Events page 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="Events page 400px.css" />	
+</head>
+
+<body>
+<!--- Top navigation bar --->	
+	
+<div class="content-wrapper">
+  	
+	<div class="navmenu">
+	  
+    <span id="menu"><img src="img/hamburger menu.png" alt="hamburger_menu" width="40px" height="30px"></span>
+    <nav id="navbar" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		
+    <ul class="navbar" id="myNavbar">
+		
+		<li><a href="/" itemprop="url" title="logo"><span itemprop="name">Home</span></a></li>
+		
+		<li id="sub-menu-categories">
+		<span itemprop="name" class="dropdown_title">Types</span>
+        <ul class="sub-menu">
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Family</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Friendship</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Horror</span></a></li>				
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Justice</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Love</span></a></li>				
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Philisophical</span></a></li>	
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">War</span></a></li>	
+		</ul>
+		</li>
+        
+		<li id="sub-menu-genres">
+		<span itemprop="name" class="dropdown_title">Genres</span>
+        <ul class="sub-menu">
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Art &amp; design</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Fiction</span></a></li>		   
+		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Mystery</span></a></li>	
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Non fiction</span></a></li>
+        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Science fiction</span></a></li>	
+		</ul>
+		</li>
+		<li><a href="/" itemprop="url" title="Events"><span itemprop="name">Events</span></a></li>
+		<li><a href="/" itemprop="url" title="Contact us"><span itemprop="name">About us</span></a></li>
+
+
+<li>
+
+		<form action="/search" autocomplete="on" id="search-form" method="get">
+		<input type="text" placeholder="Search here" size="15"/>
+		<div id="search_button"><img src="img/search icon.png" id="search_icon" alt="search icon" width="25px" height="25px"></div>
+    	</form>   	
+
+		</li>			
+				
+        </ul>
+
+</nav>
+	
+	
+		<div class="menu_icons_container">
+		<span class="menu_icons"><img src="img/logo profile.png" alt="logo_profile" width="35px" height="35px" /></span>
+		<span class="menu_icons"><img src="img/logo cart.png" alt="logo_cart" width="35px" height="35px"/></span>	
+		</div>	
+
+</div>
+</div>
+	
+<div style="clear: both;"/>
+	
+<!--- End of Top navigation bar --->	
+<section id="header_section">
+<div class="header_container">	
+<h1 class="header_text">Events</h1>
+<div class="header_box"></div>
+</div>
+
+<ul id="filters_container">
+<li class="filter">
+	
+<div class="dropdown_menu">	
+<h4>From</h4>
+	
+<form>
+ <select id="month_from" name="month">
+  <option value="may">May</option>
+  <option value="june">June</option>
+  <option value="july">July</option>
+  <option value="august">August</option>
+</select>	
+</form>
+	
+</div>	
+</li>
+	
+<li class="filter">
+	
+<h4>To</h4>
+	
+<form>
+ <select id="month_to" name="month">
+  <option value="may">May</option>
+  <option value="june">June</option>
+  <option value="july">July</option>
+  <option value="august">August</option>
+</select>	
+</form>
+
+</li>
+	
+<li class="filter">
+<div class="dropdown_menu">	
+<h4>Where</h4>	
+<form>
+ <select id="type" name="type">
+  <option value="greenwich">Bookaholic Greenwich</option>
+  <option value="camden">Bookaholic Mudchute</option>
+</select>	
+</form>	
+	</div>	
+	</li>	
+</ul>		
+	
+</section>	
+	
+<section id="events">
+
+<div class="event_g">	
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event1_photo">	
+<h4 class="date" id="event1_date">15th May 2019, 5 pm<br><span id="event1_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event1_title">The new mystery literature</h2>
+<h2 class="author" id="event1_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event1_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>
+</div>
+
+<div class="event">		
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event2_photo">	
+<h4 class="date" id="event2_date">15th May 2019, 5 pm<br><span id="event2_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event2_title">The new mystery literature</h2>
+<h2 class="author" id="event2_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event2_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>	
+</div>
+	
+<div class="event_g">	
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event3_photo">	
+<h4 class="date" id="event3_date">15th May 2019, 5 pm<br><span id="event3_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event3_title">The new mystery literature</h2>
+<h2 class="author" id="event3_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event3_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>
+</div>
+
+<div class="event">	
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event4_photo">	
+<h4 class="date" id="event4_date">15th May 2019, 5 pm<br><span id="event4_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event4_title">The new mystery literature</h2>
+<h2 class="author" id="event4_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event4_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>	
+</div>
+
+<div class="event_g">		
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event5_photo">	
+<h4 class="date" id="event5_date">15th May 2019, 5 pm<br><span id="event5_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event5_title">The new mystery literature</h2>
+<h2 class="author" id="event5_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event5_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>		
+</div>	
+	
+<div class="event">		
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event6_photo">	
+<h4 class="date" id="event6_date">15th May 2019, 5 pm<br><span id="event6_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event6_title">The new mystery literature</h2>
+<h2 class="author" id="event6_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event6_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>		
+</div>	
+	
+<div class="event_g">		
+<img src="img/gillian_flynn.jpg" class="event_photo" id="event7_photo">	
+<h4 class="date" id="event7_date">15th May 2019, 5 pm<br><span id="event7_place">Bookaholic Greenwich</span></h4>
+<h2 class="title" id="event7_title">The new mystery literature</h2>
+<h2 class="author" id="event7_author">with Gillian Flynn</h2>	
+<h6 class="description" id="event7_description">You know her stories, either from her books or from the beautiful movies and series that were inspired by them. Gillian Flynn made her stories instant classics, focused on women taking hard decisions, twisted plots and unexpected ending... but what's her secret? How can she make you hold your breath until the last page? Come to this event for the answer.</h6>		
+</div>	
+	
+	
+</section>	
+	
+</body>
+</html>
