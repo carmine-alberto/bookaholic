@@ -3,19 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Cart page</title>
-<link href="/assets/css/cart.css" rel="stylesheet">
+<link href="Cart page CSS.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="Cart page 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="Cart page 400px.css" />
 </head>
 
 <body>
-
-<div class="cart_item" id="cart_item_1">
-
-<div class="close"></div>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+	
+<ul id="cart_items">
+	
+<li class="cart_item" id="cart_item_1">
+	
+<div class="outer">
+  <div class="inner">
+  </div>
+</div>
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book1_title">East of Eden</h2>
 <h4 class="book_author_1" id="book1_author1">John Steinbeck</h4>
@@ -25,9 +32,9 @@
 <h4 class="book_price" id="book1_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_1" name="quantity">
   <option value="1">1</option>
@@ -40,26 +47,30 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
+	
 <div>
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
-</div>
-</div>
+</div>		
+	
+</li>
+	
+	
+<li class="cart_item" id="cart_item_2">
 
-<div class="cart_item" id="cart_item_2">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+<div class="outer">
+  <div class="inner">
+  </div>
+</div>	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book2_title">East of Eden</h2>
 <h4 class="book_author_1" id="book2_author1">John Steinbeck</h4>
@@ -69,9 +80,9 @@
 <h4 class="book_price" id="book2_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_2" name="quantity">
   <option value="1">1</option>
@@ -84,27 +95,30 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
-</div>
-</div>
+</div>	
+	
+</li>
 
+	
+<li class="cart_item" id="cart_item_3">
 
-<div class="cart_item" id="cart_item_3">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+<div class="outer">
+  <div class="inner">
+  </div>
+</div>	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book3_title">East of Eden</h2>
 <h4 class="book_author_1" id="book3_author1">John Steinbeck</h4>
@@ -114,9 +128,9 @@
 <h4 class="book_price" id="book3_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_3" name="quantity">
   <option value="1">1</option>
@@ -129,26 +143,31 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
+	
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
 </div>
+	
+</li>	
+	
+<li class="cart_item" id="cart_item_4">
+
+<div class="outer">
+  <div class="inner">
+  </div>
 </div>
-
-<div class="cart_item" id="cart_item_4">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book4_title">East of Eden</h2>
 <h4 class="book_author_1" id="book4_author1">John Steinbeck</h4>
@@ -158,9 +177,9 @@
 <h4 class="book_price" id="book4_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_4" name="quantity">
   <option value="1">1</option>
@@ -173,26 +192,29 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
+</div>	
+</li>
+	
+<li class="cart_item" id="cart_item_5">
+
+<div class="outer">
+  <div class="inner">
+  </div>
 </div>
-</div>
-
-<div class="cart_item" id="cart_item_5">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book5_title">East of Eden</h2>
 <h4 class="book_author_1" id="book5_author1">John Steinbeck</h4>
@@ -202,9 +224,9 @@
 <h4 class="book_price" id="book5_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_5" name="quantity">
   <option value="1">1</option>
@@ -217,26 +239,30 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
+</div>	
+	
+</li>	
+	
+<li class="cart_item" id="cart_item_6">
+
+<div class="outer">
+  <div class="inner">
+  </div>
 </div>
-</div>
-
-<div class="cart_item" id="cart_item_6">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book6_title">East of Eden</h2>
 <h4 class="book_author_1" id="book6_author1">John Steinbeck</h4>
@@ -246,9 +272,9 @@
 <h4 class="book_price" id="book6_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_6" name="quantity">
   <option value="1">1</option>
@@ -261,26 +287,31 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
+</div>	
+	
+</li>	
+	
+	
+<li class="cart_item" id="cart_item_7">
+
+<div class="outer">
+  <div class="inner">
+  </div>
 </div>
-</div>
-
-<div class="cart_item" id="cart_item_7">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book7_title">East of Eden</h2>
 <h4 class="book_author_1" id="book7_author1">John Steinbeck</h4>
@@ -290,9 +321,9 @@
 <h4 class="book_price" id="book7_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_7" name="quantity">
   <option value="1">1</option>
@@ -305,26 +336,30 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
+</div>	
+	
+</li>	
+	
+<li class="cart_item" id="cart_item_8">
+
+<div class="outer">
+  <div class="inner">
+  </div>
 </div>
-</div>
-
-<div class="cart_item" id="cart_item_8">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book8_title">East of Eden</h2>
 <h4 class="book_author_1" id="book8_author1">John Steinbeck</h4>
@@ -334,9 +369,9 @@
 <h4 class="book_price" id="book8_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_8" name="quantity">
   <option value="1">1</option>
@@ -349,26 +384,30 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
-</div>
-</div>
+</div>	
+	
+</li>	
+	
+<li class="cart_item" id="cart_item_9">
 
-<div class="cart_item" id="cart_item_9">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+<div class="outer">
+  <div class="inner">
+  </div>
+</div>	
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book9_title">East of Eden</h2>
 <h4 class="book_author_1" id="book9_author1">John Steinbeck</h4>
@@ -378,9 +417,9 @@
 <h4 class="book_price" id="book9_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_9" name="quantity">
   <option value="1">1</option>
@@ -393,26 +432,31 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
 </div>
-</div>
+	
+</li>
+	
+	
+<li class="cart_item" id="cart_item_10">
 
-<div class="cart_item" id="cart_item_10">
-
-<a href="#" class="close"></a>
-
-<img class="book_cover" src="/assets/img/east_of_eden.jpeg">
-
+<div class="outer">
+  <div class="inner">
+  </div>
+</div>	
+	
+<img class="book_cover" src="/assets/img/east_of_eden.jpeg">	
+	
 <div class="book_info">
-
+	
 <div class="column">
 <h2 class="book_title" id="book10_title">East of Eden</h2>
 <h4 class="book_author_1" id="book10_author1">John Steinbeck</h4>
@@ -422,9 +466,9 @@
 <h4 class="book_price" id="book10_price">23.79 eur</h4>
 </div>
 
-<div class="column">
+<div class="column">	
 <div class="quantity_menu">
-<h4>Quantity</h4>
+<h4 class="quantity">Quantity</h4>
 <form>
  <select id="quantity_10" name="quantity">
   <option value="1">1</option>
@@ -437,25 +481,28 @@
   <option value="8">8</option>
   <option value="9">9</option>
   <option value="10">10</option>
-</select>
+</select>	
 </form>
 </div>
 </div>
-
-<div>
+	
+<div class="colmn">
 <h4 class="book_subtotal_title">Subtotal</h4>
 <h4 class="book_subtotal">23.99 eur</h4>
 </div>
-</div>
-</div>
-
+</div>	
+</li>	
+	
+	</ul>
+	
 <div id="subtotal">
 <h3>Your order</h3>
+<img src="img/logo cart.png" id="cart" width="70px">
 <h4 id="subtotal_title">Subtotal</h4>
 <h4 id="subtotal_number">23.79 eur</h4>
-<div id="checkout_button">checkout</div>
+<div id="checkout_button">checkout</div>	
 </div>
-
-
+		
+	
 </body>
 </html>
