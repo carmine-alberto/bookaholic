@@ -1,104 +1,34 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Documento senza titolo</title>
-<link href="/assets/css/book.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Single book page</title>
+<link href="/assets/css/book CSS.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/book CSS 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/book CSS 400px.css" />
 </head>
 
 <body>
 
-<!--- Top navigation bar --->
-
-<div class="content-wrapper">
-
-	<div class="navmenu">
-
-    <span id="menu"><img src="/assets/img/hamburger menu.png" alt="hamburger_menu" width="40px" height="30px"></span>
-    <nav id="navbar" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-
-    <ul class="navbar" id="myNavbar">
-
-		<li><a href="/" itemprop="url" title="logo"><span itemprop="name">Home</span></a></li>
-
-		<li id="sub-menu-categories">
-		<span itemprop="name" class="dropdown_title">Types</span>
-        <ul class="sub-menu">
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Family</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Friendship</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Horror</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Justice</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Love</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Philisophical</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">War</span></a></li>
-		</ul>
-		</li>
-
-		<li id="sub-menu-genres">
-		<span itemprop="name" class="dropdown_title">Genres</span>
-        <ul class="sub-menu">
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Art &amp; design</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Fiction</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Mystery</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Non fiction</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Science fiction</span></a></li>
-		</ul>
-		</li>
-		<li><a href="/" itemprop="url" title="Events"><span itemprop="name">Events</span></a></li>
-		<li><a href="/" itemprop="url" title="Contact us"><span itemprop="name">Who we are</span></a></li>
-
-
-<li>
-
-		<form action="/search" autocomplete="on" id="search-form" method="get">
-		<input type="text" placeholder="Search here" size="15"/>
-		<div id="search_button"><img src="/assets/img/search icon.png" id="search_icon" alt="search icon" width="25px" height="25px"></div>
-    	</form>
-
-		</li>
-
-        </ul>
-
-</nav>
-
-
-		<div class="menu_icons_container">
-		<span class="menu_icons"><img src="/assets/img/logo profile.png" alt="logo_profile" width="35px" height="35px" /></span>
-		<span class="menu_icons"><img src="/assets/img/logo cart.png" alt="logo_cart" width="35px" height="35px"/></span>
-		</div>
-
-</div>
-</div>
-
-<div style="clear: both;"/>
-
-<!--- End of Top navigation bar --->
-
-<!-- Book landing page --->
-
 <section id="book_landing_page">
-
-<div id="book_info">
-<img id="book_image" alt="book_cover" src="/assets/img/dear_data.jpeg">
+	
+<div id="book_info">	
+<img id="book_image" alt="book_cover" src="/assets/img/gingerbread.jpeg">
 <h1 id="book_name">Book_name</h1>
 <h2 id="book_author">Book_author</h2>
 <h2 id="book_price">00.00 eur</h2>
 <h5 id="book_resume">For one year, Giorgia Lupi, an Italian living in New York, and Stefanie Posavec, an American in London, mapped the particulars of their daily lives as a series of hand-drawn postcards they exchanged via mail weekly—small portraits as full of emotion as they are data, both mundane and magical. Dear Data reproduces in pinpoint detail the full year's set of cards, front and back, providing a remarkable portrait of two artists connected by their attention to the details of their lives—including complaints, distractions, phone addictions, physical contact, and desires.</h5>
 <div id="add_to_cart_button">add to cart</div>
-</div>
+</div>	
 
 </section>
-
-<!-- End Book landing page --->
-
-
-<!-- Fact sheets and author section --->
-
-<section id="fact_and_author">
+	
+	
+<section id="fact_and_author">	
 <div id="fact_sheet">
-<h4 class="section_title" id="fact_sheet_title">Fact sheet</h4>
+<h4 class="section_title" id="fact_sheet_title">Fact sheet</h4>	
 <div id="fact_sheet_content">
-<div class="column">
+<div class="column">	
 <h4 class="fact_title">Released:</h4>
 <h5 id="release_date">Release_date</h5>
 <h4 class="fact_title">Language</h4>
@@ -106,100 +36,177 @@
 <h4 class="fact_title">Genre</h4>
 <h5 id="book_genre">Book_genre</h5>
 </div>
-<div class="column">
+<div class="column">	
 <h4 class="fact_title">Publisher:</h4>
 <h5 id="book_publisher">Book_publisher</h5>
 <h4 class="fact_title">ISBN</h4>
 <h5 id="isbn">Book_ISBN</h5>
 <h4 class="fact_title">Type of cover</h4>
-<h5 id="type_of_cover_">hardcover</h5>
+<h5 id="type_of_cover">hardcover</h5>
 </div>
 </div>
-</div>
-
+</div>	
+	
 <div id="about_the_author">
-<h4 class="section_title" id="about_the_author_title">About the author</h4>
-<img id="author_image" src="/assets/img/giorgia_lupi.jpeg">
-<h5 id="author_bio">Giorgia Lupi is an information designer, artist and entrepreneur.
-She co-founded Accurat, a data-driven design firm with offices in Milan and New York where she is the Creative Director.
-After receiving her Masters in Architecture, she earned a PhD in Design at Politecnico di Milano...	</h5>
-<div id="read_more_button">read more</div>
+<h4 class="section_title" id="about_the_author_title">About the author</h4>	
+<img id="author_image" src="/assets/img/helen_oyeyemi.jpg">
+<h5 id="author_bio">Helen Oyeyemi is a British writer currently based in Prague. Her first novel, Boy Snow Bird, became an instant success in her home<span id="dots">...</span></h5>
+<div id="author_page_button">go to <br> author's page</div>	
 	</div>
-</section>
+</section>		
+	
+<section id="related_books">	
 
-<!-- END Fact sheets and author section --->
-
-<!-- Related books section --->
-
-<section id="related_books">
-	<h3 class="section_title">
+	
+	<h3 class="section_title" id="related_books_title_mobile">
 Related books
-		</h3>
+		</h3>	
+	
+<div class="scrolling-wrapper">
 
-    <div class="carousel">
+	
+  <div class="card">
+ 	       <img src="/assets/img/chronicles_of_a_radical_hag.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book1_author_1">Book_author_1</h6>
+		   <h6 class="book_author" id="book1_author_2">Book_author_2</h6>	
+		   <h6 class="book_author" id="book1_author_3">Book_author_3</h6>
+		   <h6 class="book_author" id="book1_author_4"><br></h6>
+		   </div>
+		   </div>
+ 
+	
+  <div class="card">
+ 	       <img src="/assets/img/dear_client.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book2_author_1">Book_author_1</h6>
+		   <h6 class="book_author" id="book2_author_2">Book_author_2</h6>	
+		   <h6 class="book_author" id="book2_author_3">Book_author_3</h6>
+		   <h6 class="book_author" id="book2_author_4">Book_author_4</h6>
+		   </div>
+  </div>	
+	
+  <div class="card">
+ 	       <img src="/assets/img/east_of_eden.jpg" class="book_cover">
+		   <div class="caption_container">
+			   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book3_author_1">Book_author_1</h6>
+		   <h6 class="book_author" id="book3_author_2">Book_author_2</h6>	
+		   <h6 class="book_author" id="book3_author_3">Book_author_3</h6>
+		   <h6 class="book_author" id="book3_author_4"><br></h6>
+		   </div>
+  </div>	
+	
+  <div class="card">
+ 	       <img src="/assets/img/what_if_it's_us.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book4_author_1">Book_author_1</h6>
+		   <h6 class="book_author" id="book4_author_2">Book_author_2</h6>	
+		   <h6 class="book_author" id="book4_author_3">Book_author_3</h6>
+		   <h6 class="book_author" id="book4_author_4"><br></h6>
+		   </div>
+  </div>	
+
+  <div class="card">
+ 	       <img src="/assets/img/elsey_come_home.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book5_author_1">Book_author_1</h6>
+		   <h6 class="book_author" id="book5_author_2">Book_author_2</h6>	
+		   <h6 class="book_author" id="book5_author_3"><br></h6>
+		   <h6 class="book_author" id="book5_author_4"><br></h6>
+		   </div>
+  </div>	
+	
+  <div class="card">
+ 	       <img src="/assets/img/the_bell_jar.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book6_author_1">Book_author_1</h6>
+		   <h6 class="book_author" id="book6_author_2"><br></h6>	
+		   <h6 class="book_author" id="book6_author_3"><br></h6>
+		   <h6 class="book_author" id="book6_author_4"><br></h6>
+		   </div>
+  </div>
+	
+</div>
+	
+
+<div class="carousel">
+	<h3 class="section_title" id="related_books_title">
+Related books
+		</h3>		
         <ul class="slides">
             <input type="radio" name="radio-buttons" id="img-1" checked />
+			
     <li class="slide-container">
+		
         <div class="slide-image">
-		<div class="image_and_caption">
- 	       <img src="/assets/img/dear_data.jpeg" id="slide1_img1">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/chronicles_of_a_radical_hag.jpg" id="slide1_img1">
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book1_author1">Book_author</h6>
+   		   <h6 class="book_author" id="book1_author2"><br></h6>
+   		   <h6 class="book_author" id="book1_author3"><br></h6>
+   		   <h6 class="book_author" id="book1_author4"><br></h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/dear_data.jpeg" id="slide1_img2">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/what_if_it's_us.jpg" id="slide1_img2">
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book2_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book2_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book2_author3"><br></h6>
+   		   <h6 class="book_author" id="book2_author4"><br></h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/dear_data.jpeg" id="slide1_img3">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/elsey_come_home.jpg" id="slide1_img3">
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book3_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book3_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book3_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book3_author4">Book author 4</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/dear_data.jpeg" id="slide1_img4">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/east_of_eden.jpg" id="slide1_img4">
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book4_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book4_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book4_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book4_author4">Book author 4</h6>
 			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/dear_data.jpeg" id="slide1_img5">
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/ready_player_one.jpg" id="slide1_img5">
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book5_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book5_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book5_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book5_author4">Book author 4</h6>
 			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/dear_data.jpeg" id="slide1_img6">
-		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
-			</div>
-			</div>
+			</div>			
+		
 </div>
 
 
-<!--- Second slide --->
+<!--- Second slide --->	
 
-
+	
                 <div class="carousel-controls">
                     <label for="img-3" class="prev-slide">
                         <span>&lsaquo;</span>
@@ -209,69 +216,60 @@ Related books
                     </label>
                 </div>
             </li>
-
+			
 <input type="radio" name="radio-buttons" id="img-2" />
             <li class="slide-container">
                 <div class="slide-image">
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img1">
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/kobane.jpg" id="slide2_img1">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img2">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/kobane.jpg" id="slide2_img2">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img3">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/kobane.jpg" id="slide2_img3">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img4">
+			
+		<div class="image_and_caption">	
+ 	       <img src=/assets/"img/kobane.jpg" id="slide2_img4">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img5">
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/kobane.jpg" id="slide2_img5">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img6">
-		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
-			</div>
-			</div>
-
+			</div>							
+			
                 </div>
-
-
-<!--- Third slide --->
-
+				
+				
+<!--- Third slide --->		
+	
                 <div class="carousel-controls">
                     <label for="img-1" class="prev-slide">
                         <span>&lsaquo;</span>
@@ -282,63 +280,56 @@ Related books
                 </div>
             </li>
             <input type="radio" name="radio-buttons" id="img-3" />
-
+	
             <li class="slide-container">
                 <div class="slide-image">
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img1">
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img1">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img2">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img2">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img3">
+			
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img3">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
 			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img4">
+			
+		<div class="/assets/image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" id="slide3_img4">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img5">
+			</div>			
+					
+		<div class="image_and_caption">	
+ 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img5">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_price">Book_price</h6>
 			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img6">
-		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
-			</div>
-			</div>
+			</div>			
+					
                 </div>
+				
                 <div class="carousel-controls">
                     <label for="img-2" class="prev-slide">
                         <span>&lsaquo;</span>
@@ -348,112 +339,107 @@ Related books
                     </label>
                 </div>
             </li>
-
+ 
         </ul>
     </div>
 
-
-</section>
-
-<!-- END related book section --->
+	</section>
 
 
-
-<!-- Reviews section --->
-
+	
+<!-- Reviews section --->		
+	
 <section id="reviews">
-<h4 class="section_title">Reviews</h4>
+<h4 class="section_title" id="reviews_title">Reviews</h4>
 <div id="reviews_container">
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
+	
+<div class="single_review" id="review_1">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_1">Reviewer_name</h5>
+<img class="stars" id="stars_1" src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_1">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_2">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_2">Reviewer_name</h5>
+<img class="stars" id="stars_2" src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_2">Review text review text</h5>	
 </div>
 
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
+<div class="single_review" id="review_3">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_3">Reviewer_name</h5>
+<img class="stars" id="stars_3"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_3">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_4">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_4">Reviewer_name</h5>
+<img class="stars" id="stars_4" src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_4">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_5">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_5">Reviewer_name</h5>
+<img class="stars" id="stars_5"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_5">Review text review text</h5>	
 </div>
 
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
+<div class="single_review" id="review_6">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_6">Reviewer_name</h5>
+<img class="stars"  id="stars_6"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_6">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_7">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_7">Reviewer_name</h5>
+<img class="stars"  id="stars_7"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_7">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_8">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_8">Reviewer_name</h5>
+<img class="stars"  id="stars_8"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_8">Review text review text</h5>	
 </div>
 
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
+<div class="single_review" id="review_9">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_9">Reviewer_name</h5>
+<img class="stars" id="stars_9"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_9">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_10">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_10">Reviewer_name</h5>
+<img class="stars" id="stars_10"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_10">Review text review text</h5>	
+</div>
+	
+<div class="single_review" id="review_11">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_11">Reviewer_name</h5>
+<img class="stars" id="stars_11"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_11">Review text review text</h5>	
 </div>
 
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
+<div class="single_review" id="review_12">
+<img class="review_image" src="/assets/img/user.png">	
+<h5 class="reviewer" id="reviewer_12">Reviewer_name</h5>
+<img class="stars" id="stars_12"  src="/assets/img/5 stelle.png">
+<h5 class="review" id="review_text_12">Review text review text</h5>	
 </div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
+	
 </div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
-</div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
-</div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
-</div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
-</div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
-</div>
-
-<div class="single_review">
-<img class="review_image" src="/assets/img/user.png">
-<h5 class="reviewer">Reviewer_name</h5>
-<img class="stars" src="/assets/img/5 stelle.png">
-<h5 class="review">Review text review text</h5>
-</div>
-
-</div>
-
-</section>
-
-<!-- END Reviews section --->
-
+	
+</section>	
+	
 </body>
 </html>
