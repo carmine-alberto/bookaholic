@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	max-width: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.outer {
+  position: relative;
+  margin: auto;
+  width: 4px;
+  margin-top: 10px;
+  margin-right:20px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 20px;
+  background: #555555;
+}
+
+.inner:before {
+  top: 50%; 
+  transform: rotate(45deg);  
+}
+
+.inner:after {  
+  bottom: 50%;
+  transform: rotate(-45deg);  
+}
+
+
+#checkout_button {
+  width:60px;
+  height: 15px;
+  background-color: #D9D9D9;
+  color: #000000;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 40px;
+  position:absolute; 
+  right:120px;
+  top:150px;
+  background-color: #f3f3f3;
+}
+
+.cart_item {
+  border: 10px solid #ffffff;
+  border-radius: 30px;
+  margin-top: -1px; 
+  background-color: #f3f3f3;
+  width:280px;
+  height: 100px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+
+.book_info {
+	width:400px;
+	padding-top:2px;
+	padding-bottom: 10px;
+	line-height: 1.2;
+}
+
+.book_cover {
+	width:80px;
+	margin:10px 10px 0px 10px;
+	float:left;
+  	box-shadow: 3px 3px 5px #979797;
+	display: none;
+}
+
+.book_price {
+	font-weight: 30;
+	font-size: 12px;
+	display: none
+}
+
+.quantity {
+	font-size: 12px;
+}
+
+.book_subtotal_title {
+	font-size: 12px;
+}
+
+select {
+  width: 60px;
+  height: 20px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "F37 Ginger";
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.book_info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.book_title {
+	font-size: 14px;
+}
+
+.book_author_1 {
+	font-size: 12px;
+}
+
+.book_subtotal {
+	font-weight: lighter;
+	font-size: 12px;
+}
+
+#subtotal {
+	width:365px;
+	height:140px;
+	text-align: center;
+	padding:0;
+	margin:0 auto;
+	position: absolute;
+	top:35px;
+	right:15px;
+	background-color: #ffffff;
+}
+
+#subtotal_number {
+	font-weight: 30;
+}
+
+#cart {
+	display:none
+}
+
+#cart_items {
+	margin-top:250px;
+	margin-bottom: 30px;
+}
+
+#checkout_button:hover{
+	background-color: #ef4444;
+}

@@ -3,6 +3,9 @@
 
 body {
 	font-family: 'F37 Ginger';
+	max-width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 h1 {
@@ -25,6 +28,9 @@ h5 {
 	padding-top:20px;
 	font-size: 26px;
 }
+
+
+
 
 /* CSS Main Menu */
 
@@ -248,23 +254,26 @@ background-color: rgba(225,225,225,1.00);
 }
 
 #add_to_cart_button {
-  width:90px;
-  height: 20px;
+  width:180px;
+  height: 50px;
   background-color: #D9D9D9;
   color: #000000;
   border: none;
-  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #fact_and_author {
-height: 350px
+height: 350px;
+margin-bottom: 80px
 }
 
 .fact_title {
@@ -316,26 +325,30 @@ height: 350px
 }
 
 
-#read_more_button {
-  width:90px;
-  height: 20px;
+#author_page_button {
+  text-transform:uppercase;
+  width:150px;
+  height: 35px;
   background-color: #D9D9D9;
   color: #000000;
   border: none;
-  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: bolder;
   margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 40px;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 #related_books {
-	height: 700px;
+	height: 645px;
+	margin-top: 100px;
 }
 
 #related_books_list {
@@ -345,7 +358,7 @@ list-style-type:none;
 
 .carousel {
 	position: absolute;
-	top:1200px;
+	top:1190px;
 	left:20px;	
 	align-content: center;
 }
@@ -395,7 +408,7 @@ ul.slides input {
 .slide-image img {
     width: 73%;
     height: 73%;
-	margin-left: 25px;
+	margin-left: 75px;
 	margin-top: 10px;
 }
 
@@ -404,6 +417,7 @@ ul.slides input {
     bottom: 770px;
     left: 0;
     right: 0;
+	width:1400px;
     z-index: 999;
     font-size: 100px;
     line-height: 600px;
@@ -414,7 +428,7 @@ ul.slides input {
     display: none;
     position: absolute;
     padding: 0 20px;
-    opacity: 0;
+    opacity: 100;
     transition: opacity .2s;
     cursor: pointer;
 }
@@ -441,10 +455,11 @@ ul.slides input {
 
 .caption_container {
 	text-align: center;
+	padding-left:80px
 }
 
 div.image_and_caption {
-  width: 80%;
+  width: 90%;
   margin-bottom: 25px;
   display: inline-block;
 }
@@ -467,24 +482,52 @@ input:checked + .slide-container .carousel-controls label {
 input:checked + .slide-container .nav label { display: block; }
 
 
-
-.gift_cards {
-	width:25%;
-	display: inline-grid;
-	margin: 10px 60px 20px 40px;
-
-}
-
-.text_container {
-	text-align: center;
-	font-size: 14px;
-	margin: 0px 40px 20px 30px;	
-	width:400px;
-}
-
 #related_books {
 	background-color: #F3F3F3;
-	height: 500px;
+	height: 620px;
+	margin-top: 100px;
+}
+
+#related_books_title {
+	margin-left:45px;
+}
+
+
+.scrolling-wrapper {
+  height: 550px; 
+  width: 768px;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top:1220px;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+	opacity: 0;
+}
+
+  .card {
+    display: inline-block;
+  }
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+div.image_and_caption {
+  margin-bottom: 25px;
+  margin-left: 30px;
+}
+
+.book_cover {
+  height: 294px;
+  width: 216px;
+}
+
+.caption_container {
+	text-align: center
 }
 
 #reviews_container {
@@ -512,8 +555,18 @@ height: 20%;
 margin: 0px 10px 0px 5px;
 }
 
+#reviews {
+	margin-top: 50px;
+}
+
+#reviews_title {
+	margin-left: 60px;
+}
+
 .review {
 margin: 0px 10px 0px 5px;
 }
+
+
 
 
