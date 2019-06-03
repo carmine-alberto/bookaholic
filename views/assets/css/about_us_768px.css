@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: "F37 Ginger";
+}
+
+
+.section_title {
+	font: bolder;
+	font-size: 20px;
+	font-weight: bolder;
+	padding-left: 25px;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	clear: left;
+}
+
+.header_container {	
+	height: 150px;
+	background-color: white;
+	z-index: -100;
+}
+
+.header_text {
+	z-index: 100;
+	text-align: center;
+	position: absolute;
+	top: 40px;
+	left: 335px;
+	font-weight: bolder;
+	font-size: 40px;
+}
+
+.header_box {
+  width: 185px; 
+  height: 20px; 
+  background-color: #EF4444;
+  position: absolute;
+  bottom: 520px;
+  left:325px;
+  z-index: inherit;
+}
+
+#who_we_are_section {
+	background-color: #FFFFFF;
+	height: 300px;
+}
+
+#about_us_photo {
+   margin:0 -40%;
+   width:170%;
+}
+
+#faq_section {
+	background-color: #F3F3F3;
+	height: 570px;
+}
+
+.faq {
+	font-weight: normal;
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 700px;
+	font-size: 16px;
+}
+
+.faq_answer {
+	font-weight: lighter;
+	padding-left: 25px;
+	padding-bottom: 25px;
+	font-size: 16px;
+}
+
+#contacts {
+	background-color: #FFFFFF;
+	height: 500px;	
+}
+
+#who_we_are_text {
+	text-align: center;
+	width: 650px;
+	position: absolute;
+	left:60px;
+	font-weight: lighter;
+	font-size: 16px
+}
+
+#map {
+   margin:0 0%;
+   width:700px;
+   height: 460px;
+   float:left;
+   padding-left: 25px;
+   padding-right: 25px;
+}
+
+
+
+
+#contacts_greenwich_container, #contacts_camden_container {
+	background-color: #ef4444;
+	margin-left:90px;
+	margin-top:30px;
+	padding-top: 15px;
+	float:left;
+	width:550px;
+	height: 500px;
+}
+
+.timetable {
+  word-spacing: 60px;
+  margin-top: 20px;
+
+}
+
+#contacts_greenwich_rows, #contacts_camden_rows {
+  padding-left: 120px;
+  margin-bottom:30px;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding-left: 120px;
+  padding-bottom: 40px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.shop_name {
+	font-weight: bolder;
+}
+
+
