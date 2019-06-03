@@ -4,400 +4,173 @@
 <meta charset="utf-8">
 <title>Documento senza titolo</title>
 <link href="/assets/css/single_genre.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/single_genre_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/single_genre_400px.css" />
 
 </head>
 
 <body>
+	
 
-<!--- Top navigation bar --->
+	
+<!--- Title section --->	
 
-<div class="content-wrapper">
-
-	<div class="navmenu">
-
-    <span id="menu"><img src="/assets/img/hamburger menu.png" alt="hamburger_menu" width="40px" height="30px"></span>
-    <nav id="navbar" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-
-    <ul class="navbar" id="myNavbar">
-
-		<li><a href="/" itemprop="url" title="logo"><span itemprop="name">Home</span></a></li>
-
-		<li id="sub-menu-categories">
-		<span itemprop="name" class="dropdown_title">Types</span>
-        <ul class="sub-menu">
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Family</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Friendship</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Horror</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Justice</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Love</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Philisophical</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">War</span></a></li>
-		</ul>
-		</li>
-
-		<li id="sub-menu-genres">
-		<span itemprop="name" class="dropdown_title">Genres</span>
-        <ul class="sub-menu">
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Art &amp; design</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Fiction</span></a></li>
-		<li><a href="/" itemprop="url" title="Home"><span itemprop="name">Mystery</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Non fiction</span></a></li>
-        <li><a href="/" itemprop="url" title="Home"><span itemprop="name">Science fiction</span></a></li>
-		</ul>
-		</li>
-		<li><a href="/" itemprop="url" title="Events"><span itemprop="name">Events</span></a></li>
-		<li><a href="/" itemprop="url" title="Contact us"><span itemprop="name">Who we are</span></a></li>
-
-
-<li>
-
-		<form action="/search" autocomplete="on" id="search-form" method="get">
-		<input type="text" placeholder="Search here" size="15"/>
-		<div id="search_button"><img src="/assets/img/search icon.png" id="search_icon" alt="search icon" width="25px" height="25px"></div>
-    	</form>
-
-		</li>
-
-        </ul>
-
-</nav>
-
-
-		<div class="menu_icons_container">
-		<span class="menu_icons"><img src="/assets/img/logo profile.png" alt="logo_profile" width="35px" height="35px" /></span>
-		<span class="menu_icons"><img src="/assets/img/logo cart.png" alt="logo_cart" width="35px" height="35px"/></span>
-		</div>
-
+<section id="header_section">
+<div class="header_container">	
+<h1 class="header_text">Single genre</h1>	
 </div>
-</div>
-
-<div style="clear: both;"/>
-
-<!--- End of Top navigation bar --->
-
-<!--- Title section --->
-
-<section id="title_section">
-
-<h2 id="single_genre">Single_genre</h2>
-
+</section>	
+	
 <ul id="filters_container">
 <li class="filter">
-
-<div class="dropdown_menu">
-<h4>Published in</h4>
-
+	
+<div class="dropdown_menu">	
+<h4 class="filter_title">Published in</h4>
+	
 <form>
  <select id="year" name="year">
-  <option value="1960">1960</option>
+  <option value="1960" class="dropdown_first">1960</option>
   <option value="1970">1970</option>
   <option value="1980">1980</option>
   <option value="1990">1990</option>
   <option value="2000">2000</option>
   <option value="2010">2010</option>
-</select>
+</select>	
 </form>
-
-</div>
+	
+</div>					  
 </li>
-
+	
 <li class="filter">
-<div class="dropdown_menu">
-<h4>Type</h4>
+<div class="dropdown_menu">	
+<h4 class="filter_title">Theme</h4>	
 <form>
  <select id="type" name="type">
-  <option value="family">Family</option>
+  <option value="family" class="dropdown_first">Family</option>
   <option value="friendship">Friendship</option>
   <option value="horror">Horror</option>
   <option value="justice">Justice</option>
   <option value="love">Love</option>
   <option value="philosophical">Philosophical</option>
-</select>
-</form>
-	</div>
-	</li>
+</select>	
+</form>	
+	</div>	
+	</li>	
 
 <li class="filter">
 <h4 class="container">suggested by us
   <input type="checkbox">
   <span class="checkmark"></span>
 </h4>
-</li>
+</li>	
 
-<li class="filter">
+<li class="filter">	
 <h4 class="container">available
   <input type="checkbox">
   <span class="checkmark"></span>
 </h4>
-</li>
-</ul>
+</li>	
+</ul>	
 	</section>
-
+	
 <!--- End of Title section --->
+	
+	<div class="books_containers">
+		
+<div class="book">	
+<img src="/assets/css/img/good_omens.jpg" class="book_cover" id="book1_cover">	
+<h4 class="book_title" id="book1_title">Good Omens</h4>
+<h6 class="book_author" id="book1_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book1_author2"><br></h6>
+<h6 class="book_author" id="book1_author3"><br></h6>
+<h6 class="book_author" id="book1_author4"><br></h6>
 
-
-<!--- First slide --->
-
-
-<section id="latest_products">
-
-    <div class="carousel">
-        <ul class="slides">
-            <input type="radio" name="radio-buttons" id="img-1" checked />
-    <li class="slide-container">
-        <div class="slide-image">
-		<div class="image_and_caption">
- 	       <img src="/assets/img/cromorama.jpeg" id="slide1_img1">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/cromorama.jpeg" id="slide1_img2">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/cromorama.jpeg" id="slide1_img3">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/cromorama.jpeg" id="slide1_img4">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/cromorama.jpeg" id="slide1_img5">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/cromorama.jpeg" id="slide1_img6">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
 </div>
+	
+<div class="book">	
+<img src="/assets/css/img/chronicles_of_a_radical_hag.jpg" class="book_cover" id="book2_cover">	
+<h4 class="book_title" id="book2_title">Good Omens</h4>
+<h6 class="book_author" id="book2_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book2_author2"><br></h6>
+<h6 class="book_author" id="book2_author3"><br></h6>
+<h6 class="book_author" id="book2_author4"><br></h6>
+</div>
+		
+<div class="book">	
+<img src="/assets/css/img/joyful.jpg" class="book_cover" id="book3_cover">	
+<h4 class="book_title" id="book3_title">Good Omens</h4>
+<h6 class="book_author" id="book3_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book3_author2">Neil Gaiman</h6>
+<h6 class="book_author" id="book3_author3"><br></h6>
+<h6 class="book_author" id="book3_author4"><br></h6>
+</div>		
+		
+<div class="book">	
+<img src="/assets/css/img/good_omens.jpg" class="book_cover" id="book4_cover">	
+<h4 class="book_title" id="book4_title">Good Omens</h4>
+<h6 class="book_author" id="book4_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book4_author2"><br></h6>
+<h6 class="book_author" id="book4_author3"><br></h6>
+<h6 class="book_author" id="book4_author4"><br></h6>
 
+</div>
+	
+<div class="book">	
+<img src="/assets/css/img/da_cosa_nasce_cosa.jpg" class="book_cover" id="book5_cover">	
+<h4 class="book_title" id="book5_title">Good Omens</h4>
+<h6 class="book_author" id="book5_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book5_author2"><br></h6>
+<h6 class="book_author" id="book5_author3"><br></h6>
+<h6 class="book_author" id="book5_author4"><br></h6>
+</div>
+		
+<div class="book">	
+<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book6_cover">	
+<h4 class="book_title" id="book6_title">Good Omens</h4>
+<h6 class="book_author" id="book6_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book6_author2"><br></h6>
+<h6 class="book_author" id="book6_author3"><br></h6>
+<h6 class="book_author" id="book6_author4"><br></h6>
+</div>	
+		
+<div class="book">	
+<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book7_cover">	
+<h4 class="book_title" id="book7_title">Good Omens</h4>
+<h6 class="book_author" id="book7_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book7_author2"><br></h6>
+<h6 class="book_author" id="book7_author3"><br></h6>
+<h6 class="book_author" id="book7_author4"><br></h6>
+</div>	
+		
+<div class="book">	
+<img src="/assets/css/img/da_cosa_nasce_cosa.jpg" class="book_cover" id="book8_cover">	
+<h4 class="book_title" id="book8_title">Good Omens</h4>
+<h6 class="book_author" id="book8_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book8_author2"><br></h6>
+<h6 class="book_author" id="book8_author3"><br></h6>
+<h6 class="book_author" id="book8_author4"><br></h6>
+</div>
+		
+<div class="book">	
+<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book9_cover">	
+<h4 class="book_title" id="book9_title">Good Omens</h4>
+<h6 class="book_author" id="book9_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book9_author2"><br></h6>
+<h6 class="book_author" id="book9_author3"><br></h6>
+<h6 class="book_author" id="book9_author4"><br></h6>
+</div>	
+		
+<div class="book">	
+<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book10_cover">	
+<h4 class="book_title" id="book10_title">Good Omens</h4>
+<h6 class="book_author" id="book10_author1">Neil Gaiman</h6>
+<h6 class="book_author" id="book10_author2"><br></h6>
+<h6 class="book_author" id="book10_author3"><br></h6>
+<h6 class="book_author" id="book10_author4"><br></h6>
+</div>			
+	
+	</div>
 
-<!--- Second slide --->
-
-
-                <div class="carousel-controls">
-                    <label for="img-3" class="prev-slide">
-                        <span>&lsaquo;</span>
-                    </label>
-                    <label for="img-2" class="next-slide">
-                      <span>&rsaquo;</span>
-                    </label>
-                </div>
-            </li>
-
-<input type="radio" name="radio-buttons" id="img-2" />
-            <li class="slide-container">
-                <div class="slide-image">
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img1">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img2">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img3">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img4">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img5">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/kobane_calling.jpeg" id="slide2_img6">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-                </div>
-
-
-<!--- Third slide --->
-
-                <div class="carousel-controls">
-                    <label for="img-1" class="prev-slide">
-                        <span>&lsaquo;</span>
-                    </label>
-                    <label for="img-3" class="next-slide">
-                        <span>&rsaquo;</span>
-                    </label>
-                </div>
-            </li>
-            <input type="radio" name="radio-buttons" id="img-3" />
-
-            <li class="slide-container">
-                <div class="slide-image">
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img1">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img2">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img3">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img4">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img5">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-
-		<div class="image_and_caption">
- 	       <img src="/assets/img/le ragazze.jpeg" id="slide3_img6">
-		   <div class="caption_container">
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_author">Book_author_1</h6>
-		   <h6 class="book_author">Book_author_2</h6>
-		   <h6 class="book_author">Book_author_3</h6>
-		   <h6 class="book_author">Book_author_4</h6>
-			</div>
-			</div>
-                </div>
-                <div class="carousel-controls">
-                    <label for="img-2" class="prev-slide">
-                        <span>&lsaquo;</span>
-                    </label>
-                    <label for="img-1" class="next-slide">
-                        <span>&rsaquo;</span>
-                    </label>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-
-
-</section>
-
-<!--- End of latest products section --->
-
-
+	
 </body>
 </html>
