@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family: 'F37 Ginger';
+	overflow-x: hidden;
+	overflow-y: scroll;}
+
+h5 {
+	font-weight: 1000;
+	font-weight: bolder;
+}
+
+h6 {
+	color: #555555;
+	font-weight: lighter;
+}
+
+.section_title {
+	padding-left:30px;
+	padding-top:20px;
+	font-size: 26px;
+}
+
+
+#author_intro {
+	background-color: #F3F3F3;
+	height: 630px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#author_name {
+	font-size: 24px;
+	margin:30px;
+}
+
+#author_photo {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: 35px;
+	float: left;
+    border: solid #EF4444;
+  	border-width: 1px 10px 10px 1px;
+}
+
+#author_bio_title {
+	margin: 10px 10px 10px 50px;
+	font-size: 18px;
+}
+
+#author_bio {
+	padding: 20px 50px 50px 75px;
+	font-size: 16px;
+	width: 330px;
+}
+
+
+.authored_books_section {
+	height: 520px;	
+	padding:10px;
+}
+
+.books_containers {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  position: absolute;
+  top:700px;
+  left:20px;
+  margin-top:120px;
+}
+
+.book {
+  font-size: 18px;
+  text-align: center;
+  margin-left: 30px;
+  padding-bottom:15px;
+}
+
+.book_cover {
+	width:145px;
+	height: 190px;
+	opacity:1;
+	cursor: pointer;
+}
+
+.book_cover:hover{
+	opacity:0.8;
+}
+
+.book_title {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.book_author {
+	font-weight: lighter;
+	font-size: 12px;
+}
+
+#related_events {
+	height: 460px;
+	background-color: #f3f3f3;
+	padding-bottom: 80px;
+}
+
+#event_photo {
+	float:left;
+	width:300px;
+	height:300px;
+	margin:0px 30px 160px 30px;
+	border: solid #EF4444;
+  	border-width: 1px 10px 10px 1px;
+}
+
+#event_date {
+	font-size: 18px;
+}
+
+#event_description {
+	width:700px;
+	font-size: 16px;
+}
+
+
+
+
