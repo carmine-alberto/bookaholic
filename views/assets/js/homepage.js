@@ -1,4 +1,4 @@
-const host = "https://testing-server-123.herokuapp.com";
+const host = "https://bookaholic.herokuapp.com";
 
 
   var latestProducts = $("#latest_products .MagicScroll");
