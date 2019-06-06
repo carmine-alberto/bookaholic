@@ -14,7 +14,7 @@ const host = "https://testing-server-123.herokuapp.com";
       console.log(latestProducts);
       latestProducts
       .append('<div>' +
-                '<a href="/books/' + book["book_id"] +'">' +
+                '<a href="/book?id=' + book["book_id"] +'">' +
                  '<img src="/assets/img/'+ book["cover"] +'" style="height: 300px">' +
                  '</a>' +
           		   '<div>' +
@@ -35,7 +35,7 @@ const host = "https://testing-server-123.herokuapp.com";
         console.log(ourSuggestions);
         ourSuggestions
         .append('<div>' +
-                  '<a href="/books/' + book["book_id"] +'">' +
+                  '<a href="/book?id=' + book["book_id"] +'">' +
                    '<img src="/assets/img/'+ book["cover"] +'" style="height: 300px">' +
                    '</a>' +
             		   '<div>' +
