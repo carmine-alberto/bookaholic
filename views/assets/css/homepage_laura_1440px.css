@@ -1,0 +1,316 @@
+body {
+	font-family: "F37 Ginger";
+	background-color: #ef4444;
+	max-width: 1440px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.scrolling-wrapper {
+	display: none;
+}
+
+
+#landing_page {
+	background: none;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: column;
+    height: 700px;
+    -webkit-box-align: center;
+       -ms-flex-align: center;
+          align-items: center;
+    -webkit-box-pack: center;
+       -ms-flex-pack: center;
+     justify-content: center;
+}
+
+
+#landing_title_container {
+	position: relative;
+	z-index: -100;	
+}
+
+#landing_title_box {
+  width: 570px; 
+  height: 40px; 
+  background: #FFFFFF;
+  position: absolute;
+  bottom: 75px;
+  left: -25px;
+  z-index: inherit;
+}
+
+#landing_title_big {
+	z-index: 100;
+	position: inherit;
+	font-size: 100px;
+	text-align: center;
+	font-family: "F37 Ginger";
+	font-weight: bolder;
+}
+
+#landing_title_small {
+	z-index: 100;
+	text-align: center;
+	position: absolute;
+	top: -20px;
+	left: 140px;
+	font-family: "F37 Ginger";
+	font-weight: bolder;
+	font-size: 40px;
+}
+
+.section_title {
+	font: bolder;
+	font-size: 20px;
+	font-weight: bolder;
+	padding-left: 25px;
+	clear: left;
+}
+
+#landing_subtitle {
+	color: rgba(0,0,0,0.8);
+	text-align: center;
+	font-family: "F37 Ginger";
+	font-style: italic;
+	font-size: 30px;
+	position: absolute;
+	top: 430px;
+}
+
+#our_suggestions {
+	background-color: #ffffff;
+    height: 550px;
+	width: 1500px;
+	padding:20px;
+	position: absolute;
+	left: 0px;
+}
+
+#freshly_released {
+	background-color: #f3f3f3;
+    height: 650px;
+	width: 1500px;
+	padding:20px;
+	position: absolute;
+	left: 0px;
+	top:1297px;
+}
+
+#gift_cards {
+	height:400px;
+}
+
+
+.carousel {
+	align-content: center;
+	width: 1400px;
+}
+
+#carousel_freshly_released {
+	position:absolute;
+	top:120px;
+}
+
+#carousel_our_suggestions {
+	z-index: 999;
+	background-color: green;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none; 
+}
+
+
+.slide-container { 
+    display: inline-block; 
+	white-space: nowrap;
+	width:1400px;
+}
+
+.slide-image {
+    display: inherit;
+    position: absolute;
+	bottom:80px;
+    width: 300px;
+    height: 260px;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}   
+
+.slide-image img {
+    width: 230px;
+    height: 300px;
+	margin-left: 100px;
+	margin-top: 10px;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 770px;
+    left: 0;
+    right: 0;
+	width:1400px;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: black;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 100;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.caption_container {
+	text-align: center;
+	padding-left:140px
+}
+
+div.image_and_caption {
+  width: 90%;
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+
+#related_books {
+	background-color: #F3F3F3;
+	height: 620px;
+	margin-top: 100px;
+}
+
+#related_books_title {
+	margin-left:45px;
+}
+
+
+.scrolling-wrapper {
+  height: 550px; 
+  width: 768px;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top:1220px;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+	opacity: 0;
+}
+
+  .card {
+    display: inline-block;
+  }
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+div.image_and_caption {
+  margin-bottom: 25px;
+  margin-left: 30px;
+}
+
+.book_cover {
+  height: 294px;
+  width: 216px;
+}
+
+.caption_container {
+	text-align: center
+}
+
+
+#gift_cards_section {
+	padding-top: 10px;
+	background-color: #FFFFFF;
+	position: absolute;
+	top:1986px;
+	left: 0px;
+}
+
+.gift_cards {
+	width:25%;
+	display: inline-grid;
+	margin: 10px 60px 20px 40px;
+
+}
+
+.text_container {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 100;
+	margin: 0px 40px 20px 30px;	
+	width:400px;
+}
+	
+		
+	
+
+
+
