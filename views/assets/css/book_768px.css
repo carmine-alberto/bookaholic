@@ -28,7 +28,6 @@ h5 {
 }
 
 
-
 #book_landing_page {
 	background-color: #F3F3F3;
 	height: 680px;
@@ -107,7 +106,7 @@ h5 {
   overflow-y: hidden;
   white-space: nowrap;
   position: absolute;
-  top:1300px;
+  top:1520px;
   -webkit-overflow-scrolling: touch;
   z-index: 999;
   opacity: 1;
@@ -130,18 +129,20 @@ div.image_and_caption {
 }
 
 .book_cover {
-  height: 294px;
-  width: 216px;
+  height: 244px;
+  width: 166px;
+	margin-left: 10px;
+	margin-right: 50px;
 }
 
 .caption_container {
 	text-align: center;
-	padding-right: 110px;
+	padding-right: 80px;
 }
 
 
 #fact_and_author {
-height: 420px;
+height: 650px;
 overflow-x: hidden;
 overflow-y:scroll;
 max-width: 100%;
@@ -180,10 +181,10 @@ max-width: 100%;
 }
 
 #about_the_author {
-	width:550px;
+	width:350px;
 	margin-left: 15px;
 	position: absolute;
-	top:700px;
+	top:605px;
 	left:350px;
 }
 
@@ -232,7 +233,7 @@ max-width: 100%;
 
 #reviews {
   position: absolute;
-  top:1790px;
+  top:2000px;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
