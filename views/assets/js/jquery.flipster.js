@@ -57,11 +57,11 @@
         transformSupport = checkStyleSupport('transform'),
 
         defaults = {
-            itemContainer: '.my-flipster',
+            itemContainer: 'ul',
             // [string|object]
             // Selector for the container of the flippin' items.
 
-            itemSelector: '.flipster_item',
+            itemSelector: 'li',
             // [string|object]
             // Selector for children of `itemContainer` to flip
 
@@ -709,4 +709,6 @@
             if ( !self.hasClass(classes.active) ) { init(); }
         });
     };
+    $("head").append('<script src="/assets/js/launchFlipster.js" defer></script>'); //Call added 
+
 })(jQuery, window);
