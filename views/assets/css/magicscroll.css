@@ -101,6 +101,7 @@ body.mcs-dragging button.mcs-button.mcs-horizontal.mcs-button-arrow {
 /*.mcs-item img,*/
 .mcs-item .mcs-caption {
     display: inline-block;
+    color: black;
 }
 
 .MagicScroll .mcs-item img {
@@ -1315,7 +1316,7 @@ body.mcs-dragging button.mcs-button.mcs-horizontal.mcs-button-arrow {
 
 /* Caption */
 .mcs-item .mcs-caption {
-    color: white;
+    color: black;
     padding: 5px 0;
     font: normal 9pt/1.2em 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, sans-serif;
     text-rendering: geometricPrecision;
