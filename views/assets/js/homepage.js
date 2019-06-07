@@ -1,8 +1,8 @@
 const host = "https://bookaholic.herokuapp.com";
 
 
-  var latestProducts = $("#latest_products .MagicScroll");
-  var ourSuggestions = $("#our_suggestions .MagicScroll");
+  var latestProducts = $("#latest_products .my-flipster");
+  var ourSuggestions = $("#our_suggestions .my-flipster");
 
   //Get and inject books into "Latest Products"
   $.get(host + "/api/books?published_after=2000-01-01")
@@ -13,7 +13,7 @@ const host = "https://bookaholic.herokuapp.com";
       console.log(book);
       console.log(latestProducts);
       latestProducts
-      .append('<div>' +
+      .append('<div class="flipper_item">' +
                 '<a href="/book?id=' + book["book_id"] +'">' +
                  '<img src="/assets/img/'+ book["cover"] +'" style="height: 300px">' +
                  '</a>' +
@@ -47,8 +47,12 @@ const host = "https://bookaholic.herokuapp.com";
       });
       //Inject the magicscroll code; this is necessary to avoid race conditions (magiscroll loaded before data is served and injected) -- IMPORTANT
       var script = document.createElement('script');
-      script.src = "/assets/js/magicscroll.js";
+      script.src = "/assets/js/jquery.flipster.js";
       script.defer = true;
+      document.head.appendChild(script);
+      script = document.createElement('script');
+      script.defer = true;
+      script.html( "$('.my-flipster').flipster();");
       document.head.appendChild(script);
     })
 })
