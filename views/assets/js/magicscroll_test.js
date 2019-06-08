@@ -6,7 +6,7 @@ const appendData = function(selector, data) {
   .append('<a href="/book?id=' + data["book_id"] +'">' +
             '<img src="/assets/img/'+ data["cover"] +'" height="300px" width="150px">' +
             '<span>' + data["title"] + '<br>' +
-            extractAuthors(data["authors"]) +
+              extractAuthors(data["authors"]) +
             '</span>' +
           '</a>'
   );
@@ -29,7 +29,7 @@ const extractAuthors = function(authors) {
 var main = $(".MagicScroll");
 var script = document.createElement('script');
 
-fetch(host + "/api/books?published_after=2013-01-10")
+fetch(host + "/api/books?published_after=2013-01-10&limit=52&offset=0")
 .then(response => response.json())
 .then(data => data
   .forEach(book => appendData(main, book))

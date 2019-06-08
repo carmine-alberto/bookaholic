@@ -1316,10 +1316,12 @@ body.mcs-dragging button.mcs-button.mcs-horizontal.mcs-button-arrow {
 
 /* Caption */
 .mcs-item .mcs-caption {
-    color: black;
+    color: #f46464;
     padding: 5px 0;
-    font: normal 9pt/1.2em 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, sans-serif;
+    font: normal 12pt/1.5em 'F37 Ginger', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, sans-serif;
     text-rendering: geometricPrecision;
+    font-weight: bold;
+    font-variant: small-caps;
 }
 .MagicScroll[data-mode="scroll"] .mcs-item .mcs-caption,
 .MagicScroll[data-mode="animation"] .mcs-item .mcs-caption {
@@ -1583,6 +1585,9 @@ body.mcs-dragging button.mcs-button.mcs-horizontal.mcs-button-arrow {
 }
 
 .MagicScroll[data-mode="cover-flow"] {
-    background-color: white;
-    height: 300px !important;
+    background-color: #EEE;
+}
+
+.MagicScroll[data-mode="carousel"] {
+  background-color: #EEE;
 }
