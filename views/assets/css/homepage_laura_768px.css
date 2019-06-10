@@ -5,20 +5,81 @@
 
 body {
   margin: 0;
+  font-family: 'F37 Ginger';
+  background-color: #ef4444;
   font-family: "F37 Ginger";
-  background-color: #EF4444;
-height: 100%
+  max-width: 768px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 a {
   color: #000;
 }
 
-.scrolling-wrapper, .scrolling-wrapper-suggestions {
-opacity:0;
-width:1px;
-height: 1px;
+.carousel {
+	display: none
 }
+
+
+.scrolling-wrapper {
+  opacity: 1;
+  height: 550px; 
+  width: 768px;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top:820px;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+  opacity: 1;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.scrolling-wrapper-suggestions {
+  opacity: 0;
+  height: 550px; 
+  width: 768px;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top:1500px;
+  text-outline: 150px 0px;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+  .card {
+    display: inline-block;
+  }
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+div.image_and_caption {
+  margin-bottom: 25px;
+  margin-left: 30px;
+}
+
+.book_cover {
+  height: 294px;
+  width: 216px;
+}
+
+.caption_container {
+	text-align: center;
+	padding-right: 110px;
+}
+
 
 
 #landing_page {
@@ -72,9 +133,9 @@ height: 1px;
 
 .section_title {
 	font: bolder;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bolder;
-	margin:25px;
+	padding-left: 25px;
 	clear: left;
 }
 
@@ -85,14 +146,23 @@ height: 1px;
 	font-size: 30px;
 	position: absolute;
 	top: 430px;
-	left:535px;
+	left:170px;
+	width: 400px;
 }
 
 #fresh_releases {
 	background-color: #FFFFFF;
+	display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 700px;
-
+	width: 768px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: flex-start;
 }
 
 #our_suggestions {
@@ -100,24 +170,91 @@ height: 1px;
 	display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 700px;
+    height: 1850px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: flex-start;
 }
 
-#gift_cards {
-	height:400px;
+.gift_cards {
+	height:10px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+
+.scrollmenu-container {
+  display: flex;
+  max-width: 800px;
+}
+
+.scrollmenu {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  background-color: #222;
+  white-space: nowrap;
+  
+}
+
+.scrollmenu-container button {
+  background-color: #555;
+  color: #ccc;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+.scrollmenu-container button:hover {
+  color: #fff;
+}
+
+.scrollmenu a {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  width: 180px;
+  height: 300px;
+}
+
+.scrollmenu a:hover {
+  background-color: #777;
 }
 
 .carousel {
 	position: absolute;
-	top:820px;
+	top:800px;
 	left:20px;	
 	align-content: center;
+	width: 768px;
+}
+
+.carousel_sugg {
+	position: absolute;
+	top:780px;
+	left:20px;	
+	align-content: center;
+	width: 768px;
 }
 
 ul.slides {
     display: block;
     position: relative;
-    height: 550px;
+    height: 600px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -141,43 +278,50 @@ ul.slides input {
 .slide-container { 
     display: inline-block; 
 	white-space: nowrap;
-	width:1440px;
+	width:400px;
 }
 
 .slide-image {
     display: inherit;
     position: absolute;
-	bottom:80px;
-	left:12px;
-    width: 350px;
-    height: 360px;
+	bottom:80%;
+	left:0%;
+    width: 20%;
+    height: 60%;
     top: 0;
     opacity: 0;
     transition: all .7s ease-in-out;
 }   
 
 .slide-image img {
-    width: 70%;
-    height: 70%;
+    width: 150%;
+    height: 73%;
 	margin-left: 25px;
 	margin-top: 10px;
 }
 
+.image_and_caption {
+	padding-right: 110px;
+}
+
+
 .carousel-controls {
     position: absolute;
-    bottom: 720px;
-    left: 0;
-    right: 0;
-	width: 1410px;
+    bottom: 780px;
+    left: 0px;
+    right: 1000px;
+	width:710px;
     z-index: 999;
-    font-size: 110px;
+    font-size: 100px;
     line-height: 600px;
-    color: #555555;
+    color: black;
 }
 
 .carousel-controls label {
+    display: none;
     position: absolute;
     padding: 0 0px;
+    opacity: 0;
     transition: opacity .2s;
     cursor: pointer;
 }
@@ -204,6 +348,8 @@ ul.slides input {
 
 .caption_container {
 	text-align: center;
+	padding-left: 35px;
+	width:100px;
 }
 
 div.image_and_caption {
@@ -229,80 +375,31 @@ input:checked + .slide-container .carousel-controls label {
 
 input:checked + .slide-container .nav label { display: block; }
 
-
-#our_suggestions_container {
-position: absolute;
-left: 20px;
-margin-top: 80px;
-}
-
-.book {
-  font-size: 18px;
-  text-align: center;
-  padding-left: 80px;
-  float: left
-}
-
-.book_cover {
-	width:180px;
-	height: 240px;
-	opacity:1;
-	cursor: pointer;
-}
-
-.book_cover:hover{
-	opacity:0.8;
-}
-
-.book_name {
-	font-weight: bolder;
-}
-
-.book_author {
-	font-weight: lighter;
-}
-
-.suggestor_name {
-	display: inline;
-	background-color:#ef4444;
-	font-weight: lighter;
-}
-
 #gift_cards_section {
 	padding-top: 10px;
 	background-color: #ffffff;
-	height: 600px;
+	height: 1400px;
 }
-
-
 
 .gift_cards {
-	width:25%;
+	width:768px;
 	display: inline-grid;
 	margin: 10px 60px 20px 40px;
+	float: left;
+	padding-left: 120px;
+	padding-bottom: 300px;
+	padding-top: 50px;
 
-}
-
-.caption_container {
-	text-align: center;
-	font-size: 18px;
-	font-weight: 100;
-	margin: 0px 40px 20px 30px;	
-	width:160px;
-}
-
-.gift_text_container {
-	width:420px;
-	text-align: justify;
-	font-size: 14px;
 }
 
 .book_author, .book_title, .book_price {
 	text-align: center;
 }
-	
-		
-	
+
+.text_container {
+	width: 450px;
+	font-weight: lighter;
+}
 
 
 
