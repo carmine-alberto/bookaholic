@@ -1,13 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* General */
+
 body {
-	font-family: "F37 Ginger";
-	background-color: #ef4444;
-	max-width: 1440px;
-	overflow-x: hidden;
-	overflow-y: scroll;
+  margin: 0;
+  font-family: "F37 Ginger";
+  background-color: #EF4444;
 }
 
-.scrolling-wrapper {
-	display: none;
+a {
+  color: #000;
+}
+
+.scrolling-wrapper, .scrolling-wrapper-suggestions {
+display: none;
+	width:1px;
+height: 1px;
 }
 
 
@@ -37,7 +46,7 @@ body {
   height: 40px; 
   background: #FFFFFF;
   position: absolute;
-  bottom: 75px;
+  bottom: 80px;
   left: -25px;
   z-index: inherit;
 }
@@ -47,7 +56,6 @@ body {
 	position: inherit;
 	font-size: 100px;
 	text-align: center;
-	font-family: "F37 Ginger";
 	font-weight: bolder;
 }
 
@@ -57,72 +65,58 @@ body {
 	position: absolute;
 	top: -20px;
 	left: 140px;
-	font-family: "F37 Ginger";
 	font-weight: bolder;
 	font-size: 40px;
 }
 
 .section_title {
 	font: bolder;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: bolder;
-	padding-left: 25px;
+	margin:25px;
 	clear: left;
 }
 
 #landing_subtitle {
 	color: rgba(0,0,0,0.8);
 	text-align: center;
-	font-family: "F37 Ginger";
 	font-style: italic;
 	font-size: 30px;
 	position: absolute;
 	top: 430px;
+	left:535px;
+}
+
+#fresh_releases {
+	background-color: #FFFFFF;
+    display: flex;
+    height: 700px;
+
 }
 
 #our_suggestions {
-	background-color: #ffffff;
-    height: 550px;
-	width: 1500px;
-	padding:20px;
-	position: absolute;
-	left: 0px;
-}
-
-#freshly_released {
-	background-color: #f3f3f3;
-    height: 650px;
-	width: 1500px;
-	padding:20px;
-	position: absolute;
-	left: 0px;
-	top:1297px;
+	background-color: #F3F3F3;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 700px;
 }
 
 #gift_cards {
 	height:400px;
 }
 
-
 .carousel {
+	position: absolute;
+	top:820px;
+	left:20px;	
 	align-content: center;
-	width: 1400px;
-}
-
-#carousel_freshly_released {
-	position:absolute;
-	top:120px;
-}
-
-#carousel_our_suggestions {
-	z-index: 999;
-	background-color: green;
 }
 
 ul.slides {
     display: block;
     position: relative;
-    height: 600px;
+    height: 550px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -146,44 +140,43 @@ ul.slides input {
 .slide-container { 
     display: inline-block; 
 	white-space: nowrap;
-	width:1400px;
+	width:1440px;
 }
 
 .slide-image {
     display: inherit;
     position: absolute;
 	bottom:80px;
-    width: 300px;
-    height: 260px;
+	left:12px;
+    width: 350px;
+    height: 360px;
     top: 0;
     opacity: 0;
     transition: all .7s ease-in-out;
 }   
 
 .slide-image img {
-    width: 230px;
-    height: 300px;
-	margin-left: 100px;
+    width: 70%;
+    height: 70%;
+	margin-left: 25px;
 	margin-top: 10px;
 }
 
 .carousel-controls {
     position: absolute;
-    bottom: 770px;
+    bottom: 720px;
     left: 0;
     right: 0;
-	width:1400px;
+	width: 1410px;
     z-index: 999;
-    font-size: 100px;
+    font-size: 110px;
     line-height: 600px;
-    color: black;
+    color: #555555;
 }
 
 .carousel-controls label {
-    display: none;
     position: absolute;
-    padding: 0 20px;
-    opacity: 100;
+    padding: 0 0px;
     transition: opacity .2s;
     cursor: pointer;
 }
@@ -210,11 +203,10 @@ ul.slides input {
 
 .caption_container {
 	text-align: center;
-	padding-left:140px
 }
 
 div.image_and_caption {
-  width: 90%;
+  width: 80%;
   margin-bottom: 25px;
   display: inline-block;
 }
@@ -237,62 +229,57 @@ input:checked + .slide-container .carousel-controls label {
 input:checked + .slide-container .nav label { display: block; }
 
 
-#related_books {
-	background-color: #F3F3F3;
-	height: 620px;
-	margin-top: 100px;
+#our_suggestions_container {
+position: absolute;
+left: 20px;
+margin-top: 80px;
 }
 
-#related_books_title {
-	margin-left:45px;
-}
-
-
-.scrolling-wrapper {
-  height: 550px; 
-  width: 768px;
-  max-width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  position: absolute;
-  top:1220px;
-  -webkit-overflow-scrolling: touch;
-  z-index: 999;
-	opacity: 0;
-}
-
-  .card {
-    display: inline-block;
-  }
-
-
-::-webkit-scrollbar { 
-    display: none; 
-}
-
-div.image_and_caption {
-  margin-bottom: 25px;
-  margin-left: 30px;
+.book {
+  font-size: 18px;
+  text-align: center;
+  padding-left: 80px;
+  float: left
 }
 
 .book_cover {
-  height: 294px;
-  width: 216px;
+	width:180px;
+	height: 240px;
+	opacity:1;
+	cursor: pointer;
 }
 
-.caption_container {
-	text-align: center
+.book_cover:hover{
+	opacity:0.8;
 }
 
+.book_name {
+	font-weight: bolder;
+}
+
+.book_author {
+	font-weight: lighter;
+}
+
+.suggestion{
+	font-weight: lighter;
+	font-size: 16px;
+	margin-right: 25px;
+}
+
+.suggestor_name {
+	font-weight: bold;
+	color: #ef4444;
+	font-size: 16px;
+}
 
 #gift_cards_section {
 	padding-top: 10px;
-	background-color: #FFFFFF;
-	position: absolute;
-	top:1986px;
-	left: 0px;
+	background-color: #ffffff;
+	height: 600px;
 }
+
+
 
 .gift_cards {
 	width:25%;
@@ -301,12 +288,38 @@ div.image_and_caption {
 
 }
 
-.text_container {
+.caption_container {
 	text-align: center;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 100;
 	margin: 0px 40px 20px 30px;	
-	width:400px;
+	width:160px;
+}
+
+.gift_text_container {
+	width:420px;
+	text-align: justify;
+	font-size: 14px;
+}
+
+#learn_more {
+	background-color: #d4d4d4;
+	width: 110px;
+	height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	margin: 0 auto;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+#learn_more:hover {
+	background-color: #ef4444;
+}
+
+.book_author, .book_title, .book_price {
+	text-align: center;
 }
 	
 		
