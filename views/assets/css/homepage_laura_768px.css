@@ -23,8 +23,8 @@ a {
 
 
 .scrolling-wrapper {
-  opacity: 1;
-  height: 550px; 
+display: block;
+	height: 550px; 
   width: 768px;
   max-width: 100%;
   overflow-x: scroll;
@@ -179,6 +179,10 @@ div.image_and_caption {
     justify-content: flex-start;
 }
 
+.book {
+	height: 560px;
+}
+
 .gift_cards {
 	height:10px;
 }
@@ -243,13 +247,6 @@ div.image_and_caption {
 	width: 768px;
 }
 
-.carousel_sugg {
-	position: absolute;
-	top:780px;
-	left:20px;	
-	align-content: center;
-	width: 768px;
-}
 
 ul.slides {
     display: block;
@@ -377,6 +374,7 @@ input:checked + .slide-container .nav label { display: block; }
 
 #gift_cards_section {
 	padding-top: 10px;
+	padding-bottom: 50px;
 	background-color: #ffffff;
 	height: 1400px;
 }
@@ -391,6 +389,25 @@ input:checked + .slide-container .nav label { display: block; }
 	padding-top: 50px;
 
 }
+
+#learn_more {
+	background-color: #d4d4d4;
+	width: 110px;
+	height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 20px;
+	border-radius: 30px;
+	position: absolute;
+	left: 310px;
+	top: 4600px;
+	
+}
+
+#learn_more:hover {
+	background-color: #ef4444;
+}
+
 
 .book_author, .book_title, .book_price {
 	text-align: center;
