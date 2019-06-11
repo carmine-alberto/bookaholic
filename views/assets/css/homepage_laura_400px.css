@@ -49,8 +49,8 @@ a {
 }
 
 .book_cover {
-  height: 194px;
-  width: 145px;
+  height: 294px;
+  width: 225px;
   margin-left: 10px;
 }
 
@@ -144,13 +144,17 @@ a {
 	display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 2650px;
+    height: 3200px;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: flex-start;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: flex-start;
+}
+
+.book {
+	height: 650px;
 }
 
 .carousel {
@@ -287,6 +291,7 @@ input:checked + .slide-container .nav label { display: block; }
 #gift_cards_section {
 	background-color: #ffffff;
 	height: 1200px;
+	padding-bottom: 140px;
 }
 
 .gift_card_image {
@@ -298,19 +303,29 @@ input:checked + .slide-container .nav label { display: block; }
 	padding-top: 30px;
 }
 
-.caption_container {
-	text-align: center;
-	font-size: 18px;
-	font-weight: 100;
-	margin: 0px 0px 0px 0px;	
-	width:110px;
-}
-
 .text_container {
 	padding-top: 10px;
 	width:300px;
 	text-align: justify;
-	font-size: 10px;
+	font-size: 16px;
+}
+
+#learn_more {
+	background-color: #d4d4d4;
+	width: 110px;
+	height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 20px;
+	border-radius: 30px;
+	position: absolute;
+	left: 130px;
+	top: 5550px;
+	
+}
+
+#learn_more:hover {
+	background-color: #ef4444;
 }
 
 .book_author, .book_title, .book_price {
