@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: "F37 Ginger";
+}
+
+.section_title {
+	font: bolder;
+	font-size: 20px;
+	font-weight: bolder;
+	padding-left: 25px;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	clear: left;
+}
+
+.header_container {	
+	height: 150px;
+	background-color: white;
+	z-index: -100;
+}
+
+.header_text {
+	z-index: 100;
+	text-align: center;
+	margin-top: 120px;
+	font-weight: bolder;
+	font-size: 30px;
+}
+
+
+.event {
+	background-color: #FFFFFF;	
+	padding-bottom:20px;
+	padding-top:20px;
+	height: 350px;
+}
+
+.event_photo {
+	width:300px;
+	height:300px;
+	margin-left: 240px;
+	border: solid #EF4444;
+  	border-width: 1px 10px 10px 1px;
+}
+
+.author {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.date, .place {
+	color: rgba(67,67,67,1.00);
+	margin-left: 30px;
+	margin-top: 50px;
+	font-size: 24px;
+	text-align: center
+}
+
+.description {
+	font-size: 20px;
+	font-weight: lighter;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#condition {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 380px;
+}
+
+
