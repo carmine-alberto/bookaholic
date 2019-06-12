@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 }
 
 
@@ -17,7 +17,7 @@ body {
 }
 
 .header_container {	
-	height: 150px;
+	height: 320px;
 	background-color: white;
 	z-index: -100;
 }
@@ -26,7 +26,7 @@ body {
 	z-index: 100;
 	text-align: center;
 	position: absolute;
-	top: 40px;
+	top: 180px;
 	left: 335px;
 	font-weight: bolder;
 	font-size: 40px;
@@ -37,7 +37,7 @@ body {
   height: 20px; 
   background-color: #EF4444;
   position: absolute;
-  bottom: 520px;
+  bottom: 396px;
   left:325px;
   z-index: inherit;
 }
@@ -87,24 +87,22 @@ body {
 }
 
 #map {
-   margin:0 0%;
-   width:700px;
+   width:760px;
    height: 460px;
    float:left;
-   padding-left: 25px;
-   padding-right: 25px;
+   padding:0 25px;
 }
 
 
 
 
-#contacts_greenwich_container, #contacts_camden_container {
+#contacts_container {
 	background-color: #ef4444;
-	margin-left:90px;
+	margin-left:25px;
 	margin-top:30px;
-	padding-top: 15px;
+	padding: 15px 0px 50px 0px;
 	float:left;
-	width:550px;
+	width:710px;
 	height: 500px;
 }
 
@@ -115,13 +113,13 @@ body {
 }
 
 #contacts_greenwich_rows, #contacts_camden_rows {
-  padding-left: 120px;
+  padding-left: 105px;
   margin-bottom:30px;
 }
 
 .column {
   float: left;
-  width: 20%;
+  width: 40%;
   padding-left: 120px;
   padding-bottom: 40px;
 }
