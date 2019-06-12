@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "F37 Ginger"!important;
   background-color: white;
 }
 
@@ -8,9 +8,10 @@ body {
 }
 
 /* Add padding to containers */
-.container {
+.container_inputs {
   padding: 16px;
   background-color: white;
+  margin-top: 80px;
 }
 
 /* Full-width input fields */
@@ -60,4 +61,5 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+
 
