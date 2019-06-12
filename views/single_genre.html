@@ -4,14 +4,78 @@
 <meta charset="utf-8">
 <title>Documento senza titolo</title>
 <link href="/assets/css/single_genre_1440px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/single_genre_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/single_genre_400px.css" />
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="Single genre page 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="Single genre page 400px.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Navbar 3 CSS.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 	
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="/assets/img/bookaholic logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+  <div class="adjust-height">		
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="menu_item" id="active">Home</a></li>
+        <li><a href="#" class="menu_item">Authors</a></li>		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Art and design</a></li>
+            <li><a href="#">Fiction</a></li>
+            <li><a href="#">Mystery</a></li>
+            <li><a href="#">Non fiction</a></li>
+            <li><a href="#">Science fiction</a></li>
+          </ul>
+        </li>
+		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Family</a></li>
+            <li><a href="#">Fear</a></li>
+            <li><a href="#">Friendship</a></li>
+            <li><a href="#">Justice</a></li>
+            <li><a href="#">Love</a></li>
+            <li><a href="#">Philosophy</a></li>
+            <li><a href="#">War</a></li>
+			  
+          </ul>
+        </li>		  
+		  
+        <li><a href="#" class="menu_item">Events</a></li>
+        <li><a href="#" class="menu_item">About us</a></li>
+      </ul>
+		<form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+      <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
+        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+      </ul>
+    </div>
+  </div>
+	</div>
+</nav>
 	
 <!--- Title section --->	
 
@@ -21,8 +85,8 @@
 </div>
 </section>	
 	
-<ul id="filters_container">
-<li class="filter">
+<div id="filters_container">
+<div class="filter">
 	
 <div class="dropdown_menu">	
 <h4 class="filter_title">Published in</h4>
@@ -39,9 +103,9 @@
 </form>
 	
 </div>					  
-</li>
+</div>
 	
-<li class="filter">
+<div class="filter">
 <div class="dropdown_menu">	
 <h4 class="filter_title">Theme</h4>	
 <form>
@@ -55,118 +119,141 @@
 </select>	
 </form>	
 	</div>	
-	</li>	
+	</div>	
 
-<li class="filter">
-<h4 class="container">suggested by us
+<div class="filter">
+<h4 class="checkbox_container">suggested by us
   <input type="checkbox">
   <span class="checkmark"></span>
 </h4>
-</li>	
+</div>	
 
-<li class="filter">	
-<h4 class="container">available
+<div class="filter">	
+<h4 class="checkbox_container">available
   <input type="checkbox">
   <span class="checkmark"></span>
 </h4>
-</li>	
-</ul>	
+</div>	
+</div>	
+		
 	
 <!--- End of Title section --->
 	
 	<div class="books_containers">
 		
 <div class="book">	
-<img src="/assets/css/img/good_omens.jpg" class="book_cover" id="book1_cover">	
+<img src="/assets/img/good_omens.jpg" class="book_cover" id="book1_cover">	
 <h4 class="book_title" id="book1_title">Good Omens</h4>
+	
+<div class="authors_container">
+	
 <h6 class="book_author" id="book1_author1">Neil Gaiman</h6>
-<h6 class="book_author" id="book1_author2"><br></h6>
-<h6 class="book_author" id="book1_author3"><br></h6>
-<h6 class="book_author" id="book1_author4"><br></h6>
+<h6 class="book_author" id="book1_author2">Neil Gaiman</h6>
+<h6 class="book_author" id="book1_author3">Neil Gaiman</h6>
+<h6 class="book_author" id="book1_author4">Neil Gaiman</h6>
+	
+</div>	
 
 </div>
 	
 <div class="book">	
-<img src="/assets/css/img/chronicles_of_a_radical_hag.jpg" class="book_cover" id="book2_cover">	
+<img src="/assets/img/chronicles_of_a_radical_hag.jpg" class="book_cover" id="book2_cover">	
 <h4 class="book_title" id="book2_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book2_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book2_author2"><br></h6>
 <h6 class="book_author" id="book2_author3"><br></h6>
 <h6 class="book_author" id="book2_author4"><br></h6>
 </div>
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/joyful.jpg" class="book_cover" id="book3_cover">	
+<img src="/assets/img/joyful.jpg" class="book_cover" id="book3_cover">	
 <h4 class="book_title" id="book3_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book3_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book3_author2">Neil Gaiman</h6>
 <h6 class="book_author" id="book3_author3"><br></h6>
 <h6 class="book_author" id="book3_author4"><br></h6>
-</div>		
+</div>	
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/good_omens.jpg" class="book_cover" id="book4_cover">	
+<img src="/assets/img/good_omens.jpg" class="book_cover" id="book4_cover">	
 <h4 class="book_title" id="book4_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book4_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book4_author2"><br></h6>
 <h6 class="book_author" id="book4_author3"><br></h6>
 <h6 class="book_author" id="book4_author4"><br></h6>
-
+</div>
 </div>
 	
 <div class="book">	
-<img src="/assets/css/img/da_cosa_nasce_cosa.jpg" class="book_cover" id="book5_cover">	
+<img src="/assets/img/da_cosa_nasce_cosa.jpg" class="book_cover" id="book5_cover">	
 <h4 class="book_title" id="book5_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book5_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book5_author2"><br></h6>
 <h6 class="book_author" id="book5_author3"><br></h6>
 <h6 class="book_author" id="book5_author4"><br></h6>
 </div>
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book6_cover">	
+<img src="/assets/img/dear_data.jpg" class="book_cover" id="book6_cover">	
 <h4 class="book_title" id="book6_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book6_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book6_author2"><br></h6>
 <h6 class="book_author" id="book6_author3"><br></h6>
 <h6 class="book_author" id="book6_author4"><br></h6>
 </div>	
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book7_cover">	
+<img src="/assets/img/dear_data.jpg" class="book_cover" id="book7_cover">	
 <h4 class="book_title" id="book7_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book7_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book7_author2"><br></h6>
 <h6 class="book_author" id="book7_author3"><br></h6>
 <h6 class="book_author" id="book7_author4"><br></h6>
-</div>	
+</div>
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/da_cosa_nasce_cosa.jpg" class="book_cover" id="book8_cover">	
+<img src="/assets/img/da_cosa_nasce_cosa.jpg" class="book_cover" id="book8_cover">	
 <h4 class="book_title" id="book8_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book8_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book8_author2"><br></h6>
 <h6 class="book_author" id="book8_author3"><br></h6>
 <h6 class="book_author" id="book8_author4"><br></h6>
 </div>
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book9_cover">	
+<img src="/assets/img/dear_data.jpg" class="book_cover" id="book9_cover">	
 <h4 class="book_title" id="book9_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book9_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book9_author2"><br></h6>
 <h6 class="book_author" id="book9_author3"><br></h6>
 <h6 class="book_author" id="book9_author4"><br></h6>
 </div>	
+</div>
 		
 <div class="book">	
-<img src="/assets/css/img/dear_data.jpg" class="book_cover" id="book10_cover">	
+<img src="/assets/img/dear_data.jpg" class="book_cover" id="book10_cover">	
 <h4 class="book_title" id="book10_title">Good Omens</h4>
+<div class="authors_container">	
 <h6 class="book_author" id="book10_author1">Neil Gaiman</h6>
 <h6 class="book_author" id="book10_author2"><br></h6>
 <h6 class="book_author" id="book10_author3"><br></h6>
 <h6 class="book_author" id="book10_author4"><br></h6>
-</div>			
+</div>
+</div>
 	
 	</div>
 
