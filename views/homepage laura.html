@@ -4,11 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Homepage</title>
-    <link href="/assets/css/homepage_laura_1440px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/homepage_laura_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/homepage_laura_400px.css" />
+    <link href="Homepage CSS 2.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="Homepage CSS 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="Homepage CSS 400px.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Navbar 3 CSS.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
+	
+	
 </head>
 <body> 
+	
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+  <div class="adjust-height">		
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="menu_item" id="active">Home</a></li>
+        <li><a href="#" class="menu_item">Authors</a></li>		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Art and design</a></li>
+            <li><a href="#">Fiction</a></li>
+            <li><a href="#">Mystery</a></li>
+            <li><a href="#">Non fiction</a></li>
+            <li><a href="#">Science fiction</a></li>
+          </ul>
+        </li>
+		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Family</a></li>
+            <li><a href="#">Fear</a></li>
+            <li><a href="#">Friendship</a></li>
+            <li><a href="#">Justice</a></li>
+            <li><a href="#">Love</a></li>
+            <li><a href="#">Philosophy</a></li>
+            <li><a href="#">War</a></li>
+			  
+          </ul>
+        </li>		  
+		  
+        <li><a href="#" class="menu_item">Events</a></li>
+        <li><a href="#" class="menu_item">About us</a></li>
+      </ul>
+		<form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+      <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
+        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+      </ul>
+    </div>
+  </div>
+	</div>
+</nav>	
 		
 	
 <span id="landing_page">
@@ -23,15 +92,15 @@
 	</span>	
 	
 <section id="fresh_releases">
-	<h3 class="section_title">
-Monthly best sellers
+	<h3 class="section_title" id="monthly_best_sellers_title">
+Best sellers this month
 	</h3>
 
 <div class="scrolling-wrapper">
 
 	
   <div class="card">
- 	       <img src="/assets/img/chronicles_of_a_radical_hag.jpg" class="book_cover">
+ 	       <img src="img/chronicles_of_a_radical_hag.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book1_author_1">Book_author_1</h6>
@@ -43,7 +112,7 @@ Monthly best sellers
  
 	
   <div class="card">
- 	       <img src="/assets/img/dear_client.jpg" class="book_cover">
+ 	       <img src="img/dear_client.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book2_author_1">Book_author_1</h6>
@@ -54,7 +123,7 @@ Monthly best sellers
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/east_of_eden.jpg" class="book_cover">
+ 	       <img src="img/east_of_eden.jpg" class="book_cover">
 		   <div class="caption_container">
 			   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book3_author_1">Book_author_1</h6>
@@ -65,7 +134,7 @@ Monthly best sellers
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/what_if_it's_us.jpg" class="book_cover">
+ 	       <img src="img/what_if_it's_us.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book4_author_1">Book_author_1</h6>
@@ -76,7 +145,7 @@ Monthly best sellers
   </div>	
 
   <div class="card">
- 	       <img src="/assets/img/elsey_come_home.jpg" class="book_cover">
+ 	       <img src="img/elsey_come_home.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book5_author_1">Book_author_1</h6>
@@ -87,7 +156,7 @@ Monthly best sellers
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/the_bell_jar.jpg" class="book_cover">
+ 	       <img src="img/the_bell_jar.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book6_author_1">Book_author_1</h6>
@@ -96,6 +165,50 @@ Monthly best sellers
 		   <h6 class="book_author" id="book6_author_4"><br></h6>
 		   </div>
   </div>
+	
+  <div class="card">
+ 	       <img src="img/american_spy.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book7_author_1_suggestions">Book_author_1</h6>
+		   <h6 class="book_author" id="book7_author_2_suggestions"><br></h6>	
+		   <h6 class="book_author" id="book7_author_3_suggestions"><br></h6>
+		   <h6 class="book_author" id="book7_author_4_suggestions"><br></h6>
+		   </div>
+  </div>	
+	
+  <div class="card">
+ 	       <img src="img/american_spy.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book8_author_1_suggestions">Book_author_1</h6>
+		   <h6 class="book_author" id="book8_author_2_suggestions"><br></h6>	
+		   <h6 class="book_author" id="book8_author_3_suggestions"><br></h6>
+		   <h6 class="book_author" id="book8_author_4_suggestions"><br></h6>
+		   </div>
+  </div>		
+	
+  <div class="card">
+ 	       <img src="img/american_spy.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book9_author_1_suggestions">Book_author_1</h6>
+		   <h6 class="book_author" id="book9_author_2_suggestions"><br></h6>	
+		   <h6 class="book_author" id="book9_author_3_suggestions"><br></h6>
+		   <h6 class="book_author" id="book9_author_4_suggestions"><br></h6>
+		   </div>
+  </div>	
+	
+  <div class="card">
+ 	       <img src="img/american_spy.jpg" class="book_cover">
+		   <div class="caption_container">
+		   <h6 class="book_title">Book_title</h6>
+		   <h6 class="book_author" id="book10_author_1_suggestions">Book_author_1</h6>
+		   <h6 class="book_author" id="book10_author_2_suggestions"><br></h6>	
+		   <h6 class="book_author" id="book10_author_3_suggestions"><br></h6>
+		   <h6 class="book_author" id="book10_author_4_suggestions"><br></h6>
+		   </div>
+  </div>		
 	
 </div>
 	
@@ -110,7 +223,7 @@ Monthly best sellers
         <div class="slide-image">
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/chronicles_of_a_radical_hag.jpg" id="slide1_img1">
+ 	       <img src="img/chronicles_of_a_radical_hag.jpg" id="slide1_img1">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book1_author1">Book_author</h6>
@@ -121,7 +234,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/what_if_it's_us.jpg" id="slide1_img2">
+ 	       <img src="img/what_if_it's_us.jpg" id="slide1_img2">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book2_author1">Book_author 1</h6>
@@ -132,7 +245,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/elsey_come_home.jpg" id="slide1_img3">
+ 	       <img src="img/elsey_come_home.jpg" id="slide1_img3">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book3_author1">Book_author 1</h6>
@@ -143,7 +256,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/east_of_eden.jpg" id="slide1_img4">
+ 	       <img src="img/east_of_eden.jpg" id="slide1_img4">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book4_author1">Book_author 1</h6>
@@ -154,7 +267,7 @@ Monthly best sellers
 			</div>			
 					
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/ready_player_one.jpg" id="slide1_img5">
+ 	       <img src="img/ready_player_one.jpg" id="slide1_img5">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book5_author1">Book_author 1</h6>
@@ -184,7 +297,7 @@ Monthly best sellers
             <li class="slide-container">
                 <div class="slide-image">
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img1">
+ 	       <img src="img/kobane.jpg" id="slide2_img1">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -193,7 +306,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img2">
+ 	       <img src="img/kobane.jpg" id="slide2_img2">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -202,7 +315,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img3">
+ 	       <img src="img/kobane.jpg" id="slide2_img3">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -211,7 +324,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img4">
+ 	       <img src="img/kobane.jpg" id="slide2_img4">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -220,7 +333,7 @@ Monthly best sellers
 			</div>			
 					
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img5">
+ 	       <img src="img/kobane.jpg" id="slide2_img5">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -247,7 +360,7 @@ Monthly best sellers
             <li class="slide-container">
                 <div class="slide-image">
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img1">
+ 	       <img src="img/le ragazze.jpg" id="slide3_img1">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -256,7 +369,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img2">
+ 	       <img src="img/le ragazze.jpg" id="slide3_img2">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -265,7 +378,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img3">
+ 	       <img src="img/le ragazze.jpg" id="slide3_img3">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -274,7 +387,7 @@ Monthly best sellers
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img4">
+ 	       <img src="img/le ragazze.jpg" id="slide3_img4">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -283,7 +396,7 @@ Monthly best sellers
 			</div>			
 					
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/le ragazze.jpg" id="slide3_img5">
+ 	       <img src="img/le ragazze.jpg" id="slide3_img5">
 		   <div class="caption_container">
 		   <h6 class="book_author">Book_author</h6>
 		   <h6 class="book_title">Book_title</h6>
@@ -312,7 +425,7 @@ Monthly best sellers
 	
 	
 <section id="our_suggestions">
-	<h3 class="section_title">
+	<h3 class="section_title" id="our_monthly_recommendations_title">
 Our monthly recommendations
 	</h3>
 	
@@ -320,7 +433,7 @@ Our monthly recommendations
 
 	
   <div class="card">
- 	       <img src="/assets/img/chronicles_of_a_radical_hag.jpg" class="book_cover">
+ 	       <img src="img/chronicles_of_a_radical_hag.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book1_author_1_suggestions">Book_author_1</h6>
@@ -332,7 +445,7 @@ Our monthly recommendations
  
 	
   <div class="card">
- 	       <img src="/assets/img/dear_client.jpg" class="book_cover">
+ 	       <img src="img/dear_client.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book2_author_1_suggestions">Book_author_1</h6>
@@ -343,7 +456,7 @@ Our monthly recommendations
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/east_of_eden.jpg" class="book_cover">
+ 	       <img src="img/east_of_eden.jpg" class="book_cover">
 		   <div class="caption_container">
 			   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book3_author_1_suggestions">Book_author_1</h6>
@@ -354,7 +467,7 @@ Our monthly recommendations
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/what_if_it's_us.jpg" class="book_cover">
+ 	       <img src="img/what_if_it's_us.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book4_author_1_suggestions">Book_author_1</h6>
@@ -365,7 +478,7 @@ Our monthly recommendations
   </div>	
 
   <div class="card">
- 	       <img src="/assets/img/elsey_come_home.jpg" class="book_cover">
+ 	       <img src="img/elsey_come_home.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book5_author_1_suggestions">Book_author_1</h6>
@@ -376,7 +489,7 @@ Our monthly recommendations
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/the_bell_jar.jpg" class="book_cover">
+ 	       <img src="img/the_bell_jar.jpg" class="book_cover">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book6_author_1_suggestions">Book_author_1</h6>
@@ -385,16 +498,15 @@ Our monthly recommendations
 		   <h6 class="book_author" id="book6_author_4_suggestions"><br></h6>
 		   </div>
   </div>
+
 	
 </div>
 	
-<div id="our_suggestions_desktop">
-
 <div id="our_suggestions_container">	
 	
 <div class="book">
 <h4 class="suggestion">suggested by<span class="suggestor_name"> Giuseppe</span></h4>
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book1_cover_suggested">	
+<img src="img/dear_data.jpg" class="book_cover" id="book1_cover_suggested">	
 <h4 class="book_name" id="book1_name_suggested">American Spy</h4>
 <h4 class="book_author" id="book1_author1_suggested">Adam Sivera</h4>
 <h4 class="book_author" id="book1_author2_suggested"><br></h4>
@@ -404,7 +516,7 @@ Our monthly recommendations
 	
 <div class="book">
 <h4 class="suggestion">suggested by<span class="suggestor_name"> Carmine</span></h4>
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book2_cover_suggested">	
+<img src="img/dear_data.jpg" class="book_cover" id="book2_cover_suggested">	
 <h4 class="book_name" id="book2_name_suggested">American Spy</h4>
 <h4 class="book_author" id="book2_author1_suggested">Adam Sivera</h4>
 <h4 class="book_author" id="book2_author2_suggested"><br></h4>
@@ -414,7 +526,7 @@ Our monthly recommendations
 	
 <div class="book">
 <h4 class="suggestion">suggested by<span class="suggestor_name"> Laura</span></h4>
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book3_cover_suggested">	
+<img src="img/dear_data.jpg" class="book_cover" id="book3_cover_suggested">	
 <h4 class="book_name" id="book3_name_suggested">American Spy</h4>
 <h4 class="book_author" id="book3_author1_suggested">Adam Sivera</h4>
 <h4 class="book_author" id="book3_author2_suggested"><br></h4>
@@ -424,7 +536,7 @@ Our monthly recommendations
 	
 <div class="book">
 <h4 class="suggestion">suggested by<span class="suggestor_name"> Giuseppe</span></h4>
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book4_cover_suggested">	
+<img src="img/dear_data.jpg" class="book_cover" id="book4_cover_suggested">	
 <h4 class="book_name" id="book4_name_suggested">American Spy</h4>
 <h4 class="book_author" id="book4_author1_suggested">Adam Sivera</h4>
 <h4 class="book_author" id="book4_author2_suggested"><br></h4>
@@ -434,17 +546,14 @@ Our monthly recommendations
 	
 <div class="book">
 <h4 class="suggestion">suggested by<span class="suggestor_name"> Carmine</span></h4>
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book5_cover_suggested">	
+<img src="img/dear_data.jpg" class="book_cover" id="book5_cover_suggested">	
 <h4 class="book_name" id="book5_name_suggested">American Spy</h4>
 <h4 class="book_author" id="book5_author1_suggested">Adam Sivera</h4>
 <h4 class="book_author" id="book5_author2_suggested"><br></h4>
 <h4 class="book_author" id="book5_author3_suggested"><br></h4>
 <h4 class="book_author" id="book5_author4_suggested"><br></h4>
 </div>
-	
-	
-	</div>
-	
+		
 	</div>
 	
 	</section>
@@ -453,21 +562,21 @@ Our monthly recommendations
 	<h3 class="section_title">
 Gift cards and vouchers	</h3>
 <div class="gift_cards">
-<img src="/assets/img/GiftCard 1.png" alt="gift card 1" class="gift_card_image">
+<img src="img/GiftCard 1.png" alt="gift card 1" class="gift_card_image">
 <div class="text_container">
 <p>Are you a student and you just love Bookaholic? Get fantastic discounts, get the chance to win prizes with our student card!</p>
 </div>	
 </div>
 
 <div class="gift_cards">	
-<img src="/assets/img/GiftCard 2.png" alt="gift card 2" class="gift_card_image">
+<img src="img/GiftCard 2.png" alt="gift card 2" class="gift_card_image">
 <div class="text_container">
 <p>Get our special gift card. We have just the amount you're looking for, to give it to that special "bookaholic" in your life</p>
 </div>
 </div>	
 	
 <div class="gift_cards">
-<img src="/assets/img/GiftCard 3.png" alt="gift card 3" class="gift_card_image">	
+<img src="img/GiftCard 3.png" alt="gift card 3" class="gift_card_image">	
 <div class="text_container">
 <p>We know you've been coming here quite often lately... And we want to thank you! Keep track of your purchases, to get a free book after 10 purchases!</p>
 </div>
