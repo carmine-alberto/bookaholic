@@ -1,5 +1,5 @@
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 	max-width: 1440px;
 	overflow-x: hidden;
 	overflow-y:scroll;
@@ -15,7 +15,7 @@ body {
 	z-index: 100;
 	text-align: center;
 	position: absolute;
-	top: 40px;
+	top: 58px;
 	left: 620px;
 	font-weight: bolder;
 	font-size: 40px;
