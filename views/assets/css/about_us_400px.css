@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 }
 
 
@@ -37,7 +37,7 @@ body {
   height: 15px; 
   background-color: #EF4444;
   position: absolute;
-  top: 120px;
+  top: 110px;
   left: 130px;
   z-index: inherit;
 }
@@ -98,13 +98,12 @@ body {
 
 
 
-#contacts_greenwich_container, #contacts_camden_container {
+#contacts_container {
 	background-color: #ef4444;
-	margin-left:0px; 
-    margin-right: 5px;
+	margin:0px;
 	padding-top: 15px;
 	float:left;
-	width:380px;
+	width:400px;
 	height: 500px;
 }
 
@@ -121,8 +120,8 @@ body {
 
 .column {
   float: left;
-  width: 20%;
-  padding-left: 20px;
+  width: 45%;
+  padding-left: 65px;
   padding-bottom: 40px;
 }
 
