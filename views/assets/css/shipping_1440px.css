@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: 'F37 Ginger'
+	font-family: 'F37 Ginger'!important
 }
 
 a {
@@ -26,8 +26,8 @@ a {
 	z-index: 100;
 	text-align: center;
 	position: absolute;
-	top: 40px;
-	left: 520px;
+	top: 100px;
+	left: 510px;
 	font-weight: bolder;
 	font-size: 40px;
 }
@@ -37,16 +37,20 @@ a {
   height: 20px; 
   background-color: #EF4444;
   position: absolute;
-  bottom: 680px;
-  left: 510px;
+  bottom: 635px;
+  left: 504px;
   z-index: inherit;
+}
+
+#uk_delivery_title {
+	margin-top: 100px;
 }
 
 #uk_container {
 	display: grid;
 	grid-template-columns: auto auto;
 	font-size: 20px;
-	margin-left: 270px;
+	margin: 60px 0 0 270px;
 }
 
 .uk_request {
@@ -58,16 +62,21 @@ a {
 	width: 350px;
 }
 
+#international_delivery_title {
+	margin-bottom: 80px;
+}
+
 #international_delivery {
 	width: 900px;
 	margin-left: 270px;
-	margin-top: 100px;
+	margin-top: 150px;
 	font-size: 18px;
 }
 
 #other_questions {
 	text-align: center;
 	margin-top: 100px;
+	padding-bottom: 50px;
 	font-weight: lighter;
 	font-size: 18px;
 }
