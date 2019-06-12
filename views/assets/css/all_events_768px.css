@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 }
 
 
@@ -18,7 +18,7 @@ body {
 }
 
 .header_container {	
-	height: 150px;
+	height: 300px;
 	background-color: white;
 	z-index: -100;
 }
@@ -27,7 +27,7 @@ body {
 	z-index: 100;
 	text-align: center;
 	position: absolute;
-	top: 40px;
+	top: 200px;
 	left: 350px;
 	font-weight: bolder;
 	font-size: 40px;
@@ -38,7 +38,7 @@ body {
   height: 20px; 
   background-color: #EF4444;
   position: absolute;
-  bottom: 575px;
+  top: 245px;
   left: 335px;
   z-index: inherit;
 }
@@ -106,11 +106,12 @@ body {
 
 .learn_more {
 	background-color: #d4d4d4;
-	width: 110px;
+	width: 125px;
 	height: 30px;
 	padding-left: 20px;
 	padding-right: 0px;
-	margin-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 40px;
 	font-size: 16px;
 	border-radius: 30px;
 }
