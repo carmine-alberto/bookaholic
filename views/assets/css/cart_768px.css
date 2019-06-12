@@ -2,7 +2,12 @@
 /* CSS Document */
 
 body {
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"
+	font-family: "F37 Ginger"!important;
+}
+
+#cart_items {
+	list-style: none;
+	padding-top: 160px
 }
 
 .outer {
@@ -39,7 +44,7 @@ body {
 
 
 #checkout_button {
-  width:60px;
+  width:140px;
   height: 10px;
   background-color: #D9D9D9;
   color: #000000;
@@ -54,8 +59,12 @@ body {
   border-radius: 40px;
   position:absolute; 
   right:50px;
-  top:250px;
+  top:230px;
   background-color: #f3f3f3;
+}
+
+#checkout_button:hover{
+	background-color: #ef4444;
 }
 
 .cart_item {
@@ -64,7 +73,7 @@ body {
   margin-top: -1px; 
   background-color: #f3f3f3;
   width:420px;
-  padding: 10px;
+  padding: 10px 10px 30px 10px;
   text-decoration: none;
   font-size: 18px;
   color: black;
@@ -76,6 +85,8 @@ body {
 	width:800px;
 	padding-top:5px;
 }
+
+
 
 .book_cover {
 	width:80px;
@@ -110,7 +121,7 @@ select {
 
 .column {
   float: left;
-  width: 10%;
+  width: 12%;
   padding-left: 15px;
   padding-bottom: 0px;
 }
@@ -125,7 +136,7 @@ select {
 	font-size: 14px;
 }
 
-.book_author_1 {
+.book_author_1, .book_author_2, .book_author_3, .book_author_4  {
 	font-size: 12px;
 	font-weight: lighter;
 }
@@ -134,28 +145,35 @@ select {
 	font-weight: lighter;
 	font-size: 12px;
 	color:#555555;
+	margin-top: 15px;
+}
+
+.book_subtotal_title {
+	margin-top:20px;
+}
+
+.quantity {
+	margin-top: 20px;
 }
 
 #subtotal {
-	width:180px;
-	height: 280px;
+	width:240px;
+	height: 300px;
 	text-align: center;
 	padding:25px;
 	position: fixed;
-	top:35px;
-	right:15px;
+	top:200px;
+	right:35px;
 	background-color: #C8C8C8;
 	border-radius: 0px;
 }
 
 #subtotal_number {
 	font-weight: 30;
+	font-size: 24px;
 }
 
 #cart_items {
 	margin-top:35px;
 }
 
-#checkout_button:hover{
-	background-color: #ef4444;
-}
