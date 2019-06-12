@@ -5,8 +5,9 @@
 
 body {
   margin: 0;
-  font-family: "F37 Ginger";
-  background-color: #EF4444;
+  font-family: "F37 Ginger"!important;
+  background-color: #EF4444!important;
+  overflow-x: hidden;
 }
 
 a {
@@ -46,7 +47,7 @@ height: 1px;
   height: 40px; 
   background: #FFFFFF;
   position: absolute;
-  bottom: 80px;
+  bottom: 10px;
   left: -25px;
   z-index: inherit;
 }
@@ -57,41 +58,47 @@ height: 1px;
 	font-size: 100px;
 	text-align: center;
 	font-weight: bolder;
+	color: #000000;
 }
 
 #landing_title_small {
 	z-index: 100;
 	text-align: center;
 	position: absolute;
-	top: -20px;
+	bottom: 120px;
 	left: 140px;
 	font-weight: bolder;
 	font-size: 40px;
-}
-
-.section_title {
-	font: bolder;
-	font-size: 24px;
-	font-weight: bolder;
-	margin:25px;
-	clear: left;
+    color: #000000;
 }
 
 #landing_subtitle {
-	color: rgba(0,0,0,0.8);
 	text-align: center;
 	font-style: italic;
 	font-size: 30px;
 	position: absolute;
-	top: 430px;
-	left:535px;
+	top: 450px;
+	left:545px;
+	color: #000000;
+}
+
+.section_title {
+	font-size: 24px;
+	font-weight: bolder;
+	margin:35px;
+	clear: left;
 }
 
 #fresh_releases {
 	background-color: #FFFFFF;
     display: flex;
-    height: 700px;
+    height: 620px;
 
+}
+
+#monthly_best_sellers_title {
+	width:200px;
+	text-align: left;
 }
 
 #our_suggestions {
@@ -99,7 +106,11 @@ height: 1px;
 	display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 700px;
+    height: 600px;
+}
+
+#our_suggestions_container {
+	margin-top: 130px;
 }
 
 #gift_cards {
@@ -108,8 +119,8 @@ height: 1px;
 
 .carousel {
 	position: absolute;
-	top:820px;
-	left:20px;	
+	top:140px;
+	right:120px;	
 	align-content: center;
 }
 
@@ -288,26 +299,17 @@ margin-top: 80px;
 
 }
 
-.caption_container {
-	text-align: center;
-	font-size: 18px;
-	font-weight: 100;
-	margin: 0px 40px 20px 30px;	
-	width:160px;
-}
-
-.gift_text_container {
-	width:420px;
-	text-align: justify;
+.text_container {
+	width:400px;
+	margin: 20px;
 	font-size: 14px;
 }
 
 #learn_more {
 	background-color: #d4d4d4;
-	width: 110px;
-	height: 40px;
-	padding-left: 20px;
-	padding-right: 20px;
+	width: 160px;
+	height: 50px;
+	padding-left: 25px;
 	padding-top: 10px;
 	margin: 0 auto;
 	font-size: 20px;
