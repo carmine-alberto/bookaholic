@@ -1,5 +1,5 @@
 body {
-	font-family: 'F37 Ginger';
+	font-family: 'F37 Ginger'!important;
 }
 
 h1 {
@@ -30,10 +30,11 @@ h5 {
 
 #book_landing_page {
 	background-color: #F3F3F3;
-	height: 680px;
+	height: 750px;
 	max-width:100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	padding-top: 100px;
 }
 
 #book_resume {
@@ -47,13 +48,11 @@ h5 {
 }
 
 #book_name {
-	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 30px;
 }
 
 #book_author {
-	font-style: italic;
 	font-weight: 500;
 	font-size: 24px;
 }
@@ -64,18 +63,15 @@ h5 {
 }
 
 #book_image {
-  width: 252px; 
-  height: 358px; 
-  margin-left:20px;
-  margin-right: 30px;
-  margin-top:55px;
-  margin-bottom: 60px;
+  width: 302px; 
+  height: 408px; 
+  margin:25px 50px 60px 60px;
   float: left;
 }
 
 #add_to_cart_button {
-  width:120px;
-  height: 20px;
+  width:180px;
+  height: 55px;
   background-color: #ABABAB;
   color: #000000;
   padding: 16px 32px;
@@ -86,8 +82,8 @@ h5 {
   cursor: pointer;
   border-radius: 40px;
   position: absolute;
-  left:280px;
-  top:550px;
+  left:320px;
+  top:630px;
 }
 
 #add_to_cart_button:hover{
@@ -105,8 +101,6 @@ h5 {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  position: absolute;
-  top:1520px;
   -webkit-overflow-scrolling: touch;
   z-index: 999;
   opacity: 1;
@@ -142,21 +136,15 @@ div.image_and_caption {
 
 
 #fact_and_author {
-height: 650px;
-overflow-x: hidden;
-overflow-y:scroll;
 max-width: 100%;
+padding: 45px 50px 100px 45px;;
 }
 
 .fact_title {
 	color: #555555;
+	font-size: 16px;
 }
 
-#fact_sheet {
-	position: absolute;
-	left:15px;
-	top:700px;
-}
 
 #fact_sheet_content {
 	margin-left: 12px;
@@ -174,18 +162,16 @@ max-width: 100%;
 
 .column {
   float: left;
-  width: 20%;
+  width: 25%;
   padding-left: 20px;
   padding-bottom: 40px;
   font-size: 14px;
 }
 
 #about_the_author {
-	width:350px;
-	margin-left: 15px;
-	position: absolute;
-	top:605px;
-	left:350px;
+	width:400px;
+	margin-left: 300px;
+	margin-top: 40px;
 }
 
 #author_bio {
@@ -227,6 +213,11 @@ max-width: 100%;
   background-color:#ef4444;
 }
 
+#related_books {
+	background-color: #F3F3F3;
+	margin-top: 200px;
+}
+
 #reviews_title {
 	margin-left: 20px;
 }
@@ -237,7 +228,8 @@ max-width: 100%;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  margin-bottom:50px;
+  padding-bottom:80px;
+  background-color: #ffffff;
 }
 
 #reviews_container {
@@ -257,4 +249,42 @@ float: left;
 .stars {
 width:90px;
 height: 18px;
+}
+
+#related_events {
+	height: 460px;
+	width: 768px;
+	background-color: #f3f3f3;
+	position: absolute;
+	top:2950px;
+	left: 0px;
+}
+
+#event_photo {
+	float:left;
+	width:300px;
+	height:300px;
+	margin:0px 30px 160px 30px;
+	border: solid #EF4444;
+  	border-width: 1px 10px 10px 1px;
+}
+
+#event_date {
+	font-size: 16px;
+}
+
+#event_title {
+	font-size: 20px;
+}
+
+#event_author {
+	font-size: 14px;
+	font-weight: lighter;
+}
+
+
+#event_description {
+	width:700px;
+	font-size: 12px;
+	font-weight: lighter;
 }
