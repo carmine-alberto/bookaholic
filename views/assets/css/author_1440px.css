@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	font-family: 'F37 Ginger';
+	font-family: 'F37 Ginger'!important;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -20,19 +20,22 @@ h6 {
 	padding-left:30px;
 	padding-top:20px;
 	font-size: 26px;
+	font-weight: bolder
 }
 
 
 #author_intro {
 	background-color: #F3F3F3;
-	height: 450px;
+	height: 600px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
 #author_name {
-	font-size: 24px;
-	margin:30px;
+	font-size: 36px;
+	font-weight: bolder;
+	text-align: center;
+	margin: 70px 0px;
 }
 
 #author_photo {
@@ -49,6 +52,7 @@ h6 {
 	position: absolute;
 	left: 43.2%;
 	font-size: 18px;
+	font-weight: bolder;
 }
 
 #author_bio {
@@ -56,7 +60,8 @@ h6 {
 	position: absolute;
 	left: 40%;
 	width:700px;
-	font-size: 14px;	
+	font-size: 16px;
+	font-weight: lighter;
 }
 
 .authored_books_section {
@@ -68,7 +73,7 @@ h6 {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   position: absolute;
-  top:520px;
+  top:600px;
   left:20px;
   margin-top:120px;
 }
@@ -111,15 +116,41 @@ h6 {
 	float:left;
 	width:300px;
 	height:300px;
-	margin-left: 30px;
-	margin-right: 30px;
+	margin:30px;
 	border: solid #EF4444;
   	border-width: 1px 10px 10px 1px;
 }
 
-#event_description {
-	width:1300px;
-	font-size: 14px;
+#event_date {
+	font-size: 18px;
+	margin-top: 40px;
 }
 
+#event_title {
+	font-weight: bolder;
+}
 
+#event_author {
+	font-size: 24px;
+	font-weight: bolder;
+}
+
+#learn_more {
+  width: 140px;
+  height:40px;
+  background-color: #d5d5d5;
+  border: none;
+  border-radius: 30px;
+  color: black;
+  padding: 5px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+#learn_more:hover {
+	background-color: #ef4444
+}
