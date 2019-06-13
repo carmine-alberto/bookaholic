@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 }
 
 .section_title {
@@ -63,8 +63,7 @@ body {
 	font-size: 20px;
 	font-weight: lighter;
 	padding-bottom: 40px;
-	margin-left: 150px;
-	margin-right: 150px;
+	margin: 60px 250px;
 }
 
 #book_details {
@@ -85,14 +84,12 @@ body {
   vertical-align: middle;
   position: absolute;
   left:630px;
-  top:900px;
+  top:880px;
 }
 
 #condition {
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-	margin-top: 350px;
+	margin: 350px 0px 50px 0px;
 }
-
-
