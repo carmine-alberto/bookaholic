@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	font-family: 'F37 Ginger';
+	font-family: 'F37 Ginger'!important;
 	overflow-x: hidden;
 	overflow-y: scroll;}
 
@@ -24,14 +24,15 @@ h6 {
 
 #author_intro {
 	background-color: #F3F3F3;
-	height: 630px;
-	padding-top: 30px;
+	height: 750px;
+	padding-top: 150px;
 	padding-bottom: 30px;
 }
 
 #author_name {
-	font-size: 24px;
-	margin:30px;
+	font-size: 26px;
+	margin-bottom:80px;
+	font-weight: bolder
 }
 
 #author_photo {
@@ -39,6 +40,7 @@ h6 {
 	height: 300px;
 	position: absolute;
 	left: 35px;
+	top:340px;
 	float: left;
     border: solid #EF4444;
   	border-width: 1px 10px 10px 1px;
@@ -50,9 +52,9 @@ h6 {
 }
 
 #author_bio {
-	padding: 20px 50px 50px 75px;
+	padding: 50px 50px 50px 75px;
 	font-size: 16px;
-	width: 330px;
+	width: 460px;
 }
 
 
@@ -65,7 +67,7 @@ h6 {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   position: absolute;
-  top:700px;
+  top:760px;
   left:20px;
   margin-top:120px;
 }
@@ -101,14 +103,15 @@ h6 {
 #related_events {
 	height: 460px;
 	background-color: #f3f3f3;
-	padding-bottom: 80px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
 }
 
 #event_photo {
 	float:left;
 	width:300px;
 	height:300px;
-	margin:0px 30px 160px 30px;
+	margin:30px 30px 160px 30px;
 	border: solid #EF4444;
   	border-width: 1px 10px 10px 1px;
 }
@@ -117,9 +120,25 @@ h6 {
 	font-size: 18px;
 }
 
-#event_description {
-	width:700px;
-	font-size: 16px;
+
+#learn_more {
+  width: 160px;
+  height:50px;
+  background-color: #d5d5d5;
+  border: none;
+  border-radius: 30px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  vertical-align: middle;
+  margin: 20px 0px;
+}
+
+#learn_more:active {
+	background-color: #ef4444
 }
 
 
