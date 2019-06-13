@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 }
 
 .section_title {
@@ -53,10 +53,9 @@ body {
 
 .date, .place {
 	color: rgba(67,67,67,1.00);
-	margin-left: 30px;
-	margin-top: 50px;
 	font-size: 20px;
-	text-align: center
+	text-align: center;
+	font-weight: bolder;
 }
 
 .description {
@@ -64,6 +63,27 @@ body {
 	font-weight: lighter;
 	margin-left: 50px;
 	margin-right: 30px;
+}
+
+#book_details {
+  text-transform:uppercase;
+  width:200px;
+  height: 45px;
+  background-color: #D9D9D9;
+  color: #000000;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 30px;
+  padding-top: 15px;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  position: absolute;
+  left:110px;
+  top:900px;
 }
 
 #condition {
@@ -74,6 +94,7 @@ body {
 	margin-left: 30px;
 	margin-right: 30px;
 }
+
 
 
 
