@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	font-family: "F37 Ginger";
+	font-family: "F37 Ginger"!important;
 }
 
 .section_title {
@@ -16,7 +16,7 @@ body {
 }
 
 .header_container {	
-	height: 150px;
+	height: 250px;
 	background-color: white;
 	z-index: -100;
 }
@@ -24,7 +24,7 @@ body {
 .header_text {
 	z-index: 100;
 	text-align: center;
-	margin-top: 120px;
+	margin-top: 220px;
 	font-weight: bolder;
 	font-size: 30px;
 }
@@ -41,6 +41,7 @@ body {
 	width:300px;
 	height:300px;
 	margin-left: 240px;
+	margin-top: -150px;
 	border: solid #EF4444;
   	border-width: 1px 10px 10px 1px;
 }
@@ -56,6 +57,7 @@ body {
 	margin-left: 30px;
 	margin-top: 50px;
 	font-size: 24px;
+	font-weight: bolder;
 	text-align: center
 }
 
@@ -91,7 +93,7 @@ body {
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-	margin-top: 400px;
+	margin-top: 240px;
 }
 
 
