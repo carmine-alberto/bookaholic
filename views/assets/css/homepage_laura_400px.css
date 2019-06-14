@@ -31,23 +31,6 @@ a {
   padding-right: 30px;
 }
 
-.scrolling-wrapper-suggestions {
-  opacity: 0;
-  height: 550px; 
-  width: 768px;
-  max-width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  position: absolute;
-  top:1200px;
-  text-outline: 150px 0px;
-  -webkit-overflow-scrolling: touch;
-  z-index: 999;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
 .book_cover {
   height: 294px;
   width: 225px;
@@ -344,6 +327,9 @@ input:checked + .slide-container .nav label { display: block; }
 .book_author, .book_title, .book_price {
 	text-align: center;
 }
+
+
+
 
 
 
