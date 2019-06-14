@@ -14,7 +14,10 @@ a {
   color: #000;
 }
 
-.scrolling-wrapper, .scrolling-wrapper-suggestions {
+
+
+
+.scrolling-wrapper {
 display: none;
 	width:1px;
 height: 1px;
@@ -85,7 +88,7 @@ height: 1px;
 .section_title {
 	font-size: 24px;
 	font-weight: bolder;
-	margin:35px;
+	margin:20px 0px 20px 20px;
 	clear: left;
 }
 
@@ -117,18 +120,16 @@ height: 1px;
 	height:400px;
 }
 
-.carousel {
-	position: absolute;
-	top:140px;
-	right:120px;	
-	align-content: center;
+carousel {
+
 }
 
 ul.slides {
     display: block;
-    position: relative;
-    height: 550px;
-    margin: 0;
+    position: absolute;
+	left:-200px;
+	top:100px;
+    height: 600px;
     padding: 0;
     overflow: hidden;
     list-style: none;
@@ -151,43 +152,47 @@ ul.slides input {
 .slide-container { 
     display: inline-block; 
 	white-space: nowrap;
-	width:1440px;
+	width:1400px;
+	margin-top: 400px;
+	margin-right: 100px;
 }
 
 .slide-image {
     display: inherit;
     position: absolute;
-	bottom:80px;
-	left:12px;
-    width: 350px;
-    height: 360px;
+	bottom:80%;
+	left:0%;
+    width: 20%;
+    height: 60%;
     top: 0;
     opacity: 0;
     transition: all .7s ease-in-out;
 }   
 
 .slide-image img {
-    width: 70%;
-    height: 70%;
-	margin-left: 25px;
+    width: 93%;
+    height: 93%;
+	margin-left: 100px;
 	margin-top: 10px;
 }
 
 .carousel-controls {
     position: absolute;
-    bottom: 720px;
-    left: 0;
-    right: 0;
-	width: 1410px;
+    bottom: 750px;
+    left: 0px;
+    right: 300px;
+	width:1380px;
     z-index: 999;
-    font-size: 110px;
+    font-size: 100px;
     line-height: 600px;
-    color: #555555;
+    color: black;
 }
 
 .carousel-controls label {
+    display: none;
     position: absolute;
-    padding: 0 0px;
+    padding: 0 20px;
+    opacity: 1;
     transition: opacity .2s;
     cursor: pointer;
 }
@@ -196,8 +201,8 @@ ul.slides input {
     opacity: 0.5;
 }
 
-.carousel-controls label:hover {
-    opacity: 1;
+.carousel-controls label:active {
+    opacity: 0.4;
 }
 
 .carousel-controls .prev-slide {
@@ -214,6 +219,7 @@ ul.slides input {
 
 .caption_container {
 	text-align: center;
+	padding-left:40px
 }
 
 div.image_and_caption {
@@ -239,6 +245,12 @@ input:checked + .slide-container .carousel-controls label {
 
 input:checked + .slide-container .nav label { display: block; }
 
+
+#related_books {
+	background-color: #F3F3F3;
+	height: 620px;
+	margin-top: 100px;
+}
 
 #our_suggestions_container {
 position: absolute;
