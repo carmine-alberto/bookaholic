@@ -3,13 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>Single book page</title>
-<link href="/assets/css/all_genres_1440px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/all_genres_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/all_genres_400px.css" />
+<link href="All genres CSS.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="All genres 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="All genres 400px.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Navbar 3 CSS.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+  <div class="adjust-height">		
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="menu_item" id="active">Home</a></li>
+        <li><a href="#" class="menu_item">Authors</a></li>		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Art and design</a></li>
+            <li><a href="#">Fiction</a></li>
+            <li><a href="#">Mystery</a></li>
+            <li><a href="#">Non fiction</a></li>
+            <li><a href="#">Science fiction</a></li>
+          </ul>
+        </li>
+		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Family</a></li>
+            <li><a href="#">Fear</a></li>
+            <li><a href="#">Friendship</a></li>
+            <li><a href="#">Justice</a></li>
+            <li><a href="#">Love</a></li>
+            <li><a href="#">Philosophy</a></li>
+            <li><a href="#">War</a></li>
+			  
+          </ul>
+        </li>		  
+		  
+        <li><a href="#" class="menu_item">Events</a></li>
+        <li><a href="#" class="menu_item">About us</a></li>
+      </ul>
+		<form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+      <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
+        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+      </ul>
+    </div>
+  </div>
+	</div>
+</nav>	
 	
 <section id="header_section">
 <div class="header_container">	
@@ -18,17 +83,17 @@
 </div>
 </section>
 	
-<section id="art and design">	
+<section id="art_and_design">	
 
 	
 	<h3 class="section_title">
 Art and design
 	</h3>		
 	
-<div class="container">
+<div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book1_photo_art">	
+<img src="img/dear_data.jpg" class="book_cover" id="book1_photo_art">	
 <h4 class="book_name" id="book1_name_art">American Spy</h4>
 <h4 class="book_author" id="book1_author1_art">Adam Sivera</h4>
 <h4 class="book_author" id="book1_author2_art"><br></h4>
@@ -37,7 +102,7 @@ Art and design
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book2_photo_art">	
+<img src="img/dear_data.jpg" class="book_cover" id="book2_photo_art">	
 <h4 class="book_name" id="book2_name_art">American Spy</h4>
 <h4 class="book_author" id="book2_author1_art">Adam Sivera</h4>
 <h4 class="book_author" id="book2_author2_art"><br></h4>
@@ -46,7 +111,7 @@ Art and design
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book3_photo_art">	
+<img src="img/dear_data.jpg" class="book_cover" id="book3_photo_art">	
 <h4 class="book_name" id="book3_name_art">American Spy</h4>
 <h4 class="book_author" id="book3_author1_art">Adam Sivera</h4>
 <h4 class="book_author" id="book3_author2_art"><br></h4>
@@ -55,7 +120,7 @@ Art and design
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book4_photo_art">	
+<img src="img/dear_data.jpg" class="book_cover" id="book4_photo_art">	
 <h4 class="book_name" id="book4_name_art">American Spy</h4>
 <h4 class="book_author" id="book4_author1_art">Adam Sivera</h4>
 <h4 class="book_author" id="book4_author2_art"><br></h4>
@@ -64,7 +129,7 @@ Art and design
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book5_photo_art">	
+<img src="img/dear_data.jpg" class="book_cover" id="book5_photo_art">	
 <h4 class="book_name" id="book5_name_art">American Spy</h4>
 <h4 class="book_author" id="book5_author1_art">Adam Sivera</h4>
 <h4 class="book_author" id="book5_author2_art"><br></h4>
@@ -87,10 +152,10 @@ Art and design
 Fiction
 	</h3>		
 	
-<div class="container">
+<div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book1_photo_fiction">	
+<img src="img/the_catcher_in_the_rye.jpg" class="book_cover" id="book1_photo_fiction">	
 <h4 class="book_name" id="book1_name_fiction">American Spy</h4>
 <h4 class="book_author" id="book1_author1_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book1_author2_fiction"><br></h4>
@@ -99,7 +164,7 @@ Fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book2_photo_fiction">	
+<img src="img/the_catcher_in_the_rye.jpg" class="book_cover" id="book2_photo_fiction">	
 <h4 class="book_name" id="book2_name_fiction">American Spy</h4>
 <h4 class="book_author" id="book2_author1_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book2_author2_fiction"><br></h4>
@@ -108,7 +173,7 @@ Fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book3_photo_fiction">	
+<img src="img/the_catcher_in_the_rye.jpg" class="book_cover" id="book3_photo_fiction">	
 <h4 class="book_name" id="book3_name_fiction">American Spy</h4>
 <h4 class="book_author" id="book3_author1_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book3_author2_fiction"><br></h4>
@@ -117,7 +182,7 @@ Fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book4_photo_fiction">	
+<img src="img/the_catcher_in_the_rye.jpg" class="book_cover" id="book4_photo_fiction">	
 <h4 class="book_name" id="book4_name_fiction">American Spy</h4>
 <h4 class="book_author" id="book4_author1_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book4_author2_fiction"><br></h4>
@@ -126,7 +191,7 @@ Fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book5_photo_fiction">	
+<img src="img/the_catcher_in_the_rye.jpg" class="book_cover" id="book5_photo_fiction">	
 <h4 class="book_name" id="book5_name_fiction">American Spy</h4>
 <h4 class="book_author" id="book5_author1_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book5_author2_fiction"><br></h4>
@@ -148,10 +213,10 @@ Fiction
 Mystery
 	</h3>		
 	
-<div class="container">
+<div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_mystery">	
+<img src="img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_mystery">	
 <h4 class="book_name" id="book1_name_mystery">American Spy</h4>
 <h4 class="book_author" id="book1_author1_mystery">Adam Sivera</h4>
 <h4 class="book_author" id="book1_author2_mystery"><br></h4>
@@ -160,7 +225,7 @@ Mystery
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_mystery">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_mystery">	
 <h4 class="book_name" id="book2_name_mystery">American Spy</h4>
 <h4 class="book_author" id="book2_author1_mystery">Adam Sivera</h4>
 <h4 class="book_author" id="book2_author2_mystery"><br></h4>
@@ -169,7 +234,7 @@ Mystery
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_mystery">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_mystery">	
 <h4 class="book_name" id="book3_name_mystery">American Spy</h4>
 <h4 class="book_author" id="book3_author1_mystery">Adam Sivera</h4>
 <h4 class="book_author" id="book3_author2_mystery"><br></h4>
@@ -178,7 +243,7 @@ Mystery
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_mystery">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_mystery">	
 <h4 class="book_name" id="book4_name_mystery">American Spy</h4>
 <h4 class="book_author" id="book4_author1_mystery">Adam Sivera</h4>
 <h4 class="book_author" id="book4_author2_mystery"><br></h4>
@@ -187,7 +252,7 @@ Mystery
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book5_photo_mystery">	
+<img src="img/a_criminal_defense.jpg" class="book_cover" id="book5_photo_mystery">	
 <h4 class="book_name" id="book5_name_mystery">American Spy</h4>
 <h4 class="book_author" id="book5_author1_mystery">Adam Sivera</h4>
 <h4 class="book_author" id="book5_author2_mystery"><br></h4>
@@ -208,10 +273,10 @@ Mystery
 Non fiction
 	</h3>		
 	
-<div class="container">
+<div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_non_fiction">	
+<img src="img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_non_fiction">	
 <h4 class="book_name" id="book1_name_non_fiction">American Spy</h4>
 <h4 class="book_author" id="book1_author1_non_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book1_author2_non_fiction"><br></h4>
@@ -220,7 +285,7 @@ Non fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_non_fiction">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_non_fiction">	
 <h4 class="book_name" id="book2_name_non_fiction">American Spy</h4>
 <h4 class="book_author" id="book2_author1_non_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book2_author2_non_fiction"><br></h4>
@@ -229,7 +294,7 @@ Non fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_non_fiction">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_non_fiction">	
 <h4 class="book_name" id="book3_name_non_fiction">American Spy</h4>
 <h4 class="book_author" id="book3_author1_non_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book3_author2_non_fiction"><br></h4>
@@ -238,7 +303,7 @@ Non fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_non_fiction">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_non_fiction">	
 <h4 class="book_name" id="book4_name_non_fiction">American Spy</h4>
 <h4 class="book_author" id="book4_author1_non_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book4_author2_non_fiction"><br></h4>
@@ -247,7 +312,7 @@ Non fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/american_spy.jpg" class="book_cover" id="book5_photo_non_fiction">	
+<img src="img/american_spy.jpg" class="book_cover" id="book5_photo_non_fiction">	
 <h4 class="book_name" id="book5_name_non_fiction">American Spy</h4>
 <h4 class="book_author" id="book5_author1_non_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book5_author2_non_fiction"><br></h4>
@@ -269,10 +334,10 @@ Non fiction
 Science fiction
 	</h3>		
 	
-<div class="container">
+<div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_science_fiction">	
+<img src="img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_science_fiction">	
 <h4 class="book_name" id="book1_name_science_fiction">American Spy</h4>
 <h4 class="book_author" id="book1_author1_science_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book1_author2_science_fiction"><br></h4>
@@ -281,7 +346,7 @@ Science fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_science_fiction">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_science_fiction">	
 <h4 class="book_name" id="book2_name_science_fiction">American Spy</h4>
 <h4 class="book_author" id="book2_author1_science_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book2_author2_science_fiction"><br></h4>
@@ -290,7 +355,7 @@ Science fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_science_fiction">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_science_fiction">	
 <h4 class="book_name" id="book3_name_science_fiction">American Spy</h4>
 <h4 class="book_author" id="book3_author1_science_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book3_author2_science_fiction"><br></h4>
@@ -299,7 +364,7 @@ Science fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_science_fiction">	
+<img src="img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_science_fiction">	
 <h4 class="book_name" id="book4_name_science_fiction">American Spy</h4>
 <h4 class="book_author" id="book4_author1_science_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book4_author2_science_fiction"><br></h4>
@@ -308,7 +373,7 @@ Science fiction
 </div>
 	
 <div class="book">
-<img src="/assets/img/american_spy.jpg" class="book_cover" id="book5_photo_science_fiction">	
+<img src="img/american_spy.jpg" class="book_cover" id="book5_photo_science_fiction">	
 <h4 class="book_name" id="book5_name_science_fiction">American Spy</h4>
 <h4 class="book_author" id="book5_author1_science_fiction">Adam Sivera</h4>
 <h4 class="book_author" id="book5_author2_science_fiction"><br></h4>
