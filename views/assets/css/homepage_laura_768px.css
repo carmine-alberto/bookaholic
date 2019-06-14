@@ -38,23 +38,6 @@ display: block;
   padding-right: 30px;
 }
 
-.scrolling-wrapper-suggestions {
-  opacity: 0;
-  height: 550px; 
-  width: 768px;
-  max-width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  position: absolute;
-  top:1500px;
-  text-outline: 150px 0px;
-  -webkit-overflow-scrolling: touch;
-  z-index: 999;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
   .card {
     display: inline-block;
   }
