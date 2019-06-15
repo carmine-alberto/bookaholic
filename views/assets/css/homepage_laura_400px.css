@@ -31,6 +31,23 @@ a {
   padding-right: 30px;
 }
 
+.scrolling-wrapper-suggestions {
+  opacity: 0;
+  height: 550px; 
+  width: 768px;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top:1200px;
+  text-outline: 150px 0px;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .book_cover {
   height: 294px;
   width: 225px;
@@ -308,11 +325,11 @@ input:checked + .slide-container .nav label { display: block; }
 
 #learn_more {
 	background-color: #d4d4d4;
-	width: 150px;
+	width: 180px;
 	height: 40px;
-	padding-left: 20px;
-	padding-right: 20px;
-	font-size: 20px;
+	padding-left: 28px;
+	padding-right: 30px;
+	font-size: 18px;
 	border-radius: 30px;
 	position: absolute;
 	left: 130px;
@@ -327,9 +344,6 @@ input:checked + .slide-container .nav label { display: block; }
 .book_author, .book_title, .book_price {
 	text-align: center;
 }
-
-
-
 
 
 
