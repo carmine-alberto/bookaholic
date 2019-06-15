@@ -1,138 +1,141 @@
-@charset "utf-8";
-/* CSS Document */
-
-body {
-	font-family: "F37 Ginger"!important;
+body{
+font-family: "F37 Ginger"!important;
 }
 
-
-.section_title {
-	font: bolder;
-	font-size: 20px;
-	font-weight: bolder;
-	padding-left: 25px;
-	padding-top: 15px;
-	padding-bottom: 30px;
-	clear: left;
+#about_us_photo{
+margin: 0 -40%;
+width: 170%;
 }
 
-.header_container {	
-	height: 320px;
-	background-color: white;
-	z-index: -100;
+.column{
+float: left;
+width: 40%;
+padding-left: 200px;
+padding-bottom: 40px;
 }
 
-.header_text {
-	z-index: 100;
-	text-align: center;
-	position: absolute;
-	top: 180px;
-	left: 335px;
-	font-weight: bolder;
-	font-size: 40px;
+#contacts{
+background-color: #FFFFFF;
+height: 500px;
 }
 
-.header_box {
-  width: 185px; 
-  height: 20px; 
-  background-color: #EF4444;
-  position: absolute;
-  bottom: 396px;
-  left:325px;
-  z-index: inherit;
+#contacts_container{
+background-color: #ef4444;
+margin-left: 25px;
+margin-top: 30px;
+padding: 15px 0px 50px 0px;
+float: left;
+width: 710px;
+height: 500px;
 }
 
-#who_we_are_section {
-	background-color: #FFFFFF;
-	height: 300px;
+#contacts_greenwich_rows, #contacts_camden_rows{
+padding-left: 180px;
+margin-bottom: 30px;
 }
 
-#about_us_photo {
-   margin:0 -40%;
-   width:170%;
+.faq{
+font-weight: normal;
+padding-left: 55px;
+padding-right: 55px;
+width: 700px;
+font-size: 16px;
 }
 
-#faq_section {
-	background-color: #F3F3F3;
-	height: 570px;
+.faq_answer{
+font-weight: lighter;
+padding: 0px 55px 25px 55px;
+font-size: 16px;
 }
 
-.faq {
-	font-weight: normal;
-	padding-left: 25px;
-	padding-right: 25px;
-	width: 700px;
-	font-size: 16px;
+#faq_section{
+background-color: #F3F3F3;
+height: 570px;
 }
 
-.faq_answer {
-	font-weight: lighter;
-	padding-left: 25px;
-	padding-bottom: 25px;
-	font-size: 16px;
+.header_box{
+width: 185px;
+height: 20px;
+background-color: #EF4444;
+position: absolute;
+bottom: 396px;
+left: 325px;
+z-index: inherit;
 }
 
-#contacts {
-	background-color: #FFFFFF;
-	height: 500px;	
+.header_container{
+height: 320px;
+background-color: white;
+z-index: -100;
 }
 
-#who_we_are_text {
-	text-align: center;
-	width: 650px;
-	position: absolute;
-	left:60px;
-	font-weight: lighter;
-	font-size: 16px
+.header_text{
+z-index: 100;
+text-align: center;
+position: absolute;
+top: 180px;
+left: 335px;
+font-weight: bolder;
+font-size: 40px;
 }
 
-#map {
-   width:760px;
-   height: 460px;
-   float:left;
-   padding:0 25px;
+#map{
+width: 760px;
+height: 460px;
+float: left;
+padding: 0 25px;
 }
 
-
-
-
-#contacts_container {
-	background-color: #ef4444;
-	margin-left:25px;
-	margin-top:30px;
-	padding: 15px 0px 50px 0px;
-	float:left;
-	width:710px;
-	height: 500px;
+.navbar-header{
+float: none!important;
 }
 
-.timetable {
-  word-spacing: 60px;
-  margin-top: 20px;
-
+.navbar-left{
+padding-left: 280px!important;
 }
 
-#contacts_greenwich_rows, #contacts_camden_rows {
-  padding-left: 105px;
-  margin-bottom:30px;
+.navbar-right{
+position: absolute!important;
+top: 47px;
+right: 30px;
 }
 
-.column {
-  float: left;
-  width: 40%;
-  padding-left: 120px;
-  padding-bottom: 40px;
+.row:after{
+content: "";
+display: table;
+clear: both;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.section_title{
+font: bolder;
+font-size: 28px;
+font-weight: bolder;
+padding-left: 55px;
+padding-top: 15px;
+padding-bottom: 30px;
+clear: left;
 }
 
-.shop_name {
-	font-weight: bolder;
+.shop_name{
+font-weight: bolder;
 }
 
+.timetable{
+word-spacing: 60px;
+margin-top: 20px;
+}
+
+#who_we_are_section{
+background-color: #FFFFFF;
+height: 300px;
+}
+
+#who_we_are_text{
+text-align: justify;
+width: 650px;
+position: absolute;
+left: 60px;
+font-weight: lighter;
+font-size: 16px;
+}
 
