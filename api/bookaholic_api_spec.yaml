@@ -319,13 +319,13 @@ paths:
           schema:
             type: string
             format: date
-          description: "Specify the minimum starting date for events shown; can be coupled with <<to>> parameter."
+          description: "Specify the minimum starting date for events shown; can be coupled with to parameter."
         - name: to
           in: query
           schema:
             type: string
             format: date
-          description: "Specify the maximum date for events shown; can be coupled with <<from>> parameter."
+          description: "Specify the maximum date for events shown; can be coupled with from parameter."
 
       responses:
         '200':
@@ -673,7 +673,7 @@ paths:
             New amount of the specified resource. A value of 0 is tantamount to removing the resource from the cart
 
       responses:
-        '204':
+        '204NoContent':
           $ref: "#/components/responses/204NoContent"
 
         '400':
@@ -1247,10 +1247,10 @@ components:
       example:
         event_id: 102034659
         info: |
-          Don't miss the opportunity to know one of most promising authors of this year at the presentation of his first book, {{random title here}}.
+          Don't miss the opportunity to meet one of most promising authors of the year at the presentation of his first book.
         place: Milan
         date: 2019-06-03
-        image: even01.jpg
+        image: event01.jpg
         book_id: 0239277421
 
     Review:
