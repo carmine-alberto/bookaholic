@@ -23,6 +23,12 @@ h6 {
 	font-weight: bolder
 }
 
+.book_image_event {
+	width: 230px;
+	height: 300px;
+	float: left;
+	margin-right: 40px;
+}
 
 #author_intro {
 	background-color: #F3F3F3;
@@ -107,9 +113,18 @@ h6 {
 }
 
 #related_events {
-	height: 400px;
-	background-color: #f3f3f3;
-	padding-bottom: 30px;
+	  width: 1440px;
+  height: 900px;
+  background-color: #f3f3f3;	
+}
+
+.events_container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.event {
+	margin: 50px;
 }
 
 #event_photo {
@@ -135,7 +150,7 @@ h6 {
 	font-weight: bolder;
 }
 
-#learn_more {
+.learn_more {
   width: 140px;
   height:40px;
   background-color: #d5d5d5;
@@ -151,6 +166,6 @@ h6 {
   margin-top: 30px;
 }
 
-#learn_more:hover {
+.learn_more:hover {
 	background-color: #ef4444
 }
