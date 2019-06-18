@@ -1,154 +1,152 @@
-@charset "utf-8";
-/* CSS Document */
 body {
-	font-family: 'F37 Ginger'!important;
-	overflow-x: hidden;
-	overflow-y: scroll;}
-
-h5 {
-	font-weight: 1000;
-	font-weight: bolder;
-}
-
-h6 {
-	color: #555555;
-	font-weight: lighter;
-}
-
-.section_title {
-	padding-left:30px;
-	padding-top:20px;
-	font-size: 26px;
-}
-
-
-#author_intro {
-	background-color: #F3F3F3;
-	height: 750px;
-	padding-top: 150px;
-	padding-bottom: 30px;
-}
-
-#author_name {
-	font-size: 26px;
-	margin-bottom:80px;
-	font-weight: bolder
-}
-
-#author_photo {
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	left: 35px;
-	top:340px;
-	float: left;
-    border: solid #EF4444;
-  	border-width: 1px 10px 10px 1px;
-}
-
-#author_bio_title {
-	margin: 10px 10px 10px 50px;
-	font-size: 18px;
+font-family:'F37 Ginger'!important;
+overflow-x:hidden;
+overflow-y:scroll;
 }
 
 #author_bio {
-	padding: 50px 50px 50px 75px;
-	font-size: 16px;
-	width: 460px;
+font-size:16px;
+padding:50px 50px 50px 75px;
+width:460px;
 }
 
-
-.authored_books_section {
-	height: 520px;	
-	padding:10px;
+#author_bio_title {
+left:330px;	
+margin:0 10px 10px 20px;
+position: absolute;
 }
 
-.books_containers {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  position: absolute;
-  top:760px;
-  left:20px;
-  margin-top:120px;
+#author_intro {
+background-color:#F3F3F3;
+height:750px;
+padding-bottom:30px;
+padding-top:150px;
 }
 
-.book {
-  font-size: 18px;
-  text-align: center;
-  margin-left: 30px;
-  padding-bottom:15px;
+#author_name {
+font-size:36px;
+font-weight:bolder;
+margin-bottom:80px;
 }
 
-.book_cover {
-	width:145px;
-	height: 190px;
-	opacity:1;
-	cursor: pointer;
-}
-
-.book_cover:hover{
-	opacity:0.8;
-}
-
-.book_title {
-	font-weight: bold;
-	font-size: 15px;
-}
-
-.book_author {
-	font-weight: lighter;
-	font-size: 12px;
-}
-
-#related_events {
-	height: 1660px;
-	background-color: #f3f3f3;
-	padding-bottom: 10px;
-	margin-bottom: 0px;
+#author_photo {
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+left:35px;
+position:absolute;
+top:365px;
+width:300px;
 }
 
 #event_photo {
-	float:left;
-	width:300px;
-	height:300px;
-	margin:30px 30px 160px 30px;
-	border: solid #EF4444;
-  	border-width: 1px 10px 10px 1px;
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+margin:30px 30px 160px;
+width:300px;
 }
 
-#event_date {
-	font-size: 18px;
+#related_events {
+background-color:#f3f3f3;
+height:1660px;
+margin-bottom:0;
+padding-bottom:10px;
 }
 
-.events_container {
-  display: grid;
-  grid-template-columns: auto;
+.authored_books_section {
+height:520px;
+padding:10px;
+}
+
+.book {
+font-size:18px;
+margin-left:30px;
+padding-bottom:15px;
+text-align:center;
+}
+
+.book_author {
+font-size:12px;
+font-weight:lighter;
+}
+
+.book_cover {
+cursor:pointer;
+height:190px;
+opacity:1;
+width:145px;
+}
+
+.book_cover:hover {
+opacity:0.8;
+}
+
+.book_title {
+font-size:15px;
+font-weight:bold;
+}
+
+.books_containers {
+display:grid;
+grid-template-columns:auto auto auto auto auto;
+left:20px;
+margin-top:120px;
+position:absolute;
+top:760px;
 }
 
 .event {
-	margin: 50px;
+margin:50px;
+}
+
+.event_author {
+font-size:24px;
+}
+
+.event_date {
+font-size:18px;
+font-weight:lighter;
+}
+
+.event_title {
+font-size:26px;
+font-weight:bolder;
+}
+
+.events_container {
+display:grid;
+grid-template-columns:auto;
 }
 
 .learn_more {
-  width: 160px;
-  height:50px;
-  background-color: #d5d5d5;
-  border: none;
-  border-radius: 30px;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  vertical-align: middle;
-  margin: 20px 0px;
+background-color:#d5d5d5;
+border:none;
+border-radius:30px;
+color:black;
+display:inline-block;
+font-size:18px;
+font-weight:bolder;
+height:50px;
+margin:20px 0;
+padding:15px 12px;
+text-align:center;
+text-decoration:none;
+text-transform:uppercase;
+vertical-align:middle;
+width:160px;
 }
 
 .learn_more:active {
-	background-color: #ef4444
+background-color:#ef4444;
 }
 
-
+.section_title {
+font-size:24px;
+padding-left:30px;
+padding-top:20px;
+}
 
 
