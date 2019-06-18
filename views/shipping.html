@@ -1,80 +1,126 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Shipping</title>
-<link href="/assets/css/shipping_1440px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/shipping_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/shipping_400px.css" />
+<link href="Shipping CSS.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="Shipping 768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="Shipping 400px.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="Navbar 3 CSS.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
 </head>
 
 <body>
 	
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!--- START navigation bar section --->
+	
+<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+		
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png" alt="bookaholic logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-  <div class="adjust-height">		
+  <div class="adjust-height">	
+	  
       <ul class="nav navbar-nav">
-        <li><a href="#" class="menu_item" id="active">Home</a></li>
-        <li><a href="#" class="menu_item">Authors</a></li>		  
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Art and design</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Mystery</a></li>
-            <li><a href="#">Non fiction</a></li>
-            <li><a href="#">Science fiction</a></li>
+        <li><a href="#" class="menu_item" role="menuitem" id="active">Home</a></li>
+		  
+        <li><a href="#" class="menu_item" role="menuitem">Authors</a></li>		  
+        
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" 
+			  id="genre_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="genre">
+            <li id="genre_art_and_design"  role="option">
+			<a href="#">Art and design</a></li>
+            <li id="genre_fiction" role="option">
+			<a href="#">Fiction</a></li>
+            <li id="genre_mystery" role="option"><a href="#">Mystery</a></li>
+            <li id="genre_non_fiction" role="option"><a href="#">Non fiction</a></li>
+            <li id="genre_science_fiction" role="option"><a href="#">Science fiction</a></li>
           </ul>
         </li>
 		  
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Family</a></li>
-            <li><a href="#">Fear</a></li>
-            <li><a href="#">Friendship</a></li>
-            <li><a href="#">Justice</a></li>
-            <li><a href="#">Love</a></li>
-            <li><a href="#">Philosophy</a></li>
-            <li><a href="#">War</a></li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu"
+			  id="themes_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="theme">
+            <li id="theme_family" role="option"><a href="#">Family</a></li>
+            <li id="theme_fear" role="option"><a href="#">Fear</a></li>
+            <li id="theme_friendship" role="option"><a href="#">Friendship</a></li>
+            <li id="theme_justice" role="option"><a href="#">Justice</a></li>
+            <li id="theme_love" role="option"><a href="#">Love</a></li>
+            <li id="theme_philosophy" role="option"><a href="#">Philosophy</a></li>
+            <li id="theme_war" role="option"><a href="#">War</a></li>
 			  
           </ul>
         </li>		  
 		  
-        <li><a href="#" class="menu_item">Events</a></li>
-        <li><a href="#" class="menu_item">About us</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">Events</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">About us</a></li>
       </ul>
+	  
+	  
 		<form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+      <div class="input-group" id="searchbar">
+        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button title="search button" class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
+      			</button>
+	  </div>
       </div>
+
     </form>
       <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
-        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+		  <li><a href="#"><span class="icon_name">
+		  <img src="img/logo profile.png" 
+			   alt="profile link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(profile, 'profile page')"
+    		   onkeydown="goToLink(profile, 'profile page')"
+     		   role="link">
+			   Profile</span>
+			  </a>
+		  </li>
+		  
+          <li><a href="#"><span class="icon_name">
+		  <img src="img/logo cart.png" 
+			   alt="cart link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(cart, 'cart page')"
+    		   onkeydown="goToLink(cart, 'cart page')"
+     		   role="link">
+			   Cart</span>
+			  </a>
+		  </li>
       </ul>
     </div>
   </div>
 	</div>
-</nav>
+</nav>	
+		
+<!--- END navigation bar section --->
+	
+	
+	
+<!--- START Title section --->	
 	
 <section id="header_section">
 <div class="header_container">	
@@ -82,71 +128,76 @@
 <div class="header_box"></div>
 </div>
 </section>
+	
+<!--- END Title section --->	
 
+	
+
+<!--- START UK delivery section --->	
 	
 <section id="uk_delivery">
 
-<h4 class="section_title" id="uk_delivery_title">UK delivery options</h4>	
+<h2 class="section_title" id="uk_delivery_title">UK delivery options</h2>	
 
 <div id="uk_container">	
 
 <div class="uk_options">	
 	
-<h6 class="uk_request">
+<h3 class="uk_request">
 	I want the book to be delivered at my house
-	</h6>
-<h6>In this case you have three options:</h6>
-<h6>&#8226; Free delivery (only if you spend more than 15 £)
+	</h3>
+<h3 class="answers">In this case you have three options:</h3>
+<h3 class="answers">&#8226; Free delivery (only if you spend more than 15 £)
 	<br>
 You will get the book within a week
-	</h6>
+	</h3>
 	
-<h6>&#8226; Gold delivery (3.70 £)
+<h3 class="answers">&#8226; Gold delivery (3.70 £)
 	<br>
 You will get the book 2-3 days after the purchase
-	</h6>
+	</h3>
 	
-<h6>&#8226; Platinum delivery (5.60 £)
+<h3 class="answers">&#8226; Platinum delivery (5.60 £)
 	<br>
 You will get the book the day after the purchase
-	</h6>
+	</h3>
 	</div>
 	
 <div class="uk_options">
 
-<h6 class="uk_request">I want to pick up the book at my local Bookaholic store</h6>
-<h6>In this case you have three options:</h6>
-<h6>&#8226; Pay online and collect in store</h6>	
-<h6>&#8226; Select online and pay and collect in store</h6>	
+<h3 class="uk_request">I want to pick up the book at my local Bookaholic store</h3>
+<h3 class="answers">In this case you have three options:</h3>
+<h3 class="answers">&#8226; Pay online and collect in store</h3>
+<h3 class="answers">&#8226; Select online and pay and collect in store</h3>	
 
 </div>		
 	
 </div>
 	
-	
 	</section>
 	
+<!--- END UK delivery section --->	
+	
+	
+
+<!--- START International delivery section --->	
 	
 <section id="international_delivery">
-	<h4 class="section_title" id="international_delivery_title">International Delivery options</h4>
-<h6 class="uk_request">
+	<h2 class="section_title" id="international_delivery_title">International Delivery options</h2>
+<h3 class="uk_request">
 	I don't like in the United Kingdom, but I want the book to be delivered at my house anyway
-	</h6>	
-	<h6>The cost is 10.95 £, regardless of the country, and you will get the book within 7-10 days</h6>
+	</h3>	
+	<h3 class="answers">The cost is 10.95 £, regardless of the country, and you will get the book within 7-10 days</h3>
 	
-	<h6>Here's where we are able to ship:</h6>	
-	<h6>Aland Islands, Albania, Andorra, Antigua and Barbuda, Argentina, Aruba, Australia, Austria, Bahamas, Bahrain, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bosnia and Herzegovina, Brazil, British Virgin Islands, Bulgaria, Cambodia, Cameroon, Canada, Canary Islands, Cayman Islands, Chile, China (inc Tibet), Comoros, Cook Islands, Croatia, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Ecuador, Estonia, Faroe Islands, Fiji, Finland, France, Georgia, Germany, Gibraltar, Greece, Greenland, Guadaloupe, Guernsey, Hong Kong, Hungary, Iceland, India, Indonesia, Ireland, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Latvia, Lebanon, Liechtenstein, Lithuania, Luxembourg, Macedonia, Malaysia, Malta, Martinique, Mauritius, Moldova, Monaco, Montenegro, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Norway, Oman, Philippines, Poland, Portugal, Qatar, Reunion, Romania, Russian Federation, San Marino, Saudi Arabia, Serbia, Seychelles, Singapore, Slovakia, Slovenia, South Africa, South Korea, Spain, Sri Lanka, Suriname, Sweden, Switzerland, Taiwan, Thailand, Tonga, Trinidad and Tobago, Turkey, Uganda, United Kingdom, United States of America, Vanuatu, Vatican City.</h6>
-	
-	
-	
-	
-	
-	
-	
-	
+	<h3 class="answers">Here's where we are able to ship:</h3>	
+	<h3 class="answers">Aland Islands, Albania, Andorra, Antigua and Barbuda, Argentina, Aruba, Australia, Austria, Bahamas, Bahrain, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bosnia and Herzegovina, Brazil, British Virgin Islands, Bulgaria, Cambodia, Cameroon, Canada, Canary Islands, Cayman Islands, Chile, China (inc Tibet), Comoros, Cook Islands, Croatia, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Ecuador, Estonia, Faroe Islands, Fiji, Finland, France, Georgia, Germany, Gibraltar, Greece, Greenland, Guadaloupe, Guernsey, Hong Kong, Hungary, Iceland, India, Indonesia, Ireland, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Latvia, Lebanon, Liechtenstein, Lithuania, Luxembourg, Macedonia, Malaysia, Malta, Martinique, Mauritius, Moldova, Monaco, Montenegro, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Norway, Oman, Philippines, Poland, Portugal, Qatar, Reunion, Romania, Russian Federation, San Marino, Saudi Arabia, Serbia, Seychelles, Singapore, Slovakia, Slovenia, South Africa, South Korea, Spain, Sri Lanka, Suriname, Sweden, Switzerland, Taiwan, Thailand, Tonga, Trinidad and Tobago, Turkey, Uganda, United Kingdom, United States of America, Vanuatu, Vatican City.</h3>
+		
 	</section>	
-	
+		
 <h4 id="other_questions">Do you have other questions? <a>Contact us</a></h4>	
+	
+<!--- END International delivery section --->	
+
 	
 </body>
 </html>
