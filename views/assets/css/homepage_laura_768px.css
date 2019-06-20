@@ -2,9 +2,11 @@ body {
 background-color:#ef4444!important;
 font-family:'F37 Ginger'!important;
 margin:0;
-max-width:768px;
-overflow-x:hidden;
-overflow-y:scroll;
+width:768px!important;
+}
+
+#best_sellers {
+	width: 820px;
 }
 
 .book {
@@ -112,9 +114,10 @@ width:768px;
 
 #gift_cards_section {
 background-color:#ffffff;
-height:1400px;
+height:1460px;
 padding-bottom:50px;
 padding-top:10px;
+width: 820px;
 }
 
 .image_and_caption {
@@ -135,16 +138,8 @@ transition:opacity 1s ease-in-out;
 }
 
 #landing_page {
-align-items:center;
-background:none;
-display:flex;
-flex-direction:column;
+width: 768px;
 height:700px;
-justify-content:center;
-ms-flex-align:center;
-ms-flex-pack:center;
-webkit-box-align:center;
-webkit-box-pack:center;
 }
 
 #landing_subtitle {
@@ -192,10 +187,12 @@ z-index:100;
 
 #learn_more {
 background-color:#d4d4d4;
+border: none;
 border-radius:30px;
 font-size:20px;
 height:40px;
 left:310px;
+margin-bottom: 60px;
 padding-bottom:40px;
 padding-left:25px;
 padding-right:20px;
@@ -210,6 +207,7 @@ background-color:#ef4444;
 
 .navbar-header {
 float: none!important;
+width: 768px;
 }
 	
 .navbar-left {
@@ -225,13 +223,8 @@ right:30px;
 #our_suggestions {
 align-items:flex-start;
 background-color:#F3F3F3;
-display:flex;
 height:1850px;
-justify-content:flex-start;
-ms-flex-align:center;
-ms-flex-pack:center;
-webkit-box-align:center;
-webkit-box-pack:center;
+width: 820px;
 }
 
 #our_suggestions_container {
@@ -298,6 +291,7 @@ font:bolder;
 font-size:24px;
 font-weight:bolder;
 padding-left:25px;
+width: 768px;
 }
 
 .slide-container {
