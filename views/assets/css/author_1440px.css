@@ -5,18 +5,25 @@ overflow-y:scroll;
 }
 
 #author_bio {
-font-size:18px;
+font-size:16px;
 font-weight:lighter;
 left:40%;
-padding:80px 45px;
+padding:50px;
 position:absolute;
 width:700px;
 }
 
 #author_bio_title {
+font-size:18px;
 font-weight:bolder;
-left:590px;
+left:595px;
 position:absolute;
+top:200px;
+}
+
+.authored_books_section {
+height:520px;
+padding:10px;
 }
 
 #author_intro {
@@ -24,7 +31,6 @@ background-color:#F3F3F3;
 height:600px;
 padding-bottom:30px;
 padding-top:30px;
-
 }
 
 #author_name {
@@ -42,36 +48,6 @@ height:300px;
 left:15%;
 position:absolute;
 width:300px;
-}
-
-#event_author {
-font-size:24px;
-font-weight:bolder;
-}
-
-#event_date {
-font-size:18px;
-margin-top:40px;
-}
-
-#event_photo {
-border:solid #EF4444;
-border-width:1px 10px 10px 1px;
-float:left;
-height:300px;
-margin:30px;
-width:300px;
-}
-
-#related_events {
-background-color:#f3f3f3;
-height:900px;
-width:1440px;
-}
-
-.authored_books_section {
-height:520px;
-padding:10px;
 }
 
 .book {
@@ -122,22 +98,34 @@ top:600px;
 margin:50px;
 }
 
-.event_author {
-font-size: 24px;
+#event_author {
+font-size:24px;
+font-weight:bolder;
+}
+
+.event_date,.place {
+color:rgba(67,67,67,1.00);
+font-size:16px;
+font-weight:lighter;
+}
+
+#event_photo {
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+margin:30px;
+width:300px;
+}
+
+.event_title {
+font-size:24px;
 }
 
 .events_container {
 display:grid;
 grid-template-columns:auto auto;
-}
-
-.event_date {
-font-weight: lighter
-}
-
-.event_title {
-font-size: 26px;
-font-weight: bolder;
+width:1440px;
 }
 
 .learn_more {
@@ -147,18 +135,25 @@ border-radius:30px;
 color:black;
 display:inline-block;
 font-size:18px;
-height:40px;
+font-weight:bold;
+height:45px;
 margin-top:30px;
 padding:5px 3px;
 text-align:center;
 text-decoration:none;
 text-transform:uppercase;
 vertical-align:middle;
-width:140px;
+width:160px;
 }
 
 .learn_more:hover {
 background-color:#ef4444;
+}
+
+#related_events {
+background-color:#f3f3f3;
+height:900px;
+width:1440px;
 }
 
 .section_title {
@@ -166,6 +161,5 @@ font-size:26px;
 font-weight:bolder;
 padding-left:30px;
 padding-top:20px;
+width:768px;
 }
-
-
