@@ -1,7 +1,3 @@
-body {
-font-family:"F37 Ginger"!important;
-}
-
 .author {
 font-size:18px;
 padding:40px;
@@ -35,13 +31,12 @@ display:inherit;
 .filter {
 float:left;
 list-style:none;
-width:20%;
 }
 
 #filters_container {
-margin-left:250px;
-margin-top:300px;
-width:1200px;
+margin-left:300px;
+margin-top:130px;
+width:300px;
 }
 
 #filters_container:after {
@@ -50,13 +45,13 @@ content:"";
 display:table;
 }
 
-.filters_text {
-font-size:22px;
+.filter_title {
+font-size:20px;
 }
 
 .header_box {
 background-color:#EF4444;
-bottom:453px;
+bottom:400px;
 height:20px;
 left:270px;
 position:absolute;
@@ -80,6 +75,14 @@ top:180px;
 z-index:100;
 }
 
+body {
+font-family:"F37 Ginger"!important;
+width:768px!important;
+}
+
+html {
+width:768px!important;
+}
 
 select {
 background-color:#f1f1f1;
