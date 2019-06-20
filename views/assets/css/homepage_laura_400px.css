@@ -2,7 +2,11 @@ body {
 margin:0;
 font-family:"F37 Ginger"!important;
 background-color:#EF4444!important;
-width:400px;
+max-width:400px;
+}
+
+#best_sellers {
+width: 450px;
 }
 
 #best_sellers_title {
@@ -20,23 +24,28 @@ width:225px;
 margin-left:10px;
 }
 
+.gift_cards {
+	width:400px;
+}
+
 #gift_cards_section {
 background-color:#ffffff;
-height:1400px;
+height:1620px;
 padding-bottom:40px;
+width: 450px;
 }
 
 #gift_cards_section_title {
 position:absolute;
 top:4240px;
-left:10px;
+left:330px;
 font-size:26px;
 text-align:center;
 margin-left:-320px;
 }
 
 .gift_card_image {
-width:300px;
+width:350px;
 }
 
 .gift_cards {
@@ -138,16 +147,8 @@ border-color:#555555;
 
 #our_suggestions {
 background-color:#F3F3F3;
-display:-webkit-box;
-display:-ms-flexbox;
-display:flex;
 height:3200px;
-webkit-box-align:center;
-ms-flex-align:center;
-align-items:flex-start;
-webkit-box-pack:center;
-ms-flex-pack:center;
-justify-content:flex-start;
+width: 400px;
 }
 
 #our_suggestions_container {
@@ -170,12 +171,16 @@ padding-right:30px;
 font-size:18px;
 border-radius:30px;
 position:absolute;
-left:110px;
-top:5500px;
+left:130px;
+top:5730px;
 }
 
 #learn_more:hover {
 background-color:#ef4444;
+}
+
+#our_suggestions {
+width: 450px;
 }
 
 #our_monthly_recommendations_title {
@@ -187,6 +192,7 @@ font:bolder;
 font-size:26px;
 font-weight:bolder;
 text-align:center;
+width: 400px;
 }
 
 .scrolling-wrapper {
@@ -203,4 +209,8 @@ webkit-overflow-scrolling:touch;
 z-index:999;
 padding-left:30px;
 padding-right:30px;
+}
+
+.text_container {
+width:300px;
 }
