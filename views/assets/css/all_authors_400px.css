@@ -1,16 +1,17 @@
 body {
 font-family:"F37 Ginger"!important;
-max-width:400px;
-overflow-x:hidden;
-overflow-y:scroll;
+width:400px!important;
+}
+
+html {
+width:400px!important;
 }
 
 .author {
-width:180px;
+width:180px!important;
 }
 
 .author_name {
-font-size:16px;
 margin-top:20px;
 width:140px;
 }
@@ -42,12 +43,12 @@ display:inherit;
 .filter {
 float:left;
 list-style:none;
-width:20%;
 }
 
 #filters_container {
-margin-left:100px;
-margin-top:160px;
+margin-left:120px;
+margin-top:10px;
+width:200px;
 }
 
 #filters_container:after {
@@ -56,17 +57,18 @@ content:"";
 display:table;
 }
 
-.filters_text {
-font-size:18px;
+
+.filter_title {
+font-size:20px;
 }
 
 .header_box {
 background-color:#EF4444;
-bottom:392px;
+bottom:515px;
 height:15px;
-left:125px;
+left:120px;
 position:absolute;
-width:175px;
+width:180px;
 z-index:inherit;
 }
 
