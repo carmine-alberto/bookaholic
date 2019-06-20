@@ -1,10 +1,15 @@
 body{
 font-family: "F37 Ginger"!important;
+width: 400px!important;
+}
+
+html {
+width: 400px;
 }
 
 #about_us_photo{
-margin: 0 -40%;
-width: 170%;
+width: 400px;
+margin: 5px 0px 10px 0px;
 }
 
 .column{
@@ -40,7 +45,7 @@ line-height: 1
 
 .faq{
 font-weight: normal;
-padding-left: 25px;
+padding-left: 65px;
 padding-right: 25px;
 width: 400px;
 font-size: 16px;
@@ -48,16 +53,17 @@ font-size: 16px;
 
 .faq_answer{
 font-weight: lighter;
-padding-left: 25px;
+padding-left: 65px;
 padding-bottom: 25px;
-width: 420px;
+width: 400px;
 font-size: 16px;
 }
 
 #faq_section{
 background-color: #F3F3F3;
 height: 800px;
-margin-top: 60px;
+margin: 60px 0px 20px 0px;
+width: 400px;
 }
 
 .header_box{
@@ -74,6 +80,11 @@ z-index: inherit;
 height: 150px;
 background-color: white;
 z-index: -100;
+width: 400px;
+}
+
+#header_section {
+width: 400px;
 }
 
 .header_text{
@@ -94,9 +105,9 @@ left: 20px;
 }
 
 #map{
-margin: 0 -40%;
-width: 170%;
-height: 80%;
+width: 400px;
+height: 250px;
+margin-bottom: 50px;
 }
 
 .menu_item{
@@ -106,6 +117,10 @@ width: 80px!important;
 .navbar-form{
 height: 60px!important;
 border-color: #555555;
+}
+
+.row {
+width: 400px;
 }
 
 .row:after{
@@ -122,6 +137,7 @@ padding-left: 165px;
 padding-top: 15px;
 padding-bottom: 30px;
 clear: left;
+width: 400px;
 }
 
 .shop_name{
@@ -135,14 +151,15 @@ margin-top: 20px;
 
 #who_we_are_section{
 background-color: #FFFFFF;
-height: 300px;
+height: 400px;
+width: 400px!important;
 }
 
 #who_we_are_text{
 text-align: justify;
-width: 300px;
+width: 250px;
 position: absolute;
-left: 50px;
+left: 70px;
 font-weight: lighter;
 font-size: 14px;
 margin-bottom: 30px;
