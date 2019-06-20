@@ -11,9 +11,15 @@ width:460px;
 }
 
 #author_bio_title {
-left:330px;	
-margin:0 10px 10px 20px;
-position: absolute;
+font-size:18px;
+left:350px;
+position:absolute;
+top:330px;
+}
+
+.authored_books_section {
+height:520px;
+padding:10px;
 }
 
 #author_intro {
@@ -21,10 +27,11 @@ background-color:#F3F3F3;
 height:750px;
 padding-bottom:30px;
 padding-top:150px;
+width:768px;
 }
 
 #author_name {
-font-size:36px;
+font-size:26px;
 font-weight:bolder;
 margin-bottom:80px;
 }
@@ -36,29 +43,8 @@ float:left;
 height:300px;
 left:35px;
 position:absolute;
-top:365px;
+top:360px;
 width:300px;
-}
-
-#event_photo {
-border:solid #EF4444;
-border-width:1px 10px 10px 1px;
-float:left;
-height:300px;
-margin:30px 30px 160px;
-width:300px;
-}
-
-#related_events {
-background-color:#f3f3f3;
-height:1660px;
-margin-bottom:0;
-padding-bottom:10px;
-}
-
-.authored_books_section {
-height:520px;
-padding:10px;
 }
 
 .book {
@@ -71,6 +57,15 @@ text-align:center;
 .book_author {
 font-size:12px;
 font-weight:lighter;
+}
+
+.books_containers {
+display:grid;
+grid-template-columns:auto auto auto auto auto;
+left:20px;
+margin-top:120px;
+position:absolute;
+top:760px;
 }
 
 .book_cover {
@@ -89,36 +84,28 @@ font-size:15px;
 font-weight:bold;
 }
 
-.books_containers {
-display:grid;
-grid-template-columns:auto auto auto auto auto;
-left:20px;
-margin-top:120px;
-position:absolute;
-top:760px;
-}
-
 .event {
 margin:50px;
-}
-
-.event_author {
-font-size:24px;
-}
-
-.event_date {
-font-size:18px;
-font-weight:lighter;
-}
-
-.event_title {
-font-size:26px;
-font-weight:bolder;
+width:680px;
 }
 
 .events_container {
 display:grid;
 grid-template-columns:auto;
+width:768px;
+}
+
+#event_date {
+font-size:18px;
+}
+
+#event_photo {
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+margin:30px 30px 160px;
+width:300px;
 }
 
 .learn_more {
@@ -128,25 +115,32 @@ border-radius:30px;
 color:black;
 display:inline-block;
 font-size:18px;
-font-weight:bolder;
 height:50px;
 margin:20px 0;
-padding:15px 12px;
 text-align:center;
 text-decoration:none;
-text-transform:uppercase;
 vertical-align:middle;
-width:160px;
+width:180px;
 }
 
 .learn_more:active {
 background-color:#ef4444;
 }
 
+
+#related_events {
+background-color:#f3f3f3;
+height:1660px;
+margin-bottom:0;
+padding-bottom:10px;
+width:768px;
+}
+
 .section_title {
-font-size:24px;
+font-size:26px;
 padding-left:30px;
 padding-top:20px;
+width:400px;
 }
 
 
