@@ -1,15 +1,21 @@
 body {
 font-family:'F37 Ginger'!important;
+max-width:768px!important;
 overflow-x:hidden;
 }
 
+a {
+font-weight:bolder;
+}
+
 .answers {
-font-size:18px;
+font-size:16px;
+font-weight:lighter;
 }
 
 .header_box {
 background-color:#EF4444;
-bottom:452px;
+bottom:400px;
 height:20px;
 left:180px;
 position:absolute;
@@ -40,6 +46,10 @@ margin-top:100px;
 width:680px;
 }
 
+#international_delivery_title {
+margin-left:150px;
+}
+
 #other_questions {
 font-size:18px;
 font-weight:lighter;
@@ -61,12 +71,20 @@ grid-template-columns:auto auto;
 margin-left:45px;
 }
 
+#uk_delivery {
+width:768px;
+}
+
 #uk_delivery_title {
 margin-top:180px;
 }
 
+.uk_options {
+width:350px;
+}
+
 .uk_request {
-font-size:20px;
+font-size:16px;
 font-weight:bolder;
 }
 
