@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Documento senza titolo</title>
 <link rel="stylesheet" href="/assets/css/all_authors_1440px.css" />
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/all_authors_768px.css" />
@@ -15,49 +16,67 @@
 
 <body>
 	
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!--- START navigation bar section --->
+	
+<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+		
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="/assets/img/bookaholic logo.png" alt="bookaholic logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-  <div class="adjust-height">		
+  <div class="adjust-height">	
+	  
       <ul class="nav navbar-nav">
-        <li><a href="#" class="menu_item" id="active">Home</a></li>
-        <li><a href="#" class="menu_item">Authors</a></li>		  
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Art and design</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Mystery</a></li>
-            <li><a href="#">Non fiction</a></li>
-            <li><a href="#">Science fiction</a></li>
+        <li><a href="#" class="menu_item" role="menuitem" id="active">Home</a></li>
+		  
+        <li><a href="#" class="menu_item" role="menuitem">Authors</a></li>		  
+        
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" 
+			  id="genre_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="genre">
+            <li id="genre_art_and_design"  role="option">
+			<a href="#">Art and design</a></li>
+            <li id="genre_fiction" role="option">
+			<a href="#">Fiction</a></li>
+            <li id="genre_mystery" role="option"><a href="#">Mystery</a></li>
+            <li id="genre_non_fiction" role="option"><a href="#">Non fiction</a></li>
+            <li id="genre_science_fiction" role="option"><a href="#">Science fiction</a></li>
           </ul>
         </li>
 		  
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Family</a></li>
-            <li><a href="#">Fear</a></li>
-            <li><a href="#">Friendship</a></li>
-            <li><a href="#">Justice</a></li>
-            <li><a href="#">Love</a></li>
-            <li><a href="#">Philosophy</a></li>
-            <li><a href="#">War</a></li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu"
+			  id="themes_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="theme">
+            <li id="theme_family" role="option"><a href="#">Family</a></li>
+            <li id="theme_fear" role="option"><a href="#">Fear</a></li>
+            <li id="theme_friendship" role="option"><a href="#">Friendship</a></li>
+            <li id="theme_justice" role="option"><a href="#">Justice</a></li>
+            <li id="theme_love" role="option"><a href="#">Love</a></li>
+            <li id="theme_philosophy" role="option"><a href="#">Philosophy</a></li>
+            <li id="theme_war" role="option"><a href="#">War</a></li>
 			  
           </ul>
         </li>		  
 		  
-        <li><a href="#" class="menu_item">Events</a></li>
-        <li><a href="#" class="menu_item">About us</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">Events</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">About us</a></li>
       </ul>
+	  
+	  
 		<form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
@@ -69,24 +88,40 @@
       </div>
     </form>
       <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
-        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+		  <li><a href="#"><span class="icon_name">
+		  <img src="img/logo profile.png" 
+			   alt="profile link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(profile, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(profile, 'http://www.w3.org/')"
+     		   role="link">
+			   Profile</span>
+			  </a>
+		  </li>
+		  
+          <li><a href="#"><span class="icon_name">
+		  <img src="img/logo cart.png" 
+			   alt="cart link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(cart, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(cart, 'http://www.w3.org/')"
+     		   role="link">
+			   Cart</span>
+			  </a>
+		  </li>
       </ul>
     </div>
   </div>
 	</div>
-</nav>
+</nav>	
+		
+<!--- END navigation bar section --->	
 	
-<ul id="filters_container">
-<li class="filter">
-<h4 class="container">suggested by us
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</h4>
-</li>
 	
-	</ul>
-	
+<!--- START Title section --->
+		
 <section id="header_section">
 <div class="header_container">	
 <h1 class="header_text">All authors</h1>	
@@ -94,164 +129,191 @@
 </div>
 </section>	
 	
+<!--- END Title section --->
+	
+	
+<!--- START Filters section --->	
+	
+<div id="filters_container">
+<div class="filter">
+<h2 class="filter_title">suggested by us
+  <input type="checkbox" title="suggested by us checkbox">
+  <span class="checkmark"
+		 aria-checked="false"
+		 tabindex="0"></span>
+</h2>
+</div>
+	
+	</div>	
+	
+<!--- END Filters section --->	
+	
+	
+	
+	
+<!--- START Authors section --->		
+	
 <div class="authors-container">
 	
 <div class="author">	
-<img src="/assets/img/giorgia_lupi.jpg" class="author_photo" id="author1_photo">	
-<h4 class="author_name" id="author1_name">Adam Sivera</h4>
+<img src="/assets/img/giorgia_lupi.jpg" class="author_photo" id="author1_photo" alt="author photo">	
+<h3 class="author_name" id="author1_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/helen_oyeyemi.jpg" class="author_photo" id="author2_photo">	
-<h4 class="author_name" id="author2_name">Adam Sivera</h4>
+<img src="/assets/img/helen_oyeyemi.jpg" class="author_photo" id="author2_photo" alt="author photo">	
+<h3 class="author_name" id="author2_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/neil_gaiman.jpg" class="author_photo" id="author3_photo">	
-<h4 class="author_name" id="author3_name">Adam Sivera</h4>
+<img src="/assets/img/neil_gaiman.jpg" class="author_photo" id="author3_photo" alt="author photo">	
+<h3 class="author_name" id="author3_name">Adam Sivera</h3>
 </div>	
 	
 <div class="author">	
-<img src="/assets/img/alex_michaelides.jpg" class="author_photo" id="author4_photo">	
-<h4 class="author_name" id="author4_name">Adam Sivera</h4>
+<img src="/assets/img/alex_michaelides.jpg" class="author_photo" id="author4_photo" alt="author photo">	
+<h3 class="author_name" id="author4_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author5_photo">	
-<h4 class="author_name" id="author5_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author5_photo" alt="author photo">	
+<h3 class="author_name" id="author5_name">Adam Sivera</h3>
 </div>	
 	
 <div class="author">	
-<img src="/assets/img/bonnie_siegler.jpg" class="author_photo" id="author6_photo">	
-<h4 class="author_name" id="author6_name">Adam Sivera</h4>
+<img src="/assets/img/bonnie_siegler.jpg" class="author_photo" id="author6_photo" alt="author photo">	
+<h3 class="author_name" id="author6_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/becky_albertalli.jpg" class="author_photo" id="author7_photo">	
-<h4 class="author_name" id="author7_name">Adam Sivera</h4>
+<img src="/assets/img/becky_albertalli.jpg" class="author_photo" id="author7_photo" alt="author photo">	
+<h3 class="author_name" id="author7_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/bruno_munari.jpg" class="author_photo" id="author8_photo">	
-<h4 class="author_name" id="author8_name">Adam Sivera</h4>
+<img src="/assets/img/bruno_munari.jpg" class="author_photo" id="author8_photo" alt="author photo">	
+<h3 class="author_name" id="author8_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/namwali_serpell.jpg" class="author_photo" id="author9_photo">	
-<h4 class="author_name" id="author9_name">Adam Sivera</h4>
+<img src="/assets/img/namwali_serpell.jpg" class="author_photo" id="author9_photo" alt="author photo">	
+<h3 class="author_name" id="author9_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/naomi_alderman.jpg" class="author_photo" id="author10_photo">	
-<h4 class="author_name" id="author10_name">Adam Sivera</h4>
+<img src="/assets/img/naomi_alderman.jpg" class="author_photo" id="author10_photo" alt="author photo">	
+<h3 class="author_name" id="author10_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author11_photo">	
-<h4 class="author_name" id="author11_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author11_photo" alt="author photo">	
+<h3 class="author_name" id="author11_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author12_photo">	
-<h4 class="author_name" id="author12_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author12_photo" alt="author photo">	
+<h3 class="author_name" id="author12_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author13_photo">	
-<h4 class="author_name" id="author13_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author13_photo" alt="author photo">	
+<h3 class="author_name" id="author13_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author14_photo">	
-<h4 class="author_name" id="author14_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author14_photo" alt="author photo">	
+<h3 class="author_name" id="author14_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author15_photo">	
-<h4 class="author_name" id="author15_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author15_photo" alt="author photo">	
+<h3 class="author_name" id="author15_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author16_photo">	
-<h4 class="author_name" id="author16_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author16_photo" alt="author photo">	
+<h3 class="author_name" id="author16_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author17_photo">	
-<h4 class="author_name" id="author17_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author17_photo" alt="author photo">	
+<h3 class="author_name" id="author17_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author18_photo">	
-<h4 class="author_name" id="author18_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author18_photo" alt="author photo">	
+<h3 class="author_name" id="author18_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author19_photo">	
-<h4 class="author_name" id="author19_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author19_photo" alt="author photo">	
+<h3 class="author_name" id="author19_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author20_photo">	
-<h4 class="author_name" id="author20_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author20_photo" alt="author photo">	
+<h3 class="author_name" id="author20_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author21_photo">	
-<h4 class="author_name" id="author21_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author21_photo" alt="author photo">	
+<h3 class="author_name" id="author21_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author22_photo">	
-<h4 class="author_name" id="author22_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author22_photo" alt="author photo">	
+<h3 class="author_name" id="author22_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author23_photo">	
-<h4 class="author_name" id="author23_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author23_photo" alt="author photo">	
+<h3 class="author_name" id="author23_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author24_photo">	
-<h4 class="author_name" id="author24_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author24_photo" alt="author photo">	
+<h3 class="author_name" id="author24_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author25_photo">	
-<h4 class="author_name" id="author25_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author25_photo" alt="author photo">	
+<h3 class="author_name" id="author25_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author26_photo">	
-<h4 class="author_name" id="author27_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author26_photo" alt="author photo">	
+<h3 class="author_name" id="author27_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author27_photo">	
-<h4 class="author_name" id="author28_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author27_photo" alt="author photo">	
+<h3 class="author_name" id="author28_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author28_photo">	
-<h4 class="author_name" id="author29_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author28_photo" alt="author photo">	
+<h3 class="author_name" id="author29_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author29_photo">	
-<h4 class="author_name" id="author30_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author29_photo" alt="author photo">	
+<h3 class="author_name" id="author30_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author30_photo">	
-<h4 class="author_name" id="author31_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author30_photo" alt="author photo">	
+<h3 class="author_name" id="author31_name">Adam Sivera</h3>
 </div>
 	
 <div class="author">	
-<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author31_photo">	
-<h4 class="author_name" id="author32_name">Adam Sivera</h4>
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author31_photo" alt="author photo">	
+<h3 class="author_name" id="author32_name">Adam Sivera</h3>
 </div>	
 
 </div>
+	
+<!--- END Authors section --->		
+
 	
 </body>
 </html>

@@ -1,171 +1,165 @@
-@charset "utf-8";
-/* CSS Document */
 body {
-	font-family: 'F37 Ginger'!important;
-	overflow-x: hidden;
-	overflow-y: scroll;
-}
-
-h5 {
-	font-weight: 1000;
-	font-weight: bolder;
-}
-
-h6 {
-	color: #555555;
-	font-weight: lighter;
-}
-
-.section_title {
-	padding-left:30px;
-	padding-top:20px;
-	font-size: 26px;
-	font-weight: bolder
-}
-
-.book_image_event {
-	width: 230px;
-	height: 300px;
-	float: left;
-	margin-right: 40px;
-}
-
-#author_intro {
-	background-color: #F3F3F3;
-	height: 600px;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-#author_name {
-	font-size: 36px;
-	font-weight: bolder;
-	text-align: center;
-	margin: 70px 0px;
-}
-
-#author_photo {
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	left: 15%;
-	float: left;
-    border: solid #EF4444;
-  	border-width: 1px 10px 10px 1px;
-}
-
-#author_bio_title {
-	position: absolute;
-	left: 43.2%;
-	font-size: 18px;
-	font-weight: bolder;
+font-family:'F37 Ginger'!important;
+overflow-x:hidden;
+overflow-y:scroll;
 }
 
 #author_bio {
-	padding: 50px;
-	position: absolute;
-	left: 40%;
-	width:700px;
-	font-size: 16px;
-	font-weight: lighter;
+font-size:16px;
+font-weight:lighter;
+left:40%;
+padding:50px;
+position:absolute;
+width:700px;
+}
+
+#author_bio_title {
+font-size:18px;
+font-weight:bolder;
+left:595px;
+position:absolute;
+top:200px;
 }
 
 .authored_books_section {
-	height: 520px;	
-	padding:10px;
+height:520px;
+padding:10px;
 }
 
-.books_containers {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  position: absolute;
-  top:600px;
-  left:20px;
-  margin-top:120px;
+#author_intro {
+background-color:#F3F3F3;
+height:600px;
+padding-bottom:30px;
+padding-top:30px;
+}
+
+#author_name {
+font-size:36px;
+font-weight:bolder;
+margin:70px 0;
+text-align:center;
+}
+
+#author_photo {
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+left:15%;
+position:absolute;
+width:300px;
 }
 
 .book {
-  font-size: 18px;
-  text-align: center;
-  margin-left: 40px;
-  padding-bottom:15px;
-}
-
-.book_cover {
-	width:200px;
-	height: 270px;
-	opacity:1;
-	cursor: pointer;
-}
-
-.book_cover:hover{
-	opacity:0.8;
-}
-
-.book_title {
-	font-weight: bold;
-	font-size: 15px;
+font-size:18px;
+margin-left:40px;
+padding-bottom:15px;
+text-align:center;
 }
 
 .book_author {
-	font-weight: lighter;
-	font-size: 12px;
+font-size:12px;
+font-weight:lighter;
 }
 
-#related_events {
-	  width: 1440px;
-  height: 900px;
-  background-color: #f3f3f3;	
+.book_cover {
+cursor:pointer;
+height:270px;
+opacity:1;
+width:200px;
 }
 
-.events_container {
-  display: grid;
-  grid-template-columns: auto auto;
+.book_cover:hover {
+opacity:0.8;
+}
+
+.book_image_event {
+float:left;
+height:300px;
+margin-right:40px;
+width:230px;
+}
+
+.book_title {
+font-size:15px;
+font-weight:bold;
+}
+
+.books_containers {
+display:grid;
+grid-template-columns:auto auto auto auto auto;
+left:20px;
+margin-top:120px;
+position:absolute;
+top:600px;
 }
 
 .event {
-	margin: 50px;
-}
-
-#event_photo {
-	float:left;
-	width:300px;
-	height:300px;
-	margin:30px;
-	border: solid #EF4444;
-  	border-width: 1px 10px 10px 1px;
-}
-
-#event_date {
-	font-size: 18px;
-	margin-top: 40px;
-}
-
-#event_title {
-	font-weight: bolder;
+margin:50px;
 }
 
 #event_author {
-	font-size: 24px;
-	font-weight: bolder;
+font-size:24px;
+font-weight:bolder;
+}
+
+.event_date,.place {
+color:rgba(67,67,67,1.00);
+font-size:16px;
+font-weight:lighter;
+}
+
+#event_photo {
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+margin:30px;
+width:300px;
+}
+
+.event_title {
+font-size:24px;
+}
+
+.events_container {
+display:grid;
+grid-template-columns:auto auto;
+width:1440px;
 }
 
 .learn_more {
-  width: 140px;
-  height:40px;
-  background-color: #d5d5d5;
-  border: none;
-  border-radius: 30px;
-  color: black;
-  padding: 5px 3px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  vertical-align: middle;
-  margin-top: 30px;
+background-color:#d5d5d5;
+border:none;
+border-radius:30px;
+color:black;
+display:inline-block;
+font-size:18px;
+font-weight:bold;
+height:45px;
+margin-top:30px;
+padding:5px 3px;
+text-align:center;
+text-decoration:none;
+text-transform:uppercase;
+vertical-align:middle;
+width:160px;
 }
 
 .learn_more:hover {
-	background-color: #ef4444
+background-color:#ef4444;
+}
+
+#related_events {
+background-color:#f3f3f3;
+height:900px;
+width:1440px;
+}
+
+.section_title {
+font-size:26px;
+font-weight:bolder;
+padding-left:30px;
+padding-top:20px;
+width:768px;
 }

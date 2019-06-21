@@ -19,6 +19,7 @@ background-color:#EF4444!important;
 font-family:"F37 Ginger"!important;
 margin:0;
 overflow-x:hidden;
+max-width: 1440px;
 }
 
 #best_sellers {
@@ -159,15 +160,6 @@ height:600px;
 padding-top:10px;
 }
 
-.icon {
-width: 20px!important;
-height: 20px!important;
-}
-
-.icon_name:hover {
-color:#ef4444!important;
-}
-
 .image_and_caption {
 display:inline-block;
 margin-bottom:25px;
@@ -258,38 +250,6 @@ width:180px;
 
 #learn_more:hover {
 background-color:#ef4444;
-}
-
-.menu_item {
-color:#555555!important;
-padding:10px;
-}
-
-.menu_item:hover {
-color:#ef4444!important;
-}
-
-.navbar {
-background-color: #ffffff!important;
-border-color: #ffffff!important;
-opacity: 0.95!important;
-}
-
-.navbar-collapse {
-max-height:1000px!important;
-}
-
-navbar-inverse {
-border-color:white!important;
-}
-
-.navbar-toggle {
-background-color:#555555!important;
-border:none!important;
-}
-
-.navbar-toggle:focus {
-background-color:#ef4444!important;
 }
 
 #our_suggestions {

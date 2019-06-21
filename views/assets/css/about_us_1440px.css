@@ -1,6 +1,10 @@
+html {
+width: 1440px;
+}
+
 body{
 font-family: "F37 Ginger"!important;
-overflow-x: hidden;
+width: 1440px!important;
 }
 
 input:focus,
@@ -11,7 +15,7 @@ outline:none!important;
 }
 
 #about_us_photo{
-width: 1500px;
+width: 1440px;
 }
 
 #active {
@@ -103,7 +107,7 @@ height: 450px;
 
 .header_box{
 background-color: #EF4444;
-bottom: 633px;
+bottom: 678px;
 height: 20px;
 left: 670px;
 position: absolute;
@@ -127,53 +131,12 @@ top: 60px;
 z-index: 100;
 }
 
-.icon {
-width: 20px!important;
-height: 20px!important;
-}
-
-.icon_name:hover {
-color:#ef4444!important;
-}
-
 #map{
 float: left;
 height: 500px;
 padding-left: 25px;
 padding-right: 45px;
 width: 758px;
-}
-
-.menu_item {
-color:#555555!important;
-padding:10px;
-}
-
-.menu_item:hover {
-color:#ef4444!important;
-}
-
-.navbar-inverse {
-border-color:white!important;
-}
-
-.navbar-toggle {
-background-color:#555555!important;
-border:none!important;
-}
-
-.navbar-toggle:focus {
-background-color:#ef4444!important;
-}
-
-.navbar-collapse {
-max-height:1000px!important;
-}
-
-.navbar {
-background-color: #ffffff!important;
-border-color: #ffffff!important;
-opacity: 0.95!important;
 }
 
 .row:after{
@@ -211,3 +174,4 @@ position: absolute;
 text-align: justify;
 width: 650px;
 }
+	
