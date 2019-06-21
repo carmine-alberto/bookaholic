@@ -1,33 +1,33 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About us</title>
-<link href="assets/css/about_us_1440px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/about_us_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/about_us_400px.css" />	
-<link href="assets/css/navbar.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Documento senza titolo</title>
+<link rel="stylesheet" href="/assets/css/all_authors_1440px.css" />
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/all_authors_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/all_authors_400px.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
-
 <body>
-
+	
 <!--- START navigation bar section --->
 	
 <nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button">
+      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
 		
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="/assets/img/bookaholic logo.png" alt="bookaholic logo"></a>
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png" alt="bookaholic logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
   <div class="adjust-height">	
@@ -78,14 +78,14 @@
 	  
 	  
 		<form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+      <div class="input-group" id="searchbar">
+        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button title="search button" class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
+        </button>
       </div>
+	</div>
     </form>
       <ul class="nav navbar-nav navbar-right">
 		  <li><a href="#"><span class="icon_name">
@@ -117,104 +117,203 @@
 	</div>
 </nav>	
 		
-<!--- END navigation bar section --->		
+<!--- END navigation bar section --->	
 	
-
-<!--- START Title section --->	
 	
+<!--- START Title section --->
+		
 <section id="header_section">
 <div class="header_container">	
-<h1 class="header_text">About us</h1>	
+<h1 class="header_text">All authors</h1>	
 <div class="header_box"></div>
 </div>
-</section>
-	
-<!--- END Title section --->	
-	
-	
-	
-	
-<!--- START About us section --->		
-	
-<img src="assets/img/bookshop.jpeg" id="about_us_photo">
-
-<section id="who_we_are_section">
-<h6 id="who_we_are_text">There is truly something to be found for even the most discerning of readers.
-<br>
-Our friendly and knowledgeable booksellers are more than happy to assist you in exploring our shop and taking advantage of the many services we offer.
-<br>
-<br>
-These include our diverse and relaxed events programme, from Hillary Clinton to small launches and readings with the Royal Academy, as well as our complimentary gift-wrapping service and competitive worldwide shipping.<br>
-<br>
-We also offer a selection of beautiful first edition books for something a little different, and are more than happy to try and source any individual requests.</h6>
-</section>
-
-<!--- END About us section --->		
-	
-	
-	
-<!--- START FAQ section --->			
-	
-<section id="faq_section">
-<h3 class="section_title">FAQs</h3>	
-
-<p class="faq">Do you also sell second-hand books?</p>
-<p class="faq_answer">Yes, you will find a dedicated section near the checkouts, at competitive prices</p>
-
-<p class="faq">Can I bring you some old books I don't need anymore?</p>
-<p class="faq_answer">We would be glad to accept your books and give you a small payment, given that the books are in decent condition</p>
-
-<p class="faq">Are your events free?</p>
-<p class="faq_answer">It depends, many of the meetings and conferences we offer are free, but there are some workshops that require a small participation payment. Check the single event's page if you have any doubt.</p>
-	
-<p class="faq">What is the procedure of ordering and shipping a book?</p>
-<p class="faq_answer">This question was so hard we had to set up a page for it. If you want to check all the ordering and shipping information<a id="click_here"> click here</a></p>
-
 </section>	
 	
-<!--- END FAQ section --->			
+<!--- END Title section --->
 	
 	
+<!--- START Filters section --->	
 	
-<!--- START Contacts section --->				
-	
-<section id="contacts">
-<h3 class="section_title" id="contacts_title">Contacts</h3>
-<img src="assets/img/map.jpg" id="map">	
-
-<div id="contacts_container">
-<div id="contacts_greenwich_rows">
-	<p class="shop_name">Bookaholic Greenwich</p>
-	<p>14-16 Bury Pl, Bloomsbury, London WC1A 2JL</p>
-	<p>+44 20 7269 9030</p>
-	<br>
-	<p class="shop_name">Bookaholic Mudchute</p>
-	<p>11 Glengall Grove, Isle of Dogs, London E14 3ND</p>
-	<p>+44 20 3637 5993</p>
-	<br>
-<a href="mailto:info@bookaholic.co.uk" itemprop="email">
-info@bookaholic.co.uk
-</a>
-
-<br>
-	
-	</div>
-
-<div class="row">
-	<div class="column">
-	<p>Monday<br><br>Tuesday<br><br>Wednesday<br><br>Thursday<br><br>Friday<br><br>Saturday<br><br>Sunday</p>
-	</div>
-	<div class="column">
-	<p>9am-6pm<br><br>9am-6pm<br><br>9am-6pm<br><br>9am-6pm<br><br>9am-9pm<br><br>9am-9pm<br><br>closed</p>
-	</div>
-</div>
+<div id="filters_container">
+<div class="filter">
+<h2 class="filter_title">suggested by us
+  <input type="checkbox" title="suggested by us checkbox">
+  <span class="checkmark"
+		 aria-checked="false"
+		 tabindex="0"></span>
+</h2>
 </div>
 	
-</section>
+	</div>	
 	
-<!--- END Contacts section --->				
+<!--- END Filters section --->	
 	
 	
+	
+	
+<!--- START Authors section --->		
+	
+<div class="authors-container">
+	
+<div class="author">	
+<img src="/assets/img/giorgia_lupi.jpg" class="author_photo" id="author1_photo" alt="author photo">	
+<h3 class="author_name" id="author1_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/helen_oyeyemi.jpg" class="author_photo" id="author2_photo" alt="author photo">	
+<h3 class="author_name" id="author2_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/neil_gaiman.jpg" class="author_photo" id="author3_photo" alt="author photo">	
+<h3 class="author_name" id="author3_name">Adam Sivera</h3>
+</div>	
+	
+<div class="author">	
+<img src="/assets/img/alex_michaelides.jpg" class="author_photo" id="author4_photo" alt="author photo">	
+<h3 class="author_name" id="author4_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author5_photo" alt="author photo">	
+<h3 class="author_name" id="author5_name">Adam Sivera</h3>
+</div>	
+	
+<div class="author">	
+<img src="/assets/img/bonnie_siegler.jpg" class="author_photo" id="author6_photo" alt="author photo">	
+<h3 class="author_name" id="author6_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/becky_albertalli.jpg" class="author_photo" id="author7_photo" alt="author photo">	
+<h3 class="author_name" id="author7_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/bruno_munari.jpg" class="author_photo" id="author8_photo" alt="author photo">	
+<h3 class="author_name" id="author8_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/namwali_serpell.jpg" class="author_photo" id="author9_photo" alt="author photo">	
+<h3 class="author_name" id="author9_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/naomi_alderman.jpg" class="author_photo" id="author10_photo" alt="author photo">	
+<h3 class="author_name" id="author10_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author11_photo" alt="author photo">	
+<h3 class="author_name" id="author11_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author12_photo" alt="author photo">	
+<h3 class="author_name" id="author12_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author13_photo" alt="author photo">	
+<h3 class="author_name" id="author13_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author14_photo" alt="author photo">	
+<h3 class="author_name" id="author14_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author15_photo" alt="author photo">	
+<h3 class="author_name" id="author15_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author16_photo" alt="author photo">	
+<h3 class="author_name" id="author16_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author17_photo" alt="author photo">	
+<h3 class="author_name" id="author17_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author18_photo" alt="author photo">	
+<h3 class="author_name" id="author18_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author19_photo" alt="author photo">	
+<h3 class="author_name" id="author19_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author20_photo" alt="author photo">	
+<h3 class="author_name" id="author20_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author21_photo" alt="author photo">	
+<h3 class="author_name" id="author21_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author22_photo" alt="author photo">	
+<h3 class="author_name" id="author22_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author23_photo" alt="author photo">	
+<h3 class="author_name" id="author23_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author24_photo" alt="author photo">	
+<h3 class="author_name" id="author24_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author25_photo" alt="author photo">	
+<h3 class="author_name" id="author25_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author26_photo" alt="author photo">	
+<h3 class="author_name" id="author27_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author27_photo" alt="author photo">	
+<h3 class="author_name" id="author28_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author28_photo" alt="author photo">	
+<h3 class="author_name" id="author29_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author29_photo" alt="author photo">	
+<h3 class="author_name" id="author30_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author30_photo" alt="author photo">	
+<h3 class="author_name" id="author31_name">Adam Sivera</h3>
+</div>
+	
+<div class="author">	
+<img src="/assets/img/adam_silvera.jpg" class="author_photo" id="author31_photo" alt="author photo">	
+<h3 class="author_name" id="author32_name">Adam Sivera</h3>
+</div>	
+
+</div>
+	
+<!--- END Authors section --->		
+
 	
 </body>
 </html>
