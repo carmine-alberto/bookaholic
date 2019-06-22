@@ -27,6 +27,7 @@ opacity:0.8;
 
 .book_name {
 font-weight:bolder;
+font-size: 20px;
 }
 
 .books_container {
@@ -86,3 +87,4 @@ width:120px;
 .show_more_button:hover {
 background-color:#ef4444;
 }
+
