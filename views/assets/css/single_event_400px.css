@@ -1,105 +1,103 @@
 body {
-font-family:"F37 Ginger"!important;
-width:400px!important;
-}
-
-html,#header_section,#events {
+font-family:'F37 Ginger'!important;
+height:50px;
 width:400px;
 }
 
-.author {
-font-size:20px;
-margin-left:100px;
-margin-top:10px;
-text-align:center;
-width:200px;
-}
-
-#book_details {
-background-color:#D9D9D9;
-border:none;
-border-radius:30px;
-color:#000000;
-display:table-cell;
+h4,.filter_title,.dropdown_first {
 font-size:16px;
-font-weight:bolder;
-height:45px;
-left:110px;
-margin:0 auto;
-padding-top:15px;
-position:absolute;
-text-align:center;
-text-decoration:none;
-text-transform:uppercase;
-top:950px;
-vertical-align:middle;
-width:200px;
 }
 
-#condition {
-font-size:16px;
-font-weight:bold;
-margin-left:30px;
-margin-right:30px;
-margin-top:480px;
+html,#header_section {
+width:400px;
+}
+
+.book {
+font-size:18px;
+height:450px;
+margin-left:35px;
+padding-bottom:15px;
 text-align:center;
 }
 
-.date,.place {
-color:rgba(67,67,67,1.00);
-font-size:20px;
-font-weight:bolder;
-margin-left:50px;
-text-align:center;
-}
-
-.description {
-font-size:16px;
+.book_author {
+font-size:12px;
 font-weight:lighter;
-margin-left:50px;
-margin-right:30px;
-width:300px;
 }
 
-.event {
-background-color:#FFFFFF;
-height:350px;
-padding-bottom:20px;
-padding-top:20px;
-width:400px;
+.book_cover {
+cursor:pointer;
+height:180px;
+opacity:1;
+width:130px;
 }
 
-.event_photo {
-border:solid #EF4444;
-border-width:1px 10px 10px 1px;
-height:300px;
-margin-left:80px;
-width:240px;
+.book_cover:hover {
+opacity:0.8;
+}
+
+.book_title {
+font-size:15px;
+font-weight:bold;
+}
+
+.books_containers {
+display:grid;
+grid-template-columns:auto auto;
+left:20px;
+margin-top:120px;
+position:absolute;
+top:350px;
+}
+
+.dropdown_menu {
+display:inherit;
+font-size:14px;
+}
+
+.filter {
+display:inline-block;
+list-style:none;
+padding:20px;
+}
+
+#filters_container {
+display:grid;
+grid-template-columns:auto auto;
+margin:35px 30px;
+width:350px;
 }
 
 .header_container {
 background-color:white;
-height:100px;
+height:150px;
 width:400px;
 z-index:-100;
 }
 
 .header_text {
-font-size:24px;
+font-size:30px;
 font-weight:bolder;
-margin-top:120px;
+left:100px;
+position:absolute;
 text-align:center;
-width:400px;
+top:-40px;
 z-index:100;
 }
 
-.section_title {
-clear:left;
-font:bolder;
-font-size:20px;
-font-weight:bolder;
-padding-bottom:30px;
-padding-left:25px;
-padding-top:15px;
+select {
+background-color:#f1f1f1;
+border:none;
+border-radius:4px;
+font-family:"F37 Ginger";
+font-size:14px;
+padding:5px 20px;
+width:110px;
 }
 
+#single_genre {
+font-size:24px;
+font-weight:bolder;
+padding-top:60px;
+text-align:center;
+}
