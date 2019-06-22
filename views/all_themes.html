@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>All themes</title>
 <link href="/assets/css/all_themes_1440px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/all_themes_768px.css" />
@@ -15,68 +16,114 @@
 
 <body>
 	
-<nav class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid">
+	
+<!--- START navigation bar section --->
+	
+<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+		
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png" alt="bookaholic logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-  <div class="adjust-height">		
+  <div class="adjust-height">	
+	  
       <ul class="nav navbar-nav">
-        <li><a href="#" class="menu_item" id="active">Home</a></li>
-        <li><a href="#" class="menu_item">Authors</a></li>		  
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Art and design</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Mystery</a></li>
-            <li><a href="#">Non fiction</a></li>
-            <li><a href="#">Science fiction</a></li>
+        <li><a href="#" class="menu_item" role="menuitem" id="active">Home</a></li>
+		  
+        <li><a href="#" class="menu_item" role="menuitem">Authors</a></li>		  
+        
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" 
+			  id="genre_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="genre">
+            <li id="genre_art_and_design"  role="option">
+			<a href="#">Art and design</a></li>
+            <li id="genre_fiction" role="option">
+			<a href="#">Fiction</a></li>
+            <li id="genre_mystery" role="option"><a href="#">Mystery</a></li>
+            <li id="genre_non_fiction" role="option"><a href="#">Non fiction</a></li>
+            <li id="genre_science_fiction" role="option"><a href="#">Science fiction</a></li>
           </ul>
         </li>
 		  
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Family</a></li>
-            <li><a href="#">Fear</a></li>
-            <li><a href="#">Friendship</a></li>
-            <li><a href="#">Justice</a></li>
-            <li><a href="#">Love</a></li>
-            <li><a href="#">Philosophy</a></li>
-            <li><a href="#">War</a></li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu"
+			  id="themes_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="theme">
+            <li id="theme_family" role="option"><a href="#">Family</a></li>
+            <li id="theme_fear" role="option"><a href="#">Fear</a></li>
+            <li id="theme_friendship" role="option"><a href="#">Friendship</a></li>
+            <li id="theme_justice" role="option"><a href="#">Justice</a></li>
+            <li id="theme_love" role="option"><a href="#">Love</a></li>
+            <li id="theme_philosophy" role="option"><a href="#">Philosophy</a></li>
+            <li id="theme_war" role="option"><a href="#">War</a></li>
 			  
           </ul>
         </li>		  
 		  
-        <li><a href="#" class="menu_item">Events</a></li>
-        <li><a href="#" class="menu_item">About us</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">Events</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">About us</a></li>
       </ul>
+	  
+	  
 		<form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+      <div class="input-group" id="searchbar">
+        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button title="search button" class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
+        </button>
       </div>
+	</div>
     </form>
       <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
-        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+		  <li><a href="#"><span class="icon_name">
+		  <img src="img/logo profile.png" 
+			   alt="profile link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(profile, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(profile, 'http://www.w3.org/')"
+     		   role="link">
+			   Profile</span>
+			  </a>
+		  </li>
+		  
+          <li><a href="#"><span class="icon_name">
+		  <img src="img/logo cart.png" 
+			   alt="cart link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(cart, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(cart, 'http://www.w3.org/')"
+     		   role="link">
+			   Cart</span>
+			  </a>
+		  </li>
       </ul>
     </div>
   </div>
 	</div>
-	</nav>
-
+</nav>	
+		
+<!--- END navigation bar section --->	
+	
+	
+	
+	
+<!--- START header section --->	
 	
 <section id="header_section">
 <div class="header_container">	
@@ -85,66 +132,110 @@
 </div>
 </section>
 	
+<!--- END navigation bar section --->	
+
+	
+	
+<!--- START family section --->		
+	
 <section id="family">
 	
-	<h3 class="section_title">
+	<h2 class="section_title">
 Family
-	</h3>		
+	</h2>		
 	
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/7_modes_of_uncertainty.jpg" class="book_cover" id="book1_photo_family">	
-<h4 class="book_name" id="book1_name_family">American Spy</h4>
+<img src="/assets/img/7_modes_of_uncertainty.jpg"
+	 id="book1_photo_family"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_family">American Spy</h3>
 <h4 class="book_author" id="book1_author1_family">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_family"><br></h4>
-<h4 class="book_author" id="book1_author3_family"><br></h4>
-<h4 class="book_author" id="book1_author4_family"><br></h4>
+<h4 class="book_author" id="book1_author2_family">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_family">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_family">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book2_photo_family">	
-<h4 class="book_name" id="book2_name_family">American Spy</h4>
+<img src="/assets/img/dear_data.jpg"
+	 id="book2_photo_family"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_family">American Spy</h3>
 <h4 class="book_author" id="book2_author1_family">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_family"><br></h4>
-<h4 class="book_author" id="book2_author3_family"><br></h4>
-<h4 class="book_author" id="book2_author4_family"><br></h4>
+<h4 class="book_author" id="book2_author2_family">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_family">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_family">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book3_photo_family">	
-<h4 class="book_name" id="book3_name_family">American Spy</h4>
+<img src="/assets/img/dear_data.jpg"
+	 id="book3_photo_family"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_family">American Spy</h3>
 <h4 class="book_author" id="book3_author1_family">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_family"><br></h4>
-<h4 class="book_author" id="book3_author3_family"><br></h4>
-<h4 class="book_author" id="book3_author4_family"><br></h4>
+<h4 class="book_author" id="book3_author2_family">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_family">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_family">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book4_photo_family">	
-<h4 class="book_name" id="book4_name_family">American Spy</h4>
+<img src="/assets/img/dear_data.jpg"
+	 id="book4_photo_family"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_family">American Spy</h3>
 <h4 class="book_author" id="book4_author1_family">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_family"><br></h4>
-<h4 class="book_author" id="book4_author3_family"><br></h4>
-<h4 class="book_author" id="book4_author4_family"><br></h4>
+<h4 class="book_author" id="book4_author2_family">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_family">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_family">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/dear_data.jpg" class="book_cover" id="book5_photo_family">	
-<h4 class="book_name" id="book5_name_family">American Spy</h4>
+<img src="/assets/img/dear_data.jpg"
+	 id="book5_photo_family"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_family">American Spy</h3>
 <h4 class="book_author" id="book5_author1_family">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_family"><br></h4>
-<h4 class="book_author" id="book5_author3_family"><br></h4>
-<h4 class="book_author" id="book5_author4_family"><br></h4>
+<h4 class="book_author" id="book5_author2_family">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_family">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_family">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(family page, 'family page')"
+     onkeydown="goToLink(family page, 'family page')">Show more</div>
 
 	</div>	
 	
 	</section>
 
+<!--- END family section --->
 	
+	
+
+
+<!--- START friendship section --->		
 
 <section  id="friendship">	
 
@@ -156,55 +247,93 @@ Friendship
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book1_photo_friendship">	
-<h4 class="book_name" id="book1_name_friendship">American Spy</h4>
+<img src="/assets/img/the_catcher_in_the_rye.jpg"
+	 id="book1_photo_friendship"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_friendship">American Spy</h3>
 <h4 class="book_author" id="book1_author1_friendship">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_friendship"><br></h4>
-<h4 class="book_author" id="book1_author3_friendship"><br></h4>
-<h4 class="book_author" id="book1_author4_friendship"><br></h4>
+<h4 class="book_author" id="book1_author2_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_friendship">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book2_photo_friendship">	
-<h4 class="book_name" id="book2_name_friendship">American Spy</h4>
+<img src="/assets/img/the_catcher_in_the_rye.jpg"
+	 id="book2_photo_friendship"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_friendship">American Spy</h3>
 <h4 class="book_author" id="book2_author1_friendship">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_friendship"><br></h4>
-<h4 class="book_author" id="book2_author3_friendship"><br></h4>
-<h4 class="book_author" id="book2_author4_friendship"><br></h4>
+<h4 class="book_author" id="book2_author2_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_friendship">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book3_photo_friendship">	
-<h4 class="book_name" id="book3_name_friendship">American Spy</h4>
+<img src="/assets/img/the_catcher_in_the_rye.jpg"
+	 id="book3_photo_friendship"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_friendship">American Spy</h3>
 <h4 class="book_author" id="book3_author1_friendship">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_friendship"><br></h4>
-<h4 class="book_author" id="book3_author3_friendship"><br></h4>
-<h4 class="book_author" id="book3_author4_friendship"><br></h4>
+<h4 class="book_author" id="book3_author2_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_friendship">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book4_photo_friendship">	
-<h4 class="book_name" id="book4_name_friendship">American Spy</h4>
+<img src="/assets/img/the_catcher_in_the_rye.jpg"
+	 id="book4_photo_friendship"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_friendship">American Spy</h3>
 <h4 class="book_author" id="book4_author1_friendship">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_friendship"><br></h4>
-<h4 class="book_author" id="book4_author3_friendship"><br></h4>
-<h4 class="book_author" id="book4_author4_friendship"><br></h4>
+<h4 class="book_author" id="book4_author2_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_friendship">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/the_catcher_in_the_rye.jpg" class="book_cover" id="book5_photo_friendship">	
-<h4 class="book_name" id="book5_name_friendship">American Spy</h4>
+<img src="/assets/img/the_catcher_in_the_rye.jpg"
+	 id="book5_photo_friendship"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_friendship">American Spy</h3>
 <h4 class="book_author" id="book5_author1_friendship">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_friendship"><br></h4>
-<h4 class="book_author" id="book5_author3_friendship"><br></h4>
-<h4 class="book_author" id="book5_author4_friendship"><br></h4>
+<h4 class="book_author" id="book5_author2_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_friendship">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_friendship">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(friendship page, 'friendship page')"
+     onkeydown="goToLink(friendship page, 'friendship page')">Show more</div>
 
 	</div>	
 	
 	</section>	
+
+<!--- END friendship section --->		
+	
+	
+<!--- START fear section --->		
 	
 	
 <section  id="fear">	
@@ -217,55 +346,92 @@ Fear
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_fear">	
-<h4 class="book_name" id="book1_name_fear">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book1_photo_fear"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_fear">American Spy</h3>
 <h4 class="book_author" id="book1_author1_fear">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_fear"><br></h4>
-<h4 class="book_author" id="book1_author3_fear"><br></h4>
-<h4 class="book_author" id="book1_author4_fear"><br></h4>
+<h4 class="book_author" id="book1_author2_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_fear">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_fear">	
-<h4 class="book_name" id="book2_name_fear">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book2_photo_fear"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_fear">American Spy</h3>
 <h4 class="book_author" id="book2_author1_fear">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_fear"><br></h4>
-<h4 class="book_author" id="book2_author3_fear"><br></h4>
-<h4 class="book_author" id="book2_author4_fear"><br></h4>
+<h4 class="book_author" id="book2_author2_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_fear">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_fear">	
-<h4 class="book_name" id="book3_name_fear">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book3_photo_fear"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_fear">American Spy</h3>
 <h4 class="book_author" id="book3_author1_fear">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_fear"><br></h4>
-<h4 class="book_author" id="book3_author3_fear"><br></h4>
-<h4 class="book_author" id="book3_author4_fear"><br></h4>
+<h4 class="book_author" id="book3_author2_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_fear">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_fear">	
-<h4 class="book_name" id="book4_name_fear">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book4_photo_fear"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_fear">American Spy</h3>
 <h4 class="book_author" id="book4_author1_fear">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_fear"><br></h4>
-<h4 class="book_author" id="book4_author3_fear"><br></h4>
-<h4 class="book_author" id="book4_author4_fear"><br></h4>
+<h4 class="book_author" id="book4_author2_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_fear">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book5_photo_fear">	
-<h4 class="book_name" id="book5_name_fear">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book5_photo_fear"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_fear">American Spy</h3>
 <h4 class="book_author" id="book5_author1_fear">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_fear"><br></h4>
-<h4 class="book_author" id="book5_author3_fear"><br></h4>
-<h4 class="book_author" id="book5_author4_fear"><br></h4>
+<h4 class="book_author" id="book5_author2_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_fear">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_fear">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
-
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(fear page, 'fear page')"
+     onkeydown="goToLink(fear page, 'fear page')">Show more</div>
 	</div>	
 	
-	</section>		
+	</section>
+	
+<!--- END fear section --->		
+	
+	
+<!--- START justice section --->			
 
 <section  id="justice">	
 
@@ -277,56 +443,93 @@ Justice
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_justice">	
-<h4 class="book_name" id="book1_name_justice">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book1_photo_justice"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_justice">American Spy</h3>
 <h4 class="book_author" id="book1_author1_justice">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_justice"><br></h4>
-<h4 class="book_author" id="book1_author3_justice"><br></h4>
-<h4 class="book_author" id="book1_author4_justice"><br></h4>
+<h4 class="book_author" id="book1_author2_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_justice">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_justice">	
-<h4 class="book_name" id="book2_name_justice">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book2_photo_justice"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_justice">American Spy</h3>
 <h4 class="book_author" id="book2_author1_justice">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_justice"><br></h4>
-<h4 class="book_author" id="book2_author3_justice"><br></h4>
-<h4 class="book_author" id="book2_author4_justice"><br></h4>
+<h4 class="book_author" id="book2_author2_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_justice">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_justice">	
-<h4 class="book_name" id="book3_name_justice">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book3_photo_justice"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_justice">American Spy</h3>
 <h4 class="book_author" id="book3_author1_justice">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_justice"><br></h4>
-<h4 class="book_author" id="book3_author3_justice"><br></h4>
-<h4 class="book_author" id="book3_author4_justice"><br></h4>
+<h4 class="book_author" id="book3_author2_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_justice">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_justice">	
-<h4 class="book_name" id="book4_name_justice">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book4_photo_justice"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_justice">American Spy</h3>
 <h4 class="book_author" id="book4_author1_justice">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_justice"><br></h4>
-<h4 class="book_author" id="book4_author3_justice"><br></h4>
-<h4 class="book_author" id="book4_author4_justice"><br></h4>
+<h4 class="book_author" id="book4_author2_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_justice">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/american_spy.jpg" class="book_cover" id="book5_photo_justice">	
-<h4 class="book_name" id="book5_name_justice">American Spy</h4>
+<img src="/assets/img/american_spy.jpg"
+	 id="book5_photo_justice"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_justice">American Spy</h3>
 <h4 class="book_author" id="book5_author1_justice">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_justice"><br></h4>
-<h4 class="book_author" id="book5_author3_justice"><br></h4>
-<h4 class="book_author" id="book5_author4_justice"><br></h4>
+<h4 class="book_author" id="book5_author2_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_justice">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_justice">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
-
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(justice page, 'justice page')"
+     onkeydown="goToLink(justice page, 'justice page')">Show more</div>
 	</div>	
 	
 	</section>	
 	
+<!--- END justice section --->			
+	
+	
+
+<!--- START love section --->			
 	
 <section  id="love">	
 
@@ -338,56 +541,93 @@ Love
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_love">	
-<h4 class="book_name" id="book1_name_love">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book1_photo_love"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_love">American Spy</h3>
 <h4 class="book_author" id="book1_author1_love">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_love"><br></h4>
-<h4 class="book_author" id="book1_author3_love"><br></h4>
-<h4 class="book_author" id="book1_author4_love"><br></h4>
+<h4 class="book_author" id="book1_author2_love">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_love">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_love">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_love">	
-<h4 class="book_name" id="book2_name_love">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book2_photo_love"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_love">American Spy</h3>
 <h4 class="book_author" id="book2_author1_love">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_love"><br></h4>
-<h4 class="book_author" id="book2_author3_love"><br></h4>
-<h4 class="book_author" id="book2_author4_love"><br></h4>
+<h4 class="book_author" id="book2_author2_love">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_love">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_love">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_love">	
-<h4 class="book_name" id="book3_name_love">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book3_photo_love"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_love">American Spy</h3>
 <h4 class="book_author" id="book3_author1_love">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_love"><br></h4>
-<h4 class="book_author" id="book3_author3_love"><br></h4>
-<h4 class="book_author" id="book3_author4_love"><br></h4>
+<h4 class="book_author" id="book3_author2_love">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_love">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_love">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_love">	
-<h4 class="book_name" id="book4_name_love">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book4_photo_love"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_love">American Spy</h3>
 <h4 class="book_author" id="book4_author1_love">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_love"><br></h4>
-<h4 class="book_author" id="book4_author3_love"><br></h4>
-<h4 class="book_author" id="book4_author4_love"><br></h4>
+<h4 class="book_author" id="book4_author2_love">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_love">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_love">Adam Sivera</h4>
 </div>
 	
 
 <div class="book">
-<img src="/assets/img/american_spy.jpg" class="book_cover" id="book5_photo_love">	
-<h4 class="book_name" id="book5_name_love">American Spy</h4>
+<img src="/assets/img/american_spy.jpg"
+	 id="book5_photo_love"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_love">American Spy</h3>
 <h4 class="book_author" id="book5_author1_love">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_love"><br></h4>
-<h4 class="book_author" id="book5_author3_love"><br></h4>
-<h4 class="book_author" id="book5_author4_love"><br></h4>
+<h4 class="book_author" id="book5_author2_love">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_love">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_love">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
-
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(love page, 'love page')"
+     onkeydown="goToLink(love page, 'love page')">Show more</div>
 	</div>	
 	
 	</section>	
+	
+<!--- END justice section --->			
+	
+	
+<!--- START philosophical section --->				
 	
 <section  id="philosophical">	
 
@@ -399,57 +639,94 @@ Philosophical
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_philosophical">	
-<h4 class="book_name" id="book1_name_philosophical">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book1_photo_philosophical"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_philosophical">American Spy</h3>
 <h4 class="book_author" id="book1_author1_philosophical">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_philosophical"><br></h4>
-<h4 class="book_author" id="book1_author3_philosophical"><br></h4>
-<h4 class="book_author" id="book1_author4_philosophical"><br></h4>
+<h4 class="book_author" id="book1_author2_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_philosophical">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_philosophical">	
-<h4 class="book_name" id="book2_name_philosophical">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book2_photo_philosophical"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_philosophical">American Spy</h3>
 <h4 class="book_author" id="book2_author1_philosophical">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_philosophical"><br></h4>
-<h4 class="book_author" id="book2_author3_philosophical"><br></h4>
-<h4 class="book_author" id="book2_author4_philosophical"><br></h4>
+<h4 class="book_author" id="book2_author2_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_philosophical">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_philosophical">	
-<h4 class="book_name" id="book3_name_philosophical">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book3_photo_philosophical"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_philosophical">American Spy</h3>
 <h4 class="book_author" id="book3_author1_philosophical">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_philosophical"><br></h4>
-<h4 class="book_author" id="book3_author3_philosophical"><br></h4>
-<h4 class="book_author" id="book3_author4_philosophical"><br></h4>
+<h4 class="book_author" id="book3_author2_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_philosophical">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_philosophical">	
-<h4 class="book_name" id="book4_name_philosophical">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book4_photo_philosophical"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_philosophical">American Spy</h3>
 <h4 class="book_author" id="book4_author1_philosophical">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_philosophical"><br></h4>
-<h4 class="book_author" id="book4_author3_philosophical"><br></h4>
-<h4 class="book_author" id="book4_author4_philosophical"><br></h4>
+<h4 class="book_author" id="book4_author2_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_philosophical">Adam Sivera</h4>
 </div>
 	
 
 <div class="book">
-<img src="/assets/img/american_spy.jpg" class="book_cover" id="book5_photo_philosophical">	
-<h4 class="book_name" id="book5_name_philosophical">American Spy</h4>
+<img src="/assets/img/american_spy.jpg"
+	 id="book5_photo_philosophical"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_philosophical">American Spy</h3>
 <h4 class="book_author" id="book5_author1_philosophical">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_philosophical"><br></h4>
-<h4 class="book_author" id="book5_author3_philosophical"><br></h4>
-<h4 class="book_author" id="book5_author4_philosophical"><br></h4>
+<h4 class="book_author" id="book5_author2_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_philosophical">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_philosophical">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
-
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(philosophical page, 'philosophical page')"
+     onkeydown="goToLink(philosophical page, 'philosophical page')">Show more</div>
 	</div>	
 	
 	</section>
+
+<!--- END philosophical section --->				
 	
+	
+	
+<!--- START war section --->					
 	
 <section  id="war">	
 
@@ -461,56 +738,92 @@ War
 <div class="books_container">
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg" class="book_cover" id="book1_photo_war">	
-<h4 class="book_name" id="book1_name_war">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book1_photo_war"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book1_name_war">American Spy</h3>
 <h4 class="book_author" id="book1_author1_war">Adam Sivera</h4>
-<h4 class="book_author" id="book1_author2_war"><br></h4>
-<h4 class="book_author" id="book1_author3_war"><br></h4>
-<h4 class="book_author" id="book1_author4_war"><br></h4>
+<h4 class="book_author" id="book1_author2_war">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author3_war">Adam Sivera</h4>
+<h4 class="book_author" id="book1_author4_war">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book2_photo_war">	
-<h4 class="book_name" id="book2_name_war">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book2_photo_war"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book2_name_war">American Spy</h3>
 <h4 class="book_author" id="book2_author1_war">Adam Sivera</h4>
-<h4 class="book_author" id="book2_author2_war"><br></h4>
-<h4 class="book_author" id="book2_author3_war"><br></h4>
-<h4 class="book_author" id="book2_author4_war"><br></h4>
+<h4 class="book_author" id="book2_author2_war">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author3_war">Adam Sivera</h4>
+<h4 class="book_author" id="book2_author4_war">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book3_photo_war">	
-<h4 class="book_name" id="book3_name_war">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book3_photo_war"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book3_name_war">American Spy</h3>
 <h4 class="book_author" id="book3_author1_war">Adam Sivera</h4>
-<h4 class="book_author" id="book3_author2_war"><br></h4>
-<h4 class="book_author" id="book3_author3_war"><br></h4>
-<h4 class="book_author" id="book3_author4_war"><br></h4>
+<h4 class="book_author" id="book3_author2_war">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author3_war">Adam Sivera</h4>
+<h4 class="book_author" id="book3_author4_war">Adam Sivera</h4>
 </div>
 	
 <div class="book">
-<img src="/assets/img/a_criminal_defense.jpg"  class="book_cover" id="book4_photo_war">	
-<h4 class="book_name" id="book4_name_war">American Spy</h4>
+<img src="/assets/img/a_criminal_defense.jpg"
+	 id="book4_photo_war"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book4_name_war">American Spy</h3>
 <h4 class="book_author" id="book4_author1_war">Adam Sivera</h4>
-<h4 class="book_author" id="book4_author2_war"><br></h4>
-<h4 class="book_author" id="book4_author3_war"><br></h4>
-<h4 class="book_author" id="book4_author4_war"><br></h4>
+<h4 class="book_author" id="book4_author2_war">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author3_war">Adam Sivera</h4>
+<h4 class="book_author" id="book4_author4_war">Adam Sivera</h4>
 </div>
 	
 
 <div class="book">
-<img src="/assets/img/american_spy.jpg" class="book_cover" id="book5_photo_war">	
-<h4 class="book_name" id="book5_name_war">American Spy</h4>
+<img src="/assets/img/american_spy.jpg"
+	 id="book5_photo_war"
+	 class="book_cover" 
+	 alt="book cover"
+	 role="link"
+	 onclick="goToLink(book page, 'book page')"
+     onkeydown="goToLink(book page, 'book page')">	
+<h3 class="book_name" id="book5_name_war">American Spy</h3>
 <h4 class="book_author" id="book5_author1_war">Adam Sivera</h4>
-<h4 class="book_author" id="book5_author2_war"><br></h4>
-<h4 class="book_author" id="book5_author3_war"><br></h4>
-<h4 class="book_author" id="book5_author4_war"><br></h4>
+<h4 class="book_author" id="book5_author2_war">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author3_war">Adam Sivera</h4>
+<h4 class="book_author" id="book5_author4_war">Adam Sivera</h4>
 </div>
 	
-<div class="show_more_button">Show more</div>
-
+<div class="show_more_button"
+	 role="link"
+	 onclick="goToLink(war page, 'war page')"
+     onkeydown="goToLink(war page, 'war page')">Show more</div>
+	</div>	
 	</div>	
 	
 	</section>
+	
+<!--- END war section --->					
+
 	
 </body>
 </html>
