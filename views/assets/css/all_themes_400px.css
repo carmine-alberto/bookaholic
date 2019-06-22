@@ -4,39 +4,53 @@ max-width:100%;
 overflow-x:hidden;
 }
 
-#art and design {
-left:20px;
-position:absolute;
-top:250px;
+.books_container {
+display:grid;
+grid-template-columns:auto auto;
 }
 
-#fiction {
-left:20px;
+.header_box {
+background-color:#EF4444;
+height:20px;
+left:110px;
 position:absolute;
-top:1300px;
+top:245px;
+width:200px;
+z-index:inherit;
 }
 
-#mystery {
-left:20px;
-position:absolute;
-top:2500px;
+.header_container {
+background-color:white;
+height:300px;
+z-index:-100;
 }
 
-#non_fiction {
-left:20px;
+.header_text {
+font-size:36px;
+font-weight:bolder;
+left:110px;
 position:absolute;
-top:3700px;
+text-align:center;
+top:200px;
+width: 200px;
+z-index:100;
 }
 
-#science_fiction {
-left:20px;
-position:absolute;
-top:4850px;
+#love_title {
+margin-left: 120px
+}
+
+#fear_title {
+margin-left: 120px;
+}
+
+#philosophical_title {
+margin-left: 80px;
 }
 
 .section_title {
 font-size:20px;
-margin-left:5px;
+margin-left:110px;
 }
 
 .show_more_button {
@@ -46,15 +60,21 @@ border-radius:20px;
 color:black;
 display:inline-block;
 font-size:16px;
+font-weight: bolder;
 height:60px;
 margin:40px 0 0 50px;
 padding:15px 32px 62px 30px;
 text-align:center;
 text-decoration:none;
+text-transform: uppercase;
 vertical-align:middle;
 width:120px;
 }
 
 .show_more_button:hover {
 background-color:#ef4444;
+}
+
+#war_title {
+margin-left: 120px
 }
