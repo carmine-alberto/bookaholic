@@ -3,6 +3,10 @@
 
 body {font-family: Arial, Helvetica, sans-serif;}
 
+#login {
+	margin:240px 50px 50px 50px;
+}
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -47,7 +51,7 @@ img.avatar {
   height: 55px;
 }
 
-.container {
+.login_container {
   padding: 10px;
 }
 
