@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Registration</title>
 <link href="/assets/css/registration_1440px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/registration_768px.css" />
@@ -14,93 +15,179 @@
 
 <body>
 	
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!--- START navigation bar section --->
+	
+<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+		
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png" alt="bookaholic logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-  <div class="adjust-height">		
+  <div class="adjust-height">	
+	  
       <ul class="nav navbar-nav">
-        <li><a href="#" class="menu_item" id="active">Home</a></li>
-        <li><a href="#" class="menu_item">Authors</a></li>		  
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Art and design</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Mystery</a></li>
-            <li><a href="#">Non fiction</a></li>
-            <li><a href="#">Science fiction</a></li>
+        <li><a href="#" class="menu_item" role="menuitem" id="active">Home</a></li>
+		  
+        <li><a href="#" class="menu_item" role="menuitem">Authors</a></li>		  
+        
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" 
+			  id="genre_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="genre">
+            <li id="genre_art_and_design"  role="option">
+			<a href="#">Art and design</a></li>
+            <li id="genre_fiction" role="option">
+			<a href="#">Fiction</a></li>
+            <li id="genre_mystery" role="option"><a href="#">Mystery</a></li>
+            <li id="genre_non_fiction" role="option"><a href="#">Non fiction</a></li>
+            <li id="genre_science_fiction" role="option"><a href="#">Science fiction</a></li>
           </ul>
         </li>
 		  
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Family</a></li>
-            <li><a href="#">Fear</a></li>
-            <li><a href="#">Friendship</a></li>
-            <li><a href="#">Justice</a></li>
-            <li><a href="#">Love</a></li>
-            <li><a href="#">Philosophy</a></li>
-            <li><a href="#">War</a></li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu"
+			  id="themes_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="theme">
+            <li id="theme_family" role="option"><a href="#">Family</a></li>
+            <li id="theme_fear" role="option"><a href="#">Fear</a></li>
+            <li id="theme_friendship" role="option"><a href="#">Friendship</a></li>
+            <li id="theme_justice" role="option"><a href="#">Justice</a></li>
+            <li id="theme_love" role="option"><a href="#">Love</a></li>
+            <li id="theme_philosophy" role="option"><a href="#">Philosophy</a></li>
+            <li id="theme_war" role="option"><a href="#">War</a></li>
 			  
           </ul>
         </li>		  
 		  
-        <li><a href="#" class="menu_item">Events</a></li>
-        <li><a href="#" class="menu_item">About us</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">Events</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">About us</a></li>
       </ul>
+	  
+	  
 		<form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+      <div class="input-group" id="searchbar">
+        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button title="search button" class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
+        </button>
       </div>
+	</div>
     </form>
       <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
-        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+		  <li><a href="#"><span class="icon_name">
+		  <img src="img/logo profile.png" 
+			   alt="profile link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(profile, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(profile, 'http://www.w3.org/')"
+     		   role="link">
+			   Profile</span>
+			  </a>
+		  </li>
+		  
+          <li><a href="#"><span class="icon_name">
+		  <img src="img/logo cart.png" 
+			   alt="cart link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(cart, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(cart, 'http://www.w3.org/')"
+     		   role="link">
+			   Cart</span>
+			  </a>
+		  </li>
       </ul>
     </div>
   </div>
 	</div>
 </nav>	
+		
+<!--- END navigation bar section --->	
 	
-<form action="/action_page.php">
+	
+<!--- START registration section --->
+	
+<form role="form"
+	  id="registration form"
+	  aria-label="Register to the website">
   <div class="container_inputs">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <label for="email"
+		   title="email">		   
+	<b>Email</b>
+	</label>
+	  
+    <input class="input_box" 
+		   type="text" 
+		   placeholder="Enter Email" 
+		   name="email" 
+		   title="password input"
+		   required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="password"
+		   type="text" 		   
+		   placeholder="Enter Password" name="password" 
+		   title="password repeat input"		   
+		   required>
+	<b>Password</b>
+	</label>
+	  
+    <input class="input_box" 
+		   type="password" 
+		   placeholder="Enter Password" name="password" 
+		   title="password repeat input"		   
+		   required>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <label for="password-repeat"
+		   title="password repeat">
+    <b>Repeat Password</b>
+	</label>
+    
+	<input class="input_box" 
+		   type="password" 
+		   placeholder="Repeat Password" name="password-repeat" 
+		   title="password repeat input"
+		   required>
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms and Privacy</a>.</p>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit"
+			title="register button"
+			class="registerbtn"
+			role="button">
+		    Register</button>
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? 
+	<a href="#"
+	   type="link" 
+	   role="link" 
+	   id="login_link"
+	   onclick="goToLink(login page, 'login page')"
+       onkeydown="goToLink(login page, 'login page')">Sign in</a>.</p>
   </div>
 </form>
 	
+<!--- END registration section --->
+
 	
 </body>
 </html>
