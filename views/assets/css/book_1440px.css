@@ -1,290 +1,431 @@
 body {
-	font-family: 'F37 Ginger'!important;
-}
-
-h1 {
-	font-size: 48px;
-	margin-top: 40px;
-}
-
-h2 {
-	font-size: 36px;
-}
-
-h5 {
-	font-size: 14px;
-	color: #555555;
-	font-weight: lighter;
-}
-
-.section_title {
-	padding-left:30px;
-	padding-top:20px;
-	font-size: 20px;
-}
-
-.carousel {
-	display: none;
-}
-
-
-#book_landing_page {
-	background-color: #F3F3F3;
-	height: 750px;
-	max-width:100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	padding-top: 100px;
-}
-
-#book_resume {
-	margin-right:50px;
-	margin-left: 100px;
-	font-size: 14px;
-}
-
-#book_info {
-	padding-top: 80px;
-}
-
-#book_name {
-	font-weight: 700;
-	font-size: 30px;
-}
-
-#book_author {
-	font-weight: 500;
-	font-size: 24px;
-}
-
-#book_price {
-	font-weight: 500;
-	font-size: 18px;
-}
-
-#book_image {
-  width: 302px; 
-  height: 408px; 
-  margin:25px 50px 60px 60px;
-  float: left;
-}
-
-#add_to_cart_button {
-  width:180px;
-  height: 55px;
-  background-color: #ABABAB;
-  color: #000000;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 10px 2px;
-  cursor: pointer;
-  border-radius: 40px;
-  position: absolute;
-  left:320px;
-  top:630px;
-}
-
-#add_to_cart_button:hover{
-	background-color: #ef4444;
-}
-
-#related_books_title_mobile {
-	margin-top: 0px;
-}
-
-.scrolling-wrapper {
-  height: 550px; 
-  width: 768px;
-  max-width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  z-index: 999;
-  opacity: 1;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-  .card {
-    display: inline-block;
-  }
-
-
-::-webkit-scrollbar { 
-    display: none; 
-}
-
-div.image_and_caption {
-  margin-bottom: 25px;
-  margin-left: 30px;
-}
-
-.book_cover {
-  height: 244px;
-  width: 166px;
-	margin-left: 10px;
-	margin-right: 50px;
-}
-
-.caption_container {
-	text-align: center;
-	padding-right: 80px;
-}
-
-
-#fact_and_author {
-max-width: 100%;
-padding: 45px 50px 100px 45px;;
-}
-
-.fact_title {
-	color: #555555;
-	font-size: 16px;
-}
-
-
-#fact_sheet_content {
-	margin-left: 12px;
-}
-
-#fact_sheet_content:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#fact_sheet_title {
-	margin-right:350px;
-}
-
-.column {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-  padding-bottom: 40px;
-  font-size: 14px;
+font-family:'F37 Ginger'!important;
+max-width:100%;
+overflow-x:hidden;
+overflow-y:scroll;
 }
 
 #about_the_author {
-	width:400px;
-	margin-left: 300px;
-	margin-top: 40px;
+margin-left:820px;
+margin-top:80px;
+width:360px;
 }
 
-#author_bio {
-	width:300px;
-	margin-left: 20px;
-	font-size: 14px;
+#about_the_author_title {
+margin-left:0;
+}
+
+#add_to_cart_button {
+background-color:#D9D9D9;
+border:none;
+border-radius:30px;
+color:#000000;
+display:table-cell;
+font-size:16px;
+font-weight:bold;
+height:50px;
+text-align:center;
+text-decoration:none;
+text-transform:uppercase;
+vertical-align:middle;
+width:180px;
+}
+
+.author {
+margin-bottom:60px;
+}
+
+#author_bio,#reviews_title {
+margin-left:20px;
 }
 
 #author_image {
-  width: 160px; 
-  height: 160px; 
-  margin-left:20px;
-  margin-right: 30px;
-  margin-bottom: 15px;
-  float: left;
+float:left;
+height:200px;
+margin:5px 30px 10px 20px;
+width:200px;
+}
+
+.author_page_button {
+background-color:#D9D9D9;
+border-radius:20px;
+color:#000000;
+cursor:pointer;
+display:table-cell;
+font-size:14px;
+font-weight:bolder;
+height:45px;
+margin:0 auto;
+text-align:center;
+text-decoration:none;
+text-transform:uppercase;
+vertical-align:middle;
+width:200px;
 }
 
 
-#author_page_button {
-  width:140px;
-  height: 45px;
-  background-color: #ABABAB;
-  color: #000000;
-  text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 20px;
-  margin: 0 auto;
-  padding-top: 5px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  position: absolute;
-  left:110px;
-  top:280px;
+.book_author,.fact_content {
+font-size:16px;
+font-weight:lighter;
 }
 
-#author_page_button:hover{
-  background-color:#ef4444;
+#book_author_1,#book_author_2,#book_author_3,#book_author_4 {
+display:inline;
+font-size:24px;
+font-weight:lighter;
 }
 
-#related_books {
-	background-color: #F3F3F3;
-	margin-top: 200px;
+.book_cover {
+height:294px;
+width:216px;
 }
 
-#reviews_title {
-	margin-left: 20px;
+#book_image {
+float:left;
+height:568px;
+margin-left:300px;
+margin-right:30px;
+width:412px;
 }
 
-#reviews {
-  position: absolute;
-  top:2000px;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding-bottom:80px;
-  background-color: #ffffff;
+.book_image_event {
+float:left;
+height:300px;
+margin-right:40px;
+width:230px;
 }
 
-#reviews_container {
-  display: grid;
-  grid-template-columns: 250px 250px 250px;
-  grid-template-rows: 130px 130px 130px 130px;
-  grid-row-gap: 60px;
-  overflow: hidden;
+#book_info {
+padding-top:80px;
 }
 
-.review_image {
-width: 60px;
-height: 60px;
-float: left;
+#book_landing_page {
+background-color:#F3F3F3;
+height:700px;
+width:100%;
 }
 
-.stars {
-width:90px;
-height: 18px;
+#book_name {
+font-size:34px;
+font-weight:700;
 }
 
-#related_events {
-	height: 460px;
-	width: 768px;
-	background-color: #f3f3f3;
-	position: absolute;
-	top:2950px;
-	left: 0px;
+#book_price {
+font-size:24px;
+font-weight:lighter;
 }
 
-#event_photo {
-	float:left;
-	width:300px;
-	height:300px;
-	margin:0px 30px 160px 30px;
-	border: solid #EF4444;
-  	border-width: 1px 10px 10px 1px;
+#book_resume {
+font-size:16px;
+font-weight:lighter;
+margin:50px 300px 50px 100px;
 }
 
-#event_date {
-	font-size: 16px;
+.book_title {
+font-size:16px;
+font-weight:bolder;
 }
 
-#event_title {
-	font-size: 20px;
+.caption_container {
+margin-left:185px;
+margin-top:20px;
+text-align:center;
+width:100px;
+}
+
+.card {
+display:inline-block;
+}
+
+.carousel {
+align-content:center;
+display:block;
+}
+
+.carousel-controls {
+bottom:750px;
+color:black;
+cursor:pointer;
+font-size:100px;
+left:0;
+line-height:600px;
+position:absolute;
+right:300px;
+width:1380px;
+z-index:999;
+}
+
+.carousel-controls .next-slide {
+right:0;
+text-align:right;
+width:49%;
+}
+
+.carousel-controls .prev-slide {
+left:0;
+text-align:left;
+width:49%;
+}
+
+.carousel-controls label {
+cursor:pointer;
+display:none;
+opacity:1;
+padding:0 30px;
+position:absolute;
+transition:opacity .2s;
+}
+
+.carousel-controls label:hover {
+opacity:1;
+}
+
+.column {
+float:left;
+width:50%;
+}
+
+.event {
+margin:40px 50px;
 }
 
 #event_author {
-	font-size: 14px;
-	font-weight: lighter;
+font-size:24px;
+font-weight:bolder;
+}
+
+.event_author {
+font-size:20px;
+}
+
+.event_date,.place {
+color:rgba(67,67,67,1.00);
+font-size:16px;
+font-weight:lighter;
+}
+
+#event_photo {
+border:solid #EF4444;
+border-width:1px 10px 10px 1px;
+float:left;
+height:300px;
+margin:30px;
+width:300px;
+}
+
+.event_title {
+font-size:24px;
+}
+
+.events_container {
+display:grid;
+grid-template-columns:auto auto;
+width:768px;
+}
+
+#fact_and_author {
+margin-bottom:20px;
+}
+
+.fact_title {
+color:#555555;
+font-weight:bolder;
+}
+
+#fact_sheet {
+left:5%;
+position:absolute;
+top:96%;
+}
+
+#fact_sheet_content {
+margin-left:30px;
+}
+
+#fact_sheet_content:after {
+clear:both;
+content:"";
+display:table;
+}
+
+#fact_sheet_title {
+margin-right:350px;
+}
+
+.image_and_caption {
+display:inline-block;
+margin-bottom:25px;
+margin-left:-15px;
+width:90%;
+}
+
+input:checked + .slide-container .carousel-controls label,input:checked + .slide-container .nav label {
+display:block;
+}
+
+input:checked + .slide-container .slide-image {
+opacity:1;
+transform:scale(1);
+transition:opacity 1s ease-in-out;
+}
+
+.learn_more {
+background-color:#d5d5d5;
+border:none;
+border-radius:30px;
+color:black;
+display:inline-block;
+font-size:18px;
+font-weight:bold;
+height:45px;
+margin-top:30px;
+padding:5px 3px;
+text-align:center;
+text-decoration:none;
+text-transform:uppercase;
+vertical-align:middle;
+width:160px;
+}
+
+.learn_more:hover {
+background-color:#ef4444;
+}
+
+#related_books {
+background-color:#F3F3F3;
+margin-top:150px;
+padding-top:5px;
+}
+
+#related_books_list {
+list-style-type:none;
+}
+
+#related_books_title {
+margin-left:45px;
+margin-top:50px;
+}
+
+#related_events {
+background-color:#f3f3f3;
+margin-top:20px;
+padding-top:10px;
+}
+
+#related_events_title {
+margin-bottom:10px;
+margin-left:55px;
+}
+
+.review {
+font-weight:lighter;
+margin:0 10px 0 5px;
+}
+
+.review_image {
+float:left;
+height:55%;
+margin:0 5px;
+width:20%;
+}
+
+#reviews {
+margin-left:50px;
+margin-top:50px;
+}
+
+#reviews_container {
+display:grid;
+grid-template-columns:auto auto auto auto;
+grid-template-rows:150px 150px 150px;
+padding:15px;
+}
+
+.scrolling-wrapper {
+-webkit-overflow-scrolling:touch;
+display:none;
+height:550px;
+max-width:100%;
+opacity:0;
+overflow-x:scroll;
+overflow-y:hidden;
+position:absolute;
+top:1220px;
+white-space:nowrap;
+width:768px;
+z-index:999;
+}
+
+.section_title {
+font-size:26px;
+font-weight:bolder;
+margin-bottom:50px;
+margin-left:30px;
+}
+
+.single_review {
+font-size:30px;
+padding:20px;
+}
+
+.slide-container {
+display:inline-block;
+margin:400px -50px;
+white-space:nowrap;
+width:1440px;
+}
+
+.slide-image {
+display:inherit;
+height:60%;
+margin-left:20px;
+opacity:0;
+position:absolute;
+top:0;
+transition:all .7s ease-in-out;
+width:20%;
+}
+
+.slide-image img {
+height:80%;
+margin:30px 80px 0 140px;
+width:80%;
+}
+
+.slide-image:hover + .carousel-controls label {
+opacity:0.5;
+}
+
+.slides {
+display:block;
+height:600px;
+list-style:none;
+margin:0;
+overflow:hidden;
+padding:0;
+position:relative;
+}
+
+.slides input,::-webkit-scrollbar {
+display:none;
+}
+
+.slides * {
+-khtml-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-webkit-touch-callout:none;
+-webkit-user-select:none;
+user-select:none;
+}
+
+.stars {
+height:20%;
+margin:0 10px 0 5px;
+width:40%;
 }
 
 
-#event_description {
-	width:700px;
-	font-size: 12px;
-	font-weight: lighter;
-}
+
+
+
