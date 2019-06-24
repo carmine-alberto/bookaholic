@@ -1,94 +1,153 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Single book page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book page</title>
 <link href="/assets/css/book_1440px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/book_768px.css" />
 <link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/book_400px.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/navbar.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 	
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!--- START navigation bar section --->
+	
+<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png"></a>
+		
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png" alt="bookaholic logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-  <div class="adjust-height">		
+  <div class="adjust-height">	
+	  
       <ul class="nav navbar-nav">
-        <li><a href="#" class="menu_item" id="active">Home</a></li>
-        <li><a href="#" class="menu_item">Authors</a></li>		  
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Art and design</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Mystery</a></li>
-            <li><a href="#">Non fiction</a></li>
-            <li><a href="#">Science fiction</a></li>
+        <li><a href="#" class="menu_item" role="menuitem" id="active">Home</a></li>
+		  
+        <li><a href="#" class="menu_item" role="menuitem">Authors</a></li>		  
+        
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" 
+			  id="genre_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="genre">
+            <li id="genre_art_and_design"  role="option">
+			<a href="#">Art and design</a></li>
+            <li id="genre_fiction" role="option">
+			<a href="#">Fiction</a></li>
+            <li id="genre_mystery" role="option"><a href="#">Mystery</a></li>
+            <li id="genre_non_fiction" role="option"><a href="#">Non fiction</a></li>
+            <li id="genre_science_fiction" role="option"><a href="#">Science fiction</a></li>
           </ul>
         </li>
 		  
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Family</a></li>
-            <li><a href="#">Fear</a></li>
-            <li><a href="#">Friendship</a></li>
-            <li><a href="#">Justice</a></li>
-            <li><a href="#">Love</a></li>
-            <li><a href="#">Philosophy</a></li>
-            <li><a href="#">War</a></li>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu"
+			  id="themes_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="theme">
+            <li id="theme_family" role="option"><a href="#">Family</a></li>
+            <li id="theme_fear" role="option"><a href="#">Fear</a></li>
+            <li id="theme_friendship" role="option"><a href="#">Friendship</a></li>
+            <li id="theme_justice" role="option"><a href="#">Justice</a></li>
+            <li id="theme_love" role="option"><a href="#">Love</a></li>
+            <li id="theme_philosophy" role="option"><a href="#">Philosophy</a></li>
+            <li id="theme_war" role="option"><a href="#">War</a></li>
 			  
           </ul>
         </li>		  
 		  
-        <li><a href="#" class="menu_item">Events</a></li>
-        <li><a href="#" class="menu_item">About us</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">Events</a></li>
+        <li><a href="#" class="menu_item" role="menuitem">About us</a></li>
       </ul>
+	  
+	  
 		<form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+      <div class="input-group" id="searchbar">
+        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button title="search button" class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
+        </button>
       </div>
+	</div>
     </form>
       <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#"><span class="icon_name"><img src="img/logo profile.png" class="icon"> Profile</span></a></li>
-        <li><a href="#"><span class="icon_name"><img src="img/logo cart.png" class="icon"> Cart</span></a></li>
+		  <li><a href="#"><span class="icon_name">
+		  <img src="img/logo profile.png" 
+			   alt="profile link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(profile, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(profile, 'http://www.w3.org/')"
+     		   role="link">
+			   Profile</span>
+			  </a>
+		  </li>
+		  
+          <li><a href="#"><span class="icon_name">
+		  <img src="img/logo cart.png" 
+			   alt="cart link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(cart, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(cart, 'http://www.w3.org/')"
+     		   role="link">
+			   Cart</span>
+			  </a>
+		  </li>
       </ul>
     </div>
   </div>
 	</div>
 </nav>	
+		
+<!--- END navigation bar section --->
+	
+	
+	
+<!--- START book details section --->
 
 <section id="book_landing_page">
 	
 <div id="book_info">	
-<img id="book_image" alt="book_cover" src="/assets/img/gingerbread.jpg">
+<img id="book_image" src="img/gingerbread.jpg" alt="book_cover">
 <h1 id="book_name">Book_name</h1>
-<h2 id="book_author">Book_author</h2>
+<h2 id="book_author_1">Book_author </h2>
+<h2 id="book_author_2">Book_author </h2>
+<br>
+<h2 id="book_author_3">Book_author </h2>
+<h2 id="book_author_4">Book_author </h2>
 <h2 id="book_price">00.00 eur</h2>
-<h5 id="book_resume">For one year, Giorgia Lupi, an Italian living in New York, and Stefanie Posavec, an American in London, mapped the particulars of their daily lives as a series of hand-drawn postcards they exchanged via mail weekly—small portraits as full of emotion as they are data, both mundane and magical. Dear Data reproduces in pinpoint detail the full year's set of cards, front and back, providing a remarkable portrait of two artists connected by their attention to the details of their lives—including complaints, distractions, phone addictions, physical contact, and desires.</h5>
-<div id="add_to_cart_button">add to cart</div>
+<h3 id="book_resume">For one year, Giorgia Lupi, an Italian living in New York, and Stefanie Posavec, an American in London, mapped the particulars of their daily lives as a series of hand-drawn postcards they exchanged via mail weekly—small portraits as full of emotion as they are data, both mundane and magical. Dear Data reproduces in pinpoint detail the full year's set of cards, front and back, providing a remarkable portrait of two artists connected by their attention to the details of their lives—including complaints, distractions, phone addictions, physical contact, and desires.</h3>
+<div id="add_to_cart_button"
+	 role="link"
+	 onclick="goToLink(cart page, 'cart page')"
+     onkeydown="goToLink(cart page, 'cart page')">add to cart</div>
 </div>	
 
 </section>
 	
+<!--- END book details section --->
+	
+	
+	
+	
+<!--- START fact sheet section --->	
 	
 <section id="fact_and_author">	
 <div id="fact_sheet">
@@ -96,72 +155,103 @@
 <div id="fact_sheet_content">
 <div class="column">	
 <h4 class="fact_title">Released:</h4>
-<h5 id="release_date">Release_date</h5>
+<h5 class="fact_content" id="release_date">Release_date</h5>
 <h4 class="fact_title">Language</h4>
-<h5 id="book_language">Book_language</h5>
+<h5 class="fact_content" id="book_language">Book_language</h5>
 <h4 class="fact_title">Genre</h4>
-<h5 id="book_genre">Book_genre</h5>
+<h5 class="fact_content" id="book_genre">Book_genre</h5>
 </div>
 <div class="column">	
 <h4 class="fact_title">Publisher:</h4>
-<h5 id="book_publisher">Book_publisher</h5>
+<h5 class="fact_content" id="book_publisher">Book_publisher</h5>
 <h4 class="fact_title">ISBN</h4>
-<h5 id="isbn">Book_ISBN</h5>
+<h5 class="fact_content" id="isbn">Book_ISBN</h5>
 <h4 class="fact_title">Type of cover</h4>
-<h5 id="type_of_cover">hardcover</h5>
+<h5 class="fact_content" id="type_of_cover">hardcover</h5>
 </div>
 </div>
 </div>	
+	
+<!--- END fact sheet section --->	
+	
+	
+	
+	
+<!--- START author details section --->		
 	
 <div id="about_the_author">
 <h4 class="section_title" id="about_the_author_title">About the authors</h4>		
 <div class="author">
 <h5 class="author_bio" id="author1_bio">Helen Oyeyemi is a British writer currently based in Prague. Her first novel, Boy Snow Bird, became an instant success in her home<span class="dots">...</span></h5>
-<div class="author_page_button">go to author's page</div>	
+<div class="author_page_button"
+	 role="link"
+	 onclick="goToLink(author page, 'author page')"
+     onkeydown="goToLink(author page, 'author page')">go to author's page</div>	
 </div>
 
 <div class="author">	
 <h5 class="author_bio" id="author2_bio">Helen Oyeyemi is a British writer currently based in Prague. Her first novel, Boy Snow Bird, became an instant success in her home<span class="dots">...</span></h5>
-<div class="author_page_button">go to author's page</div>	
-</div>
+<div class="author_page_button"
+	 role="link"
+	 onclick="goToLink(author page, 'author page')"
+     onkeydown="goToLink(author page, 'author page')">go to author's page</div>	</div>
 
 <div class="author">		
 <h5 class="author_bio" id="author3_bio">Helen Oyeyemi is a British writer currently based in Prague. Her first novel, Boy Snow Bird, became an instant success in her home<span class="dots">...</span></h5>
-<div class="author_page_button">go to author's page</div>	
-</div>	
+<div class="author_page_button"
+	 role="link"
+	 onclick="goToLink(author page, 'author page')"
+     onkeydown="goToLink(author page, 'author page')">go to author's page</div>	</div>	
 	
 <div class="author">			
 <h5 class="author_bio" id="author4_bio">Helen Oyeyemi is a British writer currently based in Prague. Her first novel, Boy Snow Bird, became an instant success in her home<span class="dots">...</span></h5>
-<div class="author_page_button">go to author's page</div>	
+<div class="author_page_button"
+	 role="link"
+	 onclick="goToLink(author page, 'author page')"
+     onkeydown="goToLink(author page, 'author page')">go to author's page</div>		</div>
 	</div>
-	</div>	
 	
 </section>		
 	
-<section id="related_books">	
-
+<!--- END author details section --->		
 	
-	<h3 class="section_title" id="related_books_title_mobile">
+	
+	
+<!--- START related books section --->			
+	
+<section id="related_books">
+	
+	<h3 class="section_title" id="related_books_title">
 Related books
-		</h3>	
+		</h3>		
 	
 <div class="scrolling-wrapper">
-
+	
 	
   <div class="card">
- 	       <img src="/assets/img/chronicles_of_a_radical_hag.jpg" class="book_cover">
+ 	       <img src="img/chronicles_of_a_radical_hag.jpg"
+				class="book_cover" 
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book1_author_1">Book_author_1</h6>
 		   <h6 class="book_author" id="book1_author_2">Book_author_2</h6>	
 		   <h6 class="book_author" id="book1_author_3">Book_author_3</h6>
-		   <h6 class="book_author" id="book1_author_4"><br></h6>
+		   <h6 class="book_author" id="book1_author_4">Book_author_4</h6>
 		   </div>
 		   </div>
  
 	
   <div class="card">
- 	       <img src="/assets/img/dear_client.jpg" class="book_cover">
+ 	       <img src="img/dear_client.jpg"
+				class="book_cover" 
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book2_author_1">Book_author_1</h6>
@@ -172,53 +262,74 @@ Related books
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/east_of_eden.jpg" class="book_cover">
+ 	       <img src="img/east_of_eden.jpg"
+				class="book_cover" 
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 			   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book3_author_1">Book_author_1</h6>
 		   <h6 class="book_author" id="book3_author_2">Book_author_2</h6>	
 		   <h6 class="book_author" id="book3_author_3">Book_author_3</h6>
-		   <h6 class="book_author" id="book3_author_4"><br></h6>
+		   <h6 class="book_author" id="book3_author_4">Book_author_4</h6>
 		   </div>
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/what_if_it's_us.jpg" class="book_cover">
+ 	       <img src="img/what_if_it's_us.jpg"
+				class="book_cover" 
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book4_author_1">Book_author_1</h6>
 		   <h6 class="book_author" id="book4_author_2">Book_author_2</h6>	
 		   <h6 class="book_author" id="book4_author_3">Book_author_3</h6>
-		   <h6 class="book_author" id="book4_author_4"><br></h6>
+		   <h6 class="book_author" id="book4_author_4">Book_author_4</h6>
 		   </div>
   </div>	
 
   <div class="card">
- 	       <img src="/assets/img/elsey_come_home.jpg" class="book_cover">
+ 	       <img src="img/elsey_come_home.jpg"
+				class="book_cover" 
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book5_author_1">Book_author_1</h6>
 		   <h6 class="book_author" id="book5_author_2">Book_author_2</h6>	
-		   <h6 class="book_author" id="book5_author_3"><br></h6>
-		   <h6 class="book_author" id="book5_author_4"><br></h6>
+		   <h6 class="book_author" id="book5_author_3">Book_author_3</h6>
+		   <h6 class="book_author" id="book5_author_4">Book_author_4</h6>
 		   </div>
   </div>	
 	
   <div class="card">
- 	       <img src="/assets/img/the_bell_jar.jpg" class="book_cover">
+ 	       <img src="img/the_bell_jar.jpg"
+				class="book_cover" 
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>
 		   <h6 class="book_author" id="book6_author_1">Book_author_1</h6>
-		   <h6 class="book_author" id="book6_author_2"><br></h6>	
-		   <h6 class="book_author" id="book6_author_3"><br></h6>
-		   <h6 class="book_author" id="book6_author_4"><br></h6>
+		   <h6 class="book_author" id="book6_author_2">Book_author_2</h6>	
+		   <h6 class="book_author" id="book6_author_3">Book_author_3</h6>
+		   <h6 class="book_author" id="book6_author_4">Book_author_4</h6>
 		   </div>
   </div>
 	
 </div>
 	
 
-<div class="carousel">		
+<div class="carousel">
+	
         <ul class="slides">
             <input type="radio" name="radio-buttons" id="img-1" checked />
 			
@@ -227,29 +338,44 @@ Related books
         <div class="slide-image">
 			
 		<div class="image_and_caption">	
- 	       <img src="img/chronicles_of_a_radical_hag.jpg" id="slide1_img1">
+ 	       <img src="img/chronicles_of_a_radical_hag.jpg" 
+				id="slide1_img1"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
-   		   <h6 class="book_author" id="book1_author1">Book_author</h6>
-   		   <h6 class="book_author" id="book1_author2"><br></h6>
-   		   <h6 class="book_author" id="book1_author3"><br></h6>
-   		   <h6 class="book_author" id="book1_author4"><br></h6>
+   		   <h6 class="book_author" id="book1_author1">Book_author_1</h6>
+   		   <h6 class="book_author" id="book1_author2">Book_author_2</h6>
+   		   <h6 class="book_author" id="book1_author3">Book_author_3</h6>
+   		   <h6 class="book_author" id="book1_author4">Book_author_4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/what_if_it's_us.jpg" id="slide1_img2">
+ 	       <img src="img/what_if_it's_us.jpg" 
+				id="slide1_img2"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">					
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book2_author1">Book_author 1</h6>
    		   <h6 class="book_author" id="book2_author2">Book author 2</h6>
-   		   <h6 class="book_author" id="book2_author3"><br></h6>
-   		   <h6 class="book_author" id="book2_author4"><br></h6>
+   		   <h6 class="book_author" id="book2_author3">Book_author_3</h6>
+   		   <h6 class="book_author" id="book2_author4">Book_author_4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/elsey_come_home.jpg" id="slide1_img3">
+ 	       <img src="img/elsey_come_home.jpg" 
+				id="slide1_img3"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book3_author1">Book_author 1</h6>
@@ -260,7 +386,12 @@ Related books
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/east_of_eden.jpg" id="slide1_img4">
+ 	       <img src="img/east_of_eden.jpg"
+				id="slide1_img4"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book4_author1">Book_author 1</h6>
@@ -271,7 +402,12 @@ Related books
 			</div>			
 					
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/ready_player_one.jpg" id="slide1_img5">
+ 	       <img src="img/ready_player_one.jpg" 
+				id="slide1_img5"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
 		   <h6 class="book_title">Book_title</h6>		    
    		   <h6 class="book_author" id="book5_author1">Book_author 1</h6>
@@ -282,9 +418,6 @@ Related books
 			</div>			
 		
 </div>
-
-
-<!--- Second slide --->	
 
 	
                 <div class="carousel-controls">
@@ -301,55 +434,88 @@ Related books
             <li class="slide-container">
                 <div class="slide-image">
 		<div class="image_and_caption">	
- 	       <img src="img/hell_or_high_water.jpg" id="slide2_img1">
+ 	       <img src="img/kobane.jpg" 
+				id="slide2_img1"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book6_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book6_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book6_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book6_author4">Book author 4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img2">
+ 	       <img src="img/kobane.jpg" 
+				id="slide2_img2"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book7_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book7_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book7_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book7_author4">Book author 4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img3">
+ 	       <img src="img/kobane.jpg" 
+				id="slide2_img3"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book8_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book8_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book8_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book8_author4">Book author 4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img4">
+ 	       <img src="img/kobane.jpg" 
+				id="slide2_img4"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book9_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book9_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book9_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book9_author4">Book author 4</h6>
 			</div>
 			</div>			
 					
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide2_img5">
+ 	       <img src="img/kobane.jpg" 
+				id="slide2_img5"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book10_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book10_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book10_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book10_author4">Book author 4</h6>
 			</div>
 			</div>							
 			
                 </div>
 				
 				
-<!--- Third slide --->		
-	
                 <div class="carousel-controls">
                     <label for="img-1" class="prev-slide">
                         <span>&lsaquo;</span>
@@ -363,50 +529,85 @@ Related books
 	
             <li class="slide-container">
                 <div class="slide-image">
-				<div class="image_and_caption">	
- 	       <img src="img/joyful.jpg" id="slide3_img1">
+		<div class="image_and_caption">	
+ 	       <img src="img/le ragazze.jpg" 
+				id="slide3_img1"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book11_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book11_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book11_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book11_author4">Book author 4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide3_img2">
+ 	       <img src="img/le ragazze.jpg" 
+			    id="slide3_img2"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book12_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book12_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book12_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book12_author4">Book author 4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide3_img3">
+ 	       <img src="img/le ragazze.jpg" 
+				id="slide3_img3"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book13_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book13_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book13_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book13_author4">Book author 4</h6>
 			</div>
 			</div>
 			
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide3_img4">
+ 	       <img src="img/le ragazze.jpg" 
+				id="slide3_img4"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book14_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book14_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book14_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book14_author4">Book author 4</h6>
 			</div>
 			</div>			
 					
 		<div class="image_and_caption">	
- 	       <img src="/assets/img/kobane.jpg" id="slide3_img5">
+ 	       <img src="img/le ragazze.jpg" 
+				id="slide3_img5"
+	 			alt="book cover"
+	 			role="link"
+	 			onclick="goToLink(book page, 'book page')"
+     			onkeydown="goToLink(book page, 'book page')">				
 		   <div class="caption_container">
-		   <h6 class="book_author">Book_author</h6>
-		   <h6 class="book_title">Book_title</h6>
-		   <h6 class="book_price">Book_price</h6>
+		   <h6 class="book_title">Book_title</h6>		    
+   		   <h6 class="book_author" id="book15_author1">Book_author 1</h6>
+   		   <h6 class="book_author" id="book15_author2">Book author 2</h6>
+   		   <h6 class="book_author" id="book15_author3">Book author 3</h6>
+   		   <h6 class="book_author" id="book15_author4">Book author 4</h6>
 			</div>
-			</div>	
+			</div>			
 					
                 </div>
 				
@@ -425,95 +626,98 @@ Related books
 
 	</section>
 
+<!--- END related books section --->			
 
 	
-<!-- Reviews section --->		
+	
+	
+<!-- START Reviews section --->		
 	
 <section id="reviews">
 <h4 class="section_title" id="reviews_title">Reviews</h4>
 <div id="reviews_container">
 	
 <div class="single_review" id="review_1">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_1">Reviewer_name</h5>
-<img class="stars" id="stars_1" src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_1" src="img/5 stelle.png">
 <h5 class="review" id="review_text_1">Review text review text</h5>	
 </div>
 	
 <div class="single_review" id="review_2">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_2">Reviewer_name</h5>
-<img class="stars" id="stars_2" src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_2" src="img/5 stelle.png">
 <h5 class="review" id="review_text_2">Review text review text</h5>	
 </div>
 
 <div class="single_review" id="review_3">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_3">Reviewer_name</h5>
-<img class="stars" id="stars_3"  src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_3"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_3">Review text review text</h5>	
 </div>
 	
 <div class="single_review" id="review_4">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_4">Reviewer_name</h5>
-<img class="stars" id="stars_4" src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_4" src="img/5 stelle.png">
 <h5 class="review" id="review_text_4">Review text review text</h5>	
 </div>
 	
 <div class="single_review" id="review_5">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_5">Reviewer_name</h5>
-<img class="stars" id="stars_5"  src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_5"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_5">Review text review text</h5>	
 </div>
 
 <div class="single_review" id="review_6">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_6">Reviewer_name</h5>
-<img class="stars"  id="stars_6"  src="/assets/img/5 stelle.png">
+<img class="stars"  id="stars_6"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_6">Review text review text</h5>	
 </div>
 	
 <div class="single_review" id="review_7">
-<img class="review_image" src="/assets/img/user.png">	
+<img class="review_image" src="img/user.png" alt="user profile picture">	
 <h5 class="reviewer" id="reviewer_7">Reviewer_name</h5>
-<img class="stars"  id="stars_7"  src="/assets/img/5 stelle.png">
+<img class="stars"  id="stars_7"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_7">Review text review text</h5>	
 </div>
 	
-<div class="single_review" id="review_8">
-<img class="review_image" src="/assets/img/user.png">	
+<div class="single_review" id="review_8" alt="user profile picture">
+<img class="review_image" src="img/user.png">	
 <h5 class="reviewer" id="reviewer_8">Reviewer_name</h5>
-<img class="stars"  id="stars_8"  src="/assets/img/5 stelle.png">
+<img class="stars"  id="stars_8"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_8">Review text review text</h5>	
 </div>
 
-<div class="single_review" id="review_9">
-<img class="review_image" src="/assets/img/user.png">	
+<div class="single_review" id="review_9" alt="user profile picture">
+<img class="review_image" src="img/user.png">	
 <h5 class="reviewer" id="reviewer_9">Reviewer_name</h5>
-<img class="stars" id="stars_9"  src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_9"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_9">Review text review text</h5>	
 </div>
 	
-<div class="single_review" id="review_10">
-<img class="review_image" src="/assets/img/user.png">	
+<div class="single_review" id="review_10" alt="user profile picture">
+<img class="review_image" src="img/user.png">	
 <h5 class="reviewer" id="reviewer_10">Reviewer_name</h5>
-<img class="stars" id="stars_10"  src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_10"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_10">Review text review text</h5>	
 </div>
 	
-<div class="single_review" id="review_11">
-<img class="review_image" src="/assets/img/user.png">	
+<div class="single_review" id="review_11" alt="user profile picture">
+<img class="review_image" src="img/user.png">	
 <h5 class="reviewer" id="reviewer_11">Reviewer_name</h5>
-<img class="stars" id="stars_11"  src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_11"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_11">Review text review text</h5>	
 </div>
 
-<div class="single_review" id="review_12">
-<img class="review_image" src="/assets/img/user.png">	
+<div class="single_review" id="review_12" alt="user profile picture">
+<img class="review_image" src="img/user.png">	
 <h5 class="reviewer" id="reviewer_12">Reviewer_name</h5>
-<img class="stars" id="stars_12"  src="/assets/img/5 stelle.png">
+<img class="stars" id="stars_12"  src="img/5 stelle.png">
 <h5 class="review" id="review_text_12">Review text review text</h5>	
 </div>
 	
@@ -521,15 +725,41 @@ Related books
 	
 </section>
 	
+<!-- END Reviews section --->		
+	
+	
+	
+	
+	
+<!-- START Related events section --->			
+	
 <section id="related_events">
-<h3 class="section_title">Related events</h3>	
-<img src="/assets/img/giorgia_lupi.jpg" id="event_photo">
-<h4 id="event_date">15th May 2019, 5 pm<br><span id="event_place">Bookaholic Greenwich</span></h4>
-<h2 class="title" id="event_title">The new mystery literature</h2>
-<h2 class="author" id="event_author">with Gillian Flynn</h2>
-<div id="learn_more">Learn more</div>
-
+	
+<h2 class="section_title" id="related_events_title">Related events</h2>	
+	
+<div class="events_container">	
+	
+<div class="event">	
+<img src="img/the_catcher_in_the_rye.jpg" class="book_image_event" id="event1_photo" alt="event_photo">
+<h3 class="event_date" id="event1_date">15th May 2019, 5 pm<br><span id="event_place">Bookaholic Greenwich</span></h3>
+<h3 class="event_title" id="event1_title">The new mystery literature</h3>
+<h3 class="event_author" id="event1_author">with Gillian Flynn</h3>
+<button title="menu_icon" 
+		type="button" 
+		class="learn_more"
+	    role="link"
+	    onclick="goToLink(book page, 'book page')"
+        onkeydown="goToLink(book page, 'book page')">
+	    Learn more</button>		
+	
+</div>	
+</div>
+	
 </section>
+	
+<!-- END Related events section --->			
+	
+	
 	
 </body>
 </html>
