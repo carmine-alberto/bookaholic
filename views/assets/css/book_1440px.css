@@ -235,7 +235,7 @@ font-weight:bolder;
 #fact_sheet {
 left:5%;
 position:absolute;
-top:96%;
+top:775px;
 }
 
 #fact_sheet_content {
@@ -424,8 +424,3 @@ height:20%;
 margin:0 10px 0 5px;
 width:40%;
 }
-
-
-
-
-
