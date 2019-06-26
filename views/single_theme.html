@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Single theme</title>
-<link href="/assets/css/single_theme_1400px.css" rel="stylesheet">
+<link href="/assets/css/single_theme_1440px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/single_theme_768px.css" />
 <link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/single_theme_400px.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -187,19 +187,15 @@
 	</div>	
 
 
-<div class="filter_checkbox">
-<h2 class="filter_title">suggested by us
-  <input type="checkbox" title="suggested by us checkbox">
-  <span class="checkmark"></span>
-</h2>
-</div>	
-
-<div class="filter_checkbox">	
-<h2 class="filter_title">available
-  <input type="checkbox" title="available checkbox">
-  <span class="checkmark"></span>
-</h2>
-</div>
+<form name="suggested_by_us" method="get" action="action" class="filter_checkbox">
+ <h2 class="filter_title">suggested by us</h2>
+    <input type="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
+ 
+<form name="available" method="get" action="action" class="filter_checkbox">
+ <h2 class="filter_title">available</h2>
+    <input type="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
 	
 </div>	
 	
