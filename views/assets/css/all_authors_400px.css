@@ -45,6 +45,11 @@ float:left;
 list-style:none;
 }
 
+.filter_checkbox {
+margin-left: 120px;
+margin-top: 30px;
+}
+
 #filters_container {
 margin-left:120px;
 margin-top:10px;
