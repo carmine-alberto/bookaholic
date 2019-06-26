@@ -4,12 +4,6 @@ max-width:100%;
 overflow-x:hidden;
 }
 
-#art_and_design {
-left:20px;
-position:absolute;
-top:250px;
-}
-
 .book {
 font-size:18px;
 padding:35px;
@@ -36,24 +30,18 @@ font-weight:bolder;
 font-size: 20px;
 }
 
-.books_container {
+.books_container_1, .books_container_2, .books_container_3, .books_container_4, .books_container_5, .books_container_6, .books_container_7  {
 display:grid;
-grid-template-columns:auto auto auto auto auto auto auto;
-}
-
-#fiction {
-left:20px;
-position:absolute;
-top:740px;
+grid-template-columns:auto auto auto auto auto auto;
 }
 
 .header_box {
 background-color:#EF4444;
-bottom:615px;
+top:120px;
 height:20px;
 left:670px;
 position:absolute;
-width:205px;
+width:215px;
 z-index:inherit;
 }
 
@@ -69,26 +57,8 @@ font-weight:bolder;
 left:680px;
 position:absolute;
 text-align:center;
-top:120px;
+top:70px;
 z-index:100;
-}
-
-#mystery {
-left:20px;
-position:absolute;
-top:1340px;
-}
-
-#non_fiction {
-left:20px;
-position:absolute;
-top:1940px;
-}
-
-#science_fiction {
-left:20px;
-position:absolute;
-top:2540px;
 }
 
 .section_title {
@@ -105,17 +75,16 @@ border-radius:20px;
 color:black;
 display:inline-block;
 font-size:18px;
-font-weight: bolder;
 height:80px;
 margin-top:100px;
-padding:15px 0px;
+padding:15px 32px;
 text-align:center;
 text-decoration:none;
-text-transform: uppercase;
 vertical-align:middle;
-width:100px;
+width:120px;
 }
 
 .show_more_button:hover {
 background-color:#ef4444;
 }
+
