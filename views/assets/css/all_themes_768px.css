@@ -31,7 +31,7 @@ font-size:16px;
 font-weight:bolder;
 }
 
-.books_container {
+.books_container_1, .books_container_2, .books_container_3, .books_container_4, .books_container_5, .books_container_6, .books_container_7  {
 display:grid;
 grid-template-columns:auto auto auto;
 }
@@ -87,4 +87,3 @@ width:120px;
 .show_more_button:hover {
 background-color:#ef4444;
 }
-
