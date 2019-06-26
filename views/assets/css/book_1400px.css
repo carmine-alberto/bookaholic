@@ -31,6 +31,10 @@ vertical-align:middle;
 width:180px;
 }
 
+#add_to_cart_button:hover {
+background-color: #ef4444;
+}
+
 .author {
 margin-bottom:60px;
 }
@@ -63,6 +67,10 @@ vertical-align:middle;
 width:200px;
 }
 
+.author_page_button:hover {
+background-color: #ef4444;
+}
+
 
 .book_author,.fact_content {
 font-size:16px;
@@ -81,6 +89,7 @@ width:216px;
 }
 
 #book_image {
+box-shadow: 3px 3px 5px #979797;
 float:left;
 height:568px;
 margin-left:300px;
@@ -327,9 +336,8 @@ margin:0 10px 0 5px;
 
 .review_image {
 float:left;
-height:55%;
 margin:0 5px;
-width:20%;
+width: 40px;
 }
 
 #reviews {
@@ -424,6 +432,6 @@ user-select:none;
 
 .stars {
 height:20%;
-margin:0 10px 0 5px;
+margin:0 10px 0 -45px;
 width:40%;
 }
