@@ -21,7 +21,7 @@ cursor:pointer;
 font-size:16px;
 font-weight:bolder;
 height:55px;
-left:320px;
+left:300px;
 margin:10px 2px;
 padding:16px 32px;
 position:absolute;
@@ -62,7 +62,6 @@ display:table-cell;
 font-size:14px;
 height:45px;
 margin:0 auto;
-padding-top:5px;
 text-align:center;
 text-decoration:none;
 vertical-align:middle;
@@ -87,7 +86,6 @@ width:216px;
 }
 
 #book_image {
-border:1px solid black;
 float:left;
 height:348px;
 margin:25px 50px 60px 40px;
@@ -313,6 +311,8 @@ padding-top:20px;
 .stars {
 height:18px;
 width:90px;
+margin-left: 0px;
+margin-top: -40px;
 }
 
 
