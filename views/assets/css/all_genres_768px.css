@@ -37,7 +37,7 @@ font-size:16px;
 font-weight:bolder;
 }
 
-.books_container {
+.books_container_1, .books_container_2,.books_container_3,.books_container_4, .books_container_5 {
 display:grid;
 grid-template-columns:auto auto auto;
 }
