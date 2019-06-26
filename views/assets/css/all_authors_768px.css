@@ -1,3 +1,12 @@
+body {
+font-family:"F37 Ginger"!important;
+width:768px!important;
+}
+
+html {
+width:768px!important;
+}
+
 .author {
 font-size:18px;
 padding:40px;
@@ -31,6 +40,11 @@ display:inherit;
 .filter {
 float:left;
 list-style:none;
+}
+
+.filter_checkbox {
+margin-left: 285px;
+margin-top: 120px
 }
 
 #filters_container {
@@ -73,15 +87,6 @@ position:absolute;
 text-align:center;
 top:180px;
 z-index:100;
-}
-
-body {
-font-family:"F37 Ginger"!important;
-width:768px!important;
-}
-
-html {
-width:768px!important;
 }
 
 select {
