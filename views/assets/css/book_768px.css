@@ -8,15 +8,13 @@ width:768px;
 }
 
 #about_the_author {
-left:350px;
-margin-left:15px;
-position:absolute;
-top:765px;
+margin-left:385px;
+overflow: auto;
 width:300px;
 }
 
 #add_to_cart_button {
-background-color:#ABABAB;
+background-color:#D9D9D9;
 border-radius:40px;
 color:#000000;
 cursor:pointer;
@@ -56,7 +54,7 @@ width:160px;
 }
 
 .author_page_button {
-background-color:#ABABAB;
+background-color:#D9D9D9;
 border-radius:20px;
 color:#000000;
 cursor:pointer;
@@ -176,7 +174,8 @@ width:768px;
 }
 
 #fact_and_author {
-height:590px;
+overflow: auto;
+margin-bottom: 60px
 }
 
 #fact_sheet {
@@ -211,7 +210,7 @@ margin-left:30px;
 }
 
 .learn_more {
-background-color:#d5d5d5;
+background-color:#D9D9D9;
 border:none;
 border-radius:30px;
 color:black;
@@ -230,8 +229,14 @@ background-color:#ef4444;
 }
 
 #related_books {
-height:600px;
-margin-top:200px;
+margin-top:80px;
+overflow: auto;
+height: auto;
+}
+
+#related_books_container {
+background-color: #f3f3f3;
+overflow: auto;
 }
 
 #related_books_title {
@@ -246,7 +251,6 @@ margin-top:0;
 #related_events {
 background-color:#f3f3f3;
 margin-bottom:0;
-margin-top:950px;
 padding-bottom:10px;
 width:768px;
 }
@@ -267,13 +271,9 @@ width:60px;
 }
 
 #reviews {
-left:-35px;
 margin-bottom:50px;
 max-width:100%;
-overflow-x:hidden;
-overflow-y:scroll;
-position:absolute;
-top:2200px;
+overflow:auto;
 }
 
 #reviews_container {
@@ -285,24 +285,22 @@ overflow:hidden;
 }
 
 #reviews_title {
-margin-left:20px;
+margin-left:5px;
 }
 
 .scrolling-wrapper {
 -webkit-overflow-scrolling:touch;
-display:block!important;
-height:550px;
-max-width:100%;
 opacity:1;
 overflow-x:scroll;
 overflow-y:hidden;
 padding-left:30px;
 padding-right:30px;
-position:absolute;
-top:1710px;
+position: inherit;
 white-space:nowrap;
 width:768px;
 z-index:999;
+align-content:center;
+display:block;
 }
 
 .section_title {
