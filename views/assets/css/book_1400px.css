@@ -220,11 +220,14 @@ font-size:24px;
 .events_container {
 display:grid;
 grid-template-columns:auto auto;
+margin-left: -20px;
+margin-bottom: 0px;
 width:768px;
 }
 
 #fact_and_author {
 margin-bottom:20px;
+overflow: auto
 }
 
 .fact_title {
@@ -270,7 +273,7 @@ transition:opacity 1s ease-in-out;
 }
 
 .learn_more {
-background-color:#d5d5d5;
+background-color:#D9D9D9;
 border:none;
 border-radius:30px;
 color:black;
@@ -293,7 +296,7 @@ background-color:#ef4444;
 
 #related_books {
 background-color:#F3F3F3;
-margin-top:150px;
+margin-top:100px;
 padding-top:5px;
 }
 
@@ -309,7 +312,7 @@ margin-top:50px;
 #related_events {
 background-color:#f3f3f3;
 margin-top:20px;
-padding-top:10px;
+padding:30px;
 }
 
 #related_events_title {
@@ -330,8 +333,8 @@ width:20%;
 }
 
 #reviews {
-margin-left:50px;
-margin-top:50px;
+margin:50px;
+overflow:auto;
 }
 
 #reviews_container {
