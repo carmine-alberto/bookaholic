@@ -6,7 +6,6 @@ height:50px;
 h4,.filter_title,.dropdown_first {
 font-size:16px;
 }
-
 .authors_container {
 line-height:0.01;
 }
@@ -37,7 +36,7 @@ opacity:0.8;
 
 .book_title {
 font-size:15px;
-font-weight:bold;
+font-weight:700;
 }
 
 .books_containers {
@@ -47,10 +46,6 @@ left:20px;
 margin-top:120px;
 position:absolute;
 top:250px;
-}
-
-.checkbox_container {
-margin-top:60px;
 }
 
 .dropdown_menu {
@@ -63,8 +58,8 @@ list-style:none;
 padding:10px;
 }
 
-.filter_checkbox {
-margin-top:40px
+.filter_checkbox,.checkbox_container {
+margin-top:10px;
 }
 
 #filters_container {
@@ -75,7 +70,7 @@ width:900px;
 }
 
 .header_container {
-background-color:white;
+background-color:#FFF;
 height:150px;
 z-index:-100;
 }
@@ -95,7 +90,7 @@ border-radius:4px;
 font-family:"F37 Ginger";
 font-size:14px;
 padding:5px 20px;
-width:110px;
+width:160px;
 }
 
 #single_genre {
@@ -104,6 +99,3 @@ font-weight:bolder;
 padding-top:60px;
 text-align:center;
 }
-
-
-
