@@ -25,6 +25,7 @@ grid-template-columns:auto auto auto auto auto;
 left:20px;
 position:absolute;
 top:250px;
+left:0px;
 }
 
 #checkbox {
