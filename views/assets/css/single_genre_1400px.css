@@ -7,15 +7,15 @@ h4,.filter_title,.dropdown_first {
 font-size:16px;
 }
 
-html {
-width:768px;
+.authors_container {
+line-height:0.01;
 }
 
 .book {
 font-size:18px;
-height:520px;
-margin-left:50px;
-padding-bottom:15px;
+height:600px;
+margin-bottom:-80px;
+margin-left:60px;
 text-align:center;
 }
 
@@ -26,9 +26,9 @@ font-weight:lighter;
 
 .book_cover {
 cursor:pointer;
-height:250px;
+height:270px;
 opacity:1;
-width:180px;
+width:200px;
 }
 
 .book_cover:hover {
@@ -42,33 +42,36 @@ font-weight:bold;
 
 .books_containers {
 display:grid;
-grid-template-columns:auto auto auto;
+grid-template-columns:auto auto auto auto auto;
 left:20px;
 margin-top:120px;
 position:absolute;
-top:400px;
+top:250px;
+}
+
+.checkbox_container {
+margin-top:40px;
 }
 
 .dropdown_menu {
 display:inherit;
-font-size:16px;
+font-size:14px;
 }
 
 .filter {
-display:inline-block;
 list-style:none;
-padding:20px;
+padding:10px;
 }
 
 .filter_checkbox {
-	margin-top: 20px
+	margin-top:8px
 }
 
 #filters_container {
 display:grid;
 grid-template-columns:auto auto auto auto;
-margin:145px 50px;
-width:700px;
+margin:-55px 300px;
+width:900px;
 }
 
 .header_container {
@@ -78,12 +81,10 @@ z-index:-100;
 }
 
 .header_text {
-font-size:35px;
+font-size:40px;
 font-weight:bolder;
-left:300px;
-position:absolute;
+margin-top:120px;
 text-align:center;
-top:100px;
 z-index:100;
 }
 
@@ -92,13 +93,13 @@ background-color:#f1f1f1;
 border:none;
 border-radius:4px;
 font-family:"F37 Ginger";
-font-size:16px;
+font-size:14px;
 padding:5px 20px;
 width:110px;
 }
 
 #single_genre {
-font-size:30px;
+font-size:24px;
 font-weight:bolder;
 padding-top:60px;
 text-align:center;
