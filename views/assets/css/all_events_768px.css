@@ -5,7 +5,18 @@ body {
 	font-family: "F37 Ginger"!important;
 }
 
+#apply_filters {
+background-color: #d9d9d9;
+border-radius: 30px;	
+height: 50px;
+margin-left: 330px;
+margin-top: -200px;
+width: 140px;
+}
 
+#apply_filters:active {
+background-color: #ef4444;
+}
 
 .section_title {
 	font: bolder;
@@ -119,5 +130,3 @@ body {
 .learn_more:active {
 	background-color: #ef4444;
 }
-
-
