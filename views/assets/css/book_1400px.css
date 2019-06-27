@@ -31,10 +31,6 @@ vertical-align:middle;
 width:180px;
 }
 
-#add_to_cart_button:hover {
-background-color: #ef4444;
-}
-
 .author {
 margin-bottom:60px;
 }
@@ -67,10 +63,6 @@ vertical-align:middle;
 width:200px;
 }
 
-.author_page_button:hover {
-background-color: #ef4444;
-}
-
 
 .book_author,.fact_content {
 font-size:16px;
@@ -89,7 +81,6 @@ width:216px;
 }
 
 #book_image {
-box-shadow: 3px 3px 5px #979797;
 float:left;
 height:568px;
 margin-left:300px;
@@ -229,14 +220,11 @@ font-size:24px;
 .events_container {
 display:grid;
 grid-template-columns:auto auto;
-margin-left: -20px;
-margin-bottom: 0px;
 width:768px;
 }
 
 #fact_and_author {
 margin-bottom:20px;
-overflow: auto
 }
 
 .fact_title {
@@ -247,7 +235,7 @@ font-weight:bolder;
 #fact_sheet {
 left:5%;
 position:absolute;
-top:775px;
+top:96%;
 }
 
 #fact_sheet_content {
@@ -282,7 +270,7 @@ transition:opacity 1s ease-in-out;
 }
 
 .learn_more {
-background-color:#D9D9D9;
+background-color:#d5d5d5;
 border:none;
 border-radius:30px;
 color:black;
@@ -305,7 +293,7 @@ background-color:#ef4444;
 
 #related_books {
 background-color:#F3F3F3;
-margin-top:100px;
+margin-top:150px;
 padding-top:5px;
 }
 
@@ -321,7 +309,7 @@ margin-top:50px;
 #related_events {
 background-color:#f3f3f3;
 margin-top:20px;
-padding:30px;
+padding-top:10px;
 }
 
 #related_events_title {
@@ -336,13 +324,14 @@ margin:0 10px 0 5px;
 
 .review_image {
 float:left;
+height:55%;
 margin:0 5px;
-width: 40px;
+width:20%;
 }
 
 #reviews {
-margin:50px;
-overflow:auto;
+margin-left:50px;
+margin-top:50px;
 }
 
 #reviews_container {
@@ -383,7 +372,7 @@ padding:20px;
 display:inline-block;
 margin:400px -50px;
 white-space:nowrap;
-width:1400px;
+width:1440px;
 }
 
 .slide-image {
@@ -432,6 +421,11 @@ user-select:none;
 
 .stars {
 height:20%;
-margin:0 10px 0 -45px;
+margin:0 10px 0 5px;
 width:40%;
 }
+
+
+
+
+
