@@ -187,22 +187,21 @@
 	</label>
 </div>	
 	</div>
-
-<div class="filter_checkbox">
-<h2 class="filter_title">suggested by us
-  <input type="checkbox" title="suggested by us checkbox">
-  <span class="checkmark"></span>
-</h2>
-</div>	
-
-<div class="filter_checkbox">	
-<h2 class="filter_title">available
-  <input type="checkbox" title="available checkbox">
-  <span class="checkmark"></span>
-</h2>
-</div>
+	
+<form name="suggested_by_us" method="get" action="action" class="filter_checkbox">
+	<h2 class="filter_title">suggested by us</h2>
+    <input type="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
+	
+<form name="available" method="get" action="action" class="filter_checkbox">
+	<h2 class="filter_title">available</h2>
+    <input type="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
 	
 </div>	
+	
+<button id="apply_filters"
+		role="button">Apply filters</button>
 
 	
 <!--- END Filters section --->	

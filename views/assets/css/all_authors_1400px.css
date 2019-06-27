@@ -4,6 +4,10 @@ padding:40px;
 text-align:center;
 }
 
+.author_name {
+font-size: 18px;
+}
+
 .author_photo {
 cursor:pointer;
 height:200px;
@@ -21,6 +25,12 @@ grid-template-columns:auto auto auto auto auto;
 left:20px;
 position:absolute;
 top:250px;
+left:0px;
+}
+
+#checkbox {
+margin-left: 30px;
+margin-top: 25px
 }
 
 .dropdown_menu {
@@ -32,8 +42,12 @@ float:left;
 list-style:none;
 }
 
+.filter_checkbox {
+margin-left:625px;
+}
+
 #filters_container {
-margin-left:640px;
+margin-left:600px;
 margin-top:10px;
 width:300px;
 }
@@ -45,12 +59,14 @@ display:table;
 }
 
 .filter_title {
+float: left;
 font-size:20px;
+width: 150px;
 }
 
 .header_box {
 background-color:#EF4444;
-bottom:680px;
+bottom:632px;
 height:20px;
 left:610px;
 position:absolute;

@@ -235,7 +235,7 @@ font-weight:bolder;
 #fact_sheet {
 left:5%;
 position:absolute;
-top:775px;
+top:96%;
 }
 
 #fact_sheet_content {
@@ -372,7 +372,7 @@ padding:20px;
 display:inline-block;
 margin:400px -50px;
 white-space:nowrap;
-width:1400px;
+width:1440px;
 }
 
 .slide-image {
@@ -424,3 +424,8 @@ height:20%;
 margin:0 10px 0 5px;
 width:40%;
 }
+
+
+
+
+

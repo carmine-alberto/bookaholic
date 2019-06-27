@@ -12,6 +12,18 @@ html,#header_section {
 width:400px;
 }
 
+#apply_filters {
+background-color: #d9d9d9;
+border-radius: 30px;	
+height: 50px;
+margin-left: 130px;
+width: 140px;
+}
+
+#apply_filters:active {
+background-color: #ef4444;
+}
+
 .book {
 font-size:18px;
 height:450px;
@@ -47,7 +59,7 @@ grid-template-columns:auto auto;
 left:20px;
 margin-top:120px;
 position:absolute;
-top:350px;
+top:620px;
 }
 
 .dropdown_menu {
@@ -68,7 +80,7 @@ padding:20px;
 #filters_container {
 display:grid;
 grid-template-columns:auto auto;
-margin:35px 30px;
+margin:35px 30px 70px 30px;
 width:350px;
 }
 

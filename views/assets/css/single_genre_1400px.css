@@ -7,6 +7,19 @@ h4,.filter_title,.dropdown_first {
 font-size:16px;
 }
 
+#apply_filters {
+background-color: #d9d9d9;
+border-radius: 30px;	
+height: 50px;
+margin-left: 630px;
+margin-top: 100px;
+width: 140px;
+}
+
+#apply_filters:hover {
+background-color: #ef4444;
+}
+
 .authors_container {
 line-height:0.01;
 }
@@ -46,7 +59,7 @@ grid-template-columns:auto auto auto auto auto;
 left:20px;
 margin-top:120px;
 position:absolute;
-top:250px;
+top:550px;
 }
 
 .checkbox_container {
@@ -61,6 +74,10 @@ font-size:14px;
 .filter {
 list-style:none;
 padding:10px;
+}
+
+.filter_checkbox {
+	margin-top:8px
 }
 
 #filters_container {
@@ -100,6 +117,3 @@ font-weight:bolder;
 padding-top:60px;
 text-align:center;
 }
-
-
-

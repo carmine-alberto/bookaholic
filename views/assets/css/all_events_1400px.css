@@ -5,7 +5,18 @@ body {
 	font-family: "F37 Ginger"!important;
 }
 
+#apply_filters {
+background-color: #d9d9d9;
+border-radius: 30px;	
+height: 50px;
+margin-left: 670px;
+margin-top: 60px;
+width: 140px;
+}
 
+#apply_filters:hover {
+background-color: #ef4444;
+}
 
 .section_title {
 	font: bolder;
@@ -44,7 +55,7 @@ body {
 }
 
 #filters_container {
-	padding: 50px 0px 50px 410px;
+	padding: 50px 0px 10px 410px;
 	width:1200px;
 }
 
@@ -109,7 +120,6 @@ select {
 	font-weight: lighter;
 	padding-bottom: 40px;
 }
-
 
 .learn_more {
 	background-color: #d4d4d4;
