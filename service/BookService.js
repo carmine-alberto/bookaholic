@@ -44,7 +44,7 @@ exports.getBookById = function(book_id) {
  * offset Integer Items to skip before starting to collect the response set. (optional)
  * returns List
  **/
-exports.getBooks = function(published_after,suggested,starts_with,genre,type,similar_to,limit,offset) {
+exports.getBooks = function(published_after,suggested,bestseller,starts_with,genre,type,similar_to,limit,offset) {
   return new Promise(function(resolve, reject) {
     var query = database
     .select("book_id","title", "cover")
@@ -57,6 +57,10 @@ exports.getBooks = function(published_after,suggested,starts_with,genre,type,sim
     if (suggested)
       query = query
       .where("is_suggested", true);
+
+    if (bestseller)
+      query = query
+      .where("is_bestseller", true);
 
     if (starts_with)
       query = query

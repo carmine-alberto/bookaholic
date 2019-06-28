@@ -31,7 +31,7 @@ module.exports.getCart = function getCart (context) {
   return Promise.resolve(
     Cart.getCart(username)
     .then(response => respondWithCode(context, 200, response))
-    .catch(err => respondWithCode(context, 500, err))
+    .catch(err => respondWithCode(context, 403, err))
   )
 };
 

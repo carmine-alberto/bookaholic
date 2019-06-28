@@ -9,8 +9,6 @@ const serverPort = process.env.PORT || 8080;
 
 async function createServer() {
 
-
-
     const app = express();
 
     const options = {
@@ -25,7 +23,7 @@ async function createServer() {
         plugins: [
                   exegesisSwaggerUIPlugin({
                     app: app,
-                    path: "/docs"
+                    path: "/backend/swaggerui"
                   })]
     };
 
@@ -38,14 +36,18 @@ async function createServer() {
 
     /*This endpoint is necessary if we want to make the clicked resource's id available to the page in the URL,
     * for an easy retrieval of the requested resource from the server through URL parsing.
+
+    FIX: after talking with the tutors, we've been suggested to change the single page URL handling.
+        It's kept here for instructional purposes
+
     */
-    app.get(/\/(?:books|authors|events)\/\d{8,10}$/, function(req, res) {
-      res.sendFile(path.join(__dirname, "views", req.url.match(/(?:book|author|event)/)[0] + ".html"));
-    })
+    // app.get(/\/(?:books|authors|events)\/\d{8,10}$/, function(req, res) {
+    //   res.sendFile(path.join(__dirname, "views", req.url.match(/(?:book|author|event)/)[0] + ".html"));
+    // })
 
-    app.use(serveStatic(path.join(__dirname, "views"), {extensions: ["html"]}));
+    app.use(serveStatic(path.join(__dirname, "public"), {extensions: ["html"]}));
 
-    app.use(serveStatic(path.join(__dirname, "views/assets")));
+    app.use(serveStatic(path.join(__dirname, "public/pages")));
 
     app.use((req, res) => {
         res.status(404).json({message: `Not found`});

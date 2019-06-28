@@ -16,6 +16,7 @@ module.exports.getBookById = function getBookById (context) {
 module.exports.getBooks = function getBooks (context) {
   const published_after = context.params.query.published_after;
   const suggested = context.params.query.suggested;
+  const bestseller = context.params.query.bestseller;
   const starts_with = context.params.query.starts_with;
   const genre = context.params.query.genre;
   const type = context.params.query.type;
@@ -24,7 +25,7 @@ module.exports.getBooks = function getBooks (context) {
   const offset = context.params.query.offset;
 
   return Promise.resolve (
-    Book.getBooks(published_after,suggested,starts_with,genre,type,similar_to,limit,offset)
+    Book.getBooks(published_after,suggested,bestseller,starts_with,genre,type,similar_to,limit,offset)
     .then(response => respondWithCode(context, 200, response))
     .catch(err => respondWithCode(context, 500, err))
   );

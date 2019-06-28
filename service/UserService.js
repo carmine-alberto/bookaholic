@@ -101,22 +101,20 @@ exports.logout = function(username) {
  **/
 exports.postToOrders = function(username, address) {
   return new Promise(function(resolve, reject) {
-    console.log("entering post");
     database
     .select("cart.book_id", "cart.cover_type", "quantity", "in_storage", "price")
     .from("cart")
     .join("book_details as bd", {"cart.book_id":"bd.book_id", "cart.cover_type": "bd.cover_type"})
     .where("username", username)
     .then(booksInCart => addOrder(database, booksInCart, address, username))
-    .then(orderDetails => {console.log(orderDetails); return addOrderDetails(database, orderDetails.booksInCart, orderDetails.orderId);})
+    .then(orderDetails => { return addOrderDetails(database, orderDetails.booksInCart, orderDetails.orderId);})
     .then(success => resolve(success))
-    .catch(error => {console.log(error); reject(error)});
+    .catch(error => { reject(error)} );
   });
 };
 
 const addOrder = function(database,booksInCart, address, username) {
   return new Promise(function(resolve, reject) {
-    console.log("inside addOrder"+booksInCart[0]);
     booksInCart[0]
     ? booksInCart
       .reduce((promise, book) => promise.then(acc => {
@@ -124,24 +122,23 @@ const addOrder = function(database,booksInCart, address, username) {
          acc.status = (acc.status == "pending" && book.quantity > book.in_storage)
                       ? "reservation"
                       : acc.status;
-         console.log(acc);
 
          return Promise.resolve(acc);
       }), Promise.resolve({total: 0, status: "pending"})) //Il problema sta qui - potrebbe essere dovuto al fatto che l'oggetto non è iterabile, reduce va chiamata su un array.
-      .then(order => {console.log(order);
+      .then(order => {
          database
          .insert({"status": order.status, "total": order.total, "address": address, "username": username})
          .into("order")
          .returning("order_id")
-         .then(order_id => {console.log(order_id, booksInCart); resolve({orderId: order_id[0], booksInCart: booksInCart}); })
-         .catch(orderInsertionError => {console.log("rejected"); reject(orderInsertionError)})})
+         .then(order_id => { resolve({orderId: order_id[0], booksInCart: booksInCart}); })
+         .catch(orderInsertionError => { reject(orderInsertionError) })
+       })
     : reject("There are no books in your cart!");
   })
 }
 
 const addOrderDetails = function(database, booksInCart, orderId) {
   return new Promise(function(resolve, reject) {
-    console.log("Inside addOrderDetails "+ orderId);
     booksInCart
     .filter(book => book.quantity <= book.in_storage)
     .forEach(bookInStorage => database

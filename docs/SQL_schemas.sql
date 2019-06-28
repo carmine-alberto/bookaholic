@@ -5,6 +5,7 @@ CREATE TABLE "book" (
   "abstract" text NOT NULL,
   "interview" text,
   "is_suggested" boolean DEFAULT false,
+  "is_bestseller" boolean DEFAULT false,
   "publication_date" date NOT NULL,
   "genre" varchar,
   "language" varchar NOT NULL,
@@ -49,6 +50,7 @@ CREATE TABLE "author" (
 
 CREATE TABLE "event" (
   "event_id" char(9) PRIMARY KEY,
+  "title" text NOT NULL;
   "place" text NOT NULL,
   "occurring" timestamp(0) NOT NULL,
   "info" text,
@@ -78,7 +80,8 @@ CREATE TABLE "review" (
     ON DELETE CASCADE,
   "gist" text DEFAULT 'Read below',
   "content" text NOT NULL,
-  "rating" int NOT NULL,
+  "rating" int NOT NULL
+    CHECK("rating" >= 0 AND "rating" < 6),
   PRIMARY KEY("username", "book_id")
 );
 
