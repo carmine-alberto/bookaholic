@@ -74,7 +74,9 @@ exports.getBooks = function(published_after,suggested,bestseller,starts_with,gen
       query = query
       .where("type", theme)
 
-    if (similar_to)
+    if (similar_to) {
+      if (similar_to.criterion == "theme")   //Hotfix to resolve discrepancy between database (type) and API (theme)
+        similar_to.criterion = "type";
       query = query
       .whereIn("book_id",
         database({ a: 'book', b: 'book' })
@@ -83,6 +85,7 @@ exports.getBooks = function(published_after,suggested,bestseller,starts_with,gen
         .andWhereNot("b.book_id", similar_to.id) //b: column for similar books
         .select("b.book_id")
       );
+    }
 
     if (limit)
       query = query
