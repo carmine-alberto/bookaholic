@@ -960,10 +960,9 @@ paths:
                   type: string
                   format: password
         description: |
-                      User's data required to login.
-                      Credentials already in the database:
-                        username: carmine
-                        password: bookaholic2019
+                      User's data required to login. Working example:
+                        - **username**: carmine
+                        - **password**: bookaholic2019
 
 
       responses:
