@@ -130,14 +130,14 @@ paths:
 
       x-exegesis-controller: "Book"
 
-  /books/types:
+  /books/themes:
     get:
-      summary: Get available types
+      summary: Get available themes
 
       tags:
         - Book
 
-      description: "Return all the distinct available book types in the database."
+      description: "Return all the distinct available book themes in the database."
 
       operationId: getThemes
 
