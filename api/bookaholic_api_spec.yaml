@@ -68,11 +68,11 @@ paths:
           schema:
             type: string
           description: "Return a subset of books: having provided genre."
-        - name: type
+        - name: theme
           in: query
           schema:
             type: string
-          description: "Return a subset of books: having provided type."
+          description: "Return a subset of books: having provided theme."
         - name: similar_to
           in: query
           schema:
@@ -84,7 +84,7 @@ paths:
                 pattern: ^\d{10}$
               criterion:
                 type: string
-                enum: [genre, type, author]
+                enum: [genre, theme, author]
             required:
               - id
               - criterion
@@ -139,7 +139,7 @@ paths:
 
       description: "Return all the distinct available book types in the database."
 
-      operationId: getTypes
+      operationId: getThemes
 
       responses:
         '200':

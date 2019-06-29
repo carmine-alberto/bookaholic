@@ -38,13 +38,13 @@ exports.getBookById = function(book_id) {
  * suggested Boolean Return a subset of books: suggested by us (optional)
  * starts_with String Return a subset of books: title starts with the provided string (optional)
  * genre String Return a subset of books: having provided genre (optional)
- * type String Return a subset of books: having provided type (optional)
+ * theme String Return a subset of books: having provided theme (optional)
  * similar_to similar_to Return a subset of books: having the same property specified in criterion as the book provided (optional)
  * limit Integer The number of items to return. (optional)
  * offset Integer Items to skip before starting to collect the response set. (optional)
  * returns List
  **/
-exports.getBooks = function(published_after,suggested,bestseller,starts_with,genre,type,similar_to,limit,offset) {
+exports.getBooks = function(published_after,suggested,bestseller,starts_with,genre,theme,similar_to,limit,offset) {
   return new Promise(function(resolve, reject) {
     var query = database
     .select("book_id","title", "cover")
@@ -70,9 +70,9 @@ exports.getBooks = function(published_after,suggested,bestseller,starts_with,gen
       query = query
       .where("genre", genre)
 
-    if (type)
+    if (theme)
       query = query
-      .where("type", type)
+      .where("type", theme)
 
     if (similar_to)
       query = query
@@ -127,12 +127,12 @@ exports.getGenres = function() {
 
 
 /**
- * get available types
- * Return all the distinct available book types in the database
+ * get available themes
+ * Return all the distinct available book themes in the database
  *
  * returns List
  **/
-exports.getTypes = function() {
+exports.getThemes = function() {
   return new Promise(function(resolve, reject) {
     database
     .distinct("type")
