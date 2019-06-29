@@ -64,7 +64,7 @@ module.exports.register = function register (context) {
 
   return Promise.resolve(
     User.register(username,password,email)
-    .then(response => respondWithCode(context, 204, response))
+    .then(response => respondWithCode(context, 201, response))
     .catch(err => respondWithCode(context, 403, err))
   )
 };
