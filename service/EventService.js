@@ -49,7 +49,7 @@ exports.getEventPlaces = function() {
 exports.getEvents = function(offset,limit,about,where,from,to) {
   return new Promise(function(resolve, reject) {
     var query = database
-    .select("event_id", "info", "place", "occurring as date", "image", "book_id")
+    .select("event_id", "title", "info", "place", "occurring as date", "image", "book_id")
     .from("event");
 
     if (about)
