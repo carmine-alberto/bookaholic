@@ -959,7 +959,12 @@ paths:
                 password:
                   type: string
                   format: password
-        description: "User's data required to login."
+        description: |
+                      User's data required to login.
+                      Credentials already in the database:
+                        username: carmine
+                        password: bookaholic2019
+
 
       responses:
         '200':
