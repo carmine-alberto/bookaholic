@@ -22,7 +22,7 @@
 <td>Carmine</td>
 <td>Alberto</td>
 <td>871624</td>
-<td><a href="mailto:carmine.alberto@mail.polimi.it">carmine.alberto@mail.polimi.it</a></td>
+<td><a href="mailto:carmine.alberto@mail.polimi.it" target="_blank">carmine.alberto@mail.polimi.it</a></td>
 </tr>
 <tr>
 <td>2</td>
@@ -30,7 +30,7 @@
 <td>Laura</td>
 <td>Cappelli</td>
 <td>894180</td>
-<td><a href="mailto:laura.cappelli@mail.polimi.it">laura.cappelli@mail.polimi.it</a></td>
+<td><a href="mailto:laura.cappelli@mail.polimi.it" target="_blank">laura.cappelli@mail.polimi.it</a></td>
 </tr>
 <tr>
 <td>3</td>
@@ -38,17 +38,17 @@
 <td>Giuseppe</td>
 <td>Italia</td>
 <td>869897</td>
-<td><a href="mailto:giuseppe.italia@mail.polimi.it">giuseppe.italia@mail.polimi.it</a></td>
+<td><a href="mailto:giuseppe.italia@mail.polimi.it" target="_blank">giuseppe.italia@mail.polimi.it</a></td>
 </tr>
 </tbody>
 </table>
 <h2><a id="Links_to_other_deliverables_12"></a>Links to other deliverables</h2>
 <ul>
-<li>Deliverable D0: the web application is accessible at <a href="https://bookaholic.herokuapp.com">this address</a>.</li>
-<li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at <a href="https://bookaholic.herokuapp.com/backend/spec.yaml">this address</a>.</li>
-<li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https://bookaholic.herokuapp.com/backend/swaggerui">this address</a>.</li>
-<li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://bookaholic.herokuapp.com/backend/app.zip">this address</a>.</li>
-<li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/carmine-alberto/hyp-project">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors.</li>
+<li>Deliverable D0: the web application is accessible at <a href="https://bookaholic.herokuapp.com" target="_blank">this address</a>.</li>
+<li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at <a href="https://bookaholic.herokuapp.com/backend/spec.yaml" target="_blank">this address</a>.</li>
+<li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https://bookaholic.herokuapp.com/backend/swaggerui" target="_blank">this address</a>.</li>
+<li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://bookaholic.herokuapp.com/backend/app.zip" target="_blank">this address</a>.</li>
+<li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/carmine-alberto/hyp-project" target="_blank">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors.</li>
 </ul>
 <h2><a id="Specification_19"></a>Specification</h2>
 <h3><a id="Web_Architecture_20"></a>Web Architecture</h3>
@@ -57,7 +57,7 @@
 <p><strong>Data Layer</strong>: Relational Database built using PostgreSQL, as provided by the hosting service Heroku;</p>
 </li>
 <li>
-<p><strong>Application Layer</strong>: the application was built using NodeJS and the Express web framework. Authentication and authorization are implemented using JSON Web Tokens (<a href="https://bookaholic.herokuapp.com/backend/JWTInnerWorkings.html">read more</a>). The OpenAPI specification was written in compliance with the OpenAPI 3.0 format.</p>
+<p><strong>Application Layer</strong>: the application was built using NodeJS and the Express web framework. Authentication and authorization are implemented using JSON Web Tokens (<a href="https://bookaholic.herokuapp.com/backend/JWTInnerWorkings.html" target="_blank">read more</a>). The OpenAPI specification was written in compliance with the OpenAPI 3.0 format.</p>
 </li>
 <li>
 <p><strong>Presentation Layer</strong>: the presentation layer was built using HTML, CSS, JavaScript(ES6), BootStrap and jQuery.</p>
@@ -65,7 +65,7 @@
 </ul>
 <h3><a id="API_28"></a>API</h3>
 <h5><a id="REST_compliance_29"></a>REST compliance</h5>
-<p>We’ve chosen to follow the REST principles up to the Level 2 of the <a href="https://restfulapi.net/richardson-maturity-model/">Richardson Maturity Model</a>:</p>
+<p>We’ve chosen to follow the REST principles up to the Level 2 of the <a href="https://restfulapi.net/richardson-maturity-model/" target="_blank">Richardson Maturity Model</a>:</p>
 <ul>
 <li>Multiple verbs have been used to provide access to the resources, as made evident in the OpenAPI specs;</li>
 <li>The application is as stateless as possible: JWT allow for a stateless authentication/authorization mechanism, at the expense of a not-completely-safe logout procedure.</li>
@@ -78,7 +78,7 @@
 <li>Single fields can be integers, strings, booleans or more complex data-types. .</li>
 </ul>
 <h3><a id="Data_model_41"></a>Data model</h3>
-<p>The ER diagram can be found <a href="https://bookaholic.herokuapp.com/backend/ERDiagram.pdf">here</a>.<br>
+<p>The ER diagram can be found <a href="https://bookaholic.herokuapp.com/backend/ERDiagram.pdf" target="_blank">here</a>.<br>
 Specifically:</p>
 <ul>
 <li>
@@ -91,19 +91,19 @@ Specifically:</p>
 <h2><a id="Implementation_50"></a>Implementation</h2>
 <h3><a id="Tools_used_51"></a>Tools used</h3>
 <ul>
-<li>The application was built using <a href="https://nodejs.org/en/about/">NodeJS</a> and the <a href="https://expressjs.com/">Express</a> web framework;</li>
-<li>Authentication and authorization are implemented using JSON Web Token (the adopted middleware can be found <a href="https://github.com/auth0/node-jsonwebtoken">here</a>).<br>
-An explanation of the inner workings can be found <a href="https://bookaholic.herokuapp.com/backend/JWTInnerWorkings.html">at the page we created for this specific purpose</a>, as requested during tutoring;</li>
-<li>The OpenAPI specification was written in compliance with the <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md">OpenAPI 3.0</a> format;</li>
-<li>The <a href="https://knexjs.org/">Knex.js</a> module to connect the Data Layer to the Application Layer;</li>
-<li>The <a href="https://www.npmjs.com/package/bcrypt">Bcrypt</a> module was used to encrypt the passwords before storing them in the database and compare the hashes during the login procedure;</li>
+<li>The application was built using <a href="https://nodejs.org/en/about/" target="_blank">NodeJS</a> and the <a href="https://expressjs.com/" target="_blank">Express</a> web framework;</li>
+<li>Authentication and authorization are implemented using JSON Web Token (the adopted middleware can be found <a href="https://github.com/auth0/node-jsonwebtoken" target="_blank">here</a>).<br>
+An explanation of the inner workings can be found <a href="https://bookaholic.herokuapp.com/backend/JWTInnerWorkings.html" target="_blank">at the page we created for this specific purpose</a>, as requested during tutoring;</li>
+<li>The OpenAPI specification was written in compliance with the <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md" target="_blank">OpenAPI 3.0</a> format;</li>
+<li>The <a href="https://knexjs.org/" target="_blank">Knex.js</a> module to connect the Data Layer to the Application Layer;</li>
+<li>The <a href="https://www.npmjs.com/package/bcrypt" target="_blank">Bcrypt</a> module was used to encrypt the passwords before storing them in the database and compare the hashes during the login procedure;</li>
 <li>A lot of middlewares, too many to list them all (package-lock.json does a great job at this), without which request parsing, fs handling and other operations would have been very hard to implement within a limited time frame.</li>
 </ul>
 <h3><a id="Discussion_59"></a>Discussion</h3>
 <ul>
 <li>
 <p>How did you make sure your web application adheres to the provided OpenAPI specification?<br>
-By studying it thoroughly and using tools to enforce its syntax (<a href="https://editor.swagger.io/">Swagger Editor</a>, <a href="https://github.com/exegesis-js/exegesis-express">Exegesis</a>).</p>
+By studying it thoroughly and using tools to enforce its syntax (<a href="https://editor.swagger.io/" target="_blank">Swagger Editor</a>, <a href="https://github.com/exegesis-js/exegesis-express" target="_blank">Exegesis</a>).</p>
 </li>
 <li>
 <p>Why do you think your web application adheres to common practices to partition the web application (static assets vs. application data)<br>
@@ -112,7 +112,7 @@ Because it was built following tutors’ guidelines and has undergone their revi
 <li>
 <p>Describe synthetically why and how did you manage session state, what are the state change triggering actions (e.g., POST to login etc…).<br>
 We’ve decided to create an API as REST-compliant as possible, thus stateless as for the user authentication/authorization: the client attaches the JWT provided during the login procedure (POST /login) at every authenticated request, but there’s no “logged_users” table on the server.<br>
-Further information is provided <a href="https://bookaholic.herokuapp.com/backend/JWTInnerWorkings.html">here</a>.</p>
+Further information is provided <a href="https://bookaholic.herokuapp.com/backend/JWTInnerWorkings.html" target="_blank">here</a>.</p>
 <p>Other state-changing actions related to the cart and the user:<br>
 <strong>POST /cart</strong>, to add items to the cart;<br>
 <strong>PATCH /cart/{item_id}</strong>, to modify the quantity of a single item;<br>
