@@ -50,7 +50,7 @@ CREATE TABLE "author" (
 
 CREATE TABLE "event" (
   "event_id" char(9) PRIMARY KEY,
-  "title" text NOT NULL;
+  "title" text NOT NULL,
   "place" text NOT NULL,
   "occurring" timestamp(0) NOT NULL,
   "info" text,
