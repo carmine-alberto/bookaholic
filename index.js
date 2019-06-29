@@ -45,7 +45,7 @@ async function createServer() {
     //   res.sendFile(path.join(__dirname, "views", req.url.match(/(?:book|author|event)/)[0] + ".html"));
     // })
 
-    app.use(serveStatic(path.join(__dirname, "public/pages"))));
+    app.use(serveStatic(path.join(__dirname, "public/pages")));
 
     app.use(serveStatic(path.join(__dirname, "public/pages"), {extensions: ["html"]}));
 
