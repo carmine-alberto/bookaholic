@@ -62,10 +62,35 @@ top:200px;
 z-index:100;
 }
 
+#friendship {
+margin-top: 100px;
+}
+
+#fear {
+margin-top: 100px
+}
+
+#justice {
+margin-top: 100px
+}
+
+#love {
+margin-top: 100px
+}
+
+#philosophical {
+margin-top: 100px
+}
+
+#war {
+margin-top: 100px
+}
+
 .section_title {
-font-size:20px;
+font-size:26px;
 font-weight:bolder;
-padding:20px 0 10px 55px;
+padding: 0px!important;
+text-align: center;
 }
 
 .show_more_button {

@@ -12,9 +12,9 @@ grid-template-columns:auto auto;
 .header_box {
 background-color:#EF4444;
 height:20px;
-left:110px;
+left:135px;
 position:absolute;
-top:245px;
+top:195px;
 width:200px;
 z-index:inherit;
 }
@@ -28,29 +28,47 @@ z-index:-100;
 .header_text {
 font-size:36px;
 font-weight:bolder;
-left:110px;
+left:135px;
 position:absolute;
 text-align:center;
-top:200px;
+top:150px;
 width: 200px;
 z-index:100;
 }
 
-#love_title {
-margin-left: 120px
+#fear {
+margin-top: 100px;
 }
 
-#fear_title {
-margin-left: 120px;
+#friendship {
+margin-top: 100px;
 }
 
-#philosophical_title {
-margin-left: 80px;
+#friendship_title {
+margin-left: 100px;
+}
+
+justice {
+margin-top: 100px;
+}
+
+#love {
+margin-top: 100px;
+}
+
+#philosophical {
+margin-top: 100px
+}
+
+#war {
+margin-top: 100px
 }
 
 .section_title {
-font-size:20px;
-margin-left:110px;
+font-size:24px;
+margin-left: 80px;
+padding: 0px;
+text-align: center
 }
 
 .show_more_button {
@@ -62,7 +80,7 @@ display:inline-block;
 font-size:16px;
 font-weight: bolder;
 height:60px;
-margin:40px 0 0 50px;
+margin:100px 0 0 50px;
 padding:15px 32px 62px 30px;
 text-align:center;
 text-decoration:none;
@@ -73,8 +91,4 @@ width:120px;
 
 .show_more_button:hover {
 background-color:#ef4444;
-}
-
-#war_title {
-margin-left: 120px
 }

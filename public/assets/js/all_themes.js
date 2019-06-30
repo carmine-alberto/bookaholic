@@ -16,7 +16,8 @@ const appendData= function(selector, data, identifier, dim, i)
     if(data.authors.length==1)
         {
             selector.append(
-    '<div class="book">'+
+    '<a class="book" '+
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
     '<img src="assets/img/'+data["cover"]+'"' + 
     'id="book'+i+'_photo_+'+identifier+'" '+
     'class="book_cover" '+ 
@@ -26,13 +27,14 @@ const appendData= function(selector, data, identifier, dim, i)
      'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+	
      '<h3 class="book_name" id="book'+i+'_name_'+identifier+'">'+data["title"]+'</h3>'+
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
-     '</div>'
+     '</a>'
 )
         }
     else if(data.authors.length==2)
         {
             selector.append(
-    '<div class="book">'+
+    '<a class="book" '+
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
     '<img src="assets/img/'+data["cover"]+'"' + 
     'id="book'+i+'_photo_+'+identifier+'" '+
     'class="book_cover" '+ 
@@ -43,13 +45,14 @@ const appendData= function(selector, data, identifier, dim, i)
      '<h3 class="book_name" id="book'+i+'_name_'+identifier+'">'+data["title"]+'</h3>'+
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author2_'+identifier+'">'+data.authors[1].author_name+'</h4>'+
-     '</div>'
+     '</a>'
 )
         }
     else if(data.authors.length==3)
         {
             selector.append(
-    '<div class="book">'+
+    '<a class="book" '+
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
     '<img src="assets/img/'+data["cover"]+'"' + 
     'id="book'+i+'_photo_+'+identifier+'" '+
     'class="book_cover" '+ 
@@ -61,13 +64,14 @@ const appendData= function(selector, data, identifier, dim, i)
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author2_'+identifier+'">'+data.authors[1].author_name+'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author3_'+identifier+'">'+data.authors[2].author_name+'</h4>'+
-     '</div>'
+     '</a>'
 )
         }
     else
         {
             selector.append(
-    '<div class="book">'+
+    '<a class="book" '+
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
     '<img src="assets/img/'+data["cover"]+'"' + 
     'id="book'+i+'_photo_+'+identifier+'" '+
     'class="book_cover" '+ 
@@ -80,7 +84,7 @@ const appendData= function(selector, data, identifier, dim, i)
      '<h4 class="book_author" id="book'+i+'_author2_'+identifier+'">'+data.authors[1].author_name+'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author3_'+identifier+'">'+data.authors[2].author_name+'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author4_'+identifier+'">'+data.authors[3].author_name+'</h4>'+
-     '</div>'
+     '</a>'
 )
         }
     
@@ -88,15 +92,15 @@ const appendData= function(selector, data, identifier, dim, i)
     if(i==dim)
         {
             selector.append(
-            '<div class="show_more_button"'+
-	 'role="link"'+
-	 'onclick="goToLink(fiction page, '+host+'/theme?theme='+identifier+')"'+
-     'onkeydown="goToLink(fiction page, '+host+'/theme?theme='+identifier+')">Show more</div>')
+            '<a class="show_more_button"'+
+	 	 	'role="link"'+
+	 		'onclick="goToLink(fiction page, '+host+'/theme?theme='+identifier+')"'+
+     		'onkeydown="goToLink(fiction page, '+host+'/theme?theme='+identifier+')"'+
+     		'href="'+host+'/theme?theme_id='+data["theme_id"]+'">Show more</a>')
         }
-
-
-
 }
+
+
 
 const appendDataForListThemes= function(selector, list)
 {

@@ -5,26 +5,26 @@ overflow-x:hidden;
 }
 
 #art_and_design {
-left:20px;
 position:absolute;
-top:250px;
+top:100px;
 }
 
 .book {
-font-size:18px;
-padding:35px;
+font-size:16px;
+padding:10px;
 text-align:center;
 }
 
 .book_author {
+font-size:14px;
 font-weight:lighter;
 }
 
 .book_cover {
 cursor:pointer;
-height:240px;
+height:160px;
 opacity:1;
-width:180px;
+width:120px;
 }
 
 .book_cover:hover {
@@ -32,28 +32,29 @@ opacity:0.8;
 }
 
 .book_name {
+font-size:14px;
 font-weight:bolder;
-font-size: 20px;
 }
 
 .books_container_1, .books_container_2,.books_container_3,.books_container_4, .books_container_5 {
 display:grid;
-grid-template-columns:auto auto auto auto auto auto auto;
+grid-template-columns:auto auto;
+margin-top:60px;
+width:370px;
 }
 
 #fiction {
-left:20px;
 position:absolute;
-top:740px;
+top:1150px;
 }
 
 .header_box {
 background-color:#EF4444;
-bottom:615px;
-height:20px;
-left:670px;
+height:15px;
+left:125px;
 position:absolute;
-width:205px;
+top:105px;
+width:160px;
 z-index:inherit;
 }
 
@@ -64,56 +65,50 @@ z-index:-100;
 }
 
 .header_text {
-font-size:40px;
+font-size:30px;
 font-weight:bolder;
-left:680px;
+left:135px;
 position:absolute;
 text-align:center;
-top:120px;
+top:65px;
 z-index:100;
 }
 
 #mystery {
-left:20px;
 position:absolute;
-top:1340px;
+top:2100px;
 }
 
 #non_fiction {
-left:20px;
 position:absolute;
-top:1940px;
+top:3100px;
 }
 
 #science_fiction {
-left:20px;
 position:absolute;
-top:2540px;
+top:4100px;
 }
 
 .section_title {
-font-size:26px;
+font-size:24px;
 font-weight:bolder;
-padding-left:30px;
-padding-top:20px;
+padding-top:60px;
 }
 
 .show_more_button {
 background-color:rgba(225,225,225,1.00);
 border:none;
-border-radius:20px;
+border-radius:30px;
 color:black;
 display:inline-block;
-font-size:18px;
-font-weight: bolder;
-height:80px;
-margin-top:100px;
-padding:15px 0px;
+font-size:14px;
+height:50px;
+margin:40px 0 0 10px;
+padding:15px;
 text-align:center;
 text-decoration:none;
-text-transform: uppercase;
 vertical-align:middle;
-width:100px;
+width:150px;
 }
 
 .show_more_button:hover {

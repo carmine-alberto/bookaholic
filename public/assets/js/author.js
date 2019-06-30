@@ -25,96 +25,96 @@ function getUrlParameter(url) {
 const appendData = function(selector, data) {
   selector
   .replaceWith('<section id="author_intro">' + '<h3 id="author_name">' + data["name"] + '</h3>'+
-      '<img id="author_photo" src="assets/img/'+data["picture"] +'">' +
+      '<img id="author_photo" src="/assets/img/'+data["picture"] +'">' +
       '<h5 id="author_bio_title"> ' + data["short_bio"] + '</h5>' + '</section>'
   )
 };
 
 const appendDataforBook = function(selector, data, selector1) {
-    var k=0; //contatore di autori 
-    var l=0; //contatore di libri libro 
+    var k=0; //contatore di autori
+    var l=0; //contatore di libri libro
     var trovato = new Boolean("false");
-    
+
     trovato=false;
     for(i=0;i<data.authors.length; i++)
         {
             if(data.authors[i].author_id==id)
             {
                 trovato=true;
-            } 
+            }
         }
     if(trovato==true)
     {
         if(data.authors.length==1)
             {
                 l++;
-        
+
             k++;
             selector
             .append(
            '<div class="book">	'+
-           '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
+           '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h6>' +
-           '</div>' 
+           '</div>'
                    );
             }
         else if(data.authors.length==2)
             {
                  l++;
-        
+
             k++;
             selector
             .append(
            '<div class="book">	'+
-           '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
+           '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h3>' +
-           '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+ 
-           '</div>' 
+           '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+
+           '</div>'
                    );
             }
         else if(data.authors.length==3)
             {
                  l++;
-        
+
             k++;
             selector
             .append(
            '<div class="book">	'+
-           '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
+           '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h3>' +
-           '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+ 
+           '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+
             '<h3 class="book_author" id="book'+l+'_author3">'+data.authors[2].author_name+'</h3>'+
-           '</div>' 
+           '</div>'
                    );
             }
         else
             {
                  l++;
-        
+
             k++;
             selector
             .append(
            '<div class="book">	'+
-           '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
+           '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h3>' +
-           '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+ 
+           '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+
             '<h3 class="book_author" id="book'+l+'_author3">'+data.authors[2].author_name+'</h3>'+
            '<h3 class="book_author" id="book'+l+'_author4">'+data.authors[3].author_name+'</h3>'+
-           '</div>' 
+           '</div>'
                    );
             }
-        
+
          fetch(host+"/api/events?about="+data["book_id"])
          .then(response => response.json())
          .then(data=> data
                .forEach(event => appendDataforEvents(selector1, event)))
-        
+
         }
-        
+
     };
 
 const appendDataforEvents= function(selector, data)
@@ -122,13 +122,13 @@ const appendDataforEvents= function(selector, data)
     c++;
     selector.append(
             '<div class="event">'+
-            '<img src="assets/img/'+data["image"]+'" class="book_image_event" id="event'+c+'_photo" alt="event_photo">'+
+            '<img src="/assets/img/'+data["image"]+'" class="book_image_event" id="event'+c+'_photo" alt="event_photo">'+
             '<h3 class="event_date" id="event'+c+'_date">'+data["date"]+'<br><span id="event_place">'+data["place"]+'</span></h3>'+
             '<h3 class="event_title" id="event'+c+'_title">The new mystery literature</h3>'+
             '<h3 class="event_author" id="event'+c+'_author">with Gillian Flynn</h3>'+
-            '<button title="menu_icon" type="button" role="button" class="learn_more">Learn more</button>'+		
-	
-           '</div>'	
+            '<button title="menu_icon" type="button" role="button" class="learn_more">Learn more</button>'+
+
+           '</div>'
         )
 }
 
@@ -140,9 +140,9 @@ const appendDataForListThemes= function(selector, list)
             selector.append(
                 '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
                 )
-                
+
         }
-    
+
 }
 
 const appendDataForListGenres= function(selector, list)
@@ -153,16 +153,16 @@ const appendDataForListGenres= function(selector, list)
                ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
             )
         }
-    
-}
-    
 
-    
-    
-        
-             
-        
-   
+}
+
+
+
+
+
+
+
+
 
 
 //MAIN
@@ -198,6 +198,3 @@ fetch(host + "/api/authors/"+id)
     .then(response => response.json())
     .then(genres=> appendDataForListGenres(genre_list, genres))
 )
-
-
-

@@ -3,12 +3,12 @@ const host= "https://bookaholic.herokuapp.com";
 const appendDataForAuthors = function(selector, author)
 {
     selector.append(
-    '<div class="author">' +
+    '<a class="author" href="/author?author_id=' + author["author_id"] + '">' +
       '<img src="/assets/img/' + author["picture"] + '" class="author_photo" alt="author photo" role="link"' +
             'onclick="goToLink(author page, /author?id=' + author["author_id"] + ')"' +
             'onkeydown="goToLink(author page, /author?id='+author["author_id"] + ')">' +
       '<h3 class="author_name" id="author1_name">' + author["name"] + '</h3>' +
-    '</div>'
+    '</a>'
     )
 }
 
