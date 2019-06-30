@@ -12,7 +12,6 @@ const appendDataForAuthors = function(selector, author)
     )
 }
 
-
 const appendDataForListThemes = function(selector, list)
 {
     for (var i = 0; i < list.length; i++)
@@ -24,7 +23,6 @@ const appendDataForListThemes = function(selector, list)
       )
     }
 }
-
 
 const appendDataForListGenres= function(selector, list)
 {
