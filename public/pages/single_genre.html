@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Single genre</title>
+<link href="assets/css/single_genre_1400px.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="assets/css/single_genre_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="assets/css/single_genre_400px.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	
+	
+<!--- START navigation bar section --->
+	
+<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+		
+      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="img/bookaholic logo.png" alt="bookaholic logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+  <div class="adjust-height">	
+	  
+      <ul class="nav navbar-nav">
+        <li><a href="https://bookaholic.herokuapp.com" class="menu_item" role="menuitem" id="active">Home</a></li>
+		  
+        <li><a href="https://bookaholic.herokuapp.com/authors" class="menu_item" role="menuitem">Authors</a></li>		  
+        
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" 
+			  id="genre_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="genre">
+            
+          </ul>
+        </li>
+		  
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+          <ul class="dropdown-menu"
+			  id="themes_list" 
+			  tabindex="-1"
+			  role="listbox"
+			  aria-labelledby="theme">
+            
+			  
+          </ul>
+        </li>		  
+		  
+        <li><a href="https://bookaholic.herokuapp.com/events" class="menu_item" role="menuitem">Events</a></li>
+        <li><a href="https://bookaholic.herokuapp.com/about_us" class="menu_item" role="menuitem">About us</a></li>
+      </ul>
+	  
+	  
+		<form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group" id="searchbar">
+        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
+        <div class="input-group-btn">
+          <button title="search button" class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+        </button>
+      </div>
+	</div>
+    </form>
+      <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#"><span class="icon_name">
+		  <img src="img/logo profile.png" 
+			   alt="profile link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(profile, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(profile, 'http://www.w3.org/')"
+     		   role="link">
+			   Profile</span>
+			  </a>
+		  </li>
+		  
+          <li><a href="#"><span class="icon_name">
+		  <img src="img/logo cart.png" 
+			   alt="cart link"
+			   class="icon"
+			   tabindex="0"
+     		   onclick="goToLink(cart, 'http://www.w3.org/')"
+    		   onkeydown="goToLink(cart, 'http://www.w3.org/')"
+     		   role="link">
+			   Cart</span>
+			  </a>
+		  </li>
+      </ul>
+    </div>
+  </div>
+	</div>
+</nav>	
+		
+<!--- END navigation bar section --->	
+	
+	
+	
+<!--- START Title section --->	
+
+<section id="header_section">
+<div class="header_container">	
+<h1 class="header_text">Single genre</h1>	
+</div>
+</section>	
+	
+<!--- END Title section --->	
+
+	
+	
+	
+	
+<!--- START Filters section --->	
+	
+	
+<div id="filters_container">
+<div class="filter">
+<div class="dropdown_menu_filter">
+<h2 class="filter_title">Published in</h2>
+<label for="publication_year">
+	<select id="publication_year" 
+			name="publication year dropdown menu" 
+			class="dropdown_filter"
+		    tabindex="-1"
+			role="listbox">
+<optgroup>
+	  <option value="1950">1950</option>
+	  <option value="1960">1960</option>
+	  <option value="1970">1970</option>
+	  <option value="1980">1980</option>
+	  <option value="1990">1990</option>
+	  <option value="2000">2000</option>
+	  <option value="2010">2010</option>
+</optgroup>
+	</select>
+	</label>
+
+</div>					  	
+</div>					  
+
+	
+<div class="filter">
+<div class="dropdown_menu_filter">	
+<h2 class="filter_title">Theme</h2>
+<label for="genre_dropdown">
+	<select id="genre_dropdown" 
+			name="genre dropdown menu" 
+			class="dropdown_filter"
+		    tabindex="-1"
+			role="listbox">
+<optgroup>
+	  <option value="family">Family</option>
+	  <option value="fear">Fear</option>
+	  <option value="friendship">Friendship</option>
+	  <option value="justice">Justice</option>
+	  <option value="love">Love</option>
+	  <option value="philosophy">Philosophy</option>
+	  <option value="war">War</option>
+</optgroup>
+	</select>
+	</label>
+</div>	
+	</div>
+	
+<form name="suggested_by_us" method="get" action="action" class="filter_checkbox">
+	<h2 class="filter_title">suggested by us</h2>
+    <input type="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
+	
+<form name="available" method="get" action="action" class="filter_checkbox">
+	<h2 class="filter_title">available</h2>
+    <input type="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
+	
+</div>	
+	
+<button id="apply_filters"
+		role="button">Apply filters</button>
+
+	
+<!--- END Filters section --->	
+
+	
+
+	
+	
+<div class="books_containers">
+		
+
+	
+	</div>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/single_genre1.js"></script>	
+</body>
+</html>

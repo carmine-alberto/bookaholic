@@ -1,18 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Author</title>
-<link href="/assets/css/author_1400px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/author_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/author_400px.css" />
+<title>All events</title>
+<link rel="stylesheet" href="/assets/css/all_events_1400px.css" />
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/all_events_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/all_events_400px.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/navbar.css">
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script defer src="/assets/js/author.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -113,51 +111,74 @@
 
 <!--- END navigation bar section --->
 
-<!--- START Author section --->
+<section id="header_section">
+<div class="header_container">
+<h1 class="header_text">Events</h1>
+<div class="header_box"></div>
+</div>
 
-<section id="author_intro">
+<ul id="filters_container">
+<li class="filter">
 
-	</section>
+<div class="dropdown_menu">
+<h4>From</h4>
 
-<!--- END Author section --->
+<form>
+ <select id="month_from" name="month">
+  <option value="may">May</option>
+  <option value="june">June</option>
+  <option value="july">July</option>
+  <option value="august">August</option>
+</select>
+</form>
 
+</div>
+</li>
 
+<li class="filter">
 
-<!--- START Books section --->
+<h4>To</h4>
 
-<section class="authored_books_section">
+<form>
+ <select id="month_to" name="month">
+  <option value="may">May</option>
+  <option value="june">June</option>
+  <option value="july">July</option>
+  <option value="august">August</option>
+</select>
+</form>
 
-<h2 class="section_title">Books</h2>
+</li>
 
-<div class="authored_books_container">
+<li class="filter">
+<div class="dropdown_menu">
+<h4>Where</h4>
+<form>
+ <select id="where" name="where">
+  <option value="greenwich">Bookaholic Greenwich</option>
+  <option value="camden">Bookaholic Mudchute</option>
+</select>
+</form>
+	</div>
+	</li>
+</ul>
 
-<div class="books_containers">
+<button id="apply_filters"
+		role="button">Apply filters</button>
+
+</section>
+
+<section id="events">
+
+<div id="events_container">
+
 
 
 	</div>
-	</div>
 
-	</section>
+</section>
 
-<!--- END Books section --->
-
-
-
-
-<!--- START Related events section --->
-
-<section id="related_events">
-
-<h2 class="section_title" id="related_events_title">Related events</h2>
-
-<div class="events_container">
-
-
-
-	</div>
-
-	</section>
-
-<!--- END Related events section --->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/all_events.js"></script>
 </body>
 </html>

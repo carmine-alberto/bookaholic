@@ -3,22 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shipping</title>
-<link href="assets/css/shipping_1400px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="assets/css/shipping_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="assets/css/shipping_400px.css" />
+<title>All authors</title>
+<link rel="stylesheet" href="/assets/css/all_authors_1400px.css" />
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/all_authors_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/all_authors_400px.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script defer src="/assets/js/navbar.js"></script>
+<script defer src="/assets/js/all_authors.js"></script>
+
 </head>
 
 <body>
 
-<!--- START navigation bar section --->
-
-<!--- START navigation bar section --->
+  <!--- START navigation bar section --->
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
   <div class="container-fluid">
@@ -119,7 +118,7 @@
 
 <section id="header_section">
 <div class="header_container">
-<h1 class="header_text">Ordering and shipping</h1>
+<h1 class="header_text">All authors</h1>
 <div class="header_box"></div>
 </div>
 </section>
@@ -127,78 +126,27 @@
 <!--- END Title section --->
 
 
+<!--- START Filters section --->
 
-<!--- START UK delivery section --->
+<form name="suggested_by_us" method="get" action="action" class="filter_checkbox">
+ <h2 class="filter_title">suggested by us</h2>
+    <input type="checkbox" id="checkbox" title="suggested by us checkbox" name="cb" value="cb" /><br />
+    </form>
 
-<section id="uk_delivery">
 
-<h2 class="section_title" id="uk_delivery_title">UK delivery options</h2>
+<!--- END Filters section --->
 
-<div id="uk_container">
 
-<div class="uk_options">
 
-<h3 class="uk_request">
-	I want the book to be delivered at my house
-	</h3>
-<h3 class="answers">In this case you have three options:</h3>
-<h3 class="answers">&#8226; Free delivery (only if you spend more than 15 £)
-	<br>
-You will get the book within a week
-	</h3>
 
-<h3 class="answers">&#8226; Gold delivery (3.70 £)
-	<br>
-You will get the book 2-3 days after the purchase
-	</h3>
+<!--- START Authors section --->
 
-<h3 class="answers">&#8226; Platinum delivery (5.60 £)
-	<br>
-You will get the book the day after the purchase
-	</h3>
-	</div>
+<div class="authors-container">
 
-<div class="uk_options">
-
-<h3 class="uk_request">I want to pick up the book at my local Bookaholic store</h3>
-<h3 class="answers">In this case you have three options:</h3>
-<h3 class="answers">&#8226; Pay online and collect in store</h3>
-<h3 class="answers">&#8226; Select online and pay and collect in store</h3>
 
 </div>
 
-</div>
-
-	</section>
-
-<!--- END UK delivery section --->
-
-
-
-<!--- START International delivery section --->
-
-<section id="international_delivery">
-	<h2 class="section_title" id="international_delivery_title">International Delivery options</h2>
-<h3 class="uk_request">
-	I don't live in the United Kingdom, but I want the book to be delivered at my house anyway
-	</h3>
-	<h3 class="answers">The cost is 10.95 £, regardless of the country, and you will get the book within 7-10 days</h3>
-
-	<h3 class="answers">Here's where we are able to ship:</h3>
-	<h3 class="answers">Aland Islands, Albania, Andorra, Antigua and Barbuda, Argentina, Aruba, Australia, Austria, Bahamas, Bahrain, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bosnia and Herzegovina, Brazil, British Virgin Islands, Bulgaria, Cambodia, Cameroon, Canada, Canary Islands, Cayman Islands, Chile, China (inc Tibet), Comoros, Cook Islands, Croatia, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Ecuador, Estonia, Faroe Islands, Fiji, Finland, France, Georgia, Germany, Gibraltar, Greece, Greenland, Guadaloupe, Guernsey, Hong Kong, Hungary, Iceland, India, Indonesia, Ireland, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Latvia, Lebanon, Liechtenstein, Lithuania, Luxembourg, Macedonia, Malaysia, Malta, Martinique, Mauritius, Moldova, Monaco, Montenegro, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Norway, Oman, Philippines, Poland, Portugal, Qatar, Reunion, Romania, Russian Federation, San Marino, Saudi Arabia, Serbia, Seychelles, Singapore, Slovakia, Slovenia, South Africa, South Korea, Spain, Sri Lanka, Suriname, Sweden, Switzerland, Taiwan, Thailand, Tonga, Trinidad and Tobago, Turkey, Uganda, United Kingdom, United States of America, Vanuatu, Vatican City.</h3>
-
-	</section>
-
-<h4 id="other_questions">Do you have other questions? <a
-			   alt="Contact us link"
-			   class="link"
-			   tabindex="0"
-     		   onclick="goToLink(About us page, 'About us page')"
-    		   onkeydown="goToLink(About us page, 'About us page')"
-     		   role="link">
-Contact us</a></h4>
-
-<!--- END International delivery section --->
+<!--- END Authors section --->
 
 
 </body>
