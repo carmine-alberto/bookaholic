@@ -38,6 +38,7 @@ const appendDataforBook = function(selector, data, selector1) {
     trovato=false;
     for(i=0;i<data.authors.length; i++)
         {
+            console.log(data.authors[i].author_id + "  " + id);
             if(data.authors[i].author_id==id)
             {
                 trovato=true;
@@ -45,6 +46,7 @@ const appendDataforBook = function(selector, data, selector1) {
         }
     if(trovato==true)
     {
+        console.log("Trovato");
         if(data.authors.length==1)
             {
                 l++;
@@ -182,7 +184,7 @@ fetch(host + "/api/authors/"+id)
 .then(response => response.json())
 .then(author => appendData(authorIntro, author))
 .then(
-    fetch(host + "/api/books?offset=0")
+    fetch(host + "/api/books?limit=100")
     .then(response => response.json())
     .then(data => data
     .forEach(book => appendDataforBook(books_containers, book, events_container)))

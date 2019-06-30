@@ -43,7 +43,7 @@ var genre_list= $("#genre_list");
 var themes_list= $("#themes_list");
 
 
-fetch(host + "/api/authors?offset=0")
+fetch(host + "/api/authors?limit=100")
 .then(response => response.json())
 .then(data => data
   .forEach(author => appendDataForAuthors(authors_container, author))
