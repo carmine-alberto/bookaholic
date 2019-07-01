@@ -12,7 +12,7 @@ grid-template-columns:auto auto;
 .header_box {
 background-color:#EF4444;
 height:20px;
-left:135px;
+left:110px;
 position:absolute;
 top:195px;
 width:200px;
@@ -28,7 +28,7 @@ z-index:-100;
 .header_text {
 font-size:36px;
 font-weight:bolder;
-left:135px;
+left:110px;
 position:absolute;
 text-align:center;
 top:150px;
@@ -66,7 +66,7 @@ margin-top: 100px
 
 .section_title {
 font-size:24px;
-margin-left: 80px;
+margin-left: 10px;
 padding: 0px;
 text-align: center
 }
