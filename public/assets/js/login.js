@@ -15,5 +15,4 @@ formSelector.onsubmit = (event) => {
       window.location.href = "/";
   })
   .fail(handleErrors)
-
 }
