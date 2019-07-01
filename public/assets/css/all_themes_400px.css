@@ -4,6 +4,10 @@ max-width:100%;
 overflow-x:hidden;
 }
 
+.book {
+padding: 35px
+}
+
 .books_container_1, .books_container_2, .books_container_3, .books_container_4, .books_container_5, .books_container_6, .books_container_7 {
 display:grid;
 grid-template-columns:auto auto;
