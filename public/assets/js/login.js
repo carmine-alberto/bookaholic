@@ -2,9 +2,9 @@ const formSelector = document.getElementById("login_form");
 const host = "https://bookaholic.herokuapp.com";
 
 const handleErrors = function(response) {
-  if (!response.ok)
-    alert("The submitted credentials do not have a valid match. Please try again.");
-  return response;
+  if (response.ok)
+    return response;
+  throw new Error("The submitted credentials are not valid; try again!");
 }
 
 formSelector.onsubmit = (event) => {
@@ -13,12 +13,13 @@ formSelector.onsubmit = (event) => {
 
   const fetchParams = {
     method: "POST",
-    body: params
+    body: params,
   };
-  console.log(fetchParams.body.toString());
+  console.log(fetchParams.body);
 
   fetch( host + "/api/profile", fetchParams)
   .then(handleErrors)
-  .then(response => alert(response))
-  .catch(error => alert("The following error has occurred: " + error));
+  .then(response => alert(response.json()))
+  .catch(error => alert("The following error has occurred: " + error.message));
+  //$.post(host + "/api/login", $("#login_form").serialize(), data => alert(data));
 }
