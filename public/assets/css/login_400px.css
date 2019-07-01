@@ -30,6 +30,14 @@ width:100%;
 padding:16px;
 }
 
+#login {
+margin-left: 100px;
+}
+
+#login:active {
+background-color: #ef4444
+}
+
 .psw {
 float:right;
 padding-top:16px;
