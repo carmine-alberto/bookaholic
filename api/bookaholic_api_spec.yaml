@@ -559,6 +559,9 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/CartBook"
+        '400':
+          $ref: ""#/components/responses/400BadRequest"
+          
         '401':
           $ref: "#/components/responses/401Unauthorized"
 

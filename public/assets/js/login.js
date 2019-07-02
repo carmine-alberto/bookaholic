@@ -1,5 +1,4 @@
 const formSelector = document.getElementById("login_form");
-const host = "https://bookaholic.herokuapp.com";
 
 const handleErrors = function(error) {
   alert("The submitted credentials are not valid; try again!");
