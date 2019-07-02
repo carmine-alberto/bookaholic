@@ -8,10 +8,13 @@ width: 400px
 }
 
 #about_the_author {
+display: block;
 margin-top:50px;
 margin-left: 20px;
-overflow: auto;
+position: relative;
+/* overflow: auto; */
 width:350px;
+height: auto
 }
 
 #about_the_author_title {
@@ -28,14 +31,14 @@ cursor:pointer;
 font-size:16px;
 font-weight:bolder;
 height:55px;
-left:100px;
-margin:10px 2px;
+/* left:100px; */
+margin: 100px 20px 0px -190px;
 padding:16px 32px;
-position:absolute;
+/* position:absolute; */
 text-align:center;
 text-decoration:none;
 text-transform:uppercase;
-top:860px;
+/* top:860px; */
 width:180px;
 }
 
@@ -111,6 +114,7 @@ background-color:#F3F3F3;
 padding-bottom:80px;
 padding-top:80px;
 width:400px;
+height: auto;
 }
 
 #book_landing_page {
@@ -129,18 +133,18 @@ text-align:center;
 #book_price {
 font-size:20px;
 font-weight:500;
-margin-top: 200px;
+margin-top: 15px;
 text-align:center;
 }
 
 #book_resume {
 font-size:16px;
 font-weight:lighter;
-margin-left:80px;
+margin-left: 40px;
 margin-right:20px;
 margin-top:40px;
 text-align:justify;
-width:230px;
+width: 320px;
 }
 
 .caption_container {
@@ -200,9 +204,12 @@ width:400px;
 }
 
 #fact_and_author {
+display: block;
+position: relative;
 width: 400px;
-margin-left:15px;
-padding-top: 200px;
+/* margin-left: 0px; */
+padding-top: 100px;
+height: auto;
 }
 
 .fact_content {
@@ -264,10 +271,13 @@ margin-left:120px
 }
 
 #related_books {
-margin-top:650px;
+display: block;
+clear: both;
+margin: auto;
+position: relative;
 padding-bottom: 50px;
 padding-bottom: 50px;
-overflow: auto;
+/* overflow: auto; */
 width:400px;
 }
 
