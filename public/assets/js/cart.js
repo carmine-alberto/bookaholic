@@ -5,7 +5,11 @@ const handleErrors = function(response) {
   if (response.ok)
     return response;
   else
-    throw new Error("Your access token is invalid or expired.\nYou'll be redirected to the login page.\nSelect OK to continue.");
+    switch(response.status) {
+      case 401:
+        throw new Error("Your access token is invalid or expired.\nYou'll be redirected to the login page.\nSelect OK to continue.");
+        break;
+      }
 }
 
 const appendBookItem = function(book, selector) {
@@ -62,17 +66,48 @@ const appendBookItem = function(book, selector) {
   '</li>'
 )};
 
+const postOrder = function() {
+  const postParams = {
+                      method: "POST",
+                      headers: {"Content-Type": "text/plain", 
+                               "Authorization": "Bearer " + jwt
+                              },
+                      body: "Via del Carroccio, 33/F, 20032, Milano (MI)"
+                    };
+
+  fetch("/api/orders", postParams)
+  .then(handleErrors)
+  .then(
+    fetch("/api/cart", {method: "DELETE", headers: {"Authorization": "Bearer " + jwt}})
+    .then(handleErrors)
+    .then(response => {
+      alert("Your order has been registered correctly!\n You'll now return to the Homepage.")
+      window.location.href = "/";
+    })
+  )
+  .catch(error => {
+    alert("There was an error during the request.\nIf your connection was not lost, it's probably due to an expired token.\nTry to login again.");
+    window.location.href = "/login";
+  })
+}
+
 //MAIN's HELPER
-const populatePage = function(response) {
-  const data = response.json();
+const populatePage = function(data) {
   console.log(data);
   const cartItemsSelector = $("#cart_items");
+  const subTotalSelector = $("#subtotal");
 
   //Add cart_items or "No Items"
-  if (data.length != 0)
+  if (data.length != 0) {
     data.forEach(book => appendBookItem(book, cartItemsSelector));
-  else
+    subTotalSelector.children("#subtotal_number").html(data.reduce((total, curr) => total + curr, 0.00) + " £");
+    subTotalSelector.children("button").click(postOrder);
+  }
+  else {
     cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart.</p></li>');
+    subTotalSelector.children("#subtotal_number").html("0.00 £");
+    subTotalSelector.children("button").prop("disabled", true);
+  }
 
   //Add event handlers
   $('select').change(() => {
@@ -97,9 +132,10 @@ else {
 
   fetch(host + "/api/cart", requestParams)
   .then(handleErrors)
+  .then(response => response.json())
   .then(populatePage)
   .catch(error => {
       alert(error.message);
-      window.location.href = "/login";
+      //window.location.href = "/login";
   });
 }

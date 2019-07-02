@@ -1,5 +1,5 @@
 
-var host = "https://bookaholic.herokuapp.com";
+var host = "";
 
 const appendDataForListThemes = function(selector, list)
 {
