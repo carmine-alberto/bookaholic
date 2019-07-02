@@ -136,68 +136,59 @@
 
 <ul id="cart_items">
 
-<li class="cart_item" id="cart_item_1">
+  <li class="cart_item">
+    <button aria-label="Remove from cart"
+        		class="close_button"
+        		type="button"
+        		role="button">
+      <div class="outer">
+        <div class="inner">
+        </div>
+      </div>
+    </button>
 
-<button aria-label="Remove from cart"
-		class="close_button"
-		type="button"
-		role="button"
-		onclick="document.getElementById('cart_item_1').style.display='none';">
+    <img class="book_cover" src="/assets/img/east_of_eden.jpg" alt="book cover">
 
-<div class="outer">
-  <div class="inner">
-  </div>
-</div>
-</button>
+    <div class="book_info">
+      <div class="column">
+        <h3 class="book_title">East of Eden</h3>
+        <h4 class="cover_type">John Steinbeck</h4>
+        <h4 class="book_price">23.79 eur</h4>
+      </div>
 
-<img class="book_cover" src="assets/img/east_of_eden.jpg" alt="book cover">
+      <div class="column">
+        <div class="quantity_menu">
+          <h4 class="quantity">Quantity</h4>
+          <div>
+            <label for="quantity">
+              <select id="quantity"
+                  		name="quantity"
+                  		class="quality_form">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
 
-<div class="book_info">
-
-<div class="column">
-<h3 class="book_title" id="book1_title">East of Eden</h3>
-<h4 class="book_author_1" id="book1_author1">John Steinbeck</h4>
-<h4 class="book_author_2" id="book1_author2">John Steinbeck</h4>
-<h4 class="book_author_3" id="book1_author3">John Steinbeck</h4>
-<h4 class="book_author_4" id="book1_author4">John Steinbeck</h4>
-<h4 class="book_price" id="book1_price">23.79 eur</h4>
-</div>
-
-<div class="column">
-<div class="quantity_menu">
-<h4 class="quantity">Quantity</h4>
-<div>
-<label for="quantity_1">
-<select id="quantity_1"
-		 name="quantity"
-		 class="quality_form">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10</option>
-</select>
-</label>
-</div>
-</div>
-</div>
-
-<div class="column">
-<h4 class="book_subtotal_title">Subtotal</h4>
-<h4 class="book_subtotal">23.99 eur</h4>
-</div>
-</div>
-</li>
+      <div class="column">
+        <h4 class="book_subtotal_title">Subtotal</h4>
+        <h4 class="book_subtotal">23.99 eur</h4>
+      </div>
+    </div>
+  </li>
 </ul>
 
-
-	<!--- END cart items section --->
-
+<!-- END cart items section --->
 
 </body>
 </html>

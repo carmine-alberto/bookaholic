@@ -32,6 +32,14 @@ async function createServer() {
         options
     );
 
+    // Used to redirect http requests to https - uncomment before deployment
+    // app.use((req, res, next) => {
+    //   if (req.header('x-forwarded-proto') !== 'https')
+    //     res.redirect(`https://${req.header('host')}${req.url}`);
+    //   else
+    //     next();
+    // });
+
     app.use(exegesisMiddleware);
 
     /*This endpoint is necessary if we want to make the clicked resource's id available to the page in the URL,

@@ -29,9 +29,9 @@ const appendDataforbookinfo = function(selector, data) {
 '<h1 id="book_name">' + data["title"] + '</h1>' +
 '<h2 id="book_author_1"> Book_author </h2>' +
 '<h2 id="book_price">' + data["details"][0]["price"] + '</h2>' +
-'<h5 id="book_resume">' + data["abstract"] + '</h5>' + 
+'<h5 id="book_resume">' + data["abstract"] + '</h5>' +
 '</div>	' +
-'<div id="add_to_cart_button" role="link" onclick="goToLink(cart page, )" onkeydown="goToLink(cart page, )">add to cart</div> </div>'	
+'<div id="add_to_cart_button" role="link" onclick="goToLink(cart page, )" onkeydown="goToLink(cart page, )">add to cart</div> </div>'
   );
     genreBook= data["genre"];
 };
@@ -42,10 +42,10 @@ const appendDataforbookinfo = function(selector, data) {
 const appendDataforFactsheet = function(selector, data) {
   selector
   .replaceWith(
-'<h4 class="section_title" id="fact_sheet_title"> Fact sheet </h4>' +	
+'<h4 class="section_title" id="fact_sheet_title"> Fact sheet </h4>' +
 '<div id="fact_sheet_content">' +
 '<div class="column">' +
-'<h4 class="fact_title"> Released : </h4>' + 
+'<h4 class="fact_title"> Released : </h4>' +
 '<h5 id="release_date"> ' + data["publication_date"] + ' </h5>' +
 '<h4 class="fact_title"> Language </h4>' +
 '<h5 id="book_language">' + data["language"] + '</h5>' +
@@ -60,7 +60,7 @@ const appendDataforFactsheet = function(selector, data) {
 '<h4 class="fact_title"> Type of cover </h4>'+
 '<h5 id="type_of_cover">' + data["details"][0]["cover_type"] + '</h5>'+
 '</div>' +
-'</div>' 
+'</div>'
 )};
 
 
@@ -68,7 +68,7 @@ const appendDataforAuthor = function(selector, data) {
     i++;
   selector
   .append('<div class="author">' +
-'<h5 class="author_bio" id="author'+i+'_bio">' + data["short_bio"] + '<span class="dots">...</span></h5>' +
+'<h5 class="author_bio" id="author'+i+'_bio">' + data["short_bio"].substring(0, 100) + '<span class="dots">...</span></h5>' +
 '<a class="author_page_button" href="'+host+'/author?author_id='+data["author_id"]+'"'+
 	 'role="link"'+
 	 'onclick="goToLink(author page, '+host+'/author?author_id='+data["author_id"]+')"'+
@@ -82,9 +82,9 @@ const appendDataforAuthor = function(selector, data) {
 
 const appendDataforReview= function(selector, dat)
 {
-    
+
     var k;
-    
+
     if(dat.lenght==0)
         {
             selector.append('<h3 id=no_reviews> NO REVIEWS </h3>')
@@ -94,44 +94,44 @@ const appendDataforReview= function(selector, dat)
             //selector.append("<h>"+dat.lenght+"</h>");
             for(k=1;k<=dat.lenght; k++)
                 {
-                    
+
                     selector.append(
                     '<div class="single_review" id="review_'+k+'">' +
-                    '<img class="review_image" src="/assets/img/user.png" alt="user profile picture">' + 	
+                    '<img class="review_image" src="/assets/img/user.png" alt="user profile picture">' +
                     '<h5 class="reviewer" id="reviewer_'+k+'">' + dat[k-1]["username"] + '</h5>'+
                     '<img class="stars" id="stars_'+k+'" src="assets/img/'+dat[k-1]["rating"]+' stelle.png">' +
                     '<h5 class="review" id="review_text_'+i+'">'+ dat[k-1]["gist"] + '</h5>	' +
                     '</div>'
                 )
                 }
-                
-            
+
+
         }
-    
-    
-    
+
+
+
 }
 
 const appendDataforEvents= function(selector, data)
 {
-    
+
     if(data.length==0)
         {
             selector.replaceWith(
                 '<section id="related_events">'+
-	
+
                 '<h2 class="section_title" id="related_events_title">Related events</h2>	'+
                 '<h3 id="no_Events"> NO EVENTS </h3>'+
                 '</section>'
-            
+
             );
         }
     else{
-        
+
         selector.replaceWith(
     '<section id="related_events">'+
-'<h2 class="section_title" id="related_events_title">Related events</h2>'+	
-        '<div class="events_container">'+	
+'<h2 class="section_title" id="related_events_title">Related events</h2>'+
+        '<div class="events_container">'+
         '<div class="event">	'+
 '<img src="/assets/img/'+data[0]["image"]+'" class="book_image_event" id="event1_photo" alt="event_photo">'+
 '<h4 id="event_date">'+ data[0]["date"] + '<br><span id="event_place">'+data[0]["place"]+'</span></h4>' +
@@ -140,17 +140,17 @@ const appendDataforEvents= function(selector, data)
 '<div id="learn_more">' + data[0]["info"] + '</div>'+
 
 '</section>'
-    
-    
+
+
     )}
-    
+
 }
 
 const appendDataforOtherBook= function(data)
 {
-    
+
     var slide_container= $("#slide_container_1");
-    if(data.length<6) 
+    if(data.length<6)
         {
             var slide_2= $("#slide_2")
             var img_2=$("#img-2")
@@ -172,92 +172,92 @@ const appendDataforOtherBook= function(data)
     for(var y=0;y<data.length;y++)
         {
             libro++;
-            
+
             if(data[y].authors.length==1)
                 {
                    slide_container.append(
-                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+	
- 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+ 
+                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+
+ 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+
 				'id="slide1_img1"'+
 	 			'alt="book cover"'+
 	 			'role="link"'+
 	 			'onclick="goToLink(book page, '+host+'/book?id='+data[y].book_id+')"'+
-     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+			
+     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+
 		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+	    
+		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+
    		   '<h6 class="book_author" id="book'+libro+'_author1">'+data[y].authors[0].author_name+'</h6>'+
-   		   
+
 			'</div>'+
 			'</a>'
-            ) 
+            )
                 }
-            
+
             else if(data[y].authors.length==2)
             {
                 slide_container.append(
-                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+	
- 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+ 
+                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+
+ 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+
 				'id="slide1_img1"'+
 	 			'alt="book cover"'+
 	 			'role="link"'+
 	 			'onclick="goToLink(book page, '+host+'/book?id='+data[y].book_id+')"'+
-     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+			
+     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+
 		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+	    
+		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+
    		   '<h6 class="book_author" id="book'+libro+'_author1">'+data[y].authors[0].author_name+'</h6>'+
    		   '<h6 class="book_author" id="book'+libro+'_author2">'+data[y].authors[1].author_name+'</h6>'+
 			'</div>'+
 			'</a>'
-            ) 
+            )
             }
-            
+
             else if(data[y].authors.length==3)
                 {
                     slide_container.append(
-                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+	
- 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+ 
+                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+
+ 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+
 				'id="slide1_img1"'+
 	 			'alt="book cover"'+
 	 			'role="link"'+
 	 			'onclick="goToLink(book page, '+host+'/book?id='+data[y].book_id+')"'+
-     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+			
+     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+
 		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+	    
+		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+
    		   '<h6 class="book_author" id="book'+libro+'_author1">'+data[y].authors[0].author_name+'</h6>'+
    		   '<h6 class="book_author" id="book'+libro+'_author2">'+data[y].authors[1].author_name+'</h6>'+
            '<h6 class="book_author" id="book'+libro+'_author3">'+data[y].authors[2].author_name+'</h6>'+
 			'</div>'+
 			'</a>'
-            ) 
+            )
                 }
             else
             {
                 slide_container.append(
-                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+	
- 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+ 
+                '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+
+ 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+
 				'id="slide1_img1"'+
 	 			'alt="book cover"'+
 	 			'role="link"'+
 	 			'onclick="goToLink(book page, '+host+'/book?id='+data[y].book_id+')"'+
-     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+			
+     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+
 		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+	    
+		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+
    		   '<h6 class="book_author" id="book'+libro+'_author1">'+data[y].authors[0].author_name+'</h6>'+
    		   '<h6 class="book_author" id="book'+libro+'_author2">'+data[y].authors[1].author_name+'</h6>'+
            '<h6 class="book_author" id="book'+libro+'_author3">'+data[y].authors[2].author_name+'</h6>'+
             '<h6 class="book_author" id="book'+libro+'_author4">'+data[y].authors[3].author_name+'</h6>'+
 			'</div>'+
 			'</a>'
-            ) 
+            )
             }
-            
+
             if(y==4) slide_container= $("#slide_container_2");
             else if(y==9) slide_container= $("#slide_container_3");
-            
+
         }
-    
-    
-    
+
+
+
 }
 
 
@@ -268,9 +268,9 @@ const appendDataForListThemes= function(selector, list)
             selector.append(
                 '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
                 )
-                
+
         }
-    
+
 }
 
 const appendDataForListGenres= function(selector, list)
@@ -281,7 +281,7 @@ const appendDataForListGenres= function(selector, list)
                ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
             )
         }
-    
+
 }
 
 
@@ -332,9 +332,9 @@ fetch(host + "/api/books/"+id)
         )
     .then(
         fetch(host+ "/api/events?offset=0&about="+id)
-        .then(response => response.json()) 
+        .then(response => response.json())
         .then(events => appendDataforEvents(related_events, events))
-            
+
         )
 .then(
     fetch(host+"/api/books/themes")
@@ -347,17 +347,3 @@ fetch(host + "/api/books/"+id)
     .then(response => response.json())
     .then(genres=> appendDataForListGenres(genre_list, genres))
 )
-
-
-        
-    
-
-
-
-
-
-
-
-
-
-  
