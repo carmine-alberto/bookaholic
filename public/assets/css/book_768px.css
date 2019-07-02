@@ -9,10 +9,10 @@ width:768px;
 
 #about_the_author {
 margin-left:368px;
-margin-top: -300px;
-overflow: auto;
-position: absolute;
-width:300px;
+margin-top: -320px;
+/* overflow: auto; */
+position: relative;
+width: 300px;
 }
 
 #about_the_author_title {
@@ -38,10 +38,7 @@ top:630px;
 width:180px;
 }
 
-.author {
-margin-left:30px;
-width:350px;
-}
+.author {margin-left: 20px;width: 300px;}
 
 #author_bio {
 font-size:16px;
@@ -159,7 +156,7 @@ float:left;
 font-size:14px;
 padding-bottom:40px;
 padding-left:20px;
-width:40%;
+width: 35%;
 }
 
 .event {
@@ -195,9 +192,12 @@ width:768px;
 }
 
 #fact_and_author {
+display: block;
+margin-left: 5px;
 padding-top: 30px;
-width: 400px;
-overflow: auto
+position: relative;
+width: 700px;
+height: auto;
 }
 
 #fact_sheet {
@@ -255,8 +255,11 @@ margin-left:300px
 }
 
 #related_books {
-height:600px;
-margin-top:200px;
+clear: both;
+position: relative;
+ height:600px;
+ /* margin-top: 750px; */
+display: block;
 }
 
 #related_books_title {
@@ -323,11 +326,11 @@ overflow-x:scroll;
 overflow-y:hidden;
 padding-left:30px;
 padding-right:30px;
-position:inherit;
-top:1710px;
+position: initial;
 white-space:nowrap;
 width:768px;
 z-index:999;
+/* clear: both; */
 }
 
 .section_title {
