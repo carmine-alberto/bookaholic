@@ -10,6 +10,10 @@ position:absolute;
 top:250px;
 }
 
+#art_and_design_title {
+margin-left: -15px
+}
+
 .book {
 font-size:16px;
 padding:50px;
@@ -48,6 +52,10 @@ position:absolute;
 top:1200px;
 }
 
+#fiction_title {
+margin-left: 5px
+}
+
 .header_box {
 background-color:#EF4444;
 height:20px;
@@ -80,6 +88,10 @@ position:absolute;
 top:2200px;
 }
 
+#mystery_title {
+margin-left: 20px
+}
+
 #non_fiction {
 left:20px;
 position:absolute;
@@ -90,6 +102,10 @@ top:3200px;
 left:20px;
 position:absolute;
 top:4200px;
+}
+
+#science_fiction_title {
+margin-left: -35px
 }
 
 .section_title {
@@ -106,6 +122,7 @@ border-radius:20px;
 color:black;
 display:inline-block;
 font-size:18px;
+font-weight: bolder;
 height:50px;
 margin:100px 0 0 40px;
 padding:10px 32px;

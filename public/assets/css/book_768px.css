@@ -8,10 +8,10 @@ width:768px;
 }
 
 #about_the_author {
-left:350px;
-margin-left:15px;
-position:absolute;
-top:765px;
+margin-left:368px;
+margin-top: -350px;
+overflow: auto;
+position: absolute;
 width:300px;
 }
 
@@ -23,7 +23,7 @@ cursor:pointer;
 font-size:16px;
 font-weight:bolder;
 height:55px;
-left:320px;
+left:300px;
 margin:10px 2px;
 padding:16px 32px;
 position:absolute;
@@ -96,6 +96,14 @@ margin:25px 50px 60px 40px;
 width:242px;
 }
 
+.book_image_event {
+float:left;
+height: 300px;
+margin-bottom: 100px;
+margin-right: 40px;
+width: 230px
+}
+
 #book_info {
 padding-top:80px;
 }
@@ -147,12 +155,19 @@ float:left;
 font-size:14px;
 padding-bottom:40px;
 padding-left:20px;
-width:30%;
+width:40%;
 }
 
 .event {
 margin:100px 50px;
 width:680px;
+}
+
+#event_author {
+font-size: 24px;
+font-weight: bolder;
+width: 150px;
+margin-left: 260px
 }
 
 #event_date {
@@ -176,7 +191,9 @@ width:768px;
 }
 
 #fact_and_author {
-height:590px;
+padding-top: 30px;
+width: 400px;
+overflow: auto
 }
 
 #fact_sheet {
@@ -298,7 +315,7 @@ overflow-x:scroll;
 overflow-y:hidden;
 padding-left:30px;
 padding-right:30px;
-position:absolute;
+position:inherit;
 top:1710px;
 white-space:nowrap;
 width:768px;

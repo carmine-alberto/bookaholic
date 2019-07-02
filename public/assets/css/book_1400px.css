@@ -7,7 +7,7 @@ overflow-y:scroll;
 
 #about_the_author {
 margin-left:820px;
-margin-top:80px;
+margin-top:-250px;
 width:360px;
 }
 
@@ -127,10 +127,11 @@ font-weight:bolder;
 }
 
 .caption_container {
-margin-left:185px;
+margin-left:40px;
+margin-right: 0px;
 margin-top:20px;
 text-align:center;
-width:100px;
+width:400px;
 }
 
 .card {
@@ -182,7 +183,7 @@ opacity:1;
 
 .column {
 float:left;
-width:50%;
+width:230px;
 }
 
 .event {
@@ -224,7 +225,7 @@ width:768px;
 }
 
 #fact_and_author {
-margin-bottom:20px;
+margin:60px 0px 20px 30px;
 }
 
 .fact_title {
@@ -240,6 +241,8 @@ top:96%;
 
 #fact_sheet_content {
 margin-left:30px;
+width: 500px;
+padding: 0px
 }
 
 #fact_sheet_content:after {
@@ -289,6 +292,11 @@ width:160px;
 
 .learn_more:hover {
 background-color:#ef4444;
+}
+
+.no_Events {
+font-weight: lighter;
+padding: 30px;
 }
 
 #related_books {
@@ -361,6 +369,7 @@ font-size:26px;
 font-weight:bolder;
 margin-bottom:50px;
 margin-left:30px;
+width: 180px
 }
 
 .single_review {
@@ -424,7 +433,6 @@ height:20%;
 margin:0 10px 0 5px;
 width:40%;
 }
-
 
 
 
