@@ -7,6 +7,7 @@ const handleErrors = function(response) {
   else
     switch(response.status) {
       case 401:
+      case 400:
         throw new Error("Your access token is invalid or expired.\nYou'll be redirected to the login page.\nSelect OK to continue.");
         break;
       }
@@ -69,7 +70,7 @@ const appendBookItem = function(book, selector) {
 const postOrder = function() {
   const postParams = {
                       method: "POST",
-                      headers: {"Content-Type": "text/plain", 
+                      headers: {"Content-Type": "text/plain",
                                "Authorization": "Bearer " + jwt
                               },
                       body: "Via del Carroccio, 33/F, 20032, Milano (MI)"
@@ -136,6 +137,6 @@ else {
   .then(populatePage)
   .catch(error => {
       alert(error.message);
-      //window.location.href = "/login";
+      window.location.href = "/login";
   });
 }
