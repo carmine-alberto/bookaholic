@@ -16,7 +16,7 @@ width:350px;
 
 #about_the_author_title {
 font-weight:bolder;
-margin-left:-50px;
+margin-left:50px;
 text-align:center;
 }
 
@@ -201,6 +201,7 @@ width:400px;
 
 #fact_and_author {
 width: 400px;
+margin-left:15px;
 padding-top: 200px;
 }
 
@@ -258,6 +259,9 @@ width:180px;
 background-color:#ef4444;
 }
 
+#no_Events {
+margin-left:120px
+}
 
 #related_books {
 margin-top:650px;
@@ -280,8 +284,7 @@ text-align:center;
 
 #related_events {
 background-color:#f3f3f3;
-height:790px;
-margin-top:2760px;
+overflow:auto;
 width:400px;
 }
 
@@ -298,6 +301,7 @@ width:40px;
 
 #reviews {
 position:absolute;
+overflow:auto;
 top:2950px;
 }
 
@@ -307,22 +311,21 @@ grid-column-gap:5px;
 grid-row-gap:25px;
 grid-template-columns:160px 160px;
 grid-template-rows:130px 130px 130px 130px 130px;
+overflow:auto;
 }
 
 #reviews_title {
-margin-right:100px;
+margin-right:70px;
 text-align:center;
 }
 
 .scrolling-wrapper {
 -webkit-overflow-scrolling:touch;
 height:450px;
+margin-top:30px;
 max-width:100%;
 overflow-x:scroll;
 overflow-y:hidden;
-position:absolute;
-right:0;
-top:100px;
 white-space:nowrap;
 }
 

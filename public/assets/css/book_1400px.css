@@ -152,7 +152,7 @@ left:0;
 line-height:600px;
 position:absolute;
 right:300px;
-width:1380px;
+width:1280px;
 z-index:999;
 }
 
@@ -222,6 +222,13 @@ font-size:24px;
 display:grid;
 grid-template-columns:auto auto;
 width:768px;
+}
+
+.image_and_caption {
+display:inline-block;
+margin-bottom:25px;
+margin-left:-15px;
+width:260px
 }
 
 #fact_and_author {
@@ -397,7 +404,7 @@ width:20%;
 
 .slide-image img {
 height:80%;
-margin:30px 80px 0 140px;
+margin:30px 80px 0 30px;
 width:80%;
 }
 
@@ -409,10 +416,11 @@ opacity:0.5;
 display:block;
 height:600px;
 list-style:none;
-margin:0;
+margin-left:80px;
 overflow:hidden;
 padding:0;
 position:relative;
+width:1400px;
 }
 
 .slides input,::-webkit-scrollbar {
