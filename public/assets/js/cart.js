@@ -59,7 +59,7 @@ const appendBookItem = function(book, selector) {
         '<h4 class="book_subtotal">23.99 eur</h4>' +
       '</div>' +
     '</div>' +
-  '</li>';
+  '</li>'
 )};
 
 //MAIN's HELPER
@@ -70,11 +70,9 @@ const populatePage = function(response) {
 
   //Add cart_items or "No Items"
   if (data.length != 0)
-    data.forEach(book => appendBookItem(book, cartItemsSelector))
+    data.forEach(book => appendBookItem(book, cartItemsSelector));
   else
-    cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart.</p></li>')
-})
-
+    cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart.</p></li>');
 
   //Add event handlers
   $('select').change(() => {
