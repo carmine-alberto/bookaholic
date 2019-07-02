@@ -15,6 +15,10 @@ position: absolute;
 width:300px;
 }
 
+#about_the_author_title {
+margin-top:-20px;
+}
+
 #add_to_cart_button {
 background-color:#ABABAB;
 border-radius:40px;
