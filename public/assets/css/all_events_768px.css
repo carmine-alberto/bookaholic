@@ -55,9 +55,10 @@ background-color: #ef4444;
 }
 
 #filters_container {
+	margin-left: 250px;
 	padding-left: 70px;
 	padding-bottom: 50px;
-	width:1200px;
+	/* width:1200px; */
 }
 
 #filters_container:after {
@@ -80,10 +81,11 @@ background-color: #ef4444;
 }
 
 .event {
-	background-color: #FFFFFF;	
+	background-color: #FFFFFF;
 	padding-bottom:20px;
 	padding-top:20px;
 	height: 350px;
+	width: 350px;
 }
 
 .title {
@@ -118,13 +120,15 @@ background-color: #ef4444;
 .learn_more {
 	background-color: #d4d4d4;
 	width: 125px;
-	height: 30px;
-	padding-left: 20px;
-	padding-right: 0px;
-	padding-bottom: 30px;
+	height: 45px;
+	font-weight: bolder;
+	padding: 15px;
+	margin-left: 200px;
 	margin-top: 40px;
 	font-size: 16px;
 	border-radius: 30px;
+	color: black;
+	text-transform: uppercase;
 }
 
 .learn_more:active {
