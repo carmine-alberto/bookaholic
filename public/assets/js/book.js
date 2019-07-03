@@ -58,7 +58,7 @@ const appendDataForNameAuthor= function(books)
 		{
 			for(var f=0;f<books[t].authors.lenght;f++)
 			{
-				if(f==0) book_author_1.append(books[t].authors[0].author_name)
+				if(f==0) book_author_1.append(''+books[t].authors[0].author_name+'')
 				if(f==1) book_author_2.append(books[t].authors[1].author_name)
 				if(f==2) book_author_3.append(books[t].authors[2].author_name)
 				if(f==3) book_author_4.append(books[t].authors[3].author_name)
