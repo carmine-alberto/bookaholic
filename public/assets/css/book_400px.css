@@ -267,7 +267,9 @@ background-color:#ef4444;
 }
 
 #no_Events {
-margin-left:120px
+font-weight:lighter;
+margin-left:100px;
+padding:18px;
 }
 
 #related_books {

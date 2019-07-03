@@ -55,13 +55,13 @@ const appendDataForNameAuthor= function(books)
 	
 	
 	
-	for(var t=0;t<books.lenght;t++)
+	for(var t=0;t<books.length;t++)
 	{
 		
 		if(books[t].book_id==id)
 		{
 			
-			for(var f=0;f<books[t].authors.lenght;f++)
+			for(var f=0;f<books[t].authors.length;f++)
 			{
 				
 				if(f==0) book_author_1.append(books[t].authors[0].author_name)
@@ -123,14 +123,14 @@ const appendDataforReview= function(selector, dat)
 
     var k;
 
-    if(dat.lenght==0)
+    if(dat.length==0)
         {
             selector.append('<h3 id=no_reviews> NO REVIEWS </h3>')
         }
     else
         {
             //selector.append("<h>"+dat.lenght+"</h>");
-            for(k=1;k<=dat.lenght; k++)
+            for(k=1;k<=dat.length; k++)
                 {
 
                     selector.append(

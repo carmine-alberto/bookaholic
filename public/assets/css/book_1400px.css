@@ -301,7 +301,7 @@ width:160px;
 background-color:#ef4444;
 }
 
-.no_Events {
+#no_Events {
 font-weight: lighter;
 padding: 30px;
 }
@@ -391,6 +391,10 @@ display:inline-block;
 margin:400px -50px;
 white-space:nowrap;
 width:1440px;
+}
+
+#slide_2 {
+margin-top:-600px;
 }
 
 .slide-image {

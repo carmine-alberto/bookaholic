@@ -5,14 +5,7 @@ body {
 	font-family: "F37 Ginger"!important;
 }
 
-#apply_filters {
-background-color: #d9d9d9;
-border-radius: 30px;	
-height: 50px;
-margin-left: 670px;
-margin-top: 60px;
-width: 140px;
-}
+#apply_filters {background-color: #d9d9d9;border: none;border-radius: 30px;color: #000000;font-weight: bolder;height: 50px;text-transform: uppercase;margin-left: 670px;margin-top: 60px;width: 140px;}
 
 #apply_filters:hover {
 background-color: #ef4444;
@@ -55,8 +48,12 @@ background-color: #ef4444;
 }
 
 #filters_container {
-	padding: 50px 0px 10px 410px;
-	width:1200px;
+	/* padding: 50px 0px 10px 10px; */
+	/* width:1200px; */
+	float: none;
+	align-content: center;
+	margin-left: 620px;
+	margin-top: 30px;
 }
 
 #filters_container:after {
@@ -109,6 +106,7 @@ select {
 
 .author {
 	font-size: 18px;
+	margin-bottom: 40px;
 }
 
 .date, .place {
@@ -123,13 +121,16 @@ select {
 
 .learn_more {
 	background-color: #d4d4d4;
+	color: black;
 	width: 140px;
 	height: 45px;
-	padding-left: 15px;
-	padding-top: 10px;
-	margin: 30px auto;
-	font-size: 20px;
+	padding: 15px;
+	/* padding-top: 10px; */
+	margin-top: 60px;
+	font-size: 18px;
+	font-weight: bolder;
 	border-radius: 30px;
+	text-transform: uppercase;
 }
 
 .learn_more:hover {

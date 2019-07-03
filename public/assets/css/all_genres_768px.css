@@ -109,7 +109,7 @@ margin-left: -35px
 }
 
 .section_title {
-font-size:24px;
+font-size:26px;
 font-weight:bolder;
 padding-left:310px;
 padding-top:20px;
@@ -123,13 +123,13 @@ color:black;
 display:inline-block;
 font-size:18px;
 font-weight: bolder;
-height:50px;
-margin: 100px 15px 0 40px;
-padding:10px 32px;
+height:80px;
+margin: 100px 15px 0 60px;
+padding:15px 32px;
 text-align:center;
 text-decoration:none;
 vertical-align:middle;
-width: 180px;
+width: 120px;
 }
 
 .show_more_button:hover {

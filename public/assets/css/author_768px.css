@@ -12,9 +12,10 @@ width:460px;
 
 #author_bio_title {
 font-size:18px;
-left:350px;
+left: 400px;
 position:absolute;
-top:330px;
+top: 340px;
+width: 300px;
 }
 
 .authored_books_section {
@@ -130,7 +131,6 @@ background-color:#ef4444;
 
 #related_events {
 background-color:#f3f3f3;
-height:1660px;
 margin-bottom:0;
 padding-bottom:10px;
 width:768px;
