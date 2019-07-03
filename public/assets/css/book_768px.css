@@ -248,8 +248,9 @@ width:180px;
 background-color:#ef4444;
 }
 
-no_Events {
-margin-left:300px
+#no_Events {
+font-weight: lighter;
+padding: 46px;
 }
 
 #related_books {
