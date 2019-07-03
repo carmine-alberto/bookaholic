@@ -28,7 +28,7 @@ const addData= function(selector, data)
         
 '</div>'	))
 	
-	name_author="";
+	
 
 }
 
