@@ -128,7 +128,7 @@ const appendDataforEvents= function(selector, data)
             '<h3 class="event_date" id="event'+c+'_date">'+data["date"].slice(0,10)+'<br><span id="event_place">'+data["place"]+'</span></h3>'+
             '<h3 class="event_title" id="event'+c+'_title">The new mystery literature</h3>'+
             '<h3 class="event_author" id="event'+c+'_author">with Gillian Flynn</h3>'+
-            '<button title="menu_icon" type="button" role="button" class="learn_more">Learn more</button>'+
+            '<a title="menu_icon" type="button" role="button" class="learn_more">Learn more</a>'+
 
            '</div>'
         )
