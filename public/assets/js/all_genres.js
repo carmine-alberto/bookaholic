@@ -94,7 +94,7 @@ const appendData= function(selector, data, identifier, dim, i,link)
 	  		'role="link"'+
 	 		'onclick="goToLink(fiction page, '+host+'/genre?genre='+link+')"'+
      		'onkeydown="goToLink(fiction page, '+host+'/genre?genre='+link+')"'+
-     		'href="'+host+'/genre?genre_id='+link+'">Show more</a>')
+     		'href="'+host+'/genre?genre='+link+'">Show more</a>')
         }
 
 }
