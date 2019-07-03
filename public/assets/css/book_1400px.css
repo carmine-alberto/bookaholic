@@ -393,6 +393,10 @@ white-space:nowrap;
 width:1440px;
 }
 
+#slide_2 {
+margin-top:-600px;
+}
+
 .slide-image {
 display:inherit;
 height:60%;
