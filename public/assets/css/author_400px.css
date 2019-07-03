@@ -15,18 +15,16 @@ width:380px;
 }
 
 #author_bio_title {
-font-size:18px;
-left:100px;
+font-size: 16px;
+left: 30px;
 margin:5px 0 10px 30px;
 position:absolute;
-top:460px;
-width:100px;
+top: 480px;
+width: 300px;
 }
 
 .authored_books_section {
 margin-left:120px;
-max-height:700px;
-min-height:100px;
 padding-bottom:10px;
 padding-top:10px;
 }
@@ -147,8 +145,6 @@ background-color:#ef4444;
 
 #related_events {
 background-color:#f3f3f3;
-height:2575px;
-margin-top:300px;
 padding-bottom:80px;
 width:400px;
 }
