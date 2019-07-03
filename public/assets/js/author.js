@@ -135,28 +135,7 @@ const appendDataforEvents= function(selector, data)
 }
 
 
-const appendDataForListThemes= function(selector, list)
-{
-    for(var i=0;i<list.length;i++)
-        {
-            selector.append(
-                '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
-                )
 
-        }
-
-}
-
-const appendDataForListGenres= function(selector, list)
-{
-    for(var k=0; k<list.length; k++)
-        {
-            selector.append(
-               ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
-            )
-        }
-
-}
 
 
 
@@ -171,8 +150,7 @@ const appendDataForListGenres= function(selector, list)
 var authorIntro = $("#author_intro");
 var books_containers= $(".books_containers")
 var events_container= $(".events_container")
-var genre_list= $("#genre_list");
-var themes_list= $("#themes_list");
+
  //Get id of author from URL
 var Url = self.location.href;
 var id= getUrlParameter(Url).author_id;
@@ -189,14 +167,4 @@ fetch(host + "/api/authors/"+id)
     .then(data => data
     .forEach(book => appendDataforBook(books_containers, book, events_container)))
 )
-.then(
-    fetch(host+"/api/books/themes")
-    .then(response => response.json())
-    .then(themes=> appendDataForListThemes(themes_list, themes))
-)
-.then(
 
-    fetch(host+"/api/books/genres")
-    .then(response => response.json())
-    .then(genres=> appendDataForListGenres(genre_list, genres))
-)
