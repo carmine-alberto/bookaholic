@@ -10,6 +10,8 @@ const handleErrors = function(response) {
       case 400:
         throw new Error("Your access token is invalid or expired.\nYou'll be redirected to the login page.\nSelect OK to continue.");
         break;
+      case 404:
+        throw new Error("The resource does not exist in the server, try refreshing the page.");
       }
 }
 
@@ -26,7 +28,7 @@ const calculateTotal = function(cartItemsSelector) {
 
 const appendBookItem = function(book, selector) {
   selector.append(
-  '<li class="cart_item">' +
+  '<li class="cart_item" id="' + book["book_id"] + '">' +
     '<button aria-label="Remove from cart"' +
         		'class="close_button"' +
         		'type="button"' +
@@ -80,7 +82,7 @@ const appendBookItem = function(book, selector) {
 
 const postOrder = function() {
   $("#checkout_button").prop("disabled", true);
-  
+
   const postParams = {
                       method: "POST",
                       headers: {"Content-Type": "text/plain",
@@ -95,7 +97,7 @@ const postOrder = function() {
     fetch("/api/cart", {method: "DELETE", headers: {"Authorization": "Bearer " + jwt}})
     .then(handleErrors)
     .then(response => {
-      alert("Your order has been registered correctly!\n You'll now return to the Homepage.")
+      alert("Your order has been registered correctly!\nYou'll now return to the Homepage.")
       window.location.href = "/";
     })
   )
@@ -110,6 +112,12 @@ const populatePage = function(data) {
   const cartItemsSelector = $("#cart_items");
   const totalSelector = $("#subtotal_number");
   const checkoutButtonSelector = $("#checkout_button");
+  const setTotal = () => $("#subtotal_number").html(calculateTotal(cartItemsSelector) + " £");
+  const populateEmptyCart = () => {
+                                    cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart!</p></li>');
+                                    totalSelector.html("0.00 £");
+                                    checkoutButtonSelector.prop("disabled", true);
+                                  };
 
   //Add cart_items or "No Items"
   if (data.length != 0) {
@@ -125,21 +133,41 @@ const populatePage = function(data) {
 
         affectedBook.find(".book_subtotal").html( subtotal + " £");
 
-        $("#subtotal_number").html(calculateTotal(cartItemsSelector) + " £");
+        setTotal();
      }).change();
 
-    checkoutButtonSelector.click(postOrder);
+    $(".close_button").on("click touch", function() {
+      const patchParams = {
+                          method: "PATCH",
+                          headers: {"Authorization": "Bearer " + jwt }
+                          };
+      const itemId = "book_id," + $(this).parent().attr("id") + ",cover_type," + $(this).parent().find(".cover_type").text().toLowerCase();
+
+      fetch(host + "/api/cart/" + itemId + "?amount=0", patchParams)
+      .then(handleErrors)
+      .then(response => {
+        $(this).parent().detach();
+        setTotal();
+        if (cartItemsSelector.children().length == 0)
+          populateEmptyCart();
+      })
+      .catch(error => {
+        alert(error.message);
+        window.location.href = "/login";
+      });
+    });
+
+    checkoutButtonSelector.on("click touch", postOrder);
+
   }
   else {
-    cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart!</p></li>');
-    totalSelector.html("0.00 £");
-    checkoutButtonSelector.prop("disabled", true);
+    populateEmptyCart();
   }
 }
 
 //MAIN
 if (jwt == null) {
-  alert("You must be logged in to see this page!\nYou'll be redirected to the login page.\nClick OK to continue.");
+  alert("You must be logged in to see this page!\nYou'll be redirected to the login page.\nSelect OK to continue.");
   window.location.href = "/login";
 }
 else {
