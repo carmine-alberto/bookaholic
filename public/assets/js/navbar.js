@@ -10,7 +10,7 @@ const appendDataForListThemes = function(selector, list)
     {
       selector.append(
         '<li id="theme_' + list[i] + '" role="option">' +
-          '<a href="/theme?id=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
+          '<a href="/theme?theme=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
         '</li>'
       )
     }
@@ -23,7 +23,7 @@ const appendDataForListGenres= function(selector, list)
   {
     selector.append(
       '<li id="genre_' + list[i] + '" role="option">' +
-        '<a href="/genre?id=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
+        '<a href="/genre?genre=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
       '</li>'
     )
   }
