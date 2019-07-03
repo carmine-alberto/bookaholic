@@ -96,7 +96,7 @@ const appendData= function(selector, data, identifier, dim, i)
 	 	 	'role="link"'+
 	 		'onclick="goToLink(fiction page, '+host+'/theme?theme='+identifier+')"'+
      		'onkeydown="goToLink(fiction page, '+host+'/theme?theme='+identifier+')"'+
-     		'href="'+host+'/theme?theme_id='+data["theme_id"]+'">Show more</a>')
+     		'href="'+host+'/theme?theme='+identifier+'">Show more</a>')
         }
 }
 

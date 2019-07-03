@@ -1,5 +1,6 @@
 const host = "https://bookaholic.herokuapp.com";
 var i=0;
+//var name_author;
 
 const addData= function(selector, data)
 {
@@ -7,69 +8,136 @@ const addData= function(selector, data)
     i++
     selector.append(
     '<div class="event">'+	
-'<img src="assets/img/'+data["image"]+'" class="event_photo" id="event'+i+'_photo">'+
-'<h4 class="date" id="event'+i+'_date">'+data["date"]+' <br><span id="event'+i+'_place">'+data["place"]+'</span></h4>'+
-'<h2 class="title" id="event'+i+'_title">The new mystery literature</h2>'+
-'<h2 class="author" id="event'+i+'_author">with Gillian Flynn</h2>	'+
-'<div class="learn_more"'+
+'<img src="/assets/img/'+data["image"]+'" class="event_photo" id="event'+i+'_photo">'+
+'<h4 class="date" id="event'+i+'_date">'+data["date"].slice(0,10)+' <br><span id="event'+i+'_place">'+data["place"]+'</span></h4>'+
+'<h2 class="title" id="event'+i+'_title">'+data["title"]+'</h2>'+
+'<h2 class="author" id="event'+i+'_author">with </h2>'+
+'<a class="learn_more"'+
      'onclick="goToLink(event page, '+host+'/event?event_id='+data["event_id"]+')"'+
      'onkeydown="goToLink(profile, '+host+'/event?event_id='+data["event_id"]+')"'+
-     'role="link">Learn more</div>'+
+     'role="link"'+
+    'href="'+host+'/event?event_id='+data["event_id"]+'">Learn more</a>'+
 		
-'</div>'	
 
-)}
+        
+'</div>'	)
+
+}
+
+
+ 
+
+
+/*function returnAuthor(books, book_id)
+    {
+        for(var i=0; i<books.length; i++)
+            {
+                if(books[i].book_id==book_id) name_author= books[i].authors[0].author_name
+            }
+        name_author="CIAO"
+    }
+
+const lookForAuthor= function(event)
+{
+    fetch(host+"/api/books?offset=0")
+    .then(response => response.json())
+	.then(books => returnAuthor(books, event.book_id))
+    .then(addData(events_container, event))
+    
+}*/
+
 
 
 
 
 const handler = function() { 
+
     
-var a1 = document.getElementById("month_from");
-var from = a1.options[a1.selectedIndex].text;
-
-
-var a2 = document.getElementById("month_to");
-var to = a2.options[a2.selectedIndex].text;
-
+events_container.empty();
 
 var a3 = document.getElementById("where");
 var c3 = a3.options[a3.selectedIndex].text;
-where = c3.toLowerCase();
-if(where=="bookaholic greenwich")
-    where="Greenwich";
-else where="Mudchute"
-
-if(from=="May")
-    from=05;
-else if(from=="June")
-    from=06;
-else if(from=="July")
-    from=07;
-else from=08;
-
-if(to=="May")
-    to=05;
-else if(to=="June")
-    to=06;
-else if(to=="July")
-    to=07;
-else to=08;
 
 
 
-fetch(host+"/api/events?offset=0&where="+where+"&from=2019-0"+from+"-01&to=2019-0"+to+"-30")
+
+
+    
+fetch(host+"/api/events?offset=0&where="+c3)
 .then(response => response.json())
 .then(data => data
-     .forEach(event=> addData(events_container, event)))
+     .forEach(event=> addData(events_container,event)))
+              
     
 }
 
 
+const appendDataForListThemes= function(selector, list)
+{
+    for(var i=0;i<list.length;i++)
+        {
+            selector.append(
+                '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
+                )
+                
+        }
+    
+}
+
+const appendDataForListGenres= function(selector, list)
+{
+    for(var k=0; k<list.length; k++)
+        {
+            selector.append(
+               ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
+            )
+        }
+    
+}
+
+const addDataforPlaces= function(selector, data)
+{
+    for(var h=0;h<data.length;h++)
+        {
+            selector.append(
+                '<option value="'+data[h]+'">'+data[h]+'</option>'
+            )
+        }
+}
+
+
+    
+
+    
+
+
 //MAIN
+var genre_list= $("#genre_list")
+var themes_list= $("#themes_list")
+var where= $("#where")
 var events_container= $("#events_container")
+
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
+
+fetch(host+"/api/events/places")
+.then(response => response.json())
+.then(places => addDataforPlaces(where, places))
+.then(
+    fetch(host+"/api/books/themes")
+    .then(response => response.json())
+    .then(themes=> appendDataForListThemes(themes_list, themes))
+
+.then(
+
+    fetch(host+"/api/books/genres")
+    .then(response => response.json())
+    .then(genres=> appendDataForListGenres(genre_list, genres))
+)
+
+)
+
+
 
 
       

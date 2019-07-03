@@ -14,12 +14,13 @@ margin-left: 20px;
 position: relative;
 /* overflow: auto; */
 width:350px;
-height: auto
+height: max-content;
+/* max-height: 1000px; */
 }
 
 #about_the_author_title {
 font-weight:bolder;
-margin-left:50px;
+margin-left: -40px;
 text-align:center;
 }
 
@@ -30,15 +31,12 @@ color:#000000;
 cursor:pointer;
 font-size:16px;
 font-weight:bolder;
-height:55px;
-/* left:100px; */
-margin: 100px 20px 0px -190px;
-padding:16px 32px;
-/* position:absolute; */
+height:55px;/* left:100px; */
+margin: 170px 20px 0px -190px;
+padding:16px 32px;/* position:absolute; */
 text-align:center;
 text-decoration:none;
-text-transform:uppercase;
-/* top:860px; */
+text-transform:uppercase;/* top:860px; */
 width:180px;
 }
 
@@ -72,7 +70,8 @@ color:#000000;
 cursor:pointer;
 font-size:14px;
 height:45px;
-margin-left:200px;
+/* margin-right: -100px; */
+margin-left: 200px;
 padding:5px;
 text-align:center;
 text-decoration:none;
@@ -206,7 +205,7 @@ width:400px;
 #fact_and_author {
 display: block;
 position: relative;
-width: 400px;
+width: 380px;
 /* margin-left: 0px; */
 padding-top: 100px;
 height: auto;
@@ -237,8 +236,9 @@ display:table;
 }
 
 #fact_sheet_title {
+margin-left: 100px;
 text-align:center;
-width:200px;
+width: 150px;
 }
 
 .fact_title {
@@ -281,9 +281,7 @@ padding-bottom: 50px;
 width:400px;
 }
 
-#related_books_title {
-margin:30px 0 0 100px;
-}
+#related_books_title {margin: 30px 0 0 90px;}
 
 #related_books_title_mobile {
 color:#000000;

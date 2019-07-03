@@ -15,9 +15,7 @@ position: relative;
 width: 300px;
 }
 
-#about_the_author_title {
-margin-top:-20px;
-}
+#about_the_author_title {margin-top:-20px;margin-left: -10px;}
 
 #add_to_cart_button {
 background-color:#ABABAB;
@@ -217,7 +215,7 @@ display:table;
 }
 
 #fact_sheet_title {
-margin-right:350px;
+margin-right:350px;margin-left: 5px;
 }
 
 .fact_title {
@@ -257,14 +255,15 @@ margin-left:300px
 #related_books {
 clear: both;
 position: relative;
- height:600px;
- /* margin-top: 750px; */
+height:600px;
+/* margin-top: 750px; */
 display: block;
 }
 
 #related_books_title {
 margin-left:20px;
 margin-top:25px;
+width: 200px;
 }
 
 #related_books_title_mobile {
