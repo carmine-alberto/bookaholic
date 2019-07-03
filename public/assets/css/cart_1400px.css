@@ -49,7 +49,7 @@ margin-bottom:30px;
 padding:12px;
 position:relative;
 text-decoration:none;
-width:900px;
+width: 850px;
 }
 
 .cart_item:hover {
@@ -86,6 +86,8 @@ background-color:#ef4444;
 .close_button {
 background-color:#f3f3f3;
 border:none;
+float: right;
+margin-top: 10px;
 }
 
 .column {
