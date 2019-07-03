@@ -1,18 +1,26 @@
 const host = "https://bookaholic.herokuapp.com";
 var i=0;
 
-//var name_author;
+var name_author;
 
 const addData= function(selector, data)
 {
+    fetch(host+"/api/books?offset=0")
+    .then(response => response.json())
+    .then(books =>
+	    for(var i=0; i<books.length; i++)
+            {
+                if(books[i].book_id==data.book_id) name_author= books[i].authors[0].author_name
+            }
+	)
     
-    i++
+    i++;
     selector.append(
     '<div class="event">'+	
 '<img src="/assets/img/'+data["image"]+'" class="event_photo" id="event'+i+'_photo">'+
 '<h4 class="date" id="event'+i+'_date">'+data["date"].slice(0,10)+' <br><span id="event'+i+'_place">'+data["place"]+'</span></h4>'+
 '<h2 class="title" id="event'+i+'_title">'+data["title"]+'</h2>'+
-'<h2 class="author" id="event'+i+'_author">with </h2>'+
+'<h2 class="author" id="event'+i+'_author">with '+name_author+'</h2>'+
 '<a class="learn_more"'+
      'onclick="goToLink(event page, '+host+'/event?event_id='+data["event_id"]+')"'+
      'onkeydown="goToLink(profile, '+host+'/event?event_id='+data["event_id"]+')"'+
