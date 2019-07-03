@@ -1,5 +1,5 @@
 
-const jwt = window.localStorage.getItem("jwt");
+//const jwt set by navbar.js
 
 const handleErrors = function(response) {
   if (response.ok)

@@ -9,104 +9,82 @@
 <link rel="stylesheet" media="screen and (max-width: 400px)" href="assets/css/homepage_laura_400px.css" />
 <link rel="stylesheet" href="/assets/css/navbar.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/homepage.js"></script>
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script defer src="/assets/js/navbar.js"></script>
+<script defer src="/assets/js/homepage.js"></script>
 </head>
 
 
 <body>
 
-<!--- START navigation bar section --->
+  <!--- START navigation bar section --->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="/assets/img/bookaholic_logo.png" alt="bookaholic logo"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-  <div class="adjust-height">
-
-      <ul class="nav navbar-nav">
-        <li><a href="https://bookaholic.herokuapp.com" class="menu_item" role="menuitem" id="active">Home</a></li>
-
-        <li><a href="https://bookaholic.herokuapp.com/authors" class="menu_item" role="menuitem">Authors</a></li>
-
-		<li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
-          <ul class="dropdown-menu"
-			  id="genre_list"
-			  tabindex="-1"
-			  role="listbox"
-			  aria-labelledby="genre">
-            
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
-          <ul class="dropdown-menu"
-			  id="themes_list"
-			  tabindex="-1"
-			  role="listbox"
-			  aria-labelledby="theme">
-            
-          </ul>
-        </li>
-
-        <li><a href="https://bookaholic.herokuapp.com/events" class="menu_item" role="menuitem">Events</a></li>
-        <li><a href="https://bookaholic.herokuapp.com/about_us" class="menu_item" role="menuitem">About us</a></li>
-      </ul>
-
-
-		<form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group" id="searchbar">
-        <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
-        <div class="input-group-btn">
-          <button title="search button" class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-      </div>
-	</div>
-    </form>
-      <ul class="nav navbar-nav navbar-right">
-		  <li><a href="#"><span class="icon_name">
-		  <img src="/assets/img/logo_profile.png"
-			   alt="profile link"
-			   class="icon"
-			   tabindex="0"
-     		   onclick="goToLink(profile, 'http://www.w3.org/')"
-    		   onkeydown="goToLink(profile, 'http://www.w3.org/')"
-     		   role="link">
-			   Profile</span>
-			  </a>
-		  </li>
 
-          <li><a href="#"><span class="icon_name">
-		  <img src="/assets/img/logo_cart.png"
-			   alt="cart link"
-			   class="icon"
-			   tabindex="0"
-     		   onclick="goToLink(cart, 'http://www.w3.org/')"
-    		   onkeydown="goToLink(cart, 'http://www.w3.org/')"
-     		   role="link">
-			   Cart</span>
-			  </a>
-		  </li>
-      </ul>
+        <a class="navbar-brand" id="bookaholic_logo" href="#"><img src="/assets/img/bookaholic_logo.png" alt="bookaholic logo"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="adjust-height">
+          <ul class="nav navbar-nav" id="landmarks">
+            <li><a href="/" class="menu_item" role="menuitem">Home</a></li>
+
+            <li><a href="/authors" class="menu_item" role="menuitem">Authors</a></li>
+
+    		    <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Genres<span class="caret"></span></a>
+              <ul class="dropdown-menu"
+          			  id="genre_list"
+          			  tabindex="-1"
+          			  role="listbox"
+          			  aria-labelledby="genre">
+                  <!-- All genres - filled by JavaScript -->
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">Themes<span class="caret"></span></a>
+              <ul class="dropdown-menu"
+            		  id="themes_list"
+            		  tabindex="-1"
+            		  role="listbox"
+            		  aria-labelledby="theme">
+                  <!-- All themes - filled by JavaScript -->
+              </ul>
+            </li>
+
+            <li><a href="/events" class="menu_item" role="menuitem">Events</a></li>
+
+            <li><a href="/about_us" class="menu_item" role="menuitem">About us</a></li>
+          </ul>
+
+    		<form class="navbar-form navbar-left" action="#">
+          <div class="input-group" id="searchbar">
+            <input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">
+            <div class="input-group-btn">
+              <button title="search button" class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+    	   </div>
+        </form>
+
+        <ul class="nav navbar-nav navbar-right">
+      	  <!-- Actions - filled by JavaScript -->
+        </ul>
+      </div>
     </div>
   </div>
-	</div>
-</nav>
+  </nav>
 
-<!--- END navigation bar section --->
+  <!--- END navigation bar section --->
 
 
 <!--- START landing page section --->
@@ -271,9 +249,9 @@ Best sellers
 		aria-label="slide 1 of 3"
 			 >
 
-		
 
-		
+
+
 
 </div>
 
@@ -281,7 +259,7 @@ Best sellers
 <!--- Second slide --->
 
 
-                
+
             </li>
 
 <input type="radio" name="radio-buttons" id="img-2" />
@@ -290,17 +268,17 @@ Best sellers
 					role="group"
 	    			aria-roledescription="slide"
 					aria-label="slide 2 of 3">
-	
-		
+
+
 
                 </div>
 
 
 <!--- Third slide --->
-                
-                
 
-                
+
+
+
             </li>
             <input type="radio" name="radio-buttons" id="img-3" />
 
@@ -309,12 +287,12 @@ Best sellers
 				role="group"
 	    		aria-roledescription="slide"
 				aria-label="slide 3 of 3">
-			
-		
+
+
 
                 </div>
 
-                
+
             </li>
 
         </ul>
@@ -426,20 +404,18 @@ Gift cards and vouchers	</h3>
 
 <!--- START Active navbar element --->
 
-<script>
-
+<!-- <script>
+  May be integrated in navbar.js
 	$(".nav .nav-link").on("click", function(){
    $(".nav").find(".active").removeClass("active");
    $(this).addClass("active");
 });
 
-	</script>
+	</script> -->
 
 <!--- START Active navbar element --->
 
-    
-	
+
+
 </body>
 </html>
-
-
