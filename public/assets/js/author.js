@@ -54,11 +54,11 @@ const appendDataforBook = function(selector, data, selector1) {
             k++;
             selector
             .append(
-           '<div class="book">	'+
+           '<a class="book" href="'+host+'/book?id='+data["book_id"]+'">	'+
            '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h6>' +
-           '</div>'
+           '</a>'
                    );
             }
         else if(data.authors.length==2)
@@ -68,12 +68,12 @@ const appendDataforBook = function(selector, data, selector1) {
             k++;
             selector
             .append(
-           '<div class="book">	'+
+           '<a class="book" href="'+host+'/book?id='+data["book_id"]+'">	'+
            '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+
-           '</div>'
+           '</a>'
                    );
             }
         else if(data.authors.length==3)
@@ -83,13 +83,13 @@ const appendDataforBook = function(selector, data, selector1) {
             k++;
             selector
             .append(
-           '<div class="book">	'+
+         '<a class="book" href="'+host+'/book?id='+data["book_id"]+'">	'+
            '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+
             '<h3 class="book_author" id="book'+l+'_author3">'+data.authors[2].author_name+'</h3>'+
-           '</div>'
+           '</a>'
                    );
             }
         else
@@ -99,14 +99,14 @@ const appendDataforBook = function(selector, data, selector1) {
             k++;
             selector
             .append(
-           '<div class="book">	'+
+            '<a class="book" href="'+host+'/book?id='+data["book_id"]+'">	'+
            '<img src="/assets/img/'+data["cover"]+'" class="book_cover" id="book'+l+'_cover" alt="book_cover">'+
            '<h3 class="book_title" id="book'+l+'_title">' + data["title"] + '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author1">' + data.authors[0].author_name+ '</h3>' +
            '<h3 class="book_author" id="book'+l+'_author2">'+data.authors[1].author_name+'</h3>'+
             '<h3 class="book_author" id="book'+l+'_author3">'+data.authors[2].author_name+'</h3>'+
            '<h3 class="book_author" id="book'+l+'_author4">'+data.authors[3].author_name+'</h3>'+
-           '</div>'
+           '</a>'
                    );
             }
 
