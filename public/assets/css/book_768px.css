@@ -70,6 +70,14 @@ vertical-align:middle;
 width:180px;
 }
 
+.book {
+ float:left;
+ font-size:18px;
+ padding-left:60px;
+ text-align:center;
+ margin-top:-30px;
+}
+
 .book_author {
 font-size:16px;
 font-weight:lighter;
