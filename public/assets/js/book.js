@@ -32,7 +32,7 @@ const appendDataforbookinfo = function(selector, data) {
 '<br>'+
 '<h2 id="book_author_3"> </h2>'+
 '<h2 id="book_author_4"> </h2>'+	  
-'<h2 id="book_price">' + data["details"][0]["price"] + '</h2>' +
+'<h2 id="book_price">' + data["details"][0]["price"] + ' euro</h2>' +
 '<h5 id="book_resume">' + data["abstract"] + '</h5>' +
 '</div>	' +
 '<div id="add_to_cart_button" role="link" onclick="goToLink(cart page, )" onkeydown="goToLink(cart page, )">add to cart</div> </div>'
