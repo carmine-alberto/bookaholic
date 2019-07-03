@@ -27,15 +27,47 @@ const appendDataforbookinfo = function(selector, data) {
 '<div id="book_info">' +
 '<img id="book_image" alt="book_cover" src="/assets/img/'+ data["cover"]+'" alt="book_cover">' +
 '<h1 id="book_name">' + data["title"] + '</h1>' +
-'<h2 id="book_author_1"> Book_author </h2>' +
+'<h2 id="book_author_1">  </h2>' +
+'<h2 id="book_author_2"> </h2>'+
+'<br>'+
+'<h2 id="book_author_3"> </h2>'+
+'<h2 id="book_author_4"> </h2>'+	  
 '<h2 id="book_price">' + data["details"][0]["price"] + '</h2>' +
 '<h5 id="book_resume">' + data["abstract"] + '</h5>' +
 '</div>	' +
 '<div id="add_to_cart_button" role="link" onclick="goToLink(cart page, )" onkeydown="goToLink(cart page, )">add to cart</div> </div>'
   );
     genreBook= data["genre"];
+	
+	fetch(host+"/api/books?offset=0")
+	.then(response => response.json())
+	.then(books => appendDataForNameAuthor(books))
 };
 
+
+const appendDataForNameAuthor= function(books)
+{
+	var book_author_1= $("#book_author_1")
+	var book_author_2= $("#book_author_2")
+	var book_author_3= $("#book_author_3")
+	var book_author_4= $("#book_author_4")
+	
+	for(var t=0;t<books.lenght;t++)
+	{
+		if(books[t].book_id==id)
+		{
+			for(var f=0;f<books[t].authors.lenght;f++)
+			{
+				if(f==0) book_author_1.append(books[t].authors[0].author_name)
+				if(f==1) book_author_2.append(books[t].authors[1].author_name)
+				if(f==2) book_author_3.append(books[t].authors[2].author_name)
+				if(f==3) book_author_4.append(books[t].authors[3].author_name)
+			}
+		}
+	}
+}
+					
+			
 
 
 
