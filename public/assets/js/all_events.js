@@ -72,17 +72,16 @@ fetch(host+"/api/events?offset=0&where="+c3)
 }
 
 
-const appendDataForListThemes= function(selector, list)
+const addDataforPlaces= function(selector, data)
 {
-    for(var i=0;i<list.length;i++)
+    for(var h=0;h<data.length;h++)
         {
             selector.append(
-                '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
-                )
-                
+                '<option value="'+data[h]+'">'+data[h]+'</option>'
+            )
         }
-    
 }
+
 
 
     
