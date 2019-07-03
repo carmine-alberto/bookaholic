@@ -27,15 +27,53 @@ const appendDataforbookinfo = function(selector, data) {
 '<div id="book_info">' +
 '<img id="book_image" alt="book_cover" src="/assets/img/'+ data["cover"]+'" alt="book_cover">' +
 '<h1 id="book_name">' + data["title"] + '</h1>' +
-'<h2 id="book_author_1"> Book_author </h2>' +
-'<h2 id="book_price">' + data["details"][0]["price"] + '</h2>' +
+'<h2 id="book_author_1">   </h2>' +
+'<h2 id="book_author_2"> </h2>'+
+'<br>'+
+'<h2 id="book_author_3"> </h2>'+
+'<h2 id="book_author_4"> </h2>'+	  
+'<h2 id="book_price">' + data["details"][0]["price"] + ' euro</h2>' +
 '<h5 id="book_resume">' + data["abstract"] + '</h5>' +
 '</div>	' +
 '<div id="add_to_cart_button" role="link" onclick="goToLink(cart page, )" onkeydown="goToLink(cart page, )">add to cart</div> </div>'
   );
     genreBook= data["genre"];
+	
+	fetch(host+"/api/books?offset=0")
+	.then(response => response.json())
+	.then(books => appendDataForNameAuthor(books))
 };
 
+
+const appendDataForNameAuthor= function(books)
+{
+	
+	var book_author_1= $("#book_author_1")
+	var book_author_2= $("#book_author_2")
+	var book_author_3= $("#book_author_3")
+	var book_author_4= $("#book_author_4")
+	
+	
+	
+	for(var t=0;t<books.lenght;t++)
+	{
+		
+		if(books[t].book_id==id)
+		{
+			
+			for(var f=0;f<books[t].authors.lenght;f++)
+			{
+				
+				if(f==0) book_author_1.append(books[t].authors[0].author_name)
+				if(f==1) book_author_2.append(books[t].authors[1].author_name)
+				if(f==2) book_author_3.append(books[t].authors[2].author_name)
+				if(f==3) book_author_4.append(books[t].authors[3].author_name)
+			}
+		}
+	}
+}
+					
+			
 
 
 
@@ -46,7 +84,7 @@ const appendDataforFactsheet = function(selector, data) {
 '<div id="fact_sheet_content">' +
 '<div class="column">' +
 '<h4 class="fact_title"> Released : </h4>' +
-'<h5 id="release_date"> ' + data["publication_date"] + ' </h5>' +
+'<h5 id="release_date"> ' + data["publication_date"].slice(0,10) + ' </h5>' +
 '<h4 class="fact_title"> Language </h4>' +
 '<h5 id="book_language">' + data["language"] + '</h5>' +
 '<h4 class="fact_title"> Genre </h4>' +
@@ -134,7 +172,7 @@ const appendDataforEvents= function(selector, data)
         '<div class="events_container">'+
         '<div class="event">	'+
 '<img src="/assets/img/'+data[0]["image"]+'" class="book_image_event" id="event1_photo" alt="event_photo">'+
-'<h4 id="event_date">'+ data[0]["date"] + '<br><span id="event_place">'+data[0]["place"]+'</span></h4>' +
+'<h4 id="event_date">'+ data[0]["date"].slice(0,10) + '<br><span id="event_place">'+data[0]["place"]+'</span></h4>' +
 '<h2 class="title" id="event_title">The new mystery literature</h2>'+
 '<h2 class="author" id="event_author">with Gillian Flynn</h2>'+
 '<div id="learn_more">' + data[0]["info"] + '</div>'+
@@ -261,37 +299,12 @@ const appendDataforOtherBook= function(data)
 }
 
 
-const appendDataForListThemes= function(selector, list)
-{
-    for(var i=0;i<list.length;i++)
-        {
-            selector.append(
-                '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
-                )
-
-        }
-
-}
-
-const appendDataForListGenres= function(selector, list)
-{
-    for(var k=0; k<list.length; k++)
-        {
-            selector.append(
-               ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
-            )
-        }
-
-}
-
 
 
 
 
 //MAIN
 
-var genre_list= $("#genre_list");
-var themes_list= $("#themes_list");
 
  //Get id of author from URL
 var Url = self.location.href;
@@ -336,14 +349,4 @@ fetch(host + "/api/books/"+id)
         .then(events => appendDataforEvents(related_events, events))
 
         )
-.then(
-    fetch(host+"/api/books/themes")
-    .then(response => response.json())
-    .then(themes=> appendDataForListThemes(themes_list, themes))
-)
-.then(
 
-    fetch(host+"/api/books/genres")
-    .then(response => response.json())
-    .then(genres=> appendDataForListGenres(genre_list, genres))
-)

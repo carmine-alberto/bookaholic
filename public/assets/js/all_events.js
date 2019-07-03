@@ -84,27 +84,6 @@ const appendDataForListThemes= function(selector, list)
     
 }
 
-const appendDataForListGenres= function(selector, list)
-{
-    for(var k=0; k<list.length; k++)
-        {
-            selector.append(
-               ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
-            )
-        }
-    
-}
-
-const addDataforPlaces= function(selector, data)
-{
-    for(var h=0;h<data.length;h++)
-        {
-            selector.append(
-                '<option value="'+data[h]+'">'+data[h]+'</option>'
-            )
-        }
-}
-
 
     
 
@@ -112,8 +91,7 @@ const addDataforPlaces= function(selector, data)
 
 
 //MAIN
-var genre_list= $("#genre_list")
-var themes_list= $("#themes_list")
+
 var where= $("#where")
 var events_container= $("#events_container")
 
@@ -123,19 +101,8 @@ buttons.addEventListener("click", handler);
 fetch(host+"/api/events/places")
 .then(response => response.json())
 .then(places => addDataforPlaces(where, places))
-.then(
-    fetch(host+"/api/books/themes")
-    .then(response => response.json())
-    .then(themes=> appendDataForListThemes(themes_list, themes))
 
-.then(
 
-    fetch(host+"/api/books/genres")
-    .then(response => response.json())
-    .then(genres=> appendDataForListGenres(genre_list, genres))
-)
-
-)
 
 
 
