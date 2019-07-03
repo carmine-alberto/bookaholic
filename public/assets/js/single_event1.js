@@ -29,12 +29,12 @@ const addDataforEvent= function(selector1, data, selector2)
     )
     
     selector2.replaceWith(
-        '<div id="book_details"'+
+        '<a id="book_details" href="'+host+'+/book?id="'+data.book_id+'">
 	 'class="book_cover"'+ 
 	 'alt="book cover"'+
 	 'role="link"'+
-	 'onclick="goToLink(book page, '+host+'/book?id='+id+')"'+
-     'onkeydown="goToLink(book page, '+host+'/book?id='+id+')">See book details</div>'
+	 'onclick="goToLink(book page, '+host+'+/book?id="'+data.book_id+')"'+
+     'onkeydown="goToLink(book page, '+host+'+/book?id="'+data.book_id+')">See book details</a>'
         )
 }
 
