@@ -78,4 +78,4 @@ fetch(host+"/api/events/places")
 	fetch(host+"/api/events?offset=0")
 	.then(response => response.json())
 	.then(events => events
-	      .forEach(event => addData(events_container, event)))
+	      .forEach(event => addData(events_container, event))))
