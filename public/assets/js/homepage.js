@@ -1,4 +1,4 @@
-const host = "https://bookaholic.herokuapp.com";
+// const host declared in navbar.js
 var l=0;
 
 //HELPER
@@ -33,14 +33,14 @@ const appendDataForBook= function (books)
     var slide_2= $("#slide_2")
     var slide_3= $("#slide_3")
     var slide;
-    
-    
+
+
     for(var i=0;i<books.lenght;i++)
         {
             if(i<5) slide= slide_1;
             else if(i<10) slide= slide_2;
             else slide= slide_3;
-            
+
             if(books[i].authors.length==1)
             {
                 slide.append(
@@ -80,7 +80,7 @@ const appendDataForBook= function (books)
 			'</div> </div> </div>'
             )
                 }
-            
+
             else{
                 slide.append(
                     '<div class="image_and_caption">'+
@@ -94,8 +94,8 @@ const appendDataForBook= function (books)
             '<h6 class="book_author" id="book1_author4">'+books[i].authors[3].author_name+'</h6>'+
 			'</div> </div> </div>')
             }
-            
-            
+
+
             if(1==4)
                 {
                     slide.append(
@@ -133,9 +133,9 @@ const appendDataForBook= function (books)
                 '</div>'
                     )
                 }
-            
+
         }
-    
+
 }*/
 
 
@@ -165,11 +165,4 @@ Promise.all(
       .then(books => appendDataForBook(books)
     )*/
   ]
-)
-.then( () => {
-  //Add script to modify injected data - by doing it here, we are guaranteed that data has been loaded and is ready to be modified
-  script.src = "assets/js/magicscroll.js";
-  script.defer = true;
-  document.head.appendChild(script);
-});
-
+);
