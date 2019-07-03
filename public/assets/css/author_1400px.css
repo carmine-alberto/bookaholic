@@ -13,7 +13,13 @@ position:absolute;
 width:700px;
 }
 
-#author_bio_title {font-size:18px;/* font-weight:bolder; */left:595px;position:absolute;top:200px;width: 700px;}
+#author_bio_title {
+font-size:18px;
+left:595px;
+position:absolute;
+top:200px;
+width: 700px;
+}
 
 .authored_books_section {
 height:520px;
@@ -144,7 +150,10 @@ width:160px;
 background-color:#ef4444;
 }
 
-#related_events {background-color:#f3f3f3;/* height: auto; */width:1400px;}
+#related_events {
+background-color:#f3f3f3;
+width:1400px;
+}
 
 .section_title {
 font-size:26px;
