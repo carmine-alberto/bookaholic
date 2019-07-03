@@ -29,7 +29,7 @@ const addDataforEvent= function(selector1, data, selector2)
     )
     
     selector2.replaceWith(
-        '<a id="book_details" href="'+host+'+/book?id="'+data.book_id+'"'+
+        '<a id="book_details" href="'+host+'/book?id='+data.book_id+'"'+
 	 'class="book_cover"'+ 
 	 'alt="book cover"'+
 	 'role="link"'+
