@@ -6,15 +6,15 @@ var name_author;
 
 const addData= function(selector, data)
 {
-        i++;
+  i++;
 
-     fetch(host+"/api/books?offset=0")
-    .then(response => response.json())
-    .then(books => insertAuthor(books, data.book_id))
-    .then(
+  fetch(host+"/api/books?offset=0")
+  .then(response => response.json())
+  .then(books => insertAuthor(books, data.book_id))
+  .then(
 
-    selector.append(
-    '<div class="event">'+
+  selector.append(
+  '<div class="event">'+
 '<img src="/assets/img/'+data["image"]+'" class="event_photo" id="event'+i+'_photo">'+
 '<h4 class="date" id="event'+i+'_date">'+data["date"].slice(0,10)+' <br><span id="event'+i+'_place">'+data["place"]+'</span></h4>'+
 '<h2 class="title" id="event'+i+'_title">'+data["title"]+'</h2>'+
@@ -28,13 +28,7 @@ const addData= function(selector, data)
 
 '</div>'	))
 
-
-
 }
-
-
-
-
 
 const insertAuthor= function(books, book_id)
 {
@@ -44,10 +38,6 @@ const insertAuthor= function(books, book_id)
             }
 }
 
-
-
-
-
 const handler = function() {
 
 
@@ -56,11 +46,6 @@ events_container.empty();
 var a3 = document.getElementById("where");
 var c3 = a3.options[a3.selectedIndex].text;
 
-
-
-
-
-
 fetch(host+"/api/events?offset=0&where="+c3)
 .then(response => response.json())
 .then(data => data
@@ -68,7 +53,6 @@ fetch(host+"/api/events?offset=0&where="+c3)
 
 
 }
-
 
 const addDataforPlaces= function(selector, data)
 {
@@ -80,13 +64,6 @@ const addDataforPlaces= function(selector, data)
         }
 }
 
-
-
-
-
-
-
-
 //MAIN
 
 var where= $("#where")
@@ -97,4 +74,4 @@ buttons.addEventListener("click", handler);
 
 fetch(host+"/api/events/places")
 .then(response => response.json())
-.then(places => addDataforPlaces(where, places))
+.then(places => addDataforPlaces(where, places));
