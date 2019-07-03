@@ -53,7 +53,7 @@ const appendDataForNameAuthor= function(books)
 	var book_author_3= $("#book_author_3")
 	var book_author_4= $("#book_author_4")
 	
-	book_author_1.append(id)
+	book_author_1.append(books.lenght)
 	
 	for(var t=0;t<books.lenght;t++)
 	{
