@@ -123,14 +123,14 @@ const appendDataforReview= function(selector, dat)
 
     var k;
 
-    if(dat.lenght==0)
+    if(dat.length==0)
         {
             selector.append('<h3 id=no_reviews> NO REVIEWS </h3>')
         }
     else
         {
             //selector.append("<h>"+dat.lenght+"</h>");
-            for(k=1;k<=dat.lenght; k++)
+            for(k=1;k<=dat.length; k++)
                 {
 
                     selector.append(
