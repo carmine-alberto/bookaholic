@@ -27,7 +27,7 @@ const appendDataforbookinfo = function(selector, data) {
 '<div id="book_info">' +
 '<img id="book_image" alt="book_cover" src="/assets/img/'+ data["cover"]+'" alt="book_cover">' +
 '<h1 id="book_name">' + data["title"] + '</h1>' +
-'<h2 id="book_author_1">  ciao </h2>' +
+'<h2 id="book_author_1">   </h2>' +
 '<h2 id="book_author_2"> </h2>'+
 '<br>'+
 '<h2 id="book_author_3"> </h2>'+
@@ -53,14 +53,16 @@ const appendDataForNameAuthor= function(books)
 	var book_author_3= $("#book_author_3")
 	var book_author_4= $("#book_author_4")
 	
-	book_author_1.append("CIAO")
+	
 	
 	for(var t=0;t<books.lenght;t++)
 	{
 		if(books[t].book_id==id)
 		{
+			book_author_1.append("CIAO")
 			for(var f=0;f<books[t].authors.lenght;f++)
 			{
+				
 				if(f==0) book_author_1.append(books[t].authors[0].author_name)
 				if(f==1) book_author_2.append(books[t].authors[1].author_name)
 				if(f==2) book_author_3.append(books[t].authors[2].author_name)
