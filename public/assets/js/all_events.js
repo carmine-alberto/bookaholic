@@ -12,7 +12,6 @@ const addData= function(selector, data)
   .then(response => response.json())
   .then(books => insertAuthor(books, data.book_id))
   .then(
-
   selector.append(
   '<div class="event">'+
 '<img src="/assets/img/'+data["image"]+'" class="event_photo" id="event'+i+'_photo">'+
