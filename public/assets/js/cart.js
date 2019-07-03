@@ -13,9 +13,19 @@ const handleErrors = function(response) {
       }
 }
 
+const calculateTotal = function(cartItemsSelector) {
+  let total = 0.00;
+
+  cartItemsSelector.children(".book_subtotal").each(function() {
+    total += parseFloat($(this).text());
+  })
+
+  return total;
+}
+
 const appendBookItem = function(book, selector) {
   selector.append(
-    '<li class="cart_item">' +
+  '<li class="cart_item">' +
     '<button aria-label="Remove from cart"' +
         		'class="close_button"' +
         		'type="button"' +
@@ -26,13 +36,13 @@ const appendBookItem = function(book, selector) {
       '</div>' +
     '</button>' +
 
-    '<img class="book_cover" src="/assets/img/east_of_eden.jpg" alt="book cover">' +
+    '<img class="book_cover" src="/assets/img/' + book["cover"] + '" alt="book cover">' +
 
     '<div class="book_info">' +
       '<div class="column">' +
-        '<h3 class="book_title">East of Eden</h3>' +
-        '<h4 class="cover_type">John Steinbeck</h4>' +
-        '<h4 class="book_price">23.79 eur</h4>' +
+        '<h3 class="book_title">' + capitalizeString(book["book_title"]) + '</h3>' +
+        '<h4 class="cover_type">' + capitalizeString(book["cover_type"]) + '</h4>' +
+        '<h4 class="book_price">' + book["price"] + ' £</h4>' +
       '</div>' +
 
       '<div class="column">' +
@@ -61,7 +71,7 @@ const appendBookItem = function(book, selector) {
 
       '<div class="column">' +
         '<h4 class="book_subtotal_title">Subtotal</h4>' +
-        '<h4 class="book_subtotal">23.99 eur</h4>' +
+        '<h4 class="book_subtotal"></h4>' +
       '</div>' +
     '</div>' +
   '</li>'
@@ -96,27 +106,32 @@ const postOrder = function() {
 const populatePage = function(data) {
   console.log(data);
   const cartItemsSelector = $("#cart_items");
-  const subTotalSelector = $("#subtotal");
+  const totalSelector = $("#subtotal_number");
+  const checkoutButtonSelector = $("checkout_button");
 
   //Add cart_items or "No Items"
   if (data.length != 0) {
     data.forEach(book => appendBookItem(book, cartItemsSelector));
-    subTotalSelector.children("#subtotal_number").html(data.reduce((total, curr) => total + curr, 0.00) + " £");
-    subTotalSelector.children("button").click(postOrder);
+
+    //TODO Weird behaviour of "this" in case of arrow functions - further investigation is needed; for now, classic notation will be used
+    $('select').change(function() {
+        const selected = $(this).find('option:selected');
+        const affectedBook = $(this).parents(".book_info");
+        const affectedBookPrice = parseFloat(affectedBook.children(".book_price").text());
+        const multiplier = parseInt(selected.html());
+
+        affectedBook.children(".book_subtotal").text(affectedBookPrice * multiplier);
+
+        $("#subtotal_number").html(calculateTotal(cartItemsSelector));
+     }).change();
+
+    checkoutButtonSelector.click(postOrder);
   }
   else {
     cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart.</p></li>');
-    subTotalSelector.children("#subtotal_number").html("0.00 £");
-    subTotalSelector.children("button").prop("disabled", true);
+    totalSelector.html("0.00 £");
+    checkoutButtonSelector.prop("disabled", true);
   }
-
-  //Add event handlers
-  $('select').change(() => {
-      const selected = $(this).find('option:selected');
-      $('#text').html(selected.parent().attr("id"));
-      $('#value').html(selected.val());
-      $('#foo').html(selected.data('foo'));
-   });
 }
 
 //MAIN

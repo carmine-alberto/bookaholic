@@ -1,13 +1,16 @@
 
 var host = "";
 
+const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+
 const appendDataForListThemes = function(selector, list)
 {
     for (var i = 0; i < list.length; i++)
     {
       selector.append(
         '<li id="theme_' + list[i] + '" role="option">' +
-          '<a href="/theme?id=' + list[i] + '">' + list[i] + '</a>' +
+          '<a href="/theme?id=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
         '</li>'
       )
     }
@@ -20,7 +23,7 @@ const appendDataForListGenres= function(selector, list)
   {
     selector.append(
       '<li id="genre_' + list[i] + '" role="option">' +
-        '<a href="/genre?id=' + list[i] + '">' + list[i] + '</a>' +
+        '<a href="/genre?id=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
       '</li>'
     )
   }
