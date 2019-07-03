@@ -19,9 +19,9 @@ const calculateTotal = function(cartItemsSelector) {
   cartItemsSelector.find(".book_subtotal").each(function() {
                         //12.3 £ - we need just the number, which is the first item in the array
     total += parseFloat($(this).text().split(" ")[0]);
-  })
+  });
 
-  return total;
+  return total.toFixed(2);
 }
 
 const appendBookItem = function(book, selector) {
@@ -79,6 +79,8 @@ const appendBookItem = function(book, selector) {
 )};
 
 const postOrder = function() {
+  $("#checkout_button").prop("disabled", true);
+  
   const postParams = {
                       method: "POST",
                       headers: {"Content-Type": "text/plain",
@@ -105,24 +107,23 @@ const postOrder = function() {
 
 //MAIN's HELPER
 const populatePage = function(data) {
-  console.log(data);
   const cartItemsSelector = $("#cart_items");
   const totalSelector = $("#subtotal_number");
-  const checkoutButtonSelector = $("checkout_button");
+  const checkoutButtonSelector = $("#checkout_button");
 
   //Add cart_items or "No Items"
   if (data.length != 0) {
     data.forEach(book => appendBookItem(book, cartItemsSelector));
 
     //TODO Weird behaviour of "this" in case of arrow functions - further investigation is needed; for now, classic notation will be used
-    console.log($("select"));
     $("select").change(function() {
         const selected = $(this).find('option:selected');
         const affectedBook = $(this).parents(".book_info");
         const affectedBookPrice = parseFloat(affectedBook.find(".book_price").text());
         const multiplier = parseInt(selected.html());
+        const subtotal = (affectedBookPrice * multiplier).toFixed(2);
 
-        affectedBook.find(".book_subtotal").html(affectedBookPrice * multiplier + " £");
+        affectedBook.find(".book_subtotal").html( subtotal + " £");
 
         $("#subtotal_number").html(calculateTotal(cartItemsSelector) + " £");
      }).change();
@@ -130,7 +131,7 @@ const populatePage = function(data) {
     checkoutButtonSelector.click(postOrder);
   }
   else {
-    cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart.</p></li>');
+    cartItemsSelector.append('<li class="cart_item"><p>There are no books in your cart!</p></li>');
     totalSelector.html("0.00 £");
     checkoutButtonSelector.prop("disabled", true);
   }
