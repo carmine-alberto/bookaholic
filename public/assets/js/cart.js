@@ -16,8 +16,9 @@ const handleErrors = function(response) {
 const calculateTotal = function(cartItemsSelector) {
   let total = 0.00;
 
-  cartItemsSelector.children(".book_subtotal").each(function() {
-    total += parseFloat($(this).text());
+  cartItemsSelector.find(".book_subtotal").each(function() {
+                        //12.3 £ - we need just the number, which is the first item in the array
+    total += parseFloat($(this).text().split(" ")[0]);
   })
 
   return total;
@@ -36,7 +37,7 @@ const appendBookItem = function(book, selector) {
       '</div>' +
     '</button>' +
 
-    '<img class="book_cover" src="/assets/img/' + book["cover"] + '" alt="book cover">' +
+    '<a href="/book?id=' + book["book_id"] + '"><img class="book_cover" src="/assets/img/' + book["cover"] + '" alt="book cover" /></a>' +
 
     '<div class="book_info">' +
       '<div class="column">' +
@@ -114,15 +115,16 @@ const populatePage = function(data) {
     data.forEach(book => appendBookItem(book, cartItemsSelector));
 
     //TODO Weird behaviour of "this" in case of arrow functions - further investigation is needed; for now, classic notation will be used
-    $('select').change(function() {
+    console.log($("select"));
+    $("select").change(function() {
         const selected = $(this).find('option:selected');
         const affectedBook = $(this).parents(".book_info");
-        const affectedBookPrice = parseFloat(affectedBook.children(".book_price").text());
+        const affectedBookPrice = parseFloat(affectedBook.find(".book_price").text());
         const multiplier = parseInt(selected.html());
 
-        affectedBook.children(".book_subtotal").text(affectedBookPrice * multiplier);
+        affectedBook.find(".book_subtotal").html(affectedBookPrice * multiplier + " £");
 
-        $("#subtotal_number").html(calculateTotal(cartItemsSelector));
+        $("#subtotal_number").html(calculateTotal(cartItemsSelector) + " £");
      }).change();
 
     checkoutButtonSelector.click(postOrder);
