@@ -45,7 +45,7 @@ const appendBookItem = function(book, selector) {
       '<div class="column">' +
         '<h3 class="book_title">' + capitalizeString(book["book_title"]) + '</h3>' +
         '<h4 class="cover_type">' + capitalizeString(book["cover_type"]) + '</h4>' +
-        '<h4 class="book_price">' + book["price"] + ' £</h4>' +
+        '<h4 class="book_price">' + parseFloat(book["price"]).toFixed(2) + ' £</h4>' +
       '</div>' +
 
       '<div class="column">' +

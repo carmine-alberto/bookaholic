@@ -91,23 +91,27 @@ border:none!important;
 .faq{
 font-size: 18px;
 font-weight: normal;
-padding-left: 25px;
+padding-left: 45px;
 }
+
 .faq_answer{
 font-size: 16px;
 font-weight: lighter;
 padding-bottom: 15px;
-padding-left: 25px;
+padding-left: 45px;
+width: 1350px;
 }
 
 #faq_section{
 background-color: #F3F3F3;
-height: 450px;
+margin-bottom: 80px;
+height: auto;
+padding: 20px 0px 60px 0px;
 }
 
 .header_box{
 background-color: #EF4444;
-bottom: 597px;
+bottom: 965px;
 height: 20px;
 left: 670px;
 position: absolute;
@@ -151,7 +155,7 @@ font: bolder;
 font-size: 28px;
 font-weight: bolder;
 padding-bottom: 30px;
-padding-left: 25px;
+padding-left: 45px;
 padding-top: 15px;
 }
 

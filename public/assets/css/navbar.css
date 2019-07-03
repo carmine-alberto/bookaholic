@@ -9,6 +9,11 @@ body {
 font-family: "F37 Ginger"!important
 }
 
+@font-face {
+font-family:"F37 Ginger"!important;
+src: url("/assets/F37 Ginger Regular.ttf") format("truetype");
+}
+
 @media (max-width:1400px) {
 	
 	navbar navbar-inverse navbar-fixed-top {
@@ -93,7 +98,7 @@ padding-left: 280px!important;
 	}
 	
 	.navbar-left {
-padding-left: 5px!important;
+padding-left: 10px!important;
 	}	
 	
 	.navbar-header {
