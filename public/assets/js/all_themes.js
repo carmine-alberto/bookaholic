@@ -102,28 +102,7 @@ const appendData= function(selector, data, identifier, dim, i)
 
 
 
-const appendDataForListThemes= function(selector, list)
-{
-    for(var i=0;i<list.length;i++)
-        {
-            selector.append(
-                '<li id="theme_'+list[i]+'" role="option"><a href="https://bookaholic.herokuapp.com/theme?theme='+list[i]+'">'+list[i]+'</a></li>'
-                )
-                
-        }
-    
-}
 
-const appendDataForListGenres= function(selector, list)
-{
-    for(var k=0; k<list.length; k++)
-        {
-            selector.append(
-               ' <li id="genre_'+list[k]+'"  role="option"> <a href="https://bookaholic.herokuapp.com/genre?genre='+list[k]+'">'+list[k]+'</a></li>'
-            )
-        }
-    
-}
 
 
 
@@ -140,8 +119,7 @@ var books_container4= $(".books_container_4");
 var books_container5= $(".books_container_5");
 var books_container6= $(".books_container_6");
 var books_container7= $(".books_container_7");
-var genre_list= $("#genre_list");
-var themes_list= $("#themes_list");
+
 
 fetch(host+"/api/books?theme=family&limit=5&offset=0")
 .then(response => response.json())
@@ -171,14 +149,4 @@ fetch(host+"/api/books?theme=family&limit=5&offset=0")
 .then(response => response.json())
 .then(data => data
       .forEach(book => appendData(books_container7, book, "war",data.length,g++))))
-.then(
-    fetch(host+"/api/books/themes")
-    .then(response => response.json())
-    .then(themes=> appendDataForListThemes(themes_list, themes))
-)
-.then(
 
-    fetch(host+"/api/books/genres")
-    .then(response => response.json())
-    .then(genres=> appendDataForListGenres(genre_list, genres))
-)
