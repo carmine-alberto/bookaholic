@@ -27,7 +27,7 @@ const appendDataforbookinfo = function(selector, data) {
 '<div id="book_info">' +
 '<img id="book_image" alt="book_cover" src="/assets/img/'+ data["cover"]+'" alt="book_cover">' +
 '<h1 id="book_name">' + data["title"] + '</h1>' +
-'<h2 id="book_author_1">  </h2>' +
+'<h2 id="book_author_1">  ciao </h2>' +
 '<h2 id="book_author_2"> </h2>'+
 '<br>'+
 '<h2 id="book_author_3"> </h2>'+
