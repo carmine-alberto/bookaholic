@@ -166,7 +166,7 @@ const appendDataforEvents= function(selector, data)
         '<div class="events_container">'+
         '<div class="event">	'+
 '<img src="/assets/img/'+data[0]["image"]+'" class="book_image_event" id="event1_photo" alt="event_photo">'+
-'<h4 id="event_date">'+ data[0]["date"] + '<br><span id="event_place">'+data[0]["place"]+'</span></h4>' +
+'<h4 id="event_date">'+ data[0]["date"].slice(0,10) + '<br><span id="event_place">'+data[0]["place"]+'</span></h4>' +
 '<h2 class="title" id="event_title">The new mystery literature</h2>'+
 '<h2 class="author" id="event_author">with Gillian Flynn</h2>'+
 '<div id="learn_more">' + data[0]["info"] + '</div>'+
