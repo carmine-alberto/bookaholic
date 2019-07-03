@@ -124,12 +124,12 @@ display:inline-block;
 font-size:18px;
 font-weight: bolder;
 height:50px;
-margin:100px 0 0 40px;
+margin: 100px 15px 0 40px;
 padding:10px 32px;
 text-align:center;
 text-decoration:none;
 vertical-align:middle;
-width:180px;
+width: 180px;
 }
 
 .show_more_button:hover {
