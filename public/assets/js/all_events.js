@@ -10,7 +10,6 @@ const addData= function(selector, data)
 	
      fetch(host+"/api/books?offset=0")
     .then(response => response.json())
-<<<<<<< HEAD
     .then(books =>
 	    for(var i=0; i<books.length; i++)
             {
@@ -18,12 +17,11 @@ const addData= function(selector, data)
             }
 	)
 
-    i++;
-=======
+    
+	
     .then(books => insertAuthor(books, data.book_id))
     .then(
 
->>>>>>> 420f609c7b09db8eacea5d7ff2b6f9ec0e8b453c
     selector.append(
     '<div class="event">'+
 '<img src="/assets/img/'+data["image"]+'" class="event_photo" id="event'+i+'_photo">'+
@@ -36,44 +34,20 @@ const addData= function(selector, data)
      'role="link"'+
     'href="'+host+'/event?event_id='+data["event_id"]+'">Learn more</a>'+
 
-<<<<<<< HEAD
+
 
 
 '</div>'	)
-=======
+
         
 '</div>'	))
 	
 	
->>>>>>> 420f609c7b09db8eacea5d7ff2b6f9ec0e8b453c
+
 
 }
 
 
-
-
-
-const insertAuthor= function(books, book_id)
-{
-	for(var i=0; i<books.length; i++)
-            {
-                if(books[i].book_id==book_id) name_author= books[i].authors[0].author_name
-            }
-<<<<<<< HEAD
-        name_author="CIAO"
-    }
-
-const lookForAuthor= function(event)
-{
-    fetch(host+"/api/books?offset=0")
-    .then(response => response.json())
-	.then(books => returnAuthor(books, event.book_id))
-    .then(addData(events_container, event))
-
-}*/
-=======
-}
->>>>>>> 420f609c7b09db8eacea5d7ff2b6f9ec0e8b453c
 
 
 
@@ -134,9 +108,9 @@ fetch(host+"/api/events/places")
 	.then(response => response.json())
 	.then(data => data
 	      .forEach(event => addData(events_container,event)))
-<<<<<<< HEAD
+
 	)
-=======
+
 	)*/
 	
 
@@ -146,4 +120,4 @@ fetch(host+"/api/events/places")
 
 
       
->>>>>>> 420f609c7b09db8eacea5d7ff2b6f9ec0e8b453c
+
