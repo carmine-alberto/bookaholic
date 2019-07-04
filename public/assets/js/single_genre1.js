@@ -113,7 +113,7 @@ const addData= function(selector, data)
 
 const handler = function() { 
 
-
+i=0;
 books_containers.empty();
     
 var a1 = document.getElementById("genre_dropdown");
