@@ -152,10 +152,11 @@ var theme= getUrlParameter(Url).theme;
 var books_containers= $(".books_containers");
 
 var header_text= $(".header_text");
-header_text.replaceWith("theme");
+
 
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
+header_text.replaceWith("theme");
 
 
 
