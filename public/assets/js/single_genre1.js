@@ -157,9 +157,23 @@ var Url = self.location.href;
 var genre= getUrlParameter(Url).genre;
 
 var header_container= $(".header_container");
+if(genre=="art%20and%20design")
+{
+	header_container.append(
+'<h1 class="header_text"> art and disegn</h1>'
+                              )
+}
+else if(genre=="science%20fiction")
+{
+	header_container.append(
+'<h1 class="header_text"> science fiction </h1>'
+                               )
+}
+else{
 header_container.append(
 '<h1 class="header_text">'+genre+'</h1>'
 )
+}
 
 var books_containers= $(".books_containers");
 var buttons = document.getElementById("apply_filters");
