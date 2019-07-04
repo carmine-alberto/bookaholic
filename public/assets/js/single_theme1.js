@@ -36,7 +36,7 @@ const addData= function(selector, data)
 '<div class="authors_container">'+
  
 '<h4 class="book_author" id="book'+i+'_author1">'+data.authors[0].author_name+'</h4>'+
-'</div>'
+'</div>'+
 '</a>'
     )
         }
