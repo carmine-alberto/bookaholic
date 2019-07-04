@@ -113,7 +113,7 @@ const addData= function(selector, data)
 
 const handler = function() { 
 
-
+i=0;
 books_containers.empty();
     
 var a1 = document.getElementById("genre_dropdown");
@@ -156,9 +156,34 @@ fetch(host+"/api/books?published_after="+c2+"-01-01&suggested="+suggestedBoolean
 var Url = self.location.href;
 var genre= getUrlParameter(Url).genre;
 
+var header_container= $(".header_container");
+if(genre=="art%20and%20design")
+{
+	header_container.append(
+'<h1 class="header_text"> art and disegn</h1>'
+                              )
+}
+else if(genre=="science%20fiction")
+{
+	header_container.append(
+'<h1 class="header_text"> science fiction </h1>'
+                               )
+}
+else{
+header_container.append(
+'<h1 class="header_text">'+genre+'</h1>'
+)
+}
+
 var books_containers= $(".books_containers");
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
+
+fetch(host+"/api/books?genre="+genre+"&offset=0")
+.then(response => response.json())
+.then(books => books
+      .forEach(book => addData(books_containers, book)))
+
 
 
 

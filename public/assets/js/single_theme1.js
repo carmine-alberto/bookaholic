@@ -153,7 +153,7 @@ var books_containers= $(".books_containers");
 
 var header_container= $(".header_container");
 
-header_container.replaceWith(
+header_container.append(
 	'<h1 class="header_text">'+theme+' </h1>'
 );
 

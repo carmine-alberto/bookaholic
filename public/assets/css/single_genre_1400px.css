@@ -33,6 +33,7 @@ text-align:center;
 }
 
 .book_author {
+color:#000000;
 font-size:12px;
 font-weight:lighter;
 }
@@ -49,6 +50,7 @@ opacity:0.8;
 }
 
 .book_title {
+color:#000000;
 font-size:15px;
 font-weight:bold;
 }
