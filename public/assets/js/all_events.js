@@ -31,9 +31,9 @@ const addData= function(selector, data)
 
 const insertAuthor= function(books, book_id)
 {
-	for(var i=0; i<books.length; i++)
+	for(var b=0; b<books.length; b++)
             {
-                if(books[i].book_id==book_id) name_author= books[i].authors[0].author_name
+                if(books[b].book_id==book_id) name_author= books[b].authors[0].author_name
             }
 }
 

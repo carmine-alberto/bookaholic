@@ -24,7 +24,7 @@ const addData= function(selector, data)
         {
             selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,'+host+'/book?id='+data["book_id"]+')"'+
@@ -35,14 +35,15 @@ const addData= function(selector, data)
 	
 '<h3 class="book_author" id="book'+i+'_author1">'+data.authors[0].author_name+'</h3>'+
 	
-'</div>'	
+'</div>'+
+		    '</a>'
     )
         }
     else if(data.authors.length==2)
         {
             selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,'+host+'/book?id='+data["book_id"]+')"'+
@@ -55,14 +56,16 @@ const addData= function(selector, data)
 '<h3 class="book_author" id="book'+i+'_author2">'+data.authors[1].author_name+'</h3>'+
 
 	
-'</div>'	
+'</div>'+
+		    '</a>'
+	
     )
         }
     else if(data.authors.length==3)
         {
             selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,'+host+'/book?id='+data["book_id"]+')"'+
@@ -76,14 +79,15 @@ const addData= function(selector, data)
 '<h3 class="book_author" id="book'+i+'1_author3">'+data.authors[2].author_name+'</h3>'+
 
 	
-'</div>'	
+'</div>'+
+		    '</a>'
     )
         }
     else
         {
             selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,'+host+'/book?id='+data["book_id"]+')"'+
@@ -97,7 +101,8 @@ const addData= function(selector, data)
 '<h3 class="book_author" id="book1_author3">'+data.authors[2].author_name+'</h3>'+
 '<h3 class="book_author" id="book1_author4">'+data.authors[3].author_name+'</h3>'+
 	
-'</div>'	
+'</div>'+
+		    '</a>'
     )
         }
     

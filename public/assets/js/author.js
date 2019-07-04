@@ -1,7 +1,9 @@
 // const host set in navbar.js
 var i=0;
 var c=0;
-
+books_id = new Array();
+var count=0; //contatore numero iterazioni funzione appendDataforBook
+var trov = new Boolean("false");
 
 //HELPER
 const appendData = function(selector, data) {
@@ -12,11 +14,13 @@ const appendData = function(selector, data) {
   )
 };
 
-const appendDataforBook = function(selector, data, selector1) {
+const appendDataforBook = function(selector, data, selector1, dim_books) {
     var k=0; //contatore di autori
     var l=0; //contatore di libri libro
     var trovato = new Boolean("false");
+   
 
+    count ++;
     trovato=false;
     for(i=0;i<data.authors.length; i++)
         {
@@ -92,18 +96,33 @@ const appendDataforBook = function(selector, data, selector1) {
                    );
             }
 
-         fetch(host+"/api/events?about="+data["book_id"])
-         .then(response => response.json())
-         .then(data=> data
-               .forEach(event => appendDataforEvents(selector1, event)))
+         
+          books_id.push(data["book_id"]);
+      
+         
 
         }
+  
+  if(count==dim_books)
+  {
+    appendDataforEvents(selector1, books_id);
+  }
+      
 
     };
 
 const appendDataforEvents= function(selector, data)
 {
-    c++;
+   trov=false;
+    
+
+    for(c=0;c<data.length;c++)
+    {
+      fetch(host+"/api/events?offset=0&about="+data[c])
+      .then(response => response.json())
+      .then(events => events
+            .forEach(data =>
+                     
     selector.append(
             '<div class="event">'+
             '<img src="/assets/img/'+data["image"]+'" class="book_image_event" id="event'+c+'_photo" alt="event_photo">'+
@@ -114,6 +133,16 @@ const appendDataforEvents= function(selector, data)
 
            '</div>'
         )
+               
+                     ))
+    
+                     
+  }
+  
+  if(!trov)
+  {
+    selector.append('<h3 id="no_events"> NO EVENTS </h3>')
+  }
 }
 
 
@@ -147,5 +176,5 @@ fetch(host + "/api/authors/"+id)
     fetch(host + "/api/books?limit=100")
     .then(response => response.json())
     .then(data => data
-    .forEach(book => appendDataforBook(books_containers, book, events_container)))
+    .forEach(book => appendDataforBook(books_containers, book, events_container, data.length)))
 )

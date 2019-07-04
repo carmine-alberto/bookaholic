@@ -26,25 +26,25 @@ const addData= function(selector, data)
         {
              selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'"> '+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
-	    'role="link"'+
-	 'onclick="goToLink(book page,)"'+
-     'onkeydown="goToLink(book page,)">	'+
+     'role="link"'+
+  'onclick="goToLink(book page,)"'+
+     'onkeydown="goToLink(book page,)"> '+
 '<h3 class="book_title" id="book'+i+'_title">'+data["title"]+'</h3>'+
-	
+ 
 '<div class="authors_container">'+
-	
+ 
 '<h4 class="book_author" id="book'+i+'_author1">'+data.authors[0].author_name+'</h4>'+
-	
-'</div>'	
+'</div>'+
+'</a>'
     )
         }
     else if(data.authors.length==2)
         {
              selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,)"'+
@@ -57,14 +57,15 @@ const addData= function(selector, data)
 '<h4 class="book_author" id="book'+i+'_author2">'+data.authors[1].author_name+'</h4>'+
 
 	
-'</div>'	
+'</div>'+
+		     '</a>'
     )
         }
     else if(data.authors.length==3)
         {
              selector.append(
     
-        '<div class="book">	'+
+        '<a class="book"  href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,)"'+
@@ -78,7 +79,8 @@ const addData= function(selector, data)
 '<h4 class="book_author" id="book'+i+'_author3">'+data.authors[2].author_name+'</h4>'+
 
 	
-'</div>'	
+'</div>'+
+		     '</a>'
     )
         }
     
@@ -86,7 +88,7 @@ const addData= function(selector, data)
         {
              selector.append(
     
-        '<div class="book">	'+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'">	'+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
 	    'role="link"'+
 	 'onclick="goToLink(book page,)"'+
@@ -100,7 +102,8 @@ const addData= function(selector, data)
 '<h4 class="book_author" id="book1_author3">'+data.authors[2].author_name+'</h4>'+
 '<h4 class="book_author" id="book1_author4">'+data.authors[3].author_name+'</h4>'+
 	
-'</div>'	
+'</div>'+
+		     '</a>'
     )
    
 }
@@ -147,8 +150,23 @@ var Url = self.location.href;
 var theme= getUrlParameter(Url).theme;
 
 var books_containers= $(".books_containers");
+
+var header_container= $(".header_container");
+
+header_container.replaceWith(
+	'<h1 class="header_text">'+theme+' </h1>'
+);
+
+
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
+
+fetch(host+"/api/books?theme="+theme+"&offset=0")
+.then(response => response.json())
+.then(books => books
+      .forEach(book => addData(books_containers, book)))
+
+
 
 
 
