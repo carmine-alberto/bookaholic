@@ -92,7 +92,7 @@ const appendReviews = (selector, data) => data["reviews"]
       '<div class="single_review">' +
         '<img class="review_image" src="/assets/img/user.png" alt="user profile picture">' +
         '<h5 class="reviewer">' + review["username"] + '</h5>' +
-        '<img class="stars" src="assets/img/stars_' + review["rating"] + '>' +
+        '<img class="stars" src="/assets/img/stars_' + review["rating"] + '.png" />' +
         '<h5 class="review">'+ review["content"] + '</h5>	' +
       '</div>'
     )
