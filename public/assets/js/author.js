@@ -133,8 +133,8 @@ const appendDataforEvents= function(selector, data)
 
            '</div>'
         )
-                     )
-           .then(trov=true))
+               trov=true;
+                     ))
     
                      
   }
