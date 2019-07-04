@@ -150,6 +150,10 @@ var Url = self.location.href;
 var theme= getUrlParameter(Url).theme;
 
 var books_containers= $(".books_containers");
+
+var header_text= $(".header_text");
+header_text.append(capitalizeString(theme))
+
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
 
