@@ -51,10 +51,6 @@ font-weight:bold;
 .books_containers {
 display:grid;
 grid-template-columns:auto auto;
-left:20px;
-margin-top:120px;
-position:absolute;
-top:620px;
 }
 
 .dropdown_menu {
