@@ -122,7 +122,7 @@ const appendDataforEvents= function(selector, data)
       .then(response => response.json())
       .then(events => events
             .forEach(data =>
-                     trov=true;
+                     
     selector.append(
             '<div class="event">'+
             '<img src="/assets/img/'+data["image"]+'" class="book_image_event" id="event'+c+'_photo" alt="event_photo">'+
@@ -133,7 +133,8 @@ const appendDataforEvents= function(selector, data)
 
            '</div>'
         )
-                     ))
+                     )
+           .then(trov=true)
     
                      
   }
