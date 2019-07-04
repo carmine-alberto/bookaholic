@@ -60,6 +60,7 @@ text-align:center;
 .book_author {
 font-size:12px;
 font-weight:lighter;
+line-height:1px;
 }
 
 .book_cover {
