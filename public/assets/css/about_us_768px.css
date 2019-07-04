@@ -58,7 +58,15 @@ background-color: #F3F3F3;
 height: 570px;
 }
 
-.header_box{width: 185px;height: 20px;background-color: #EF4444;position: absolute;top: 225px;left: 325px;z-index: inherit;}
+.header_box{
+ width: 185px;
+ height: 20px;
+ background-color: #EF4444;
+ position: absolute;
+ top: 225px;
+ left: 325px;
+ z-index: inherit;
+}
 
 .header_container{
 height: 320px;
