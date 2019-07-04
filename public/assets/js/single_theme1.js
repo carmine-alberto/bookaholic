@@ -151,12 +151,14 @@ var theme= getUrlParameter(Url).theme;
 
 var books_containers= $(".books_containers");
 
-var header_text= $(".header_text");
+var header_container= $(".header_container");
 
 
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
-header_text.replaceWith("theme");
+header_container.replaceWith(
+	'<h1 class="header_text">'+theme+' </h1>'
+);
 
 
 
