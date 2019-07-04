@@ -6,20 +6,6 @@ var c=0;
 
 
 
-function getUrlParameter(url) {
-    var toReturn = {};
-    var questionSplit = url.split('?');
-    questionSplit.shift();
-    var onlyParameters = questionSplit.join('?');
-    var splittedParameters = onlyParameters.split('&');
-    for (var c = 0; c < splittedParameters.length; c++) {
-        var parts = splittedParameters[c].split('=');
-        if ($.trim(parts[0]) != '') {
-            toReturn[parts[0]] = parts[1];
-        }
-    }
-    return toReturn;
-}
 
 //HELPER
 const appendData = function(selector, data) {
@@ -152,8 +138,8 @@ var books_containers= $(".books_containers")
 var events_container= $(".events_container")
 
  //Get id of author from URL
-var Url = self.location.href;
-var id= getUrlParameter(Url).author_id;
+var url = self.location.href;
+var id= getUrlParametersAsObject(url).author_id;
 
 
 
@@ -167,4 +153,3 @@ fetch(host + "/api/authors/"+id)
     .then(data => data
     .forEach(book => appendDataforBook(books_containers, book, events_container)))
 )
-
