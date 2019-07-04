@@ -3,6 +3,7 @@ var i=0;
 var c=0;
 books_id = new Array();
 var count=0; //contatore numero iterazioni funzione appendDataforBook
+var trov = new Boolean("false");
 
 //HELPER
 const appendData = function(selector, data) {
@@ -112,12 +113,7 @@ const appendDataforBook = function(selector, data, selector1, dim_books) {
 
 const appendDataforEvents= function(selector, data)
 {
-    if(data.length==0)
-       {
-       selector.append('<h3 id="no_events"> NO EVENTS </h3>')
-       }
-  else 
-  {
+   trov=false;
     
 
     for(c=0;c<data.length;c++)
@@ -126,6 +122,7 @@ const appendDataforEvents= function(selector, data)
       .then(response => response.json())
       .then(events => events
             .forEach(data =>
+                     trov=true;
     selector.append(
             '<div class="event">'+
             '<img src="/assets/img/'+data["image"]+'" class="book_image_event" id="event'+c+'_photo" alt="event_photo">'+
@@ -137,7 +134,13 @@ const appendDataforEvents= function(selector, data)
            '</div>'
         )
                      ))
-    }
+    
+                     
+  }
+  
+  if(!trov)
+  {
+    selector.append('<h3 id="no_events"> NO EVENTS </h3>')
   }
 }
 
