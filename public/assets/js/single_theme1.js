@@ -26,7 +26,7 @@ const addData= function(selector, data)
         {
              selector.append(
     
-        '<a class="book"> '+
+        '<a class="book" href="'+host+'/book?id='+data.book_id+'"> '+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
      'role="link"'+
   'onclick="goToLink(book page,)"'+
