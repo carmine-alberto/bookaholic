@@ -87,7 +87,10 @@ const appendAuthorsInfo = (selector, data) => data["authors"]
   );
 
 //expects reviewsContainerSelector
-const appendReviews = (selector, data) => data["reviews"]
+const appendReviews = (selector, data) => {
+  if (data["reviews"].length != 0)
+    selector.empty();
+  data["reviews"]
   .forEach(review => selector.append(
       '<div class="single_review">' +
         '<img class="review_image" src="/assets/img/user.png" alt="user profile picture">' +
@@ -96,10 +99,14 @@ const appendReviews = (selector, data) => data["reviews"]
         '<h5 class="review">'+ review["content"] + '</h5>	' +
       '</div>'
     )
-  );
+  )
+};
 
 //expects .events_container
-const appendEvents = (selector, data) => data["events"]
+const appendEvents = (selector, data) => {
+  if (data["events"].length != 0)
+    selector.empty();
+  data["events"]
   .forEach(event => {
     const eventDateTime = new Date(event["date"]);
     const dateTimeOptions = {year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit", minute: "2-digit" }
@@ -111,7 +118,7 @@ const appendEvents = (selector, data) => data["events"]
           '<br><span id="event_place">' + event["place"] + '</span>' +
         '</h4>' +
         '<h2 class="title" id="event_title">' + event["title"] + '</h2>' +
-        '<h2 class="author" id="event_author">with' + data["authors"][0]["name"] + '</h2>' + //Assumption: only events with one author related or only one of them present
+        '<h2 class="author" id="event_author">with ' + data["authors"][0]["name"] + '</h2>' + //Assumption: only events with one author related or only one of them present
         '<a href="/event?id=' + event["event_id"] + '">' +
           '<button title="menu_icon"' +
                   'type="button"' +
@@ -123,7 +130,7 @@ const appendEvents = (selector, data) => data["events"]
       '</div>'
     )
   }
-);
+)};
 
 const appendSimilarBooks = (selector, data) => {
     var libro = 0;
