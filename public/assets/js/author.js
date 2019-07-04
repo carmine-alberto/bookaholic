@@ -132,7 +132,7 @@ const appendDataforEvents= function(selector, data)
             '<a href="'+host+'/event?event_id='+data["event_id"]+'" title="menu_icon" type="button" role="button" class="learn_more">Learn more</a>'+
 
            '</div>'
-        )
+        ).then(trov=true)
                
                      ))
     
