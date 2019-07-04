@@ -56,10 +56,8 @@ font-weight:700;
 .books_containers {
 display:grid;
 grid-template-columns:auto auto auto auto auto;
-left:20px;
 margin-top:120px;
-position:absolute;
-top:550px;
+padding-right:60px;
 }
 
 .dropdown_menu {
