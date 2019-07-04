@@ -53,9 +53,6 @@ font-weight:bold;
 display:grid;
 grid-template-columns:auto auto auto;
 left:20px;
-margin-top:120px;
-position:absolute;
-top:650px;
 }
 
 .dropdown_menu {
