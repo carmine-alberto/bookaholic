@@ -164,7 +164,7 @@ buttons.addEventListener("click", handler);
 fetch(host+"/api/books?theme="+theme+"&offset=0")
 .then(response => response.json())
 .then(books => books
-      .forEach(book => addData(books_containers, book)))
+      .forEach(book => addData(books_containers, book)));
 
 
 
