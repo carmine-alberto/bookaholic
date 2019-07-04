@@ -160,7 +160,7 @@ var header_container= $(".header_container");
 if(genre=="art%20and%20design")
 {
 	header_container.append(
-'<h1 class="header_text"> art and disegn</h1>'
+'<h1 class="header_text"> art and design</h1>'
                               )
 }
 else if(genre=="science%20fiction")
