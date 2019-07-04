@@ -10,13 +10,7 @@ padding:50px 50px 50px 75px;
 width:460px;
 }
 
-#author_bio_title {
-font-size:18px;
-left: 400px;
-position:absolute;
-top: 340px;
-width: 300px;
-}
+#author_bio_title {font-weight:;font-size:18px;left: 400px;position:absolute;top: 340px;width: 300px;}
 
 .authored_books_section {
 height:520px;
@@ -55,10 +49,7 @@ padding-bottom:15px;
 text-align:center;
 }
 
-.book_author {
-font-size:12px;
-font-weight:lighter;
-}
+.book_author {color: black;font-size:12px;font-weight:lighter;}
 
 .books_containers {
 display:grid;
@@ -80,10 +71,7 @@ width:145px;
 opacity:0.8;
 }
 
-.book_title {
-font-size:15px;
-font-weight:bold;
-}
+.book_title {color: black;font-size:15px;font-weight:bold;}
 
 .event {
 margin:50px;
@@ -128,6 +116,9 @@ width:180px;
 background-color:#ef4444;
 }
 
+#no_events {
+margin-left:40px
+}
 
 #related_events {
 background-color:#f3f3f3;
