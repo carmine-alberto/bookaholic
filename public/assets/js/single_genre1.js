@@ -156,9 +156,20 @@ fetch(host+"/api/books?published_after="+c2+"-01-01&suggested="+suggestedBoolean
 var Url = self.location.href;
 var genre= getUrlParameter(Url).genre;
 
+var header_container= $(".header_container");
+header_container.append(
+'<h1 class="header_text">'+genre+'</h1>'
+)
+
 var books_containers= $(".books_containers");
 var buttons = document.getElementById("apply_filters");
 buttons.addEventListener("click", handler);
+
+fetch(host+"/api/books?genre="+genre+"&offset=0")
+.then(response => response.json())
+.then(books => books
+      .forEach(book => addData(books_containers, book)))
+
 
 
 
