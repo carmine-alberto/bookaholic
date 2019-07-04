@@ -1,4 +1,4 @@
-const host="https://bookaholic.herokuapp.com";
+// const host set inside navbar.js
 var a=1; //contatore per i libri
 var b=1;
 var c=1;
@@ -11,35 +11,35 @@ const appendData= function(selector, data, identifier, dim, i,link)
         {
             selector.append(
     '<a class="book" '+
-		'href="'+host+'/book?id='+data["book_id"]+'">'+		
-    '<img src="assets/img/'+data["cover"]+'"' + 
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
+    '<img src="assets/img/'+data["cover"]+'"' +
     'id="book'+i+'_photo_+'+identifier+'" '+
-    'class="book_cover" '+ 
+    'class="book_cover" '+
 	 'alt="book cover"'+
 	 'role="link"'+
 	 'onclick="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')"'+
-     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+	
+     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+
      '<h3 class="book_name" id="book'+i+'_name_'+identifier+'">'+data["title"]+'</h3>'+
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
      '</a>'
                           )
         }
-	
-	
-	
-	
+
+
+
+
     else if(data.authors.length==2)
         {
             selector.append(
     '<a class="book" '+
-		'href="'+host+'/book?id='+data["book_id"]+'">'+	
-    '<img src="assets/img/'+data["cover"]+'"' + 
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
+    '<img src="assets/img/'+data["cover"]+'"' +
     'id="book'+i+'_photo_+'+identifier+'" '+
-    'class="book_cover" '+ 
+    'class="book_cover" '+
 	 'alt="book cover"'+
 	 'role="link"'+
 	 'onclick="goToLink(book page,'+host+ '/book?id='+data["book_id"]+' )"'+
-     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+	
+     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+
      '<h3 class="book_name" id="book'+i+'_name_'+identifier+'">'+data["title"]+'</h3>'+
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author2_'+identifier+'">' +data.authors[1].author_name+'</h4>'+
@@ -50,14 +50,14 @@ const appendData= function(selector, data, identifier, dim, i,link)
         {
             selector.append(
     '<a class="book" '+
-		'href="'+host+'/book?id='+data["book_id"]+'">'+	
-    '<img src="assets/img/'+data["cover"]+'"' + 
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
+    '<img src="assets/img/'+data["cover"]+'"' +
     'id="book'+i+'_photo_+'+identifier+'" '+
-    'class="book_cover" '+ 
+    'class="book_cover" '+
 	 'alt="book cover"'+
 	 'role="link"'+
 	 'onclick="goToLink(book page,'+host+ '/book?id='+data["book_id"]+' )"'+
-     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+	
+     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+
      '<h3 class="book_name" id="book'+i+'_name_'+identifier+'">'+data["title"]+'</h3>'+
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author2_'+identifier+'">'+data.authors[1].author_name+'</h4>'+
@@ -69,14 +69,14 @@ const appendData= function(selector, data, identifier, dim, i,link)
         {
             selector.append(
     '<a class="book" '+
-		'href="'+host+'/book?id='+data["book_id"]+'">'+	
-    '<img src="assets/img/'+data["cover"]+'"' + 
+		'href="'+host+'/book?id='+data["book_id"]+'">'+
+    '<img src="assets/img/'+data["cover"]+'"' +
     'id="book'+i+'_photo_+'+identifier+'" '+
-    'class="book_cover" '+ 
+    'class="book_cover" '+
 	 'alt="book cover"'+
 	 'role="link"'+
 	 'onclick="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')"'+
-     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+	
+     'onkeydown="goToLink(book page, '+host+ '/book?id='+data["book_id"]+')">'+
      '<h3 class="book_name" id="book'+i+'_name_'+identifier+'">'+data["title"]+'</h3>'+
      '<h4 class="book_author" id="book'+i+'_author1_'+identifier+'">'+data.authors[0].author_name +'</h4>'+
      '<h4 class="book_author" id="book'+i+'_author2_'+identifier+'">'+data.authors[1].author_name+'</h4>'+
@@ -85,7 +85,7 @@ const appendData= function(selector, data, identifier, dim, i,link)
      '</a>'
                           )
         }
-    
+
 
     if(i==dim)
         {
@@ -135,4 +135,3 @@ fetch(host+"/api/books?genre=art%20and%20design&limit=5&offset=0")
 .then(response => response.json())
 .then(data => data
       .forEach(book => appendData(books_container5, book, "science_fiction",data.length,e++, "science%20fiction"))))
-
