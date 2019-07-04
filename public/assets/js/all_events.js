@@ -73,4 +73,9 @@ buttons.addEventListener("click", handler);
 
 fetch(host+"/api/events/places")
 .then(response => response.json())
-.then(places => addDataforPlaces(where, places));
+.then(places => addDataforPlaces(where, places))
+.then(
+	fetch(host+"/api/events?offset=0")
+	.then(response => response.json())
+	.then(events => events
+	      .forEach(event => addData(events_container, event))))

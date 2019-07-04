@@ -216,7 +216,9 @@ border: none;
 border-radius:30px;
 font-size:20px;
 height:50px;
-margin: 110px 0px 60px 300px;
+margin: 100px 0px 60px 300px;
+padding-left: 25px;
+padding-right: 20px;
 width:180px;
 }
 

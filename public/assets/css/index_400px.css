@@ -137,8 +137,13 @@ justify-content:flex-start;
 }
 
 #learn_more {
+background-color:#d4d4d4;
+border-radius:30px;
 height: 50px;
-margin: -130px 0px 0px -15px
+font-size:18px;
+margin: 70px 0px 30px 130px;
+padding-top:10px;
+width:180px;
 }
 
 .menu_item {
