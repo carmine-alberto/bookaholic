@@ -26,18 +26,18 @@ const addData= function(selector, data)
         {
              selector.append(
     
-        '<div class="book">	'+
+        '<a class="book"> '+
         '<img src="assets/img/'+data["cover"]+'" class="book_cover" id="book'+i+'_cover" alt="book cover"'+
-	    'role="link"'+
-	 'onclick="goToLink(book page,)"'+
-     'onkeydown="goToLink(book page,)">	'+
+     'role="link"'+
+  'onclick="goToLink(book page,)"'+
+     'onkeydown="goToLink(book page,)"> '+
 '<h3 class="book_title" id="book'+i+'_title">'+data["title"]+'</h3>'+
-	
+ 
 '<div class="authors_container">'+
-	
+ 
 '<h4 class="book_author" id="book'+i+'_author1">'+data.authors[0].author_name+'</h4>'+
-	
-'</div>'	
+'</div>'
+'</a>'
     )
         }
     else if(data.authors.length==2)
