@@ -153,12 +153,14 @@ var books_containers= $(".books_containers");
 
 var header_container= $(".header_container");
 
-
-var buttons = document.getElementById("apply_filters");
-buttons.addEventListener("click", handler);
 header_container.replaceWith(
 	'<h1 class="header_text">'+theme+' </h1>'
 );
+
+
+var buttons = document.getElementById("apply_filters");
+buttons.addEventListener("click", handler);
+
 
 
 
