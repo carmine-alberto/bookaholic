@@ -134,7 +134,7 @@ const appendDataforEvents= function(selector, data)
            '</div>'
         )
                      )
-           .then(trov=true)
+           .then(trov=true))
     
                      
   }
