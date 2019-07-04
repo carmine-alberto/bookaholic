@@ -1,10 +1,6 @@
-const host = "https://bookaholic.herokuapp.com";
+// const host set in navbar.js
 var i=0;
 var c=0;
-
-
-
-
 
 
 //HELPER
