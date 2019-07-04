@@ -114,7 +114,7 @@ const appendDataforEvents= function(selector, data)
 {
     if(data.length==0)
        {
-       selector.append('<h id="no_events"> NO EVENTS </h>')
+       selector.append('<h3 id="no_events"> NO EVENTS </h3>')
        }
   else 
   {
