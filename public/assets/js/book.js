@@ -1,22 +1,41 @@
 // const host declared in navbar.js
-var i=0;
-var libro=0;
+
+const handlePostCartErrors = (response) => { if (response.ok) return response; else throw new Error(response.status); };
 
 
 //To refactor inside appendBook
-const addBookToCart = () => {
+const addBookToCart = (data) => {
   const postParams = {
                       method: "POST",
-                      headers: {"Content-Type": "text/plain",
-                               "Authorization": "Bearer " + jwt
-                              },
-                      body: "Via del Carroccio, 33/F, 20032, Milano (MI)"
+                      headers: {
+                                "Content-Type": "application/json",
+                                "Authorization": "Bearer " + jwt
+                               },
+                      body: JSON.stringify({
+                                            book_id: data["book_id"],
+                                            cover_type: data["details"][0]["cover_type"],
+                                            amount: 1
+                                          })
                     };
-
-  }
+  fetch(host + "/api/cart", postParams)
+  .then(handlePostCartErrors)
+  .then(response => alert("Book added successfully!"))
+  .catch(error => {switch(parseInt(error.message)) {
+                    case 500:
+                      alert("The book is already in the cart! Get there to modify its quantity.");
+                      break;
+                    case 400:
+                      alert("Invalid JWT, you'll be redirected to the login page.");
+                      window.location.href = "/login";
+                      break;
+                    default:
+                      alert("Unexpected error - check your connection and try refreshing the page");
+                    }
+                  });
 }
 
-//to refactor inside main
+
+//to refactor inside main - expects bookInfoSelector
 const appendBookInfo = (selector, data) => {
   const bookTitleSelector = selector.children("#book_name");
   const bookImageSelector = selector.children("img");
@@ -27,133 +46,87 @@ const appendBookInfo = (selector, data) => {
 
   bookImageSelector.attr("src", data["cover"]);
   bookTitleSelector.text(data["title"]);
-  //Handle authors
+  data["authors"].forEach(author => bookAuthorsSelector.append('<p>' + author["name"] + '</p>'));
   bookPriceSelector.text(data["details"][0]["price"].toFixed(2) + " £");
   bookSummarySelector.text(data["abstract"]);
 
   if (jwt != null) {
-    addToCartButtonSelector.prop("hidden", false);
-    addToCartButtonSelector.on("click touch", addBookToCart);
+    addToCartButtonSelector.removeClass("hidden");
+    addToCartButtonSelector.on("click touch", addBookToCart(data));
   }
-}
-
-
-
-                        );
-
-
-
-
-
-const appendFactsSheet = (selector, data) => selector.append(
-                          '<h4 class="section_title" id="fact_sheet_title"> Facts Sheet </h4>' +
-                          '<div id="fact_sheet_content">' +
-                            '<div class="column">' +
-                              '<h4 class="fact_title"> Released : </h4>' +
-                              '<h5 id="release_date"> ' + data["publication_date"] + ' </h5>' +
-                          '<h4 class="fact_title"> Language </h4>' +
-                          '<h5 id="book_language">' + data["language"] + '</h5>' +
-                          '<h4 class="fact_title"> Genre </h4>' +
-                          '<h5 id="book_genre">' + data["genre"] + '</h5>' +
-                          '</div>' +
-                          '<div class="column">'	+
-                          '<h4 class="fact_title"> Publisher : </h4>' +
-                          '<h5 id="book_publisher"> Penguin </h5>' +
-                          '<h4 class="fact_title"> ISBN </h4>' +
-                          '<h5 id="isbn">' + data["details"][0]["isbn"] + '</h5>' +
-                          '<h4 class="fact_title"> Type of cover </h4>'+
-                          '<h5 id="type_of_cover">' + data["details"][0]["cover_type"] + '</h5>'+
-                          '</div>' +
-                          '</div>'
-                        );
-
-
-
-const appendDataforAuthor = function(selector, data) {
-    i++;
-  selector
-  .append('<div class="author">' +
-'<h5 class="author_bio" id="author'+i+'_bio">' + data["short_bio"].substring(0, 100) + '<span class="dots">...</span></h5>' +
-'<a class="author_page_button" href="'+host+'/author?author_id='+data["author_id"]+'"'+
-	 'role="link"'+
-	 'onclick="goToLink(author page, '+host+'/author?author_id='+data["author_id"]+')"'+
-     'onkeydown="goToLink(author page, '+host+'/author?author_id='+data["author_id"]+')">go to author s page</a>	'+
-          '</div>'
-  );
 };
 
 
+const appendFactsSheet = (selector, data) => {
+  const releaseDateSelector = selector.find("#release_date");
+  const bookLanguageSelector = selector.find("#book_language");
+  const bookGenreSelector = selector.find("#book_genre");
+  const isbnSelector = selector.find("#book_genre");
+  const typeOfCoverSelector = selector.find("#type_of_cover");
+  const releaseDate = new Date(data["publication_date"]);
+
+  releaseDateSelector.text(releaseDate.toLocaleDateString('en-EN', {
+                                                                    year: 'numeric',
+                                                                    month: 'long',
+                                                                    day: 'numeric' }));
+  bookLanguageSelector.text(capitalizeString(data["language"]));
+  bookGenreSelector.text(capitalizeString(data["genre"]));
+  isbnSelector.text(capitalizeString(data["details"][0]["isbn"]));
+  typeOfCoverSelector.text(capitalizeString(data["details"][0]["cover_type"]));
+};
 
 
-const appendDataforReview= function(selector, dat)
-{
-
-    var k;
-
-    if(dat.lenght==0)
-        {
-            selector.append('<h3 id=no_reviews> NO REVIEWS </h3>')
-        }
-    else
-        {
-            //selector.append("<h>"+dat.lenght+"</h>");
-            for(k=1;k<=dat.lenght; k++)
-                {
-
-                    selector.append(
-                    '<div class="single_review" id="review_'+k+'">' +
-                    '<img class="review_image" src="/assets/img/user.png" alt="user profile picture">' +
-                    '<h5 class="reviewer" id="reviewer_'+k+'">' + dat[k-1]["username"] + '</h5>'+
-                    '<img class="stars" id="stars_'+k+'" src="assets/img/'+dat[k-1]["rating"]+' stelle.png">' +
-                    '<h5 class="review" id="review_text_'+i+'">'+ dat[k-1]["gist"] + '</h5>	' +
-                    '</div>'
-                )
-                }
+const appendAuthorsInfo = (selector, data) => data["authors"]
+  .forEach(author => selector.append(
+    '<div class="author">' +
+      '<h5 class="author_bio">' + author["short_bio"].substring(0, 100) + '<span class="dots">...</span></h5>' +
+      '<a class="author_page_button" href="'+ host +'/author?id=' + author["author_id"] + '"' +
+      	 'role="link">' +
+	      'Go to the author\'s page</a>' +
+    '</div>'
+    )
+  );
 
 
-        }
+const appendReviews = (selector, data) => data["reviews"]
+  .forEach(review => selector.append(
+      '<div class="single_review">' +
+        '<img class="review_image" src="/assets/img/user.png" alt="user profile picture">' +
+        '<h5 class="reviewer">' + review["username"] + '</h5>' +
+        '<img class="stars" src="assets/img/stars_' + review["rating"] + '>' +
+        '<h5 class="review">'+ review["content"] + '</h5>	' +
+      '</div>'
+    )
+  );
 
+//Selector should be .events_container
+const appendDataforEvents = (selector, data) => data["events"]
+  .forEach(event => {
+    const eventDateTime = new Date(event["date"]);
+    const dateTimeOptions = {year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit", minute: "2-digit" }
 
+    selector.append(
+      '<div class="event">' +
+        '<img src="/assets/img/' + event["image"]+'" class="book_image_event" alt="event_photo">' +
+        '<h4 id="event_date">'+ eventDateTimedate.toLocaleTimeString('en-EN', dateTimeOptions) +
+          '<br><span id="event_place">' + event["place"] + '</span>' +
+        '</h4>' +
+        '<h2 class="title" id="event_title">' + event["title"] + '</h2>' +
+        '<h2 class="author" id="event_author">with' + data["authors"][0]["name"] + '</h2>' + //Assumption: only events with one author related or only one of them present
+        '<a href="/event?id=' + event["event_id"] + '">' +
+          '<button title="menu_icon"' +
+                  'type="button"' +
+                  'class="learn_more"' +
+                  'role="link">' +
+              'Learn more' +
+          '</button>' +
+        '</a>' +
+      '</div>'
+    )
+  }
+);
 
-}
-
-const appendDataforEvents= function(selector, data)
-{
-
-    if(data.length==0)
-        {
-            selector.replaceWith(
-                '<section id="related_events">'+
-
-                '<h2 class="section_title" id="related_events_title">Related events</h2>	'+
-                '<h3 id="no_Events"> NO EVENTS </h3>'+
-                '</section>'
-
-            );
-        }
-    else{
-
-        selector.replaceWith(
-    '<section id="related_events">'+
-'<h2 class="section_title" id="related_events_title">Related events</h2>'+
-        '<div class="events_container">'+
-        '<div class="event">	'+
-'<img src="/assets/img/'+data[0]["image"]+'" class="book_image_event" id="event1_photo" alt="event_photo">'+
-'<h4 id="event_date">'+ data[0]["date"] + '<br><span id="event_place">'+data[0]["place"]+'</span></h4>' +
-'<h2 class="title" id="event_title">The new mystery literature</h2>'+
-'<h2 class="author" id="event_author">with Gillian Flynn</h2>'+
-'<div id="learn_more">' + data[0]["info"] + '</div>'+
-
-'</section>'
-
-
-    )}
-
-}
-
-const appendDataforOtherBook= function(data)
-{
-
+const appendSimilarBooks = (selector, data) => {
     var slide_container= $("#slide_container_1");
     if(data.length<6)
         {
@@ -182,12 +155,10 @@ const appendDataforOtherBook= function(data)
                 {
                    slide_container.append(
                 '<a class="image_and_caption" href="'+host+'/book?id='+data[y].book_id+'">'+
- 	       '<img src="/assets/img/'+data[y]["cover"]+'"'+
-				'id="slide1_img1"'+
-	 			'alt="book cover"'+
-	 			'role="link"'+
-	 			'onclick="goToLink(book page, '+host+'/book?id='+data[y].book_id+')"'+
-     			'onkeydown="goToLink(book page, '+host+'/book?id='+data[y].book_id+')">	'+
+         	        '<img src="/assets/img/'+data[y]["cover"]+'"'+
+				                'id="slide1_img1"'+
+		                     'alt="book cover"'+
+		                     'role="link"'+
 		   '<div class="caption_container">'+
 		   '<h6 class="book_title">'+data[y]["title"]+'</h6>	'+
    		   '<h6 class="book_author" id="book'+libro+'_author1">'+data[y].authors[0].author_name+'</h6>'+
@@ -275,12 +246,7 @@ const bookInfoSelector = $("#book_info");
 const factsSheetSelector = $("#fact_sheet");
 const aboutTheAuthorSelector = $("#about_the_author");
 const reviewsContainerSelector = $("#reviews_container");
-const relatedEventsSelector = $("#related_events");
-const genreBook = new String(""); //mi serve per poi creare i related books
-const x = new Boolean("false");
-
-
-
+const eventsContainerSelector = $("#related_events");
 
 fetch(host + "/api/books/"+bookId)
     .then(response => response.json())

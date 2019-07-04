@@ -35,7 +35,7 @@
 		<h2 id="book_author"><p>auth1</p><p>auth2</p></h2>
 		<h2 id="book_price"></h2>
 		<h5 id="book_resume"></h5>
-		<div id="add_to_cart_button" role="link" hidden>Add to Cart</div>
+		<div id="add_to_cart_button" role="link" class="hidden">Add to Cart</div>
 	</div>
 </section>
 
@@ -46,7 +46,25 @@
 
 <section id="fact_and_author">
 	<div id="fact_sheet">
-		  <!-- Facts sheet - Filled by JavaScript -->
+		<h4 class="section_title" id="fact_sheet_title"> Facts Sheet </h4>
+		<div id="fact_sheet_content">
+			<div class="column">
+				<h4 class="fact_title"> Released: </h4>
+				<h5 id="release_date"></h5>
+				<h4 class="fact_title"> Language </h4>
+				<h5 id="book_language"></h5>
+				<h4 class="fact_title"> Genre </h4>
+				<h5 id="book_genre"></h5>
+			</div>
+			<div class="column">
+				<h4 class="fact_title"> Publisher : </h4>
+				<h5 id="book_publisher"> Penguin </h5>
+				<h4 class="fact_title"> ISBN </h4>
+				<h5 id="isbn"></h5>
+				<h4 class="fact_title"> Type of cover </h4>
+				<h5 id="type_of_cover"></h5>
+			</div>
+		</div>
 	</div>
 	<div id="about_the_author">
 		<h4 class="section_title" id="about_the_author_title">About the authors</h4>
@@ -153,7 +171,8 @@
 <section id="reviews">
 	<h4 class="section_title" id="reviews_title">Reviews</h4>
 	<div id="reviews_container">
-		<!-- Reviews - Filled by JavaScript -->
+		<!-- Reviews - Filled by JavaScript | DEFAULT: No reviews -->
+		<h3 id=no_reviews> No reviews are available for this book </h3>
 	</div>
 </section>
 
@@ -162,20 +181,11 @@
 <!-- START Related events section --->
 
 <section id="related_events">
+	<a href="/"><button></button></a>
 	<h2 class="section_title" id="related_events_title">Related events</h2>
 	<div class="events_container">
-		<div class="event">
-			<img src="/assets/img/the_catcher_in_the_rye.jpeg" class="book_image_event" id="event1_photo" alt="event_photo">
-			<h3 class="event_date" id="event1_date">15th May 2019, 5 pm<br><span id="event_place">Bookaholic Greenwich</span></h3>
-			<h3 class="event_title" id="event1_title">The new mystery literature</h3>
-			<h3 class="event_author" id="event1_author">with Gillian Flynn</h3>
-			<button title="menu_icon"
-							type="button"
-							class="learn_more"
-			    		role="link">
-			    Learn more
-			</button>
-		</div>
+		<!-- Events - Filled by JavaScript | DEFAULT: No events -->
+		<h3 class="event_title" style="text-alignment: center, margin-left: 50%">There are no events for this book</h3>
 	</div>
 </section>
 

@@ -170,6 +170,9 @@ const initNavbar = () => $("nav").append(
         			  'tabindex="-1"' +
         			  'role="listbox"' +
         			  'aria-labelledby="genre">' +
+                '<li role="option">' +
+                  '<a href="/genres">All Genres</a>' +
+                '</li>' +
                 '<!-- All genres - filled by JavaScript -->' +
             '</ul>' +
           '</li>' +
@@ -181,7 +184,10 @@ const initNavbar = () => $("nav").append(
           		  'tabindex="-1"' +
           		  'role="listbox"' +
           		  'aria-labelledby="theme">' +
-                '<!-- All themes - filled by JavaScript -->' +
+              '<li role="option">' +
+                '<a href="/themes">All Themes</a>' +
+              '</li>' +
+              '<!-- All themes - filled by JavaScript -->' +
             '</ul>' +
           '</li>' +
 
