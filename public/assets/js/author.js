@@ -120,7 +120,7 @@ const appendDataforEvents= function(selector, data)
     {
       fetch(host+"/api/events?offset=0&about="+data[c])
       .then(response => response.json())
-      .then(trov=true)
+      .then(if(events.length!=0) trov=true)
       .then(events => events
             .forEach(data =>
                      
