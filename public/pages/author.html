@@ -1,14 +1,14 @@
-<!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Author</title>
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
 <link href="/assets/css/author_1400px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/author_768px.css" />
 <link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/author_400px.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/navbar.css">
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script defer src="/assets/js/navbar.js"></script>
@@ -20,57 +20,51 @@
 
 <!--- START navigation bar section --->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+<nav class="navbar navbar-fixed-top" role="menubar">
   <!-- Navbar - Filled by JavaScript -->
 </nav>
 
 
 <!--- END navigation bar section --->
 
+<div class="back">
+  <span>&lsaquo;</span><a href="/authors">back to All authors</a>
+</div>
+
 <!--- START Author section --->
 
 <section id="author_intro">
-
-	</section>
+ <!-- Author's data - Filled by JavaScript -->
+</section>
 
 <!--- END Author section --->
-
-
 
 <!--- START Books section --->
 
 <section class="authored_books_section">
-
-<h2 class="section_title">Books</h2>
-
-<div class="authored_books_container">
-
-<div class="books_containers">
-
-
-	</div>
-	</div>
-
-	</section>
+  <h2 class="section_title">Books</h2>
+  <div class="books_containers">
+    <!-- Books written by the author - Filled by JavaScript -->
+  </div>
+</section>
 
 <!--- END Books section --->
-
-
 
 
 <!--- START Related events section --->
 
 <section id="related_events">
+  <h2 class="section_title" id="related_events_title">Related events</h2>
+  <div class="events_container">
+    <!-- Events the author will take part to - Filled by JavaScript | Default: There are no events -->
+    <h3 id="no_events">There are no events related to this author</h3>
+  </div>
+</section>
 
-<h2 class="section_title" id="related_events_title">Related events</h2>
+<footer>
+	<span>Created by <a href="https://www.github.com/carmine-alberto">Carmine Alberto</a> and <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span><span>Design by <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span>
+</footer>
 
-<div class="events_container">
-
-
-
-	</div>
-
-	</section>
 
 <!--- END Related events section --->
 </body>

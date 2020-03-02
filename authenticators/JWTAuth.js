@@ -25,7 +25,7 @@ module.exports.getJWT = function() {
       bcrypt
       .compare(credentials.password, credentials.password_hash)
       .then(valid => valid
-        ? resolve(jwtParser.sign({username: credentials.username}, secretKey, {expiresIn: "24h"}))
+        ? resolve(jwtParser.sign({username: credentials.username}, secretKey, {expiresIn: "1h"}))
         : reject("Wrong username or password"))
     })
   }

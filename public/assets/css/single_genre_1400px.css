@@ -1,121 +1,137 @@
-body {
-font-family:'F37 Ginger'!important;
-height:50px;
+ h4,.filter_title,.dropdown_first {
+    font-size: 1.6rem;
+    margin: 10px 0%;
+}
+ .authors_container {
+    line-height: 1.01;
+}
+ .book {
+    font-size: 1.8rem;
+    text-align:center;
+    flex: 0 0 20%;
+    padding: 25px 2.5%;
+}
+ .book_author {
+    color:#000000;
+    font-size: 1.8rem;
+    font-weight:lighter;
+    margin: 7px 0;
+}
+ .book_cover {
+    cursor:pointer;
+    opacity:1;
+    width: 100%;
+}
+ .book_cover:hover {
+     opacity:0.8;
+}
+ .book_title {
+    color:#000000;
+    font-size: 1.9rem;
+    font-weight:bold;
+}
+ .books_containers {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 55px 0%;
+    justify-content: flex-start;
+}
+ .checkbox_container {
+     margin-top:40px;
+}
+ .dropdown_menu {
+     display:inherit;
+     font-size:14px;
+}
+ .filter {
+    list-style:none;
+    padding:10px;
+    text-align: center;
+    flex: 0 0 25%;
+}
+ .filter_checkbox {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 25%;
+    margin: 0px 0%;
+}
+ #filters_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+ #apply_filters {
+    background-color: #d9d9d9;
+    border-radius: 30px;
+    color: #000000;
+    font-weight: bolder;
+    height: 50px;
+    text-transform: uppercase;
+    width: 11%;
+    margin-top: 20px;
+}
+ #apply_filters:hover {
+     background-color: #ef4444;
+}
+ .header_box {
+     background-color:#EF4444;
+     margin-top: -25px;
+     height: 15px;
+     width: 143px;
+     z-index: 0;
+     place-self: center;
+}
+ .header_container {
+     background-color:white;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+ .header_text {
+     font-size: 4rem;
+     font-weight:bolder;
+     text-align:center;
+     z-index: 5;
+     padding: 53px 0% 5px;
+}
+ .section_title {
+    font-size: 3.2rem;
+    font-weight:bolder;
+    padding: 25px 7%;
+    margin: 0;
+}
+ select {
+    background-color:#f1f1f1;
+    border:none;
+    border-radius:4px;
+    font-size:14px;
+    padding:5px 20px;
+    width:110px;
 }
 
-h4,.filter_title,.dropdown_first {
-font-size:16px;
+input[type="checkbox"] {
+	transform: scale(2);
+	margin-left: 5%;
+}
+ #single_genre {
+     font-size:24px;
+     font-weight:bolder;
+     padding-top:60px;
+     text-align:center;
+}
+ .book:nth-child(10n+1), .book:nth-child(10n+2), .book:nth-child(10n+3), .book:nth-child(10n+4), .book:nth-child(10n+5) {
+     background-color: #F3F3F3;
 }
 
-#apply_filters {
-background-color: #d9d9d9;
-border-radius: 30px;	
-height: 50px;
-margin-left: 630px;
-margin-top: 100px;
-width: 140px;
-}
-
-#apply_filters:hover {
-background-color: #ef4444;
-}
-
-.authors_container {
-line-height:0.01;
-}
-
-.book {
-font-size:18px;
-height:600px;
-margin-bottom:-80px;
-margin-left:60px;
-text-align:center;
-}
-
-.book_author {
-color:#000000;
-font-size:12px;
-font-weight:lighter;
-}
-
-.book_cover {
-cursor:pointer;
-height:270px;
-opacity:1;
-width:200px;
-}
-
-.book_cover:hover {
-opacity:0.8;
-}
-
-.book_title {
-color:#000000;
-font-size:15px;
-font-weight:bold;
-}
-
-.books_containers {
-display:grid;
-grid-template-columns:auto auto auto auto auto;
-left:20px;
-margin-top:120px;
-position:absolute;
-top:550px;
-}
-
-.checkbox_container {
-margin-top:40px;
-}
-
-.dropdown_menu {
-display:inherit;
-font-size:14px;
-}
-
-.filter {
-list-style:none;
-padding:10px;
-}
-
-.filter_checkbox {
-	margin-top:8px
-}
-
-#filters_container {
-display:grid;
-grid-template-columns:auto auto auto auto;
-margin:-55px 300px;
-width:900px;
-}
-
-.header_container {
-background-color:white;
-height:150px;
-z-index:-100;
-}
-
-.header_text {
-font-size:40px;
-font-weight:bolder;
-margin-top:120px;
-text-align:center;
-z-index:100;
-}
-
-select {
-background-color:#f1f1f1;
-border:none;
-border-radius:4px;
-font-family:"F37 Ginger";
-font-size:14px;
-padding:5px 20px;
-width:110px;
-}
-
-#single_genre {
-font-size:24px;
-font-weight:bolder;
-padding-top:60px;
-text-align:center;
-}
+.no_books {
+    text-align: center;
+    padding: 50px 2%;
+    border-radius: 10px;
+    background-color: #EF444490;
+    opacity: 1;
+    width: 100%;
+    color: white;
+    margin: 0 2.3%
+    }

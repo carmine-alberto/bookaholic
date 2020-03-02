@@ -12,7 +12,15 @@ exports.getAuthorById = function(author_id) {
     database.select("name", "picture", "short_bio")
     .from("author")
     .where("author_id", author_id)
-    .then(data => resolve(data[0]))
+    .then(data => database
+      .select("book_id")
+      .from("written_by")
+      .where("author_id", author_id)
+      .then(written_books_id => {
+        data[0].written_books_id = written_books_id.map(object => object.book_id);
+        resolve(data[0]);
+      })
+    )
     .catch(err => reject(err));
   });
 }

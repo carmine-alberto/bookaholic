@@ -1,14 +1,14 @@
-<!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shipping</title>
-<link href="assets/css/shipping_1400px.css" rel="stylesheet">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="assets/css/shipping_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="assets/css/shipping_400px.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
+<link href="/assets/css/shipping_1400px.css" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/shipping_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/shipping_400px.css" />
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script defer src="/assets/js/navbar.js"></script>
@@ -18,12 +18,15 @@
 
 <!--- START navigation bar section --->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+<nav class="navbar navbar-fixed-top" role="menubar">
   <!-- Navbar - Filled by JavaScript -->
 </nav>
 
 <!--- END navigation bar section --->
 
+<div class="back">
+  <span>&lsaquo;</span><a href="/about_us">back to About us</a>
+</div>
 
 <!--- START Title section --->
 
@@ -42,7 +45,7 @@
 
 <section id="uk_delivery">
 
-<h2 class="section_title" id="uk_delivery_title">UK delivery options</h2>
+<h2 class="section_title" id="uk_delivery_title">UK Delivery options</h2>
 
 <div id="uk_container">
 
@@ -52,31 +55,35 @@
 	I want the book to be delivered at my house
 	</h3>
 <h3 class="answers">In this case you have three options:</h3>
-<h3 class="answers">&#8226; Free delivery (only if you spend more than 15 £)
-	<br>
-You will get the book within a week
-	</h3>
+<ul class="answers">
+	<li> Free delivery (only if you spend more than 15 £)
+			<br>
+			You will get the book within a week
+	</li>
 
-<h3 class="answers">&#8226; Gold delivery (3.70 £)
-	<br>
-You will get the book 2-3 days after the purchase
-	</h3>
+	<li class="answers">
+		Gold delivery (3.70 £)
+		<br>
+		You will get the book 2-3 days after the purchase
+	</li>
 
-<h3 class="answers">&#8226; Platinum delivery (5.60 £)
-	<br>
-You will get the book the day after the purchase
-	</h3>
-	</div>
+	<li class="answers">
+		Platinum delivery (5.60 £)
+		<br>
+		You will get the book the day after the purchase
+	</li>
+</ul>
+</div>
 
 <div class="uk_options">
 
 <h3 class="uk_request">I want to pick up the book at my local Bookaholic store</h3>
-<h3 class="answers">In this case you have three options:</h3>
-<h3 class="answers">&#8226; Pay online and collect in store</h3>
-<h3 class="answers">&#8226; Select online and pay and collect in store</h3>
-
+<h3 class="answers">In this case you have two options:</h3>
+<ul class="answers">
+	<li class="answers">Pay online and collect in store</li>
+	<li class="answers">Select online and pay and collect in store</li>
+</ul>
 </div>
-
 </div>
 
 	</section>
@@ -94,8 +101,8 @@ You will get the book the day after the purchase
 	</h3>
 	<h3 class="answers">The cost is 10.95 £, regardless of the country, and you will get the book within 7-10 days</h3>
 
-	<h3 class="answers">Here's where we are able to ship:</h3>
-	<h3 class="answers">Aland Islands, Albania, Andorra, Antigua and Barbuda, Argentina, Aruba, Australia, Austria, Bahamas, Bahrain, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bosnia and Herzegovina, Brazil, British Virgin Islands, Bulgaria, Cambodia, Cameroon, Canada, Canary Islands, Cayman Islands, Chile, China (inc Tibet), Comoros, Cook Islands, Croatia, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Ecuador, Estonia, Faroe Islands, Fiji, Finland, France, Georgia, Germany, Gibraltar, Greece, Greenland, Guadaloupe, Guernsey, Hong Kong, Hungary, Iceland, India, Indonesia, Ireland, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Latvia, Lebanon, Liechtenstein, Lithuania, Luxembourg, Macedonia, Malaysia, Malta, Martinique, Mauritius, Moldova, Monaco, Montenegro, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Norway, Oman, Philippines, Poland, Portugal, Qatar, Reunion, Romania, Russian Federation, San Marino, Saudi Arabia, Serbia, Seychelles, Singapore, Slovakia, Slovenia, South Africa, South Korea, Spain, Sri Lanka, Suriname, Sweden, Switzerland, Taiwan, Thailand, Tonga, Trinidad and Tobago, Turkey, Uganda, United Kingdom, United States of America, Vanuatu, Vatican City.</h3>
+	<h3 class="answers" title="Tip: use Ctrl + F to speed up the research">Here's where we are able to ship:</h3>
+	<h3 class="answers" title="Tip: use Ctrl + F to speed up the research">Aland Islands, Albania, Andorra, Antigua and Barbuda, Argentina, Aruba, Australia, Austria, Bahamas, Bahrain, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bosnia and Herzegovina, Brazil, British Virgin Islands, Bulgaria, Cambodia, Cameroon, Canada, Canary Islands, Cayman Islands, Chile, China (inc Tibet), Comoros, Cook Islands, Croatia, Cyprus, Czech Republic, Denmark, Dominica, Dominican Republic, Ecuador, Estonia, Faroe Islands, Fiji, Finland, France, Georgia, Germany, Gibraltar, Greece, Greenland, Guadaloupe, Guernsey, Hong Kong, Hungary, Iceland, India, Indonesia, Ireland, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Latvia, Lebanon, Liechtenstein, Lithuania, Luxembourg, Macedonia, Malaysia, Malta, Martinique, Mauritius, Moldova, Monaco, Montenegro, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Norway, Oman, Philippines, Poland, Portugal, Qatar, Reunion, Romania, Russian Federation, San Marino, Saudi Arabia, Serbia, Seychelles, Singapore, Slovakia, Slovenia, South Africa, South Korea, Spain, Sri Lanka, Suriname, Sweden, Switzerland, Taiwan, Thailand, Tonga, Trinidad and Tobago, Turkey, Uganda, United Kingdom, United States of America, Vanuatu, Vatican City.</h3>
 
 	</section>
 
@@ -103,14 +110,16 @@ You will get the book the day after the purchase
 			   alt="Contact us link"
 			   class="link"
 			   tabindex="0"
-     		   onclick="goToLink(About us page, 'About us page')"
-    		   onkeydown="goToLink(About us page, 'About us page')"
-     		   role="link"
-	           href="https://bookaholic.herokuapp.com/about_us">
-Contact us</a></h4>
+   		   role="link"
+				 href="/about_us">
+	Contact us</a>
+</h4>
 
 <!--- END International delivery section --->
 
+<footer>
+	<span>Created by <a href="https://www.github.com/carmine-alberto">Carmine Alberto</a> and <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span><span>Design by <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span>
+</footer>
 
 </body>
 </html>

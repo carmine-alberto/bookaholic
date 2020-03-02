@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
 <link href="assets/css/login_1400px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="assets/css/login_768px.css" />
 <link rel="stylesheet" media="screen and (max-width: 400px)" href="assets/css/login_400px.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/navbar.css">
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script defer src="/assets/js/navbar.js"></script>
@@ -17,13 +17,13 @@
 
 <!-- START navigation bar section -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+<nav class="navbar navbar-fixed-top" role="menubar">
   <!-- Navbar - Filled by JavaScript -->
 </nav>
 
 <!--- END navigation bar section --->
 
-<h1 id="heading_text">Login Form</h1>
+<h1 id="heading_text">Login</h1>
 
 <form role="form"
 		  id="login_form"
@@ -48,9 +48,6 @@
 				   required>
 
     <button type="submit" id="login">Login</button>
-    <!-- <label> I'd rather avoid putting it here, it's included in the query parameters and not used at all
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label> -->
   </div>
 
   <div class="button_container">
@@ -58,6 +55,11 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+
+<footer>
+	<span>Created by <a href="https://www.github.com/carmine-alberto">Carmine Alberto</a> and <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span><span>Design by <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span>
+</footer>
+
 
 </body>
 </html>

@@ -1,27 +1,12 @@
-body {
-font-family:"F37 Ginger"!important;
-max-width:400px;
-overflow-x:hidden;
-overflow-y:scroll;
+html {
+    font-size: 50% !important
 }
-
-.book_author_1,.book_author_2,.book_author_3,.book_author_4 {
-font-size:12px;
-}
-
 .book_cover {
-box-shadow:3px 3px 5px #979797;
-display:none;
-float:left;
-margin:10px 10px 0;
-width:80px;
+    max-width: 200px;
 }
 
 .book_info {
-line-height:1.2;
-padding-bottom:20px;
-padding-top:10px;
-width:300px;
+    display: block;
 }
 
 .book_info:after {
@@ -31,61 +16,25 @@ display:table;
 }
 
 .book_price {
-display:none;
-font-size:12px;
-font-weight:30;
+    margin: 10px;
 }
 
-.book_subtotal {
-font-size:12px;
-font-weight:lighter;
-margin-top:15px;
-}
+.book_subtotal {font-size: 1.7rem;}
 
 .book_title {
-font-size:14px;
+    margin: 0;
 }
 
-#cart {
-display:none;
-}
+#cart {/* display:none; */margin-right: 7px;}
 
-#cart_items {
-margin-bottom:30px;
-margin-right:30px;
-margin-top:250px;
-}
+#cart_items {width: 100%;margin: 0px;align-items: center;}
 
-.cart_item {
-background-color:#f3f3f3;
-border:10px solid #ffffff;
-border-radius:30px;
-color:black;
-font-size:18px;
-padding:10px;
-text-decoration:none;
-width:340px;
-}
+.cart_item {margin: 10px 0% 10px;width: 90%;}
 
 #checkout_button {
-background-color:#f3f3f3;
-border:none;
-border-radius:40px;
-color:#000000;
-cursor:pointer;
-display:inline-block;
-font-size:14px;
-font-weight:bold;
-height:50px;
-margin:0;
-padding:10px;
-position:absolute;
-right:100px;
-text-align:center;
-text-decoration:none;
-text-transform:uppercase;
-top:150px;
-width:160px;
+    padding: 6px 7%;
+    height: 35px;
+    margin: 10px;
 }
 
 #checkout_button:hover {
@@ -93,51 +42,28 @@ background-color:#ef4444;
 }
 
 .close_button {
-background-color:#f3f3f3;
-border:none;
+    width: 35px;
+    height: 35px;
 }
 
 .column {
-float:left;
-padding-bottom:10px;
-padding-left:10px;
-padding-right:10px;
-width:30%;
 }
 
-.inner {
-width:inherit;
-}
+.inner {}
 
-.inner:after {
-bottom:50%;
-transform:rotate(-45deg);
-}
+.inner:after {}
 
-.inner:before {
-top:50%;
-transform:rotate(45deg);
-}
+.inner:before {}
 
 .inner:before,.inner:after {
-background:#555555;
-content:'';
-height:1px;
-position:absolute;
-width:20px;
+    height: 2px;
+    width: 21px;
+    left: -1px;
 }
 
-.outer {
-cursor:pointer;
-margin:10px 20px auto auto;
-position:relative;
-width:4px;
-}
+.outer {}
 
-.quantity,.book_subtotal_title {
-font-size:12px;
-margin-top:20px;
-}
+.quantity,.book_subtotal_title {font-size: 1.8rem;margin: 10px 0 3px;}
 
 select {
 background-color:#ffffff;
@@ -150,21 +76,28 @@ width:60px;
 }
 
 #subtotal {
-background-color:#ffffff;
-height:140px;
-margin:0 auto;
-padding:0;
-position:absolute;
-right:15px;
-text-align:center;
-top:100px;
-width:365px;
+    width: initial;
+    padding: 10px 5%;
+    height: initial;
+    margin: 0.1px 0 0;
+    position: sticky;
+    top: -70px;
+    z-index: 10;
 }
 
 #subtotal_number {
-font-weight:30;
+    margin: 5px;
 }
 
 .title_and_author {
 margin-top:-10px;
+}
+
+#your_order_title {
+}
+
+.cart_item > a {padding: 8px 28%;}
+
+.cover_type {
+    font-size: 1.5rem
 }

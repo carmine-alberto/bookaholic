@@ -13,10 +13,7 @@ padding:8px;
 width:auto;
 }
 
-#heading_text {
-font-weight:bolder;
-margin:250px 50px 50px 290px;
-}
+#heading_text {}
 
 .input_box {
 box-sizing:border-box;
@@ -31,16 +28,7 @@ margin-top:80px;
 padding:30px;
 }
 
-#login {
-background-color: #d9d9d9;
-border: none;
-border-radius: 30px;
-font-size:16px;
-height:60px;
-margin-left: 270px;
-margin-top:50px;
-width: 180px
-}
+#login {border: none;}
 
 #login:active {
 background-color: #ef4444

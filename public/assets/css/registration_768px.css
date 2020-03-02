@@ -1,21 +1,12 @@
-body {
-background-color:white;
-font-family:"F37 Ginger"!important;
-}
+body {}
 
 a {
 color:dodgerblue;
 }
 
-* {
-box-sizing:border-box;
-}
+* {}
 
-.container_inputs {
-background-color:white;
-margin:180px 30px 0;
-padding:16px;
-}
+.container_inputs {padding: 10%;}
 
 hr {
 border:1px solid #f3f3f3;
@@ -36,24 +27,11 @@ background-color:#ddd;
 outline:none;
 }
 
-.registerbtn {
-background-color:#ef4444;
-border:none;
-color:white;
-cursor:pointer;
-margin:8px 0;
-opacity:0.9;
-padding:16px 20px;
-width:100%;
-}
+.registerbtn {border:none;margin:8px 0;}
 
 .registerbtn:hover {
 opacity:1;
 }
 
-.signin {
-background-color:#f1f1f1;
-margin:10px 60px;
-text-align:center;
-}
+.signin {background-color:#f1f1f1;text-align:center;}
 

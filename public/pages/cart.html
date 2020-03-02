@@ -1,14 +1,14 @@
-<!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cart page</title>
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
 <link href="/assets/css/cart_1400px.css" rel="stylesheet">
 <link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/cart_768px.css" />
 <link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/cart_400px.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/navbar.css">
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script defer src="/assets/js/navbar.js"></script>
@@ -19,37 +19,42 @@
 
 <!--- START navigation bar section --->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+<nav class="navbar navbar-fixed-top" role="menubar">
   <!-- Navbar - Filled by JavaScript -->
 </nav>
 
 <!--- END navigation bar section --->
 
 
-	<!--- START subtotal section --->
+<!--- START subtotal section --->
 
-<div id="subtotal">
+<aside id="subtotal">
   <h1 id="your_order_title">Your order</h1>
   <img src="/assets/img/logo_cart.png" id="cart" width="70px" alt="cart icon" />
-  <h2 id="subtotal_title">Subtotal</h2>
+  <h2 id="subtotal_title">Total</h2>
   <h2 id="subtotal_number"></h2>
   <button aria-label="Checkout"
       		id="checkout_button"
       		type="button"
       		role="button">
-	Checkout</button>
-</div>
+     Checkout
+  </button>
+</aside>
 
-	<!--- END subtotal section --->
+<!--- END subtotal section --->
 
 
-	<!--- START cart items section --->
+<!--- START cart items section --->
 
 <ul id="cart_items">
   <!-- Cart items - filled using JavaScript -->
 </ul>
 
 <!-- END cart items section --->
+
+<footer>
+	<span>Created by <a href="https://www.github.com/carmine-alberto">Carmine Alberto</a> and <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span><span>Design by <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span>
+</footer>
 
 </body>
 </html>

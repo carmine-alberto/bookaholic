@@ -1,83 +1,29 @@
-.author {
-font-size:24px;
-margin-top:10px;
-text-align:center;
-}
+.author {text-decoration: underline;font-size: 2.4rem;text-align:center;}
 
-#book_details {
-background-color:#D9D9D9;
-border:none;
-border-radius:30px;
-color:#000000;
-display:table-cell;
-font-size:16px;
-font-weight:bolder;
-height:50px;
-left:630px;
-margin:0 auto;
-padding-top:15px;
-position:absolute;
-text-align:center;
-text-decoration:none;
-text-transform:uppercase;
-top:950px;
-vertical-align:middle;
-width:200px;
-}
+#book_details {background-color:#D9D9D9;border-radius:30px;color:#000000;font-size: 1.9rem;font-weight:bolder;height: 65px;padding: 15px 2%;text-align:center;text-decoration:none;text-transform:uppercase;width: 30%;margin: 0px 0%;}
 
 #book_details:hover {
 background-color:#ef4444;
 }
 
-#condition {
-font-size:20px;
-font-weight:bold;
-margin:450px 0 50px;
-text-align:center;
-}
+#condition {font-size: 2.0rem;font-weight:bold;text-align:center;padding: 30px 0%;}
 
-.date,.place {
-color:rgba(67,67,67,1.00);
-font-size:24px;
-margin-left:30px;
-margin-top:50px;
-text-align:center;
-}
+.date,.place {color:rgba(67,67,67,1.00);font-size: 2.4rem;text-align:center;padding: 25px 0% 5px;}
 
-.description {
-font-size:20px;
-font-weight:lighter;
-margin:60px 250px 60px 450px;
-padding-bottom:40px;
-width:580px;
-}
+.description {font-size: 2.0rem;font-weight:lighter;text-align: justify;padding: 10px 19%;}
 
-.event {
-background-color:#FFFFFF;
-height:350px;
-padding-bottom:20px;
-padding-top:20px;
-}
+.event {background-color:#FFFFFF;padding: 20px 0%;display: flex;flex-flow: column nowrap;align-items: center;}
 
 .event_photo {
-height:300px;
-margin-left:610px;
-width:240px;
+    width: 50%;
+    box-shadow: 10px 10px 5px #E54444;
 }
 
-.header_container {
-background-color:white;
-height:150px;
-z-index:-100;
-}
+img.event_photo {}
 
-.header_text {
-font-size:40px;
-font-weight:bolder;
-margin-top:120px;
-text-align:center;
-z-index:100;
-}
+.header_container {background-color: white;padding: 80px 0% 15px;}
+
+.header_text {font-size: 4.0rem;font-weight:bolder;text-align: center;}
 
 .section_title {
 clear:left;
@@ -89,6 +35,13 @@ padding-left:25px;
 padding-top:15px;
 }
 
-body {
-font-family:"F37 Ginger"!important;
+#events {
+    display:flex;
+    flex-flow: column nowrap;
+    align-items:center;
+}
+
+.author > a {
+    color: #EF4444;
+    font-weight:bold;
 }

@@ -1,110 +1,51 @@
-body {
-font-family:'F37 Ginger'!important;
-height:50px;
+html {
+     font-size: 45% !important 
+}
+ h4,.filter_title,.dropdown_first {
+     font-size:16px;
+}
+ #apply_filters {
+     width: 40%;
+}
+ #apply_filters:active {
+     background-color: #ef4444;
+}
+ .book {
+     flex: 0 0 50%;
 }
 
-h4,.filter_title,.dropdown_first {
-font-size:16px;
+ .book_cover:hover {
+     opacity:0.8;
 }
-
-#apply_filters {
-background-color: #d9d9d9;
-border-radius: 30px;	
-height: 50px;
-margin-left: 130px;
-width: 140px;
+ 
+ .dropdown_menu {
+     display:inherit;
+     font-size:14px;
 }
-
-#apply_filters:active {
-background-color: #ef4444;
+ .filter {
+     flex: 0 0 40%;
 }
-
-.book {
-font-size:18px;
-height:450px;
-margin-left:35px;
-padding-bottom:15px;
-text-align:center;
+ .filter_checkbox {
+    flex: 0 0 40%;
 }
-
-.book_author {
-font-size:12px;
-font-weight:lighter;
+ select {
+     background-color:#f1f1f1;
+     border:none;
+     border-radius:4px;
+     font-family:"F37 Ginger";
+     font-size:14px;
+     padding:5px 20px;
+     width:110px;
 }
-
-.book_cover {
-cursor:pointer;
-height:180px;
-opacity:1;
-width:130px;
+ #single_genre {
+     font-size:24px;
+     font-weight:bolder;
+     padding-top:60px;
+     text-align:center;
 }
-
-.book_cover:hover {
-opacity:0.8;
+ .book:nth-child(10n+1), .book:nth-child(10n+2), .book:nth-child(10n+3) , .book:nth-child(10n+4) , .book:nth-child(10n+5) , .book:nth-child(6n+1) , .book:nth-child(6n+2) , .book:nth-child(6n+3) {
+     background-color: initial;
 }
-
-.book_title {
-font-size:15px;
-font-weight:bold;
-}
-
-.books_containers {
-display:grid;
-grid-template-columns:auto auto;
-}
-
-.dropdown_menu {
-display:inherit;
-font-size:14px;
-}
-
-.filter {
-display:inline-block;
-list-style:none;
-padding:20px;
-}
-
-.filter_checkbox {
-margin:10px 0 0 30px;
-}
-
-#filters_container {
-display:grid;
-font-size:18px;
-grid-template-columns:auto auto;
-margin:35px 30px 70px 30px;
-width:350px;
-}
-
-.header_container {
-background-color:white;
-height:150px;
-z-index:-100;
-}
-
-.header_text {
-font-size:30px;
-font-weight:bolder;
-left:150px;
-position:absolute;
-text-align:center;
-top:-40px;
-z-index:100;
-}
-
-select {
-background-color:#f1f1f1;
-border:none;
-border-radius:4px;
-font-family:"F37 Ginger";
-font-size:14px;
-padding:5px 20px;
-width:110px;
-}
-
-#single_genre {
-font-size:24px;
-font-weight:bolder;
-padding-top:60px;
-text-align:center;
+ .book:nth-child(4n+1) , .book:nth-child(4n+2) {
+     background-color: #F3F3F3;
 }

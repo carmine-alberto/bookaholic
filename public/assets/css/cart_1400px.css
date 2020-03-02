@@ -1,21 +1,15 @@
-body {
-font-family:"F37 Ginger"!important;
-}
 
 .book_author_1,.book_author_2,.book_author_3,.book_author_4 {
 font-weight:lighter;
 }
 
-.book_cover {
-box-shadow:3px 3px 5px #979797;
-float:left;
-margin:60px 50px 50px;
-width:180px;
-}
+.book_cover {box-shadow:3px 3px 5px #979797;width: 100%;}
 
 .book_info {
-padding-top:50px;
-width:800px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    flex: 0 0 69%;
 }
 
 .book_info:after {
@@ -24,121 +18,61 @@ content:"";
 display:table;
 }
 
-.book_price {
-font-weight:30;
-}
+.book_price {font-size: 2rem;}
 
-.book_subtotal {
-font-weight:lighter;
-margin-left:30px;
-margin-top:15px;
-}
+.book_subtotal {font-weight:lighter;font-size: 2rem;}
 
 .book_subtotal_title {
-margin-left:30px;
-margin-top:20px;
+    font-weight: bold;
+    font-size: 2.3rem;
 }
 
-.cart_item {
-background-color:#f3f3f3;
-border-radius:30px;
-color:black;
-display:block;
-font-size:18px;
-margin-bottom:30px;
-padding:12px;
-position:relative;
-text-decoration:none;
-width: 850px;
-}
+.cart_item {position: relative;background-color:#f3f3f3;border-radius:30px;color:black;font-size: 1.8rem;margin: 20px 0;padding: 60px 8%;width: 100%;display: flex;flex-flow: row wrap;align-items: end;justify-content: space-between;}
 
 .cart_item:hover {
 background-color:#eee;
 }
 
-#cart_items {
-list-style:none;
-margin-top:100px;
-}
+#cart_items {display: flex;flex-flow: column nowrap;justify-content: center;list-style:none;margin: 13px 3.5%;padding: 0;width: 58%;min-height: 100%;}
 
-#checkout_button {
-background-color:#ffffff;
-border:none;
-border-radius:40px;
-color:#000000;
-cursor:pointer;
-display:inline-block;
-font-size:18px;
-font-weight:bolder;
-height:20px;
-margin:0 0 0 10px;
-padding:16px 32px 40px 16px;
-text-align:center;
-text-decoration:none;
-text-transform:uppercase;
-width:140px;
-}
+#checkout_button {background-color:#ffffff;border-radius:40px;color:#000000;cursor:pointer;display:inline-block;font-size: 1.8rem;font-weight:bolder;height:20px;margin: 0;padding:16px 32px 40px 16px;text-align:center;text-decoration:none;text-transform:uppercase;width:140px;z-index: 5;}
 
 #checkout_button:hover {
 background-color:#ef4444;
 }
 
-.close_button {
-background-color:#f3f3f3;
-border:none;
-float: right;
-margin-top: 10px;
-}
+.close_button {background-color: #D3D3D3;position: absolute;border-radius: 50%;width: 60px;height: 60px;cursor: pointer;right: 15px;top: 13px;}
 
 .column {
-float:left;
-padding-bottom:60px;
-padding-left:30px;
-width:20%;
+    flex: 0 0 21.2%;
+    padding: 0px 2%;
+    display: flex;
+    flex-flow: column nowrap;
+    max-height: 230px;
 }
 
-.inner {
-width:inherit;
-}
+.inner {}
 
 .inner:after {
 bottom:50%;
 transform:rotate(-45deg);
 }
 
-.inner:before {
-top:50%;
-transform:rotate(45deg);
-}
+.inner:before {top: -2.3px;transform: rotate(45deg);left: -0.9px!important;}
 
-.inner:before,.inner:after {
-background:#555555;
-content:'';
-height:2px;
-left:5px;
-position:absolute;
-width:45px;
-}
+.inner:before,.inner:after {background:#555555;content:'';height: 3px;/* left:5px; *;/* position:absolute; */width: 47px;position: absolute;left: -2px;}
 
-.outer {
-cursor:pointer;
-margin:15px 15px auto auto;
-position:relative;
-width:45px;
-}
+.outer {cursor:pointer;margin: 2px 0px 0 0;position:relative;width: inherit;color: inherit;}
 
-.quality_form {
-margin:15px;
-}
+.quality_form {margin: 5px 4px;}
 
 .quantity {
-margin:20px 0 0 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.4rem;
 }
 
-.quantity_menu {
-margin-left:20px;
-margin-top:20px;
-}
+.quantity_menu {}
 
 select {
 background-color:#ffffff;
@@ -150,23 +84,9 @@ padding:5px 20px;
 width:100px;
 }
 
-#subtotal {
-background-color:#d3d3d3;
-border-radius:0;
-height:350px;
-padding:25px;
-position:fixed;
-right:30px;
-text-align:center;
-top:110px;
-width:450px;
-}
+#subtotal {background-color:#d3d3d3;position:fixed;right: 0px;top: 53px;width: 35%;height: 95%;padding: 190px 0%;z-index: 0;display: flex;flex-flow: column nowrap;align-items: center;justify-content: center;}
 
-#subtotal_number {
-font-size:24px;
-font-weight:lighter;
-margin-bottom:40px;
-}
+#subtotal_number {font-size:24px;font-weight: lighter;margin-bottom:40px;}
 
 #subtotal_title {
 font-size:20px;
@@ -178,3 +98,21 @@ margin-top:20px;
 font-size:18px;
 font-weight:bold;
 }
+
+.cart_item > a {
+    flex: 0 0 25%;
+}
+
+.book_title {
+    font-size: 135%;
+    margin: 0;
+    font-weight: bold;
+}
+
+.cart_item > p {
+    text-transform:uppercase;
+    margin: 42px 12%;
+    font-size: 4rem;
+    text-align: center;
+}
+

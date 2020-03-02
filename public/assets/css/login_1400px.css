@@ -1,15 +1,10 @@
-body {
-background-color:white;
-font-family:"F37 Ginger"!important;
-}
+body {}
 
 input:focus,select:focus,textarea:focus,button:focus {
 outline:none!important;
 }
 
-.button_container {
-margin:20px 30px;
-}
+.button_container {margin: 35px 30px;}
 
 .cancelbtn {
 background-color:#555555;
@@ -20,10 +15,7 @@ padding:10px 18px;
 width:120px;
 }
 
-#heading_text {
-font-weight:bolder;
-margin:100px 50px 50px 620px;
-}
+#heading_text {font-weight:bolder;text-align: center;margin-top: 30px;}
 
 .input_box {
 border:1px solid #ccc;
@@ -35,25 +27,11 @@ padding:12px 20px;
 width:100%;
 }
 
-.input_container {
-margin-top:50px;
-padding:30px;
-}
+.input_container {padding:30px;display: flex;flex-flow: column nowrap;align-items: center;}
 
-label {
-font-size:18px;
-}
+label {font-size:18px;align-self: flex-start;}
 
-#login {
-background-color: #d9d9d9;
-border: none;
-border-radius: 30px;
-font-size:16px;
-height:60px;
-margin-left: 600px;
-margin-top:50px;
-width: 180px
-}
+#login {background-color: #d9d9d9;border-radius: 30px;font-size: 2rem;height:60px;width: 180px;text-transform: uppercase;font-weight: bolder;margin-top: 50px;}
 
 #login:hover {
 background-color: #ef4444

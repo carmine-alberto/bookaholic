@@ -1,14 +1,14 @@
-<!doctype html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Book page</title>
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/navbar.css">
 	<link href="/assets/css/book_1400px.css" rel="stylesheet">
 	<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/book_768px.css" />
 	<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/book_400px.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/navbar.css">
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<script defer src="/assets/js/navbar.js"></script>
@@ -19,7 +19,7 @@
 
 <!--- START navigation bar section --->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+<nav class="navbar navbar-fixed-top" role="menubar">
   <!-- Navbar - Filled by JavaScript -->
 </nav>
 
@@ -29,14 +29,13 @@
 <!--- START book details section --->
 
 <section id="book_landing_page">
+	<img id="book_image" alt="book_cover">
 	<div id="book_info">
-		<img id="book_image" alt="book_cover" src="" alt="book_cover">
-		<h1 id="book_name"></h1>
-		<h2 id="book_author"></h2>
+		<h1 id="book_title"></h1>
 		<h2 id="book_price"></h2>
 		<h5 id="book_resume"></h5>
-		<div id="add_to_cart_button" role="link" class="hidden">Add to Cart</div>
 	</div>
+	<button id="add_to_cart_button" role="link" disabled>Add to Cart</button>
 </section>
 
 <!--- END book details section --->
@@ -66,8 +65,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="about_the_author">
-		<h4 class="section_title" id="about_the_author_title">About the authors</h4>
+	<div id="about_the_authors">
+		<h4 class="section_title" id="about_the_authors_title">About the authors</h4>
 		<!-- Authors - Filled by JavaScript -->
 	</div>
 </section>
@@ -77,90 +76,18 @@
 <!--- START related books section --->
 
 <section id="related_books">
-	<h3 class="section_title" id="related_books_title">Related books</h3>
+	<h2 class="section_title" id="related_books_title">Related books</h2>
 	<div class="scrolling-wrapper">
-  	<div class="card">
-			<img src="/assets/img/chronicles_of_a_radical_hag.jpeg"
-					 class="book_cover"
-					 alt="book cover"
-					 role="link" />
-			<div class="caption_container">
-				<h6 class="book_title">Book_title</h6>
-			  <h6 class="book_author" id="book1_author_1">Book_author_1</h6>
-			  <h6 class="book_author" id="book1_author_2">Book_author_2</h6>
-			  <h6 class="book_author" id="book1_author_3">Book_author_3</h6>
-			  <h6 class="book_author" id="book1_author_4">Book_author_4</h6>
-			</div>
-	  </div>
-
-
-		<div class="card">
-			<img src="/assets/img/chronicles_of_a_radical_hag.jpeg"
-					 class="book_cover"
-					 alt="book cover"
-					 role="link" />
-			<div class="caption_container">
-				<h6 class="book_title">Book_title</h6>
-				<h6 class="book_author" id="book1_author_1">Book_author_1</h6>
-				<h6 class="book_author" id="book1_author_2">Book_author_2</h6>
-				<h6 class="book_author" id="book1_author_3">Book_author_3</h6>
-				<h6 class="book_author" id="book1_author_4">Book_author_4</h6>
-			</div>
-		</div>
+  	<!-- Cards - Filled by JavaScript -->
 	</div>
 
-	<div class="carousel">
+	<div class="carousel"
+			 aria-roledescription="carousel"
+			 aria-label="Books with the same genre">
   	<ul class="slides">
-      <input type="radio" name="radio-buttons" id="/assets/img-1" checked />
-    	<li class="slide-container" id="slide_1">
-      	<div class="slide-image" id="slide_container_1">
-					<!-- Slide content - Filled by JavaScript -->
-				</div>
-
-        <div class="carousel-controls">
-        	<label for="/assets/img-3" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="/assets/img-2" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-
-			<input type="radio" name="radio-buttons" id="/assets/img-2" />
-        <li class="slide-container" id="slide_2">
-          <div class="slide-image" id="slide_container_2">
-					</div>
-
-
-                <div class="carousel-controls">
-                    <label for="/assets/img-1" class="prev-slide">
-                        <span>&lsaquo;</span>
-                    </label>
-                    <label for="/assets/img-3" class="next-slide">
-                        <span>&rsaquo;</span>
-                    </label>
-                </div>
-            </li>
-            <input type="radio" name="radio-buttons" id="/assets/img-3" />
-
-            <li class="slide-container" id="slide_3">
-                <div class="slide-image" id="slide_container_3">
-
-                </div>
-
-                <div class="carousel-controls">
-                    <label for="/assets/img-2" class="prev-slide">
-                        <span>&lsaquo;</span>
-                    </label>
-                    <label for="/assets/img-1" class="next-slide">
-                        <span>&rsaquo;</span>
-                    </label>
-                </div>
-            </li>
-
-        </ul>
-    </div>
+      <!-- Carousel slides - Filled by JavaScript -->
+    </ul>
+  </div>
 </section>
 
 <!--- END related books section --->
@@ -169,7 +96,7 @@
 <!-- START Reviews section --->
 
 <section id="reviews">
-	<h4 class="section_title" id="reviews_title">Reviews</h4>
+	<h2 class="section_title" id="reviews_title">Reviews</h2>
 	<div id="reviews_container">
 		<!-- Reviews - Filled by JavaScript | DEFAULT: No reviews -->
 		<h3 id=no_reviews> No reviews are available for this book </h3>
@@ -184,11 +111,14 @@
 	<h2 class="section_title" id="related_events_title">Related events</h2>
 	<div class="events_container">
 		<!-- Events - Filled by JavaScript | DEFAULT: No events -->
-		<h3 class="event_title" style="text-alignment: center, margin-left: 50%">There are no events for this book</h3>
+		<h3 id="no_events">There are no events for this book</h3>
 	</div>
 </section>
 
 <!-- END Related events section --->
+<footer>
+	<span>Created by <a href="https://www.github.com/carmine-alberto">Carmine Alberto</a> and <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span><span>Design by <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span>
+</footer>
 
 </body>
 </html>

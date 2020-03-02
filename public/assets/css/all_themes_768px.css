@@ -4,111 +4,35 @@ max-width:100%;
 overflow-x:hidden;
 }
 
+
 .book {
-font-size:16px;
-padding:50px;
-text-align:center;
+    width: 33.3%;
+    padding: 20px 3%;
 }
 
-.book_author {
-font-size:14px;
-font-weight:lighter;
-}
+.book_author {font-size: 16px;font-weight:lighter;}
 
-.book_cover {
-cursor:pointer;
-height:200px;
-opacity:1;
-width:140px;
-}
+.book_cover {}
 
 .book_cover:hover {
 opacity:0.8;
 }
 
-.book_name {
-font-size:16px;
-font-weight:bolder;
-}
+.book_name {font-size:16px;}
 
-.books_container_1, .books_container_2, .books_container_3, .books_container_4, .books_container_5, .books_container_6, .books_container_7  {
-display:grid;
-grid-template-columns:auto auto auto;
-}
+.books_container_1, .books_container_2,.books_container_3,.books_container_4, .books_container_5, .books_container_6, .books_container_7 {flex-wrap: wrap;justify-content: center;}
 
-.header_box {
-background-color:#EF4444;
-height:20px;
-left:287px;
-position:absolute;
-top:245px;
-width:200px;
-z-index:inherit;
-}
-
-.header_container {
-background-color:white;
-height:300px;
-z-index:-100;
-}
-
-.header_text {
-font-size:36px;
-font-weight:bolder;
-left:300px;
-position:absolute;
-text-align:center;
-top:200px;
-z-index:100;
-}
-
-#friendship {
-margin-top: 100px;
-}
-
-#fear {
-margin-top: 100px
-}
-
-#justice {
-margin-top: 100px
-}
-
-#love {
-margin-top: 100px
-}
-
-#philosophical {
-margin-top: 100px
-}
-
-#war {
-margin-top: 100px
-}
-
-.section_title {
-font-size:26px;
-font-weight:bolder;
-padding: 0px!important;
-text-align: center;
-}
+.section_title {text-align:  center;}
 
 .show_more_button {
-background-color:rgba(225,225,225,1.00);
-border:none;
-border-radius:20px;
-color:black;
-display:inline-block;
-font-size:18px;
-height:80px;
-margin:100px 0 0 70px;
-padding:15px 32px;
-text-align:center;
-text-decoration:none;
-vertical-align:middle;
-width:120px;
+    border: none;
+    min-width: 300px;
 }
 
 .show_more_button:hover {
 background-color:#ef4444;
+}
+
+section:nth-child(odd) {
+  background-color: #F3F3F3;
 }

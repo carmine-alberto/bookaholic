@@ -90,10 +90,15 @@ paths:
               - criterion
           style: deepObject
           explode: true
-          description: "Return a subset of books: having the same property specified in criterion as the book provided."
-          example:
-            id: 8935171483
-            criterion: genre
+          description: |
+            - Return a subset of books: having the same property specified in criterion as the book provided.
+            - example:\
+              {\
+                "id": "8893517144",\
+                "criterion": "genre"\
+              }\
+              \
+              We can't remove the one provided by Swagger, please overwrite it before testing the endpoint.
         - $ref: "#/components/parameters/limitParam"
         - $ref: "#/components/parameters/offsetParam"
 
@@ -188,7 +193,7 @@ paths:
 
   /books/{book_id}:
     get:
-      summary: get information on a single book
+      summary: Get information on a single book
 
       tags:
         - Book
@@ -561,7 +566,7 @@ paths:
                   $ref: "#/components/schemas/CartBook"
         '400':
           $ref: ""#/components/responses/400BadRequest"
-          
+
         '401':
           $ref: "#/components/responses/401Unauthorized"
 
@@ -966,8 +971,9 @@ paths:
                       User's data required to login. Working example:
                         - **username**: carmine
                         - **password**: bookaholic2019
-
-
+                      To test Swagger endpoints which require authentication
+                      - copy the token provided in the response below;
+                      - paste it in the window opened by clicking on the lock icon.
       responses:
         '200':
           description: |
@@ -1126,7 +1132,7 @@ components:
           readOnly: true
         cover:
           type: string
-          pattern: ^[\w]+\.jpg$
+          pattern: ^[\w]+\.jpeg$
           readOnly: true
 
     DetailedBook:
@@ -1171,7 +1177,7 @@ components:
       example:
         book_id: 8012039031
         title: The Power
-        cover: the_power.jpg
+        cover: the_power.jpeg
         abstract: All over the world women and girls are discovering they have the power. With a flick of the fingers they can inflict terrible pain, and even death.
         interview: none
         publication_date: 2013-01-02
@@ -1214,7 +1220,7 @@ components:
           example:
             book_id: 1243765890
             book_title: Mortal Instruments - City of Bones
-            cover: city_of_bones.jpg
+            cover: city_of_bones.jpeg
             cover_type: paperback
             price: 8.99
             amount: 2
@@ -1235,19 +1241,30 @@ components:
           type: string
         picture:
           type: string
-          pattern: ^[\w]+\.jpg
+          pattern: ^[\w]+\.jpeg$
         short_bio:
           type: string
+        written_books_id:
+          type: array
+          items:
+            type: number
+            format: book_id
+            pattern: ^\d{10}$
+          minItems: 1
+          uniqueItems: true
       required:
         - name
         - picture
         - short_bio
-      description: "author_id provided with sets requests only."
+      description: "author_id provided with sets requests only; written_books_id with single-author requests only."
       example:
+        author_id: 10000000 (for sets only)
         name: Friedrich Nietzsche
-        picture: friedrich_nietzsche.jpg
+        picture: friedrich_nietzsche.jpeg
         short_bio: |
           Born in Rocken in 1844, Nietzsche is a philosopher best known for his controversial theories on human nature.
+        written_books_id: |
+          [8000003285, 9382764867] (for single author only)
 
     Event:
       type: object
@@ -1267,7 +1284,7 @@ components:
           format: date
         image:
           type: string
-          pattern: ^[\w]+\.jpg$
+          pattern: ^[\w]+\.jpeg$
         book_id:
           type: string
           format: book_id
@@ -1307,7 +1324,7 @@ components:
             readOnly: true
         book_cover:
             type: string
-            pattern: ^[\w]+\.jpg$
+            pattern: ^[\w]+\.jpeg$
             readOnly: true
       required: [gist, content, rating, book_id]
       description: "book_title and book_cover are optional and provided only if the resource is requested with the <<by_user>> parameter."

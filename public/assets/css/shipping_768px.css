@@ -1,90 +1,23 @@
-body {
-font-family:'F37 Ginger'!important;
-max-width:768px!important;
-overflow-x:hidden;
+html {
+    font-size: 50% !important;
 }
-
-a {
-font-weight:bolder;
-}
-
-.answers {
-font-size:16px;
-font-weight:lighter;
-}
-
-.header_box {
-background-color:#EF4444;
-bottom:400px;
-height:20px;
-left:180px;
-position:absolute;
-width:400px;
-z-index:inherit;
-}
-
-.header_container {
-background-color:white;
-height:150px;
-z-index:-100;
-}
-
-.header_text {
-font-size:36px;
-font-weight:bolder;
-left:190px;
-position:absolute;
-text-align:center;
-top:180px;
-z-index:100;
-}
-
-#international_delivery {
-font-size:18px;
-margin-left:50px;
-margin-top:100px;
-width:680px;
-}
-
-#international_delivery_title {
-margin-left:150px;
-}
-
-#other_questions {
-font-size:18px;
-font-weight:lighter;
-margin-top:100px;
-text-align:center;
-}
-
 .section_title {
-font:bolder;
-font-size:24px;
-font-weight:bolder;
-text-align:center;
+    padding: 15px 0%;
 }
 
 #uk_container {
-display:grid;
-font-size:20px;
-grid-template-columns:auto auto;
-margin-left:45px;
+    padding: 0px 9%;
 }
 
-#uk_delivery {
-width:768px;
-}
-
-#uk_delivery_title {
-margin-top:180px;
-}
 
 .uk_options {
-width:350px;
+    padding: 10px 8%;
 }
 
-.uk_request {
-font-size:16px;
-font-weight:bolder;
+.uk_options > ul> li {
+    line-height: 1.4;
+    margin: 15px 0%;
 }
-
+.header_box {
+    
+}

@@ -1,98 +1,35 @@
-body {
-font-family:'F37 Ginger'!important;
-max-width:100%;
-overflow-x:hidden;
+html {
+    font-size: 50% !important
 }
 
-.book {
-padding: 35px
+.book_cover:hover {
+opacity:0.8;
 }
 
-.books_container_1, .books_container_2, .books_container_3, .books_container_4, .books_container_5, .books_container_6, .books_container_7 {
-display:grid;
-grid-template-columns:auto auto;
+.book {flex: 0 0 70%;}
+
+.books_container_1, .books_container_2,.books_container_3,.books_container_4, .books_container_5, .books_container_6, .books_container_7 {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: left;
+    margin: 0px 0%;
 }
 
-.header_box {
-background-color:#EF4444;
-height:20px;
-left:110px;
-position:absolute;
-top:195px;
-width:200px;
-z-index:inherit;
-}
 
-.header_container {
-background-color:white;
-height:300px;
-z-index:-100;
-}
 
-.header_text {
-font-size:36px;
-font-weight:bolder;
-left:110px;
-position:absolute;
-text-align:center;
-top:150px;
-width: 200px;
-z-index:100;
-}
+.section_title {}
 
-#fear {
-margin-top: 100px;
-}
-
-#friendship {
-margin-top: 100px;
-}
-
-#friendship_title {
-margin-left: 100px;
-}
-
-justice {
-margin-top: 100px;
-}
-
-#love {
-margin-top: 100px;
-}
-
-#philosophical {
-margin-top: 100px
-}
-
-#war {
-margin-top: 100px
-}
-
-.section_title {
-font-size:24px;
-margin-left: 10px;
-padding: 0px;
-text-align: center
-}
-
-.show_more_button {
-background-color:rgba(225,225,225,1.00);
-border:none;
-border-radius:20px;
-color:black;
-display:inline-block;
-font-size:16px;
-font-weight: bolder;
-height:60px;
-margin:100px 0 0 50px;
-padding:15px 32px 62px 30px;
-text-align:center;
-text-decoration:none;
-text-transform: uppercase;
-vertical-align:middle;
-width:120px;
-}
+.show_more_button {flex: 0 0 40%;padding: 19px 9%;text-align: center;margin: 0;max-width: 350px;}
 
 .show_more_button:hover {
 background-color:#ef4444;
 }
+
+section:nth-child(odd) {
+  background-color: #F3F3F3;
+}
+
+section:nth-child(n+1) {
+  /* padding: 15px 3%; */
+}
+

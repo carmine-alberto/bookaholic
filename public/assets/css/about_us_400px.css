@@ -1,101 +1,37 @@
-body{
-font-family: "F37 Ginger"!important;
-width: 400px!important;
-}
-
 html {
-width: 400px;
+font-size: 50% !important;
 }
 
-#about_us_photo{
-width: 400px;
-margin: 5px 0px 10px 0px;
-}
+#about_us_photo{}
 
-.column{
-float: left;
-width: 45%;
-padding-left: 65px;
-padding-bottom: 40px;
-}
+.column{width: 50%;padding: 35px 12% 0;}
 
-#contacts{
-background-color: #FFFFFF;
-height: 500px;
-}
+#contacts{}
 
-#contacts_container{
-background-color: #ef4444;
-margin: 0px;
-padding-top: 15px;
-float: left;
-width: 400px;
-height: 560px;
-}
+#contacts_container{height: 460px;width: 100%;}
 
-#contacts_greenwich_rows, #contacts_camden_rows{
-padding-left: 50px;
-padding-right: 50px;
-line-height: 1
-}
+#contacts_greenwich_rows, #contacts_camden_rows{padding: 0 10% 0;line-height: 1;}
 
-#contacts_title {
-margin-left: -20px;
-}
+#contacts_title {}
 
-.faq{
-font-weight: normal;
-padding-left: 65px;
-padding-right: 25px;
-width: 400px;
-font-size: 16px;
-}
+.faq{}
 
-.faq_answer{
-font-weight: lighter;
-padding-left: 65px;
-padding-bottom: 25px;
-width: 400px;
-font-size: 16px;
-}
+.faq_answer{}
 
 #faq_section{
-background-color: #F3F3F3;
-height: 830px;
-margin: 60px 0px 20px 0px;
-width: 400px;
+    padding: 23px 8%;
 }
 
 .header_box{
-width: 140px;
-height: 15px;
-background-color: #EF4444;
-position: absolute;
-top: 110px;
-left: 130px;
-z-index: inherit;
+    height: 14px;
+    margin-top: -23.8px;
 }
 
-.header_container{
-height: 150px;
-background-color: white;
-z-index: -100;
-width: 400px;
-}
+.header_container{}
 
-#header_section {
-width: 400px;
-}
+#header_section {}
 
-.header_text{
-z-index: 100;
-text-align: center;
-position: absolute;
-top: 70px;
-left: 140px;
-font-weight: bolder;
-font-size: 30px;
-}
+.header_text{}
 
 .input-group{
 width: 350px!important;
@@ -104,24 +40,13 @@ position: absolute!important;
 left: 20px;
 }
 
-#map{
-width: 400px;
-height: 250px;
-margin-bottom: 50px;
-}
+#map{width: 100%;height: 255px;margin-bottom: 15px;}
 
 .menu_item{
 width: 80px!important;
 }
 
-.navbar-form{
-height: 60px!important;
-border-color: #555555;
-}
-
-.row {
-width: 400px;
-}
+.row {}
 
 .row:after{
 content: "";
@@ -129,38 +54,15 @@ display: table;
 clear: both;
 }
 
-.section_title{
-font: bolder;
-font-size: 28px;
-font-weight: bolder;
-padding-left: 165px;
-padding-top: 15px;
-padding-bottom: 30px;
-clear: left;
-width: 400px;
-}
+.section_title{}
 
-.shop_name{
-font-weight: bolder;
-}
+.shop_name{}
 
 .timetable{
 word-spacing: 60px;
 margin-top: 20px;
 }
 
-#who_we_are_section{
-background-color: #FFFFFF;
-height: 400px;
-width: 400px!important;
-}
+#who_we_are_section{}
 
-#who_we_are_text{
-text-align: justify;
-width: 250px;
-position: absolute;
-left: 70px;
-font-weight: lighter;
-font-size: 14px;
-margin-bottom: 30px;
-}
+#who_we_are_text{}

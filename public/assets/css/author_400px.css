@@ -1,8 +1,6 @@
-body {
-body:768px;
-font-family:'F37 Ginger'!important;
+html {
+    font-size: 45% !important
 }
-
 #author_bio {
 font-size:16px;
 left:20px;
@@ -15,144 +13,69 @@ width:380px;
 }
 
 #author_bio_title {
-font-size: 16px;
-font-weight: lighter;
-left: 30px;
-margin:5px 0 10px 30px;
-position:absolute;
-top: 480px;
-width: 300px;
+    padding: 40px 0% 2px;
 }
 
-.authored_books_section {
-margin-left: 120px;
-}
+.authored_books_section {}
 
 #author_intro {
-background-color:#F3F3F3;
-padding-bottom:30px;
-padding-top:30px;
-width:400px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 12% 30px;
+    height: auto;
 }
 
 #author_name {
-font-size:26px;
-font-weight:bolder;
-margin:60px 0 0 50px;
-text-align:center;
-width:300px;
+    padding: 25px 0%;
 }
 
-#author_photo {
-border:solid #EF4444;
-border-width:1px 10px 10px 1px;
-float:left;
-height:300px;
-left:55px;
-position:absolute;
-top:150px;
-width:300px;
-}
+#author_photo {}
 
 .book {
-font-size:18px;
-margin-bottom: 60px;
-margin-left: 0px;
-margin-top: 0px;
-margin-left: 10px;
-margin-left: 40px;
-position: relative;
+    width: 40%;
 }
 
-.book_author {
-font-size:12px;
-font-weight:lighter;
-color: black;
-}
+.book_author {}
 
-.book_cover {
-cursor:pointer;
-height:190px;
-opacity:1;
-width:145px;
-}
+.book_cover {}
 
 .book_cover:hover {
 opacity:0.8;
 }
 
-.book_image_event {
-float:none;
-height:300px;
-width:230px;
-}
+.book_image_event {}
 
-.book_title {
-font-size:15px;
-font-weight:bold;
-color: black;
-}
+.book_title {}
 
 .books_containers {
-display:grid;
-grid-gap:10px;
-grid-template-columns:auto auto;
-margin-left: -50px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 12px 4.8% 15px;
 }
 
-.event {
-margin:40px 80px;
-width:180px;
-}
+.event {width: 100%;}
 
-.event_author {
-font-size:14px;
-}
+.event_author {}
 
-.event_date {
-font-size:16px;
-margin-top:20px;
-}
+.event_date {}
 
 .event_description {
 float:left;
 }
 
-.event_title {
-font-size:18px;
-font-weight:bolder;
-}
+.event_title {}
 
-.events_container {
-width:400px;
-}
+.events_container {}
 
 .learn_more {
-background-color:#d5d5d5;
-border:none;
-border-radius:30px;
-color:black;
-display:inline-block;
-font-size:18px;
-height:50px;
-margin:20px 25px;
-text-align:center;
-text-decoration:none;
-vertical-align:middle;
-width:180px;
+    padding: 9px 10%;
 }
 
 .learn_more:active {
 background-color:#ef4444;
 }
 
-#related_events {
-position: relative;
-background-color:#f3f3f3;
-margin-top: 330px;
-padding-bottom:80px;
-width:400px;
-}
+#related_events {}
 
 #related_events_title {
 margin-left:80px;
@@ -160,8 +83,5 @@ width:250px;
 }
 
 .section_title {
-font-size:26px;
-width:180px;
+    text-align: center;
 }
-
-

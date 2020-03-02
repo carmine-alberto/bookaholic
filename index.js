@@ -32,13 +32,13 @@ async function createServer() {
         options
     );
 
-    // Used to redirect http requests to https - uncomment before deployment
-    // app.use((req, res, next) => {
-    //   if (req.header('x-forwarded-proto') !== 'https')
-    //     res.redirect(`https://${req.header('host')}${req.url}`);
-    //   else
-    //     next();
-    // });
+    //Used to redirect http requests to https - uncomment before deployment
+    app.use((req, res, next) => {
+      if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`);
+      else
+        next();
+    });
 
     app.use(exegesisMiddleware);
 
@@ -53,7 +53,7 @@ async function createServer() {
     //   res.sendFile(path.join(__dirname, "views", req.url.match(/(?:book|author|event)/)[0] + ".html"));
     // })
 
-    app.use(serveStatic(path.join(__dirname, "public")));
+    app.use(serveStatic(path.join(__dirname, "public"), {extensions: ["html"]}));
 
     app.use(serveStatic(path.join(__dirname, "public/pages"), {extensions: ["html"]}));
 

@@ -1,17 +1,18 @@
-<!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Single event</title>
-<link rel="stylesheet" href="assets/css/single_event_1400px.css" />
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="assets/css/single_event_768px.css" />
-<link rel="stylesheet" media="screen and (max-width: 400px)" href="assets/css/single_event_400px.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/navbar.css">
+<link rel="stylesheet" href="/assets/css/single_event_1400px.css" />
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/assets/css/single_event_768px.css" />
+<link rel="stylesheet" media="screen and (max-width: 400px)" href="/assets/css/single_event_400px.css" />
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script defer src="/assets/js/navbar.js"></script>
+<script defer src="/assets/js/event.js"></script>
 </head>
 
 
@@ -19,43 +20,45 @@
 
 <!--- START navigation bar section --->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="menubar">
+<nav class="navbar navbar-fixed-top" role="menubar">
   <!-- Navbar - Filled by JavaScript -->
 </nav>
 
-<section id="header_section">
-<div class="header_container">
-<h1 class="header_text">The new mystery literature</h1>
-<h2 class="author" id="event1_author">with Gillian Flynn</h2>
-<div class="header_box"></div>
+<div class="back">
+  <span>&lsaquo;</span><a href="/events">back to Latest events</a>
 </div>
 
-
+<section id="header_section">
+	<div class="header_container">
+		<h1 class="header_text"></h1>
+		<h2 class="author"><a></a></h2>
+	</div>
+</section>
 
 <!--- START events section --->
 
-</section>
-
 <section id="events">
+	<div class="event">
+		<img class="event_photo" alt="event image">
+		<h3 class="date"></h3>
+		<h4 class="description"></h4>
+	</div>
 
-<div class="event">
+	<a id="book_details"
+		 class="book_cover"
+		 alt="book cover"
+		 role="link">
+	 See more about the book
+ 	</a>
 
-</div>
-
-<div id="book_details"
-	 class="book_cover"
-	 alt="book cover"
-	 role="link"
-	 onclick="goToLink(book page, 'book page')"
-     onkeydown="goToLink(book page, 'book page')">See book details</div>
-
-<h5 id="condition">Free entry subject to availability at the meeting room.</h5>
-
+	 <h5 id="condition">Free entry subject to availability at the meeting room.</h5>
 </section>
 
 <!--- END events section --->
 
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/single_event1.js"></script>
+<footer>
+	<span>Created by <a href="https://www.github.com/carmine-alberto">Carmine Alberto</a> and <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span><span>Design by <a href="https://www.github.com/LauraCappelli13">Laura Cappelli</a></span>
+</footer>
+
 </body>
 </html>

@@ -25,7 +25,7 @@ exports.getBookById = function(book_id) {
           resolve(data[0]);
         })
       .catch(bookError => reject(bookError)))
-    .catch(bdError => reject(bdError))
+    .catch(dbError => reject(dbError))
   })
 }
 

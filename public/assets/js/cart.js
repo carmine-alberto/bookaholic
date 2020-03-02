@@ -1,18 +1,21 @@
 
 //const jwt set by navbar.js
 
-const handleErrors = function(response) {
-  if (response.ok)
-    return response;
-  else
-    switch(response.status) {
-      case 401:
-      case 400:
-        throw new Error("Your access token is invalid or expired.\nYou'll be redirected to the login page.\nSelect OK to continue.");
-        break;
-      case 404:
-        throw new Error("The resource does not exist in the server, try refreshing the page.");
-      }
+const handleErrors = response => { if (response.ok) return response; throw new Error(response.status); }
+
+const handleError = error => {
+  switch(parseInt(error.message)) {
+    case 401:
+      alert("You are not authenticated! You'll be redirected to the login page");
+      window.location.href = "/login";
+      break;
+    case 400:
+      //Handled by navbar.js
+      break;
+    case 404:
+      alert("The resource does not exist in the server, this page is probably showing outdated info. We'll refresh it for you.");
+      document.location.reload();
+    }
 }
 
 const calculateTotal = function(cartItemsSelector) {
@@ -101,10 +104,7 @@ const postOrder = function() {
       window.location.href = "/";
     })
   )
-  .catch(error => {
-    alert("There was an error during the request.\nIf your connection was not lost, it's probably due to an expired token.\nTry to login again.");
-    window.location.href = "/login";
-  })
+  .catch(handleError)
 }
 
 //MAIN's HELPER
@@ -125,7 +125,7 @@ const populatePage = function(data) {
 
     //TODO Weird behaviour of "this" in case of arrow functions - further investigation is needed; for now, classic notation will be used
     $("select").change(function() {
-        const selected = $(this).find('option:selected');
+        const selected = $(this).children('option:selected');
         const affectedBook = $(this).parents(".book_info");
         const affectedBookPrice = parseFloat(affectedBook.find(".book_price").text());
         const multiplier = parseInt(selected.html());
@@ -148,13 +148,11 @@ const populatePage = function(data) {
       .then(response => {
         $(this).parent().detach();
         setTotal();
+        populateNavbar();
         if (cartItemsSelector.children().length == 0)
           populateEmptyCart();
       })
-      .catch(error => {
-        alert(error.message);
-        window.location.href = "/login";
-      });
+      .catch(handleError);
     });
 
     checkoutButtonSelector.on("click touch", postOrder);
@@ -181,8 +179,5 @@ else {
   .then(handleErrors)
   .then(response => response.json())
   .then(populatePage)
-  .catch(error => {
-      alert(error.message);
-      window.location.href = "/login";
-  });
+  .catch(handleError);
 }

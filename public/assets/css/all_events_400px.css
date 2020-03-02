@@ -1,109 +1,18 @@
-body {
-font-family:"F37 Ginger"!important;
-max-width:400px;
-overflow-x:hidden;
+html {
+    font-size: 45% !important;
 }
-
-#apply_filters {
-background-color:#d9d9d9;
-border-radius:30px;
-height:50px;
-margin-left:130px;
-margin-top:30px;
-width:140px;
-}
+#apply_filters {width:140px;}
 
 #apply_filters:active,.learn_more:active {
 background-color:#ef4444;
 }
 
-.author {
-font-size:16px;
-padding-left:105px;
-}
-
-.date {
-font-size:16px;
-font-weight:lighter;
-margin-top:0;
-}
-
 .event {
-background-color:#FFFFFF;
-height:350px;
-padding-bottom:50px;
-padding-top:50px;
+    width: 100%;
+    padding: 40px 5%;
 }
 
-.event_photo {
-height:150px;
-margin-bottom:30px;
-margin-left:30px;
-margin-right:20px;
-width:150px;
-}
-
-#events_container {
-display:grid;
-grid-gap:-150px 100px;
-grid-template-columns:auto;
-}
-
-.filter {
-list-style:none;
-margin-left:60px;
-width:80px;
-}
-
-#filters_container {
-margin-left: 0px;
-padding-bottom:5px;
-padding-left:10px;
-}
-
-#filters_container:after {
-clear:both;
-content:"";
-display:block;
-margin-left:80px;
-}
-
-.header_box {
-background-color:#EF4444;
-height:15px;
-left:140px;
-position:absolute;
-top:120px;
-width:110px;
-z-index:inherit;
-}
-
-.header_container {
-background-color:white;
-height:140px;
-z-index:-100;
-}
-
-.header_text {
-font-size:30px;
-font-weight:bolder;
-left:150px;
-position:absolute;
-text-align:center;
-top:80px;
-z-index:100;
-}
-
-.learn_more {
-background-color:#d4d4d4;
-border-radius:30px;
-font-size:16px;
-height: 45px;
-margin-left: -55px;
-margin-top: 55px;
-padding: 15px;
-width:110px;
-}
+.learn_more {height: 35px;padding: 10px 7%;}
 
 .section_title {
 clear:left;
@@ -115,15 +24,20 @@ padding-left:25px;
 padding-top:15px;
 }
 
-select {
-width:100px;
+select {width: 137px;}
+
+.event:nth-child(4n+1) {
+	  background-color: initial;
 }
 
-.title {
-font-size:20px;
-padding-left:70px;
+.event:nth-child(4n+2) {
+	background-color: initial;
 }
 
-#where {
-width:250px;
+.event:nth-child(odd) {
+  background-color: #F3F3F3;
+}
+
+option {
+    font-size: 1.6rem;
 }

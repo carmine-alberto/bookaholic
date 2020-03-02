@@ -1,11 +1,104 @@
 
-const host = "";
+const host = ""; //Set for debugging purposes (localhost + remote API) - right now, all of the resources are laoded using relative paths
 const jwt = window.localStorage.getItem("jwt");
 
 //UTILITY FUNCTIONS
 const getUsername = () => JSON.parse(window.atob(jwt.split(".")[1]))["username"];
 
+
+const getFormattedDateTime = dateTime => {
+  const dateTimeObject = new Date(dateTime);
+  const dateTimeOptions = {year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit", minute: "2-digit" }
+
+  return dateTimeObject.toLocaleTimeString('en-EN', dateTimeOptions);
+};
+
+const check = string => console.log("Past " + string);
+
+const modulo = (left, right) => {return (left % right + right) % right; };
+
 const capitalizeString = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+const createImgURL = imgName => "/assets/img/".concat(imgName);
+
+const createAuthorsTag = (authors, tag) => authors.reduce( (taggedAuthors, author) =>
+  taggedAuthors + '<' + tag + ' class="book_author">' + author["author_name"] + '</' + tag +'>', "");
+
+const appendScrollingWrapperContent = (selector, data) => data.forEach(book =>
+  selector.append(
+      '<a href="/book?id=' + book["book_id"] +'">' +
+        '<div class="card">' +
+          '<img src="' + createImgURL(book["cover"]) + '" ' +
+             'class="book_cover"' +
+             'alt="book cover"' +
+             'role="link" />' +
+          '<div class="scrolling_caption">' +
+            '<h6 class="book_title">' + book["title"] + '</h6>' +
+            '<div class="authors_container">' +
+              createAuthorsTag(book["authors"], "h6") +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</a>'
+  )
+);
+
+const appendCarouselSlides = (selector, data) => {
+  const itemsPerSlide = 5;
+  const numOfSlides = Math.ceil(data.length / itemsPerSlide);
+
+  const itemsLeftToAddModulo5 = multiplier => Math.min(itemsPerSlide, data.length - itemsPerSlide*multiplier);
+
+  const appendSlide = slideIndex => {
+    const appendArrowIfMoreThanOneSlide = tag => numOfSlides > 1 ? tag : "";
+
+    selector.append(
+      '<input type="radio" name="radio-buttons" id="slide_' + slideIndex + '" />' +  //The first one must have the property "checked"
+      '<li class="slide-container">' +
+        '<div class="slide-image"' +
+              'role="group"' +
+              'aria-roledescription="slide"' +
+              'aria-label="slide ' + (slideIndex + 1) + ' of ' + numOfSlides + '">' +
+          '<!-- Slide content - Filled by JavaScript -->' +
+        '</div>' +
+        '<div class="carousel-controls">' +
+          '<label class="prev-slide" for="slide_' + modulo(slideIndex - 1, numOfSlides ) + '">' +
+            appendArrowIfMoreThanOneSlide('<span>&lsaquo;</span>') +
+          '</label>' +
+          '<label class="next-slide" for="slide_' + modulo(slideIndex + 1, numOfSlides) + '">' +
+            appendArrowIfMoreThanOneSlide('<span>&rsaquo;</span>') +
+          '</label>' +
+        '</div>' +
+      '</li>'
+    )
+  };
+
+  [...Array(numOfSlides).keys()].forEach(slideIndex => {
+    appendSlide(slideIndex);
+    console.log(itemsLeftToAddModulo5(slideIndex));
+    [...Array(itemsLeftToAddModulo5(slideIndex)).keys()].forEach(itemIndexModulo5 => {
+        const itemIndex = itemIndexModulo5 + slideIndex * itemsPerSlide;
+
+        selector.find(".slide-image").last().append(
+          '<a class="image_and_caption" href="/book?id=' + data[itemIndex]["book_id"] + '">' +
+            '<img src="' + createImgURL(data[itemIndex]["cover"]) + '"' +
+                  'alt="book cover"' +
+                  'role="link" />' +
+            '<div class="caption_container">' +
+              '<h6 class="book_title">' + data[itemIndex]["title"] + '</h6>	' +
+              '<div class="authors_container">' +
+                createAuthorsTag(data[itemIndex]["authors"], "h6") +
+              '</div>' +
+            '</div>'+
+          '</a>'
+        )
+    })
+  });
+
+  $("#slide_0").prop("checked", true);
+};
+
+const handleResponseStatusCode = response => { if (response.ok) return response; else throw new Error(response.status); };
 
 const getUrlParametersAsObject = (url) => {
                                           var params = {};
@@ -23,21 +116,33 @@ const getUrlParametersAsObject = (url) => {
                                           return params;
                                       };
 
-//MAIN
+//NAVBAR HELPER FUNCTIONS
+const setActive = (selector) => selector.each(function() {
+                                                const hrefContent = $(this).attr("href");
+                                                console.log(hrefContent);
+                                                if (hrefContent != "#" && hrefContent.substring(1) == decodeURIComponent(window.location.href.split("/")[3])) {
+                                                  $(this).attr("id", "active");
+                                                  $(this).parents("ul").siblings("a").attr("id", "active");
+                                                }
+                                                });
+
+const handleNavbarError = error => {
+                              alert("Your token has expired, you'll be redirected to the login page");
+                              window.localStorage.removeItem("jwt");
+                              window.location.href = "/login";
+                            };
+
+
+//MAIN NAVBAR FUNCTIONS
 const populateNavbar = () => {
   const genresListSelector = $("#genre_list");
   const themesListSelector = $("#themes_list");
   const navbarRightSelector = $(".navbar-right");
-  const landmarksSelector = $("#landmarks").find(".menu_item");
 
-  const setActive = (selector) => selector.each(function() {
-                                                  if ($(this).attr("href").substring(1) == window.location.href.split("/")[3])
-                                                    $(this).attr("id", "active");
-                                                  });
 
   const appendNonLoggedUserTabs = (selector) => selector.append(
     '<li>' +
-      '<a href="/login" role="navbaritem">' +
+      '<a href="/login" class="menu_item" role="navbaritem">' +
         '<span class="icon_name">' +
           '<img src="/assets/img/logo_profile.png"' +
                'alt="login link"' +
@@ -50,7 +155,7 @@ const populateNavbar = () => {
     '</li>' +
 
     '<li>' +
-      '<a href="/registration" role="navbaritem">' +
+      '<a href="/registration" class="menu_item" role="navbaritem">' +
         '<span class="icon_name">' +
           '<img src="/assets/img/logo_profile.png"' +
                'alt="registration link"' +
@@ -63,9 +168,11 @@ const populateNavbar = () => {
     '</li>'
   );
 
-  const appendLoggedUserTabs = (selector) => selector.append(
+  const appendLoggedUserTabs = (selector, numberOfItemsInCart) => {
+    selector.empty();
+    selector.append(
     '<li class="dropdown">' +
-      '<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="menuitem">' +
+      '<a class="dropdown-toggle menu_item" data-toggle="dropdown" href="#" role="menuitem">' +
         '<span class="icon_name">' +
           '<img src="/assets/img/logo_profile.png"' +
                'alt="profile link"' +
@@ -89,75 +196,90 @@ const populateNavbar = () => {
     '</li>' +
 
     '<li>' +
-      '<a href="/cart">' +
+      '<a href="/cart" class="menu_item" role="navbaritem">' +
         '<span class="icon_name">' +
           '<img src="/assets/img/logo_cart.png"' +
                'alt="cart link"' +
                'class="icon"' +
                'tabindex="0"' +
                'role="link" />' +
-          ' Cart' +
+          ' Cart: ' + numberOfItemsInCart +
         '</span>' +
       '</a>' +
     '</li>'
-  );
-
-  const appendDataForListThemes = function(selector, list) {
-      for (var i = 0; i < list.length; i++)
-        selector.append(
-          '<li id="theme_' + list[i] + '" role="option">' +
-            '<a href="/theme?theme=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
-          '</li>'
-        )
+    )
   };
 
-  const appendDataForListGenres= function(selector, list) {
-    for (var i = 0; i < list.length; i++) {
-      selector.append(
-        '<li id="genre_' + list[i] + '" role="option">' +
-          '<a href="/genre?genre=' + list[i] + '">' + capitalizeString(list[i]) + '</a>' +
-        '</li>'
-      )
-    }
-  };
+  const appendDataForListThemes = list => {
+                                            if (themesListSelector.children().length <= 1) //If only All Themes has been appended
+                                              list.forEach(element => themesListSelector.append(
+                                                  '<li role="option">' +
+                                                    '<a href="/theme?theme=' + element + '">' + capitalizeString(element) + '</a>' +
+                                                  '</li>'
+                                                )
+                                            )
+                                          };
+
+  const appendDataForListGenres = list => {
+                                            if (genresListSelector.children().length <= 1)
+                                              list.forEach(element => genresListSelector.append(
+                                                  '<li role="option">' +
+                                                    '<a href="/genre?genre=' + element + '">' + capitalizeString(element) + '</a>' +
+                                                  '</li>'
+                                                )
+                                              )
+                                          };
 
   Promise.all([
     fetch(host+"/api/books/themes")
     .then(response => response.json())
-    .then(themes=> appendDataForListThemes(themesListSelector, themes))
     ,
     fetch(host+"/api/books/genres")
     .then(response => response.json())
-    .then(genres => appendDataForListGenres(genresListSelector, genres))
   ])
-  .then(() => {
-    if (jwt != null) {
-      appendLoggedUserTabs(navbarRightSelector);
-      $("#logout").on("click touch", function() {
-                                      window.localStorage.removeItem("jwt");
-                                      alert("Logout successful! You'll be redirected to the Homepage.");
-                                      window.location.href = "/";
-                                    });
-    }
-    else
-      appendNonLoggedUserTabs(navbarRightSelector);
-  })
-  .then(setActive(landmarksSelector));
-}
+  .then( values => {
+    Promise.all([
+      Promise.resolve(appendDataForListThemes(values[0])),
+      Promise.resolve(appendDataForListGenres(values[1])),
+      new Promise((resolve, reject) => {
+          if (jwt != null)
+            fetch(host + "/api/cart", { method: "GET", headers: {"Authorization": "Bearer " + jwt } })
+            .then(handleResponseStatusCode)
+            .then(response => response.json())
+            .then(response => Promise.resolve(new Promise((resolve, reject) => {//I swear I couldn't find a better solution, I don't even know why this works - TODO Ask for clarifications
+              appendLoggedUserTabs(navbarRightSelector, response.length);
+              $("#logout").on("click touch", function() {
+                                              window.localStorage.removeItem("jwt");
+                                              alert("Logout successful! You'll be redirected to the Homepage.");
+                                              window.location.href = "/";
+                                            });
 
-const initNavbar = () => $("nav").append(
-  '<div class="container-fluid">' +
-    '<div class="navbar-header">' +
-      '<button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">' +
-        '<span class="icon-bar"></span>' +
-        '<span class="icon-bar"></span>' +
-        '<span class="icon-bar"></span>' +
-      '</button>' +
+            }))
+            .then(setActive($(".nav").find("a"))))
+            .catch(handleNavbarError);
+          else
+            appendNonLoggedUserTabs(navbarRightSelector);
+        resolve();
+      })
+    ])
+    .then(setActive($(".nav").find("a")));
+  });
+};
 
-      '<a class="navbar-brand" id="bookaholic_logo" href="/"><img src="/assets/img/bookaholic_logo.png" alt="bookaholic logo"></a>' +
-    '</div>' +
-    '<div class="collapse navbar-collapse" id="myNavbar">' +
-      '<div class="adjust-height">' +
+
+const initNavbar = new Promise((resolve, reject) => {
+  $("nav").append(
+    '<div class="container-fluid">' +
+      '<div class="navbar-header">' +
+        '<button title="menu_icon" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" role="button" id="menu_icon">' +
+          '<span class="icon-bar"></span>' +
+          '<span class="icon-bar"></span>' +
+          '<span class="icon-bar"></span>' +
+        '</button>' +
+
+        '<a class="navbar-brand" id="bookaholic_logo" href="/"><img src="/assets/img/bookaholic_logo.png" alt="bookaholic logo"></a>' +
+      '</div>' +
+      '<div class="collapse navbar-collapse" id="myNavbar">' +
         '<ul class="nav navbar-nav" id="landmarks">' +
           '<li><a href="/" class="menu_item" role="menuitem">Home</a></li>' +
 
@@ -198,9 +320,9 @@ const initNavbar = () => $("nav").append(
 
     		'<form class="navbar-form navbar-left" action="#">' +
           '<div class="input-group" id="searchbar">' +
-            '<input title="searchbar" type="text" class="form-control" placeholder="Search" name="search" value="Search here">' +
+            '<input title="searchbar" type="text" class="form-control" placeholder="Search here" name="search" disabled />' +
             '<div class="input-group-btn">' +
-              '<button title="search button" class="btn btn-default" type="submit">' +
+              '<button title="search button" class="btn btn-default" type="submit" disabled>' +
                 '<i class="glyphicon glyphicon-search"></i>' +
               '</button>' +
             '</div>' +
@@ -211,10 +333,10 @@ const initNavbar = () => $("nav").append(
       	  '<!-- Actions - filled by JavaScript -->' +
         '</ul>' +
       '</div>' +
-    '</div>' +
-  '</div>'
-);
+    '</div>'
+  );
+  resolve();
+});
 
-
-initNavbar();
-populateNavbar();
+initNavbar
+.then(populateNavbar);

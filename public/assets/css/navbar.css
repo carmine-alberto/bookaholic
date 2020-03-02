@@ -1,188 +1,213 @@
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-outline: none!important;
+.nav {
+	border-width: 0px !important;
 }
 
-body {
-font-family: "F37 Ginger"!important
+.navbar-brand {
+	padding: 12.5px 15px !important"
 }
-
-@font-face {
-font-family:"F37 Ginger"!important;
-src: url("/assets/F37 Ginger Regular.ttf") format("truetype");
+.nav > li {
+	margin-bottom: -2px !important
 }
-
-@media (max-width:1400px) {
-	
-	navbar navbar-inverse navbar-fixed-top {
-		width: 768px;
-	}	
-	
-	.navbar {
-		background-color: #ffffff!important;
-		border-color: #ffffff!important;
-		opacity: 0.95!important;
-		width: 1400px;
+.nav > li > a {
+	line-height: 22px!important
 }
-	
-	.icon {
-		width: 20px!important;
-		height: 20px!important;
-	}
-	
-}
-
-@media (max-width: 768px) {
-	
-	#myNavbar.collapse {
-		width: 768px;
-	}
-	
-	.navbar-collapse {
-		width: 768px;
-	}
-	
-	.navbar {
-		width: 768px;
-	}
-	
-	.container-fluid {
-		width: 768px;
-	}
-	
-    .navbar-header {
-        float: none!important;
-		width: 768px;
-    }
-	
-	.navbar-left {
-padding-left: 280px!important;
-	}
-
-	
-	.navbar-right {
-		position: absolute;
-		top:47px;
-		right:30px;
-	}
-	
-	}
-
-@media (max-width: 400px) 
-{
-	
-	#myNavbar {
-	width: 400px;
-	}
-	
-	.container-fluid {
-		width: 400px;
-	}
-	
-	.menu_item {
-		width: 80px;
-	}
-	
-	.input-group {
-		width:350px!important;
-		margin-right: 200px!important;
-		position: absolute;
-		left:20px;
-	}
-	
-	.navbar-form {
-		height: 60px;
-		border-color: #555555
-	}
-	
-	.navbar-left {
-padding-left: 10px!important;
-	}	
-	
-	.navbar-header {
-		width: 400px;
-	}
-	
-	.navbar {
-		width: 400px;
-	}
-}
-
-
-.container-fluid {
-	background-color: #ffffff;
-	border-color:white!important;
-	position: sticky;
-	z-index: 999;
-	max-height: 1200px!important;
-}
-
-.dropdown-toggle {
-	color: #555555!important;
-}
-
-.dropdown-toggle:hover {
-	color: #ef4444!important;
-	background-color:none!important;
-}
-
-.dropdown-toggle:focus {
-	color: #ef4444!important;
-	background-color:#f3f3f3!important;
-}
-
-.dropdown-menu {
-	border:none!important;
-}
-
-.menu_item {
-	color:#555555!important;
-	padding:10px;
-}
-
-.menu_item:hover{
-	color: #ef4444!important;
-}
-
-.navbar-inverse {
-	border-color: white!important;
-}
-
-#active {
-	background-color: #ef4444!important;
-	color:#ffffff!important;
-}
-
-#active:hover {
-	color:#555555!important;
-}
-
-.icon {
-	width:20px;
-	height: 20px;
-}
-
-.icon_name:hover{	color:#ef4444!important;
+.navbar {
+    opacity: 0.95;
+    background-color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: 0 0px 5px 0px black;
 }
 
 .navbar-toggle {
-	background-color: #555555!important;
-	border: none!important
+    background-color: #555;
 }
 
 .navbar-toggle:focus {
-	background-color: #ef4444!important;
+	background-color: #ef4444;
 }
 
-.navbar-collapse {
-	max-height: 1000px!important;
+.dropdown-toggle,
+.menu_item {
+	color: #555;
 }
 
-#logout_dropdown {
-margin-left: 40px
+.dropdown-toggle:hover,
+.menu_item:hover {
+	color: #ef4444;
+	background-color: inherit !important;
+}
+
+.menu_item:focus,
+.dropdown-toggle:focus {
+	color: #ef4444;
+	background-color:#f3f3f3 !important;
 }
 
 
-	
+#active {
+	background-color: #ef4444 !important;
+	color:#ffffff !important;
+}
+
+#active:hover {
+	color:#555!important;
+}
+
+.navbar-form {
+    border-color: #555
+}
+
+.icon-bar {
+    background-color: #fff;
+}
+
+.icon {
+    width: 20px;
+}
+
+.menu_item > img + span {
+    padding: 5px;
+}
+
+.btn-default {
+	padding: 9px !important
+}
+
+/* These media queries are used for the navbar*/
+
+@media (max-width: 768px) {
+
+ 	.menu_item,
+ 	.dropdown-toggle {
+        width: 50%;
+    }
+
+
+	.navbar-right {
+		position: relative;
+		top: -312.5px;
+		right: -55.5%;
+		width: 105%;
+
+	}
+
+	#myNavbar {
+		overflow: hidden;
+		height: 320px;
+	}
+
+	.navbar-form {
+		margin-bottom: 0
+	}
+}
+
+@media (max-width: 1132px) {
+
+}
+
+/*There media queries are used for utility markers*/
+@media (max-width: 768px) {
+
+	.back {
+	top: 135px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Used in many pages, put here to be used as utility markers*/
+@font-face {
+    font-family:"F37 Ginger";
+    src: url("/assets/fonts/F37 Ginger Regular.ttf") format("truetype")
+}
+ html {
+     font-size: 62.5% !important;
+}
+
+body {
+    font-family: "F37 Ginger"!important;
+    padding: 52px 0 0;
+}
+
+.back {
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    color: #666;
+		z-index: 9;
+}
+
+.back > span {
+  font-size: 3em;
+  position: relative;
+  top: 5px;
+  right: 1px;
+	z-index: 5;
+}
+
+.back > a {
+  font-size: 1.3em;
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #666;
+	z-index: 10;
+}
+
+
+a {
+	text-decoration:none;
+	color: black;
+}
+
+button[disabled] {
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+}
+
+
+button:focus {
+    color:white;
+    background-color: #EF4444;
+}
+
+button:hover {
+    color:white;
+    background-color: #EF4444;
+}
+
+footer {
+	display:flex;
+	justify-content: space-between;
+	flex-flow: row wrap;
+	font-size: 1.4rem;
+	background-color: #E54444;
+	height: 50.5px;
+	color: white;
+	box-shadow: 0 0 5px 0px black;
+	padding: 0 3%;
+	align-items: center;
+	width: 100%;
+	z-index: 10;
+	position: relative;
+}
+
+
+footer > span > a {
+	text-decoration:underline;
+	font-weight: 700;
+	color: #D9D9D6
+}
+
+@media(max-width: 400px) {
+	footer {
+		justify-content:center
+	}
+}

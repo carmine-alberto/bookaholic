@@ -1,59 +1,17 @@
-body {
-font-family:'F37 Ginger';
-width:400px;
-}
-
 html {
-width: 400px
+font-size: 45% !important
 }
 
-#about_the_author {
-display: block;
-margin-top:50px;
-margin-left: 20px;
-position: relative;
-/* overflow: auto; */
-width:350px;
-height: max-content;
-/* max-height: 1000px; */
-}
+#about_the_author {margin: 0;overflow: auto;width: 100%;position: relative;display: block;}
 
-#about_the_author_title {
-font-weight:bolder;
-margin-left: -40px;
-text-align:center;
-}
+#about_the_author_title {font-weight:bolder;text-align:center;}
 
-#add_to_cart_button {
-background-color:#ABABAB;
-border-radius:40px;
-color:#000000;
-cursor:pointer;
-font-size:16px;
-font-weight:bolder;
-height:55px;/* left:100px; */
-margin: 170px 20px 0px -190px;
-padding:16px 32px;/* position:absolute; */
-text-align:center;
-text-decoration:none;
-text-transform:uppercase;/* top:860px; */
-width:180px;
-}
-
-.author,.author_bio {
-width:300px;
-}
+#add_to_cart_button {align-self: center;}
 
 .author_bio {
-font-weight: lighter;
 }
 
-#author_bio {
-font-size:14px;
-font-weight:lighter;
-margin-left:20px;
-width:300px;
-}
+.author_bio {font-weight:lighter;}
 
 #author_image {
 height:160px;
@@ -63,26 +21,13 @@ margin-right:30px;
 width:160px;
 }
 
-.author_page_button {
-background-color:#ABABAB;
-border-radius:50px;
-color:#000000;
-cursor:pointer;
-font-size:14px;
-height:45px;
-/* margin-right: -100px; */
-margin-left: 200px;
-padding:5px;
-text-align:center;
-text-decoration:none;
-width:180px;
-}
+.author_page_button {border-radius:50px;}
 
 .book {
 padding: 35px
 }
 
-#book_author_1,#book_author_2,#book_author_3,#book_author_4 {
+#book_author {
 display:block;
 font-size:16px;
 font-weight:lighter;
@@ -90,61 +35,24 @@ text-align:center;
 }
 
 .book_cover {
-height:284px;
-padding:10px;
-width:240px;
+    height: 200px;
 }
 
-#book_image {
-height:280px;
-margin:5px 30px 20px 95px;
-width:200px;
-}
+#book_image {width: 80%;margin: 15px 0%;}
 
-.book_image_event {
-float:left;
-height:300px;
-margin-bottom:50px;
-width:230px;
-}
+.book_image_event {}
 
 #book_info {
-background-color:#F3F3F3;
-padding-bottom:80px;
-padding-top:80px;
-width:400px;
-height: auto;
+    display: block;
 }
 
-#book_landing_page {
-display:flex;
-flex-direction:column;
-padding-top:40px;
-}
+#book_landing_page {display:flex;flex-direction: column;}
 
-#book_name {
-font-size:24px;
-font-weight:700;
-margin-top: 310px;
-text-align:center;
-}
+#book_title {text-align: center;padding: 15px 3%;}
 
-#book_price {
-font-size:20px;
-font-weight:500;
-margin-top: 15px;
-text-align:center;
-}
+#book_price {text-align:center;padding: 10px 0;}
 
-#book_resume {
-font-size:16px;
-font-weight:lighter;
-margin-left: 40px;
-margin-right:20px;
-margin-top:40px;
-text-align:justify;
-width: 320px;
-}
+#book_resume {padding: 20px 10%;max-height: initial;}
 
 .caption_container {
 font-size:20px;
@@ -153,62 +61,37 @@ line-height:1px;
 text-align:center;
 }
 
-.card {
-width:230px;
-}
+.card {}
 
 .carousel,::-webkit-scrollbar {
 display:none;
 }
 
 .column {
-float:left;
-padding-bottom:40px;
-padding-left:20px;
-width:50%;
+    padding: 0;
 }
 
 .event {
-margin-left:80px;
-width:180px;
+    width: 100%;
 }
 
-#event_author {
-font-size: 24px;
-font-weight: bolder;
-width: 150px;
-margin-left: 0px
-}
+#event_author {font-size: 20px;font-weight: lighter;width: 150px;margin-left: 0px;}
 
-.event_author {
-font-size:14px;
-}
+.event_author {}
 
-.event_date {
-font-size:16px;
-margin-top:20px;
-}
+.event_date {}
 
 .event_description {
 float:left;
 }
 
-.event_title {
-font-size:18px;
-font-weight:bolder;
-}
+.event_title {}
 
-.events_container {
-width:400px;
-}
+.events_container {}
 
 #fact_and_author {
-display: block;
-position: relative;
-width: 380px;
-/* margin-left: 0px; */
-padding-top: 100px;
-height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .fact_content {
@@ -217,17 +100,10 @@ font-weight:lighter;
 }
 
 #fact_sheet {
-left:20px;
-position:absolute;
-top:1220px;
-width:360px;
+    padding: 10px 0;
 }
 
-#fact_sheet_content {
-font-weight:lighter;
-margin-left:40px;
-width:300px;
-}
+#fact_sheet_content {text-align: center;}
 
 #fact_sheet_content:after {
 clear:both;
@@ -236,54 +112,25 @@ display:table;
 }
 
 #fact_sheet_title {
-margin-left: 100px;
-text-align:center;
-width: 150px;
 }
 
 .fact_title {
 color:#555555;
 font-size:16px;
-font-weight:bolder;
+font-weight:900
 }
 
-.learn_more {
-background-color:#d5d5d5;
-border:none;
-border-radius:30px;
-color:black;
-display:inline-block;
-font-size:18px;
-height:50px;
-margin:20px 25px;
-text-align:center;
-text-decoration:none;
-vertical-align:middle;
-width:180px;
-}
+.learn_more {}
 
-.learn_more:active,#add_to_cart_button:hover,#author_page_button:hover,#author_page_button:hover {
+.learn_more:active, #add_to_cart_button:hover, .author_page_button:hover {
 background-color:#ef4444;
+cursor:pointer;
 }
 
-#no_Events {
-font-weight:lighter;
-margin-left:100px;
-padding:18px;
-}
 
-#related_books {
-display: block;
-clear: both;
-margin: auto;
-position: relative;
-padding-bottom: 50px;
-padding-bottom: 50px;
-/* overflow: auto; */
-width:400px;
-}
+#related_books {}
 
-#related_books_title {margin: 30px 0 0 90px;}
+#related_books_title {margin: 0;}
 
 #related_books_title_mobile {
 color:#000000;
@@ -292,60 +139,34 @@ font-weight:bolder;
 text-align:center;
 }
 
-#related_events {
-background-color:#f3f3f3;
-overflow:auto;
-width:400px;
-}
+#related_events {}
 
 #related_events_title {
-margin-left:80px;
-width:250px;
+    margin:  0;
 }
 
 .review_image {
-float:left;
-height:40px;
-width:40px;
+    /* width: 25%; */
+    /* float: left; */
+    margin-right: 20px;
+}
+#no_reviews {
+  text-align: center;
+  margin:  0;
+}
+.reviewer {
+    /* margin-top: 17px; */
 }
 
-#reviews {
-position:absolute;
-overflow:auto;
-top:2950px;
-}
+#reviews_container {display: flex;overflow-x: scroll;flex-wrap: nowrap;}
 
-#reviews_container {
-display:grid;
-grid-column-gap:5px;
-grid-row-gap:25px;
-grid-template-columns:160px 160px;
-grid-template-rows:130px 130px 130px 130px 130px;
-overflow:auto;
-}
+#reviews_title {margin: 0;}
 
-#reviews_title {
-margin-right:70px;
-text-align:center;
-}
+.scrolling-wrapper {}
 
-.scrolling-wrapper {
--webkit-overflow-scrolling:touch;
-height:450px;
-margin-top:30px;
-max-width:100%;
-overflow-x:scroll;
-overflow-y:hidden;
-white-space:nowrap;
-}
+.section_title {font-size:22px;font-weight:bolder;margin: 0;width: 100%;text-align: center;}
 
-.section_title {
-font-size:22px;
-font-weight:bolder;
-margin-left:60px;
+.single_review {
+    flex: 0 0 100%;
 }
-
-.stars {
-height:18px;
-width:90px;
-}
+.stars {/* width: 145px; */}

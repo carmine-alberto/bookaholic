@@ -1,158 +1,58 @@
-body {
-font-family:"F37 Ginger"!important;
+html {
+    font-size: 50% !important
 }
 
-.book_author_1,.book_author_2,.book_author_3,.book_author_4 {
-font-size:12px;
-font-weight:lighter;
-}
-
-.book_cover {
-box-shadow:3px 3px 5px #979797;
-float:left;
-margin:10px 20px 0 10px;
-width:80px;
-}
+.book_cover {}
 
 .book_info {
-padding-top:5px;
-width:600px;
+    flex: 0 0 100%;
+    padding: 0px 0%;
 }
 
-.book_info:after {
-clear:both;
-content:"";
-display:table;
-}
+.book_price {}
 
-.book_price {
-font-size:12px;
-font-weight:30;
-}
+.book_subtotal {}
 
-.book_subtotal {
-color:#555555;
-font-size:12px;
-font-weight:lighter;
-margin-top:5px;
-}
-
-.book_subtotal_title {
-color:#000000;
-font-size:12px;
-margin-top:20px;
-width:100px;
-}
+.book_subtotal_title {}
 
 .book_title {
-font-size:14px;
+    margin: 0 0% 10px;
 }
 
 .cart_item {
-padding: 0px 10px 30px;
-background-color:#f3f3f3;
-border:10px solid #ffffff;
-border-radius:30px;
-color:black;
-display:block;
-font-size:18px;
-padding: 20px 10px 30px;
-padding:10px 10px 30px;
-position:relative;
-text-decoration:none;
-width:430px;
+    padding: 30px 8%;
 }
 
-#cart_items {
-list-style:none;
-margin-top:35px;
-padding-top:160px;
-}
+#cart_items {}
 
-#checkout_button {
-background-color:#ffffff;
-border:none;
-border-radius:40px;
-color:#000000;
-cursor:pointer;
-display:inline-block;
-font-size:14px;
-font-weight:bolder;
-height:10px;
-margin:0;
-position:absolute;
-right:50px;
-text-align:center;
-text-decoration:none;
-text-transform:uppercase;
-top:230px;
-width:140px;
-}
+#checkout_button {border:none;}
 
 #checkout_button:hover {
 background-color:#ef4444;
 }
 
-.close_button {
-background-color:#f3f3f3;
-border:none;
-float: right;
-margin-top: 0;
-}
+.close_button {}
 
 .column {
-float:left;
-padding-bottom:0;
-padding-left:15px;
-width:15%;
+    padding: 0px 1%;
+    text-align: center;
 }
 
-.inner {
-width:inherit;
-}
+.inner {}
 
-.inner:after {
-bottom:50%;
-transform:rotate(-45deg);
-}
+.inner:after {}
 
-.inner:before {
-top:50%;
-transform:rotate(45deg);
-}
+.inner:before {}
 
-.inner:before,.inner:after {
-background:#555555;
-content:'';
-height:1px;
-left:5px;
-position:absolute;
-width:20px;
-}
+.inner:before,.inner:after {}
 
-.outer {
-cursor:pointer;
-margin:10px 15px auto auto;
-position:relative;
-width:10px;
-}
+.outer {}
 
-.quality_form {
-margin:5px;
-height:30px;
-width:80px;
-font-size: 14px;
-}
+.quality_form {height: 30px;width: 100px;}
 
-.quantity {
-font-size:12px;
-margin: 30px 0 0 5px;
-}
+.quantity {}
 
-.quantity_menu {
-margin-left:20px;
-margin-top:20px;
-}
+.quantity_menu {}
 
 select {
 background-color:#ffffff;
@@ -164,29 +64,21 @@ padding:5px 20px;
 width:60px;
 }
 
-#subtotal {
-background-color:#C8C8C8;
-border-radius:0;
-height:330px;
-padding:25px;
-position:fixed;
-right:35px;
-text-align:center;
-top:200px;
-width:240px;
-}
+#subtotal {}
 
-#subtotal_number {
-font-size:18px;
-font-weight:30;
-}
+#subtotal_number {}
 
 #subtotal_title {
-font-size:17px;
-font-weight:bold;
+    margin: 10px;
 }
 
-#your_order_title {
-font-size:18px;
-font-weight:bold;
+#your_order_title {}
+
+.column:nth-child(2) {
+    order: -1
+}
+
+.cart_item > a {
+    flex: 0 0 100%;
+    padding: 8px 29%;
 }

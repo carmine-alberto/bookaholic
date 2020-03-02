@@ -1,168 +1,37 @@
 // const host declared in navbar.js
-var l=0;
 
-//HELPER
-const appendData = function(selector, data) {
-  selector
-  .append('<a href="/book?id=' + data["book_id"] +'">' +
-            '<img src="/assets/img/'+ data["cover"] +'" height="300px" width="150px">' +
-            '<span>' + data["title"] + '<br>' +
-              extractAuthors(data["authors"]) +
-            '</span>' +
-          '</a>'
-  );
-};
+(function() {
+  const bestsellerScrollingWrapperSelector = $("#best_sellers").children(".scrolling-wrapper");
+  const bestsellerCarouselSelector = $("#best_sellers").find(".slides");
+  const ourSuggestionsSelector = $("#our_suggestions_container");
 
-//HELPER
-const extractAuthors = function(authors) {
-  var formattedAuthors = "";
+  const appendOurSuggestionsContent = data => {
+    const suggestors = ["Laura", "Carmine", "Giuseppe"];
 
-  authors.forEach( author => {
-    formattedAuthors += author["author_name"] + '<br>';
+    data.forEach((book, index) => ourSuggestionsSelector.append(
+      '<a href="/book?id=' + book["book_id"] + '">' +
+        '<div class="book">' +
+          '<h4 class="suggestion">suggested by<span class="suggestor_name">  ' + suggestors[index%3] + '</span></h4>' +
+          '<img src="' + createImgURL(book["cover"]) + '" class="book_cover_suggested" alt="' + book["title"] + ' Image">' +
+          '<h4 class="book_title_suggested">' + book["title"] + '</h4>' +
+          createAuthorsTag(book["authors"], "h4") +
+        '</div>' +
+      '</a>'
+      )
+    )
+  };
+
+  //MAIN BODY
+  fetch(host + "/api/books?bestseller=true&limit=100")
+  .then(response => response.json())
+  .then(bestseller => {
+    appendScrollingWrapperContent(bestsellerScrollingWrapperSelector, bestseller);
+    appendCarouselSlides(bestsellerCarouselSelector, bestseller);
   });
 
-  console.log(formattedAuthors);
-  return formattedAuthors;
-}
+  fetch(host + "/api/books?suggested=true&limit=5")
+  .then(response => response.json())
+  .then(ourSuggestions => appendOurSuggestionsContent(ourSuggestions));
 
-/*
-const appendDataForBook= function (books)
-{
-    l++;
-    var slide_1= $("#slide_1")
-    var slide_2= $("#slide_2")
-    var slide_3= $("#slide_3")
-    var slide;
-
-
-    for(var i=0;i<books.lenght;i++)
-        {
-            if(i<5) slide= slide_1;
-            else if(i<10) slide= slide_2;
-            else slide= slide_3;
-
-            if(books[i].authors.length==1)
-            {
-                slide.append(
-                    '<div class="image_and_caption">'+
- 	       '<img src="/assets/img/'+books[i].cover+'" class="book_cover" id="slide1_img1" alt="chronicles of a radical hag">'+
-		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+books[i].title+'</h6>'+
-			'<div class="authors_container">'+
-			 '<h6 class="book_author" id="book'+l+'_author1">'+books[i].authors[0].author_name+'</h6>'+
-
-			'</div> </div> </div>'
-            )}
-            else if(books[i].authors.length==2)
-                {
-                     slide.append(
-                    '<div class="image_and_caption">'+
- 	       '<img src="/assets/img/'+books[i].cover+'" class="book_cover" id="slide1_img1" alt="chronicles of a radical hag">'+
-		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+books[i].title+'</h6>'+
-			'<div class="authors_container">'+
-			 '<h6 class="book_author" id="book'+l+'_author1">'+books[i].authors[0].author_name+'</h6>'+
-            '<h6 class="book_author" id="book'+l+'_author2">'+books[i].authors[1].author_name+'</h6>'+
-			'</div> </div> </div>'
-            )
-                }
-            else if(books[i].authors.length==3)
-                {
-                    slide.append(
-                    '<div class="image_and_caption">'+
- 	       '<img src="/assets/img/'+books[i].cover+'" class="book_cover" id="slide1_img1" alt="chronicles of a radical hag">'+
-		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+books[i].title+'</h6>'+
-			'<div class="authors_container">'+
-			 '<h6 class="book_author" id="book'+l+'_author1">'+books[i].authors[0].author_name+'</h6>'+
-            '<h6 class="book_author" id="book'+l+'_author2">'+books[i].authors[1].author_name+'</h6>'+
-            ' <h6 class="book_author" id="book'+l+'_author3">'+books[i].authors[2].author_name+'</h6>'+
-			'</div> </div> </div>'
-            )
-                }
-
-            else{
-                slide.append(
-                    '<div class="image_and_caption">'+
- 	       '<img src="/assets/img/'+books[i].cover+'" class="book_cover" id="slide1_img1" alt="chronicles of a radical hag">'+
-		   '<div class="caption_container">'+
-		   '<h6 class="book_title">'+books[i].title+'</h6>'+
-			'<div class="authors_container">'+
-			 '<h6 class="book_author" id="book'+l+'_author1">'+books[i].authors[0].author_name+'</h6>'+
-            '<h6 class="book_author" id="book'+l+'_author2">'+books[i].authors[1].author_name+'</h6>'+
-            ' <h6 class="book_author" id="book'+l+'_author3">'+books[i].authors[2].author_name+'</h6>'+
-            '<h6 class="book_author" id="book1_author4">'+books[i].authors[3].author_name+'</h6>'+
-			'</div> </div> </div>')
-            }
-
-
-            if(1==4)
-                {
-                    slide.append(
-                        '<div class="carousel-controls">'+
-                    '<label for="img-3" class="prev-slide">'+
-                        '<span>&lsaquo;</span>'+
-                    '</label>'+
-                    '<label for="img-2" class="next-slide">'+
-                      '<span>&rsaquo;</span>'+
-                    '</label>'+
-                '</div>'
-                    )
-                }
-            if(i==9)
-                {
-                    slide.append('<div class="carousel-controls">'+
-                    '<label for="img-1" class="prev-slide">'+
-                        '<span>&lsaquo;</span>'+
-                    '</label>'+
-                    '<label for="img-3" class="next-slide">'+
-                        '<span>&rsaquo;</span>'+
-                    '</label>'+
-                '</div>')
-                }
-            if(i==14)
-                {
-                    slide.append(
-                    '<div class="carousel-controls">'+
-                    '<label for="img-2" class="prev-slide">'+
-                        '<span>&lsaquo;</span>'+
-                    '</label>'+
-                    '<label for="img-1" class="next-slide">'+
-                        '<span>&rsaquo;</span>'+
-                    '</label>'+
-                '</div>'
-                    )
-                }
-
-        }
-
-}*/
-
-
-
-
-//MAIN
-
-var latestProducts = $("#freshly_released .MagicScroll");
-var ourSuggestions = $("#our_suggestions .MagicScroll");
-var script = document.createElement('script');
-
-Promise.all(
-  [
-    fetch(host + "/api/books?published_after=2013-01-10&limit=52&offset=0")
-    .then(response => response.json())
-    .then(data => data
-      .forEach(book => appendData(latestProducts, book))
-    ),
-    fetch(host + "/api/books?suggested=true")
-    .then(response => response.json())
-    .then(data => data
-      .forEach(book => appendData(ourSuggestions, book))
-    )
-    /*,
-      fetch(host+"/api/books?bestseller=true&limit=15&offset=0")
-      .then(response => response.json())
-      .then(books => appendDataForBook(books)
-    )*/
-  ]
-);
+  $("button").on("click touch", function() {$(this).blur();});
+})();
