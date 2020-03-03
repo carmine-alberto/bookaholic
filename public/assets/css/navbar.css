@@ -84,16 +84,15 @@
 
 
 	.navbar-right {
-		position: relative;
-		top: -312.5px;
-		right: -55.5%;
-		width: 105%;
-
+		position: absolute;
+		top: 0px;
+		right: -48%;
+		width: 100%;
 	}
 
 	#myNavbar {
-		overflow: hidden;
-		height: 320px;
+		height: auto;
+		position: relative;
 	}
 
 	.navbar-form {

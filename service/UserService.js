@@ -124,7 +124,7 @@ const addOrder = function(database,booksInCart, address, username) {
                       : acc.status;
 
          return Promise.resolve(acc);
-      }), Promise.resolve({total: 0, status: "pending"})) //Il problema sta qui - potrebbe essere dovuto al fatto che l'oggetto non è iterabile, reduce va chiamata su un array.
+      }), Promise.resolve({total: 0, status: "pending"})) 
       .then(order => {
          database
          .insert({"status": order.status, "total": order.total, "address": address, "username": username})
