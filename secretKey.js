@@ -1,2 +1,2 @@
 
-module.exports = "abcdefghilmnopqrstuvz";
+module.exports = "insert random password here";
