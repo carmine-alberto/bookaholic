@@ -8,6 +8,9 @@ const database = require("./DataLayer.js");
  * book_id String The ID of the book whose information have to be returned
  * returns DetailedBook
  **/
+database.raw('SELECT 1')
+  .then(() => console.log('✅ DB connected!'))
+  .catch((err) => console.error('❌ DB connection failed:', err));
 
 
 exports.getBookById = function(book_id) {
