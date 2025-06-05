@@ -1,6 +1,6 @@
 
 const jwtParser = require('jsonwebtoken');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const secretKey = require("../secretKey.js");
 
 module.exports = function(pluginContext, info) {

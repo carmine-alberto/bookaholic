@@ -775,7 +775,7 @@ paths:
           text/plain:
             schema:
               type: string
-              pattern: ^Via|Strada|Piazza|Corso .+\, \d+(?:\/[A-Z])*\, \d{5}, .+ \([A-Z]{2}\)$
+              pattern: "^(?:Via|Strada|Piazza|Corso) .+, \\d+(?:/[A-Z])*, \\d{5}, .+ \\([A-Z]{2}\\)$"
               example: Via del Carroccio, 33/F, 20032, Milano (MI)
 
       responses:
@@ -1379,7 +1379,7 @@ components:
           uniqueItems: true
         address:
           type: string
-          pattern: ^(?:Via|Strada|Piazza|Corso) .+\, \d+(?:\/[A-Z])*\, \d{5}, .+ \([A-Z]{2}\)$
+          pattern: "^(?:Via|Strada|Piazza|Corso) .+, \\d+(?:/[A-Z])*, \\d{5}, .+ \\([A-Z]{2}\\)$"
       required: [order_id, emission_time, status, total, details, address]
       description: "Object representing an emitted order. Check the example for a visualization of the regexp above."
       example:
